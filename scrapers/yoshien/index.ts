@@ -34,6 +34,7 @@ function extractProductUrls(html: string): string[] {
   return [...new Set(urls)];
 }
 
+
 async function fetchPage(url: string): Promise<string> {
   const response = await fetch(url);
   if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
@@ -51,7 +52,6 @@ async function scrape() {
 
   let vendorId = 1;
   let oxidationMap = new Map<string, number>();
-  let processingMap = new Map<string, number>();
   let cultivarMap = new Map<string, number>();
   let producerMap = new Map<string, number>();
 
@@ -63,19 +63,15 @@ async function scrape() {
     );
     console.log(`✓ Vendor: ${VENDOR_NAME} (id: ${vendorId})`);
 
-    const [oxidationLevels, processingMethods, cultivars, producers] =
+    const [oxidationLevels, cultivars, producers] =
       await Promise.all([
         supabase.from("oxidation_level").select("id, key"),
-        supabase.from("processing").select("id, key"),
         supabase.from("cultivar").select("id, key"),
         supabase.from("producer").select("id, name"),
       ]);
 
     oxidationMap = new Map(
       (oxidationLevels.data || []).map((r: any) => [r.key, r.id])
-    );
-    processingMap = new Map(
-      (processingMethods.data || []).map((r: any) => [r.key, r.id])
     );
     cultivarMap = new Map(
       (cultivars.data || []).map((r: any) => [r.key, r.id])
@@ -85,7 +81,7 @@ async function scrape() {
     );
 
     console.log(
-      `✓ Reference data: ${oxidationMap.size} oxidation, ${processingMap.size} processing`
+      `✓ Reference data: ${oxidationMap.size} oxidation`
     );
   }
 
@@ -129,6 +125,13 @@ async function scrape() {
 
           const mapped = mapToTeaRecord(detail, category.oxidationLevel);
 
+          const hasTeaMetadata = detail.cultivar || detail.ernte || detail.beschattung ||
+                                detail.charakter || detail.terroir || detail.anbau;
+          if (!hasTeaMetadata) {
+            console.log(`   ⚠️  Skipping (no tea metadata): ${detail.name}`);
+            continue;
+          }
+
           if (isDryRun) {
             console.log(`\n   📄 ${detail.name}`);
             console.log(`      URL: ${url}`);
@@ -141,7 +144,9 @@ async function scrape() {
             console.log(`      Producer: ${mapped.producerName}`);
             console.log(`      Shading: ${mapped.shading}`);
             console.log(`      Cultivar: ${detail.cultivar}`);
-            console.log(`      Harvest: ${detail.ernte}`);
+            console.log(`      Season: ${mapped.harvestSeason}`);
+            console.log(`      Year: ${mapped.harvestYear}`);
+            console.log(`      Offers: ${detail.offers.length}`);
 
             newProducts++;
             await new Promise((r) => setTimeout(r, 300));
@@ -152,25 +157,6 @@ async function scrape() {
           let oxidationLevelId: number | null = null;
           if (mapped.oxidationLevelKey) {
             oxidationLevelId = oxidationMap.get(mapped.oxidationLevelKey.toLowerCase()) || null;
-          }
-
-          let processingId: number | null = null;
-          if (mapped.processingKey) {
-            processingId = processingMap.get(mapped.processingKey.toLowerCase()) || null;
-          }
-
-          let cultivarId: number | null = null;
-          if (detail.cultivar) {
-            const cultivarKey = detail.cultivar.toLowerCase();
-            cultivarId = cultivarMap.get(cultivarKey) || null;
-            if (!cultivarId) {
-              cultivarId = await upsertUnique(
-                "cultivar",
-                { label: detail.cultivar, key: cultivarKey },
-                "key"
-              );
-              if (cultivarId) cultivarMap.set(cultivarKey, cultivarId);
-            }
           }
 
           let producerId: number | null = null;
@@ -189,14 +175,17 @@ async function scrape() {
           const teaRecord = {
             name: detail.name,
             url,
-            vendor_id: vendorId,
-            oxidation_level_id: oxidationLevelId,
-            processing_id: processingId,
+            vendor: vendorId,
+            oxidation_level: oxidationLevelId,
+            processing_raw: mapped.processingRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,
             elevation_meters: mapped.elevationMeters,
+            harvest_season: mapped.harvestSeason,
+            harvest_year: mapped.harvestYear,
             producer_id: producerId,
             shading: mapped.shading,
+            cultivar_raw: detail.cultivar,
             is_available: detail.availability.includes("InStock"),
             raw_notes: mapped.rawNotes,
           };
@@ -212,13 +201,16 @@ async function scrape() {
             continue;
           }
 
-          if (detail.price > 0) {
-            await supabase.from("price_snapshot").insert({
-              tea_id: teaData.id,
-              weight_grams: null, // TODO: extract from product page
-              price: Math.round(detail.price * 100),
-              currency_code: "EUR",
-            });
+          // Insert all offers as price snapshots
+          for (const offer of detail.offers) {
+            if (offer.price > 0) {
+              await supabase.from("price_snapshot").insert({
+                tea_id: teaData.id,
+                weight_grams: detail.weightGrams || offer.weightGrams,
+                price: offer.price,
+                currency: "EUR",
+              });
+            }
           }
 
           newProducts++;

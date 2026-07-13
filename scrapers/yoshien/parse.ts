@@ -17,10 +17,29 @@ function inferProcessing(category: string, name: string): string | null {
   return null;
 }
 
-// Parse price from HTML string
-function parsePrice(html: string): number | null {
-  const match = html.match(/data-price-amount="([\d.]+)"/);
-  return match ? parseFloat(match[1]) : null;
+function getRawProcessing(category: string, name: string): string {
+  const cat = category.toLowerCase();
+  const nameLower = name.toLowerCase();
+
+  if (cat.includes("matcha")) return "matcha";
+  if (nameLower.includes("hojicha") || nameLower.includes("hocha")) return "hojicha";
+  if (nameLower.includes("gyokuro")) return "gyokuro";
+  if (nameLower.includes("genmaicha")) return "genmaicha";
+  if (nameLower.includes("sencha")) return "sencha";
+  if (nameLower.includes("bancha")) return "bancha";
+  if (nameLower.includes("kukicha")) return "kukicha";
+  if (nameLower.includes("fukamushi")) return "fukamushi";
+  if (nameLower.includes("kabusecha")) return "kabusecha";
+  if (nameLower.includes("tencha")) return "tencha";
+  if (nameLower.includes("shincha")) return "shincha";
+
+  return category || name;
+}
+
+// Parse weight from URL like "matcha-okinami-bio-40g.html"
+function parseWeightFromUrl(url: string): number | null {
+  const match = url.match(/(\d+)g/);
+  return match ? parseInt(match[1], 10) : null;
 }
 
 // Parse weight from unit string like "40g" or "100g"
@@ -50,35 +69,13 @@ function parseTerroir(terroir: string): {
   return { origin, country };
 }
 
-// Parse harvest string to season
-function parseSeason(harvest: string): string | null {
+// Parse harvest year from string like "1. Ernte (Ichibancha), Mai 2025"
+function parseHarvestYear(harvest: string): number | null {
   if (!harvest) return null;
 
-  const lower = harvest.toLowerCase();
-  if (lower.includes("ernte")) {
-    // "1. Ernte (Ichibancha), Mai 2025"
-    const match = lower.match(/(\d+)\.\s*ernte/);
-    if (match) {
-      const num = parseInt(match[1], 10);
-      // Map harvest number to season name
-      const seasons: Record<number, string> = {
-        1: "Spring",
-        2: "Summer",
-        3: "Autumn",
-      };
-      return seasons[num] || null;
-    }
-  }
-
-  // Try month names
-  if (lower.includes("mai") || lower.includes("may")) return "Spring";
-  if (lower.includes("juni") || lower.includes("june")) return "Summer";
-  if (lower.includes("juli") || lower.includes("july")) return "Summer";
-  if (lower.includes("august")) return "Summer";
-  if (lower.includes("september")) return "Autumn";
-  if (lower.includes("oktober") || lower.includes("october")) return "Autumn";
-
-  return null;
+  // Look for 4-digit year
+  const match = harvest.match(/\b(20\d{2})\b/);
+  return match ? parseInt(match[1], 10) : null;
 }
 
 // Parse product page HTML
@@ -108,6 +105,40 @@ export function parseProductPage(html: string): YoshienProductDetail | null {
   // Get image
   const ogImage = $('meta[property="og:image"]').attr("content") || "";
 
+  // Parse unit-value for weight (e.g., "40g", "100g", "40/100g")
+  const unitValues: string[] = [];
+  $(".cs-product-tile__unit-value, .unit-value").each(function () {
+    const text = $(this).text().trim();
+    if (text) unitValues.push(text);
+  });
+
+  // Extract primary weight from unit values
+  let weightGrams: number | null = null;
+  for (const unit of unitValues) {
+    const match = unit.match(/(\d+)\s*g/);
+    if (match) {
+      weightGrams = parseInt(match[1], 10);
+      break;
+    }
+  }
+
+  // Parse offers (multiple sizes with weights)
+  const offers: { price: number; weightGrams: number | null; url: string }[] = [];
+  if (jsonData.offers) {
+    // Handle nested AggregateOffer structure
+    const offerData = jsonData.offers.offers || jsonData.offers;
+    const offerList = Array.isArray(offerData) ? offerData : [offerData];
+    for (const offer of offerList) {
+      if (offer.price) {
+        offers.push({
+          price: parseFloat(offer.price),
+          weightGrams: offer.url ? parseWeightFromUrl(offer.url) : weightGrams,
+          url: offer.url || "",
+        });
+      }
+    }
+  }
+
   return {
     name: jsonData.name || "",
     sku: jsonData.sku || "",
@@ -117,6 +148,8 @@ export function parseProductPage(html: string): YoshienProductDetail | null {
     price: parseFloat(jsonData.offers?.price || "0"),
     currency: jsonData.offers?.priceCurrency || "EUR",
     availability: jsonData.offers?.availability || "",
+    offers,
+    weightGrams,
 
     charakter: tableData["Charakter"] || null,
     teefarm: tableData["Teefarm"] || null,
@@ -140,16 +173,19 @@ export function mapToTeaRecord(
 ): {
   oxidationLevelKey: string | null;
   processingKey: string | null;
+  processingRaw: string;
   origin: string | null;
   originCountry: string | null;
   elevationMeters: number | null;
-  seasonKey: string | null;
+  harvestSeason: string | null;
+  harvestYear: number | null;
   producerName: string | null;
   shading: string | null;
   rawNotes: string;
 } {
   // Processing
   const processingKey = inferProcessing(detail.category, detail.name);
+  const processingRaw = getRawProcessing(detail.category, detail.name);
 
   // Parse terroir
   const { origin, country } = detail.terroir
@@ -159,8 +195,9 @@ export function mapToTeaRecord(
   // Elevation
   const elevation = detail.hoehenlage ? parseElevation(detail.hoehenlage) : null;
 
-  // Season from harvest
-  const seasonKey = detail.ernte ? parseSeason(detail.ernte) : null;
+  // Harvest info - store raw season, parse year
+  const harvestSeason = detail.ernte || null;
+  const harvestYear = detail.ernte ? parseHarvestYear(detail.ernte) : null;
 
   // Producer
   const producerName = detail.teefarm || null;
@@ -176,10 +213,12 @@ export function mapToTeaRecord(
   return {
     oxidationLevelKey: oxidationLevel,
     processingKey,
+    processingRaw,
     origin,
     originCountry: country,
     elevationMeters: elevation,
-    seasonKey,
+    harvestSeason,
+    harvestYear,
     producerName,
     shading,
     rawNotes,

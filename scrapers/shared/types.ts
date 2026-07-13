@@ -15,6 +15,8 @@ export interface YoshienProductDetail {
   price: number;
   currency: string;
   availability: string;
+  offers: { price: number; weightGrams: number | null; url: string }[];
+  weightGrams: number | null;
 
   // From HTML table
   charakter: string | null;
@@ -36,13 +38,14 @@ export interface YoshienProductDetail {
 export interface TeaRecord {
   name: string;
   url: string;
-  vendor_id: number;
-  oxidation_level_id: number | null;
+  vendor: number;
+  oxidation_level: number | null;
   processing_id: number | null;
   origin: string | null;
   origin_country: string | null;
   elevation_meters: number | null;
-  season: string | null;
+  harvest_season: string | null;
+  harvest_year: number | null;
   producer_id: number | null;
   shading: string | null;
   is_available: boolean;
