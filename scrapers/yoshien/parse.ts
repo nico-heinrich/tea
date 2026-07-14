@@ -94,6 +94,12 @@ function parseTerroir(terroir: string): {
   return { origin, country };
 }
 
+function cleanCultivar(raw: string | null): string | null {
+  if (!raw) return null;
+  const firstSegment = raw.split(/[\n.,;]/)[0].trim();
+  return firstSegment || null;
+}
+
 // Parse harvest year from string like "1. Ernte (Ichibancha), Mai 2025"
 function parseHarvestYear(harvest: string): number | null {
   if (!harvest) return null;
@@ -117,11 +123,15 @@ export function parseProductPage(html: string): YoshienProductDetail | null {
 
   const jsonData = JSON.parse(jsonLdScript.html() || "{}");
 
-  // Get HTML table data
+  // cheerio .text() collapses <br> — use .html() + manual replacement to preserve field boundaries
   const tableData: Record<string, string> = {};
   $("table tr").each(function () {
     const key = $(this).find("th").text().trim();
-    const value = $(this).find("td").text().trim();
+    const raw = $(this).find("td").html() || "";
+    const value = raw
+      .replace(/<br\s*\/?>/gi, "\n")
+      .replace(/<[^>]+>/g, "")
+      .trim();
     if (key && value) {
       tableData[key] = value;
     }
@@ -185,7 +195,7 @@ export function parseProductPage(html: string): YoshienProductDetail | null {
     teefarm: tableData["Teefarm"] || null,
     terroir: tableData["Terroir"] || null,
     ernte: tableData["Ernte"] || null,
-    cultivar: tableData["Cultivar"] || null,
+    cultivar: cleanCultivar(tableData["Cultivar"]),
     vermahhlung: tableData["Vermahlung"] || null,
     hoehenlage: tableData["Höhenlage"] || null,
     beschattung: tableData["Beschattung"] || null,

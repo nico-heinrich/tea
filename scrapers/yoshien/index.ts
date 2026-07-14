@@ -44,12 +44,13 @@ async function fetchPage(url: string): Promise<string> {
 
 async function scrape() {
   const isDryRun = process.argv.includes("--dry");
+  const isUpdate = process.argv.includes("--update");
 
   if (!isDryRun) {
     await initDb();
   }
 
-  console.log(`🌿 Starting Yoshien scraper${isDryRun ? " (DRY RUN)" : ""}`);
+  console.log(`🌿 Starting Yoshien scraper${isDryRun ? " (DRY RUN)" : ""}${isUpdate ? " (UPDATE)" : ""}`);
 
   let vendorId = 1;
   let categoryMap = new Map<string, number>();
@@ -78,6 +79,7 @@ async function scrape() {
   let totalProducts = 0;
   let newProducts = 0;
   let skippedProducts = 0;
+  let updatedProducts = 0;
 
   for (const category of CATEGORIES) {
     console.log(`\n📂 Fetching category: ${category.url}`);
@@ -91,7 +93,7 @@ async function scrape() {
       for (const url of productUrls) {
         totalProducts++;
 
-        if (!isDryRun) {
+        if (!isDryRun && !isUpdate) {
           const { data: existing } = await supabase
             .from("tea")
             .select("id")
@@ -114,6 +116,33 @@ async function scrape() {
           }
 
           const mapped = mapToTeaRecord(detail, category.teaCategory);
+
+          if (!isDryRun && isUpdate) {
+            const { data: existing } = await supabase
+              .from("tea")
+              .select("id")
+              .eq("url", url)
+              .single();
+
+            if (existing) {
+              const { error: updateError } = await supabase
+                .from("tea")
+                .update({
+                  cultivar_raw: detail.cultivar,
+                  scraper_version: SCRAPER_VERSION,
+                })
+                .eq("id", existing.id);
+
+              if (updateError) {
+                console.log(`      ❌ Update error: ${updateError.message}`);
+              } else {
+                updatedProducts++;
+                console.log(`      ↻ ${detail.name} (id: ${existing.id})`);
+              }
+              await new Promise((r) => setTimeout(r, 300));
+              continue;
+            }
+          }
 
           const hasTeaMetadata = detail.cultivar || detail.ernte || detail.beschattung ||
                                 detail.charakter || detail.terroir || detail.anbau;
@@ -217,6 +246,7 @@ async function scrape() {
   console.log(`\n📊 Summary:`);
   console.log(`   Total products found: ${totalProducts}`);
   console.log(`   New products saved: ${newProducts}`);
+  console.log(`   Updated: ${updatedProducts}`);
   console.log(`   Skipped (existing): ${skippedProducts}`);
 }
 
