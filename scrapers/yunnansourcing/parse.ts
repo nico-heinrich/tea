@@ -1,0 +1,157 @@
+import type { ShopifyProduct, ParsedTags } from "./types.js";
+
+function parseTags(tags: string[]): ParsedTags {
+  let teaType: string | null = null;
+  let producer: string | null = null;
+  let region: string | null = null;
+  let subRegion: string | null = null;
+  let yearOfProduction: number | null = null;
+  let harvestSeason: string | null = null;
+  let storageType: string | null = null;
+  let shape: string | null = null;
+  let cultivar: string | null = null;
+
+  for (const tag of tags) {
+    if (tag.startsWith("Tea Type_")) teaType = tag.slice(9);
+    else if (tag.startsWith("Producer_")) producer = tag.slice(9);
+    else if (tag.startsWith("Region_")) region = tag.slice(7);
+    else if (tag.startsWith("Sub-Region_")) subRegion = tag.slice(11);
+    else if (tag.startsWith("Year of Production_")) {
+      const year = parseInt(tag.slice(19), 10);
+      if (year > 1900 && year < 2100) yearOfProduction = year;
+    }
+    else if (tag.includes("Harvest Season")) harvestSeason = tag.replace(/_/g, " ");
+    else if (tag.startsWith("Storage Type_")) storageType = tag.slice(13);
+    else if (tag.startsWith("Shape_")) shape = tag.slice(6);
+    else if (tag.startsWith("Cultivar_")) cultivar = tag.slice(9);
+  }
+
+  return { teaType, producer, region, subRegion, yearOfProduction, harvestSeason, storageType, shape, cultivar };
+}
+
+const WEIGHT_PATTERNS = [
+  /(\d+(?:\.\d+)?)\s*(?:Grams?|g)\b/i,
+  /(\d+(?:\.\d+)?)\s*(?:Kilograms?|kg)\b/i,
+];
+
+function parseWeightFromTitle(title: string): number | null {
+  for (const pattern of WEIGHT_PATTERNS) {
+    const match = title.match(pattern);
+    if (match) {
+      const value = parseFloat(match[1]);
+      if (pattern.source.includes("kg")) return value * 1000;
+      return value;
+    }
+  }
+  return null;
+}
+
+const COUNTRY_MAP: Record<string, string> = {
+  yunnan: "CN", fujian: "CN", guangdong: "CN", sichuan: "CN",
+  hunan: "CN", hubei: "CN", jiangxi: "CN", jiangsu: "CN",
+  shandong: "CN", zhejiang: "CN", anhui: "CN", henan: "CN",
+  shaanxi: "CN", guizhou: "CN", guangxi: "CN", hainan: "CN",
+  taiwan: "TW", japan: "JP", india: "IN", nepal: "NP",
+  sri: "LK", kenya: "KE", vietnam: "VN", thailand: "TH",
+  indonesia: "ID", korea: "KR", turkey: "TR", tanzania: "TZ",
+};
+
+function inferCountry(region: string | null, subRegion: string | null): string | null {
+  const text = `${region || ""} ${subRegion || ""}`.toLowerCase();
+  for (const [key, code] of Object.entries(COUNTRY_MAP)) {
+    if (text.includes(key)) return code;
+  }
+  return null;
+}
+
+const TEA_TYPE_TO_OXIDATION: Record<string, string> = {
+  "Raw Pu-erh Tea": "Dark",
+  "Ripe Pu-erh Tea": "Dark",
+  "Pu-erh Tea": "Dark",
+  "Hei Cha": "Dark",
+  "Black Tea": "Black",
+  "Green Tea": "Green",
+  "Oolong Tea": "Oolong",
+  "White Tea": "White",
+  "Yellow Tea": "Yellow",
+};
+
+function inferOxidation(productType: string, teaType: string | null): string {
+  if (teaType && TEA_TYPE_TO_OXIDATION[teaType]) return TEA_TYPE_TO_OXIDATION[teaType];
+  if (TEA_TYPE_TO_OXIDATION[productType]) return TEA_TYPE_TO_OXIDATION[productType];
+  const lower = (productType + " " + (teaType || "")).toLowerCase();
+  if (lower.includes("pu-erh") || lower.includes("pu erh") || lower.includes("hei cha")) return "Dark";
+  if (lower.includes("black")) return "Black";
+  if (lower.includes("green")) return "Green";
+  if (lower.includes("oolong")) return "Oolong";
+  if (lower.includes("white")) return "White";
+  if (lower.includes("yellow")) return "Yellow";
+  return "Green";
+}
+
+function buildNotesRaw(product: ShopifyProduct, tags: ParsedTags): string {
+  const parts = [tags.storageType, tags.shape].filter(Boolean);
+  const desc = product.body_html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 500);
+  if (desc) parts.push(desc);
+  return parts.join("\n");
+}
+
+export function mapToTeaRecord(product: ShopifyProduct): {
+  name: string;
+  url: string;
+  oxidationLevelKey: string;
+  processingRaw: string;
+  origin: string | null;
+  originCountry: string | null;
+  elevationMeters: number | null;
+  harvestRaw: string | null;
+  harvestYear: number | null;
+  producerRaw: string | null;
+  shadingRaw: string | null;
+  cultivarRaw: string | null;
+  notesRaw: string;
+  available: boolean;
+  offers: { price: number; weightGrams: number | null; available: boolean }[];
+} {
+  const tags = parseTags(product.tags);
+  const url = `https://yunnansourcing.com/products/${product.handle}`;
+  const name = product.title;
+  const oxidationLevelKey = inferOxidation(product.product_type, tags.teaType);
+  const processingRaw = tags.teaType || product.product_type;
+  const origin = tags.subRegion || tags.region || null;
+  const originCountry = inferCountry(tags.region, tags.subRegion);
+  const harvestRaw = tags.harvestSeason || null;
+  const harvestYear = tags.yearOfProduction;
+  const producerRaw = tags.producer || product.vendor || null;
+  const cultivarRaw = tags.cultivar || null;
+  const notesRaw = buildNotesRaw(product, tags);
+  const available = product.variants.some(v => v.available);
+
+  const offers = product.variants.map(v => ({
+    price: parseFloat(v.price),
+    weightGrams: parseWeightFromTitle(v.title),
+    available: v.available,
+  }));
+
+  return {
+    name,
+    url,
+    oxidationLevelKey,
+    processingRaw,
+    origin,
+    originCountry,
+    elevationMeters: null,
+    harvestRaw,
+    harvestYear,
+    producerRaw,
+    shadingRaw: null,
+    cultivarRaw,
+    notesRaw,
+    available,
+    offers,
+  };
+}
