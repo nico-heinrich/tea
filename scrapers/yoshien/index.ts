@@ -2,6 +2,7 @@ import { parseProductPage, mapToTeaRecord } from "./parse.js";
 
 const VENDOR_NAME = "Yoshi en";
 const VENDOR_WEBSITE = "https://www.yoshien.com";
+const SCRAPER_VERSION = "yoshien@v1";
 
 let supabase: any = null;
 let upsertUnique: any = null;
@@ -52,8 +53,6 @@ async function scrape() {
 
   let vendorId = 1;
   let oxidationMap = new Map<string, number>();
-  let cultivarMap = new Map<string, number>();
-  let producerMap = new Map<string, number>();
 
   if (!isDryRun) {
     vendorId = await upsertUnique(
@@ -63,25 +62,16 @@ async function scrape() {
     );
     console.log(`✓ Vendor: ${VENDOR_NAME} (id: ${vendorId})`);
 
-    const [oxidationLevels, cultivars, producers] =
-      await Promise.all([
-        supabase.from("oxidation_level").select("id, key"),
-        supabase.from("cultivar").select("id, key"),
-        supabase.from("producer").select("id, name"),
-      ]);
+    const { data: oxidationLevels } = await supabase
+      .from("oxidation_level")
+      .select("id, key");
 
     oxidationMap = new Map(
-      (oxidationLevels.data || []).map((r: any) => [r.key, r.id])
-    );
-    cultivarMap = new Map(
-      (cultivars.data || []).map((r: any) => [r.key, r.id])
-    );
-    producerMap = new Map(
-      (producers.data || []).map((r: any) => [r.name, r.id])
+      (oxidationLevels || []).map((r: any) => [r.key, r.id])
     );
 
     console.log(
-      `✓ Reference data: ${oxidationMap.size} oxidation`
+      `✓ Reference data: ${oxidationMap.size} oxidation levels`
     );
   }
 
@@ -132,6 +122,12 @@ async function scrape() {
             continue;
           }
 
+          const NON_TEA_PROCESSING = ["schokolade", "teezubehör", "glas", "löffel", "teekanne", "teetasse", "flasche", "becher"];
+          if (NON_TEA_PROCESSING.some(p => mapped.processingRaw.toLowerCase().includes(p))) {
+            console.log(`   ⚠️  Skipping (not tea): ${detail.name} [${mapped.processingRaw}]`);
+            continue;
+          }
+
           if (isDryRun) {
             console.log(`\n   📄 ${detail.name}`);
             console.log(`      URL: ${url}`);
@@ -141,10 +137,10 @@ async function scrape() {
             console.log(`      Origin: ${mapped.origin}`);
             console.log(`      Country: ${mapped.originCountry}`);
             console.log(`      Elevation: ${mapped.elevationMeters}m`);
-            console.log(`      Producer: ${mapped.producerName}`);
-            console.log(`      Shading: ${mapped.shading}`);
+            console.log(`      Producer: ${mapped.producerRaw}`);
+            console.log(`      Shading: ${mapped.shadingRaw}`);
             console.log(`      Cultivar: ${detail.cultivar}`);
-            console.log(`      Season: ${mapped.harvestSeason}`);
+            console.log(`      Season: ${mapped.harvestRaw}`);
             console.log(`      Year: ${mapped.harvestYear}`);
             console.log(`      Offers: ${detail.offers.length}`);
 
@@ -159,19 +155,6 @@ async function scrape() {
             oxidationLevelId = oxidationMap.get(mapped.oxidationLevelKey.toLowerCase()) || null;
           }
 
-          let producerId: number | null = null;
-          if (mapped.producerName) {
-            producerId = producerMap.get(mapped.producerName) || null;
-            if (!producerId) {
-              producerId = await upsertUnique(
-                "producer",
-                { name: mapped.producerName },
-                "name"
-              );
-              if (producerId) producerMap.set(mapped.producerName, producerId);
-            }
-          }
-
           const teaRecord = {
             name: detail.name,
             url,
@@ -181,13 +164,13 @@ async function scrape() {
             origin: mapped.origin,
             origin_country: mapped.originCountry,
             elevation_meters: mapped.elevationMeters,
-            harvest_season: mapped.harvestSeason,
+            harvest_raw: mapped.harvestRaw,
             harvest_year: mapped.harvestYear,
-            producer_id: producerId,
-            shading: mapped.shading,
+            producer_raw: mapped.producerRaw,
+            shading_raw: mapped.shadingRaw,
             cultivar_raw: detail.cultivar,
-            is_available: detail.availability.includes("InStock"),
-            raw_notes: mapped.rawNotes,
+            notes_raw: mapped.notesRaw,
+            scraper_version: SCRAPER_VERSION,
           };
 
           const { data: teaData, error: teaError } = await supabase
@@ -200,6 +183,11 @@ async function scrape() {
             console.log(`      ❌ DB error: ${teaError.message}`);
             continue;
           }
+
+          await supabase.from("availability_snapshot").insert({
+            tea_id: teaData.id,
+            available: detail.availability.includes("InStock"),
+          });
 
           // Insert all offers as price snapshots
           for (const offer of detail.offers) {

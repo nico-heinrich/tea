@@ -54,16 +54,41 @@ function parseElevation(text: string): number | null {
   return match ? parseInt(match[1], 10) : null;
 }
 
-// Parse terroir into origin and country
+const COUNTRY_CODES: Record<string, string> = {
+  china: "CN", chinesisch: "CN", yunnan: "CN", fujian: "CN", anhua: "CN",
+  japan: "JP", japanese: "JP", kyoto: "JP", shizuoka: "JP", kagoshima: "JP",
+  fukuoka: "JP", mie: "JP", miyazaki: "JP", kōchi: "JP", kochi: "JP",
+  india: "IN", indien: "IN",
+  nepal: "NP",
+  "sri lanka": "LK", ceylon: "LK",
+  kenia: "KE", kenya: "KE",
+  tansania: "TZ", tanzania: "TZ",
+  taiwan: "TW",
+  südkorea: "KR", "south korea": "KR", korea: "KR",
+  türkei: "TR", turkey: "TR",
+  thailand: "TH",
+  vietnam: "VN",
+  indonesien: "ID", indonesia: "ID",
+};
+
+function countryNameToCode(name: string): string | null {
+  const lower = name.toLowerCase().trim();
+  if (COUNTRY_CODES[lower]) return COUNTRY_CODES[lower];
+  for (const [key, code] of Object.entries(COUNTRY_CODES)) {
+    if (lower.includes(key)) return code;
+  }
+  return null;
+}
+
 function parseTerroir(terroir: string): {
   origin: string | null;
   country: string | null;
 } {
   if (!terroir) return { origin: null, country: null };
 
-  // Pattern: "Fuji (Reg.), Shizuoka (Präf.), Japan"
   const parts = terroir.split(",").map((p) => p.trim());
-  const country = parts[parts.length - 1] || null;
+  const countryRaw = parts[parts.length - 1] || null;
+  const country = countryRaw ? countryNameToCode(countryRaw) : null;
   const origin = parts.slice(0, -1).join(", ") || null;
 
   return { origin, country };
@@ -177,36 +202,26 @@ export function mapToTeaRecord(
   origin: string | null;
   originCountry: string | null;
   elevationMeters: number | null;
-  harvestSeason: string | null;
+  harvestRaw: string | null;
   harvestYear: number | null;
-  producerName: string | null;
-  shading: string | null;
-  rawNotes: string;
+  producerRaw: string | null;
+  shadingRaw: string | null;
+  notesRaw: string;
 } {
-  // Processing
   const processingKey = inferProcessing(detail.category, detail.name);
   const processingRaw = getRawProcessing(detail.category, detail.name);
 
-  // Parse terroir
   const { origin, country } = detail.terroir
     ? parseTerroir(detail.terroir)
     : { origin: null, country: null };
 
-  // Elevation
   const elevation = detail.hoehenlage ? parseElevation(detail.hoehenlage) : null;
-
-  // Harvest info - store raw season, parse year
-  const harvestSeason = detail.ernte || null;
+  const harvestRaw = detail.ernte || null;
   const harvestYear = detail.ernte ? parseHarvestYear(detail.ernte) : null;
+  const producerRaw = detail.teefarm || null;
+  const shadingRaw = detail.beschattung || null;
 
-  // Producer
-  const producerName = detail.teefarm || null;
-
-  // Shading
-  const shading = detail.beschattung || null;
-
-  // Raw notes - combine relevant fields
-  const rawNotes = [detail.charakter, detail.anbau, detail.vermahhlung, detail.qualitaet]
+  const notesRaw = [detail.charakter, detail.anbau, detail.vermahhlung, detail.qualitaet]
     .filter(Boolean)
     .join("\n");
 
@@ -217,10 +232,10 @@ export function mapToTeaRecord(
     origin,
     originCountry: country,
     elevationMeters: elevation,
-    harvestSeason,
+    harvestRaw,
     harvestYear,
-    producerName,
-    shading,
-    rawNotes,
+    producerRaw,
+    shadingRaw,
+    notesRaw,
   };
 }
