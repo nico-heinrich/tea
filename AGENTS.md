@@ -12,7 +12,7 @@
 The `tea` table stores all tea data. Every field that stores unparsed/original text from the source uses the `_raw` suffix.
 
 **Normalized fields (IDs / structured):**
-- `oxidation_level` → FK to `oxidation_level` table (1=White, 2=Yellow, 3=Green, 4=Oolong, 5=Black, 6=Dark). Must always be set.
+- `tea_category` → FK to `tea_category` table (1=White, 2=Yellow, 3=Green, 4=Oolong, 5=Black, 6=Pu-erh). Must always be set.
 - `vendor` → FK to `vendor` table. One vendor per scraper (e.g., "Yoshi en", "Yunnan Sourcing").
 - `origin_country` → ISO 3166-1 alpha-2 country code (e.g., "JP", "CN", "IN"). Null if unknown.
 - `elevation_meters` → smallint, parsed from source. Null if not available.
@@ -56,7 +56,7 @@ Shared code lives in `scrapers/shared/`:
 3. For each product: parse into internal record using `mapToTeaRecord()`
 4. Check: skip if no tea metadata (see below)
 5. Check: skip if `processing_raw` matches known non-tea patterns
-6. Upsert vendor, resolve oxidation_level ID
+6. Upsert vendor, resolve tea_category ID
 7. Insert tea row
 8. Insert price_snapshot for each offer/variant
 9. Insert availability_snapshot
@@ -99,7 +99,7 @@ Map country names to ISO 3166-1 alpha-2 codes. Common mappings:
 - `south korea`, `korea` → `KR`
 - `vietnam` → `VN`
 
-### Oxidation Level Mapping
+### Tea Category Mapping
 
 | ID | Key    | Description |
 |----|--------|-------------|
@@ -108,9 +108,9 @@ Map country names to ISO 3166-1 alpha-2 codes. Common mappings:
 | 3  | green  | Unoxidized, heated to halt oxidation |
 | 4  | oolong | Partially oxidized (10–85%) |
 | 5  | black  | Fully oxidized |
-| 6  | dark   | Post-fermented (Pu-erh, Hei Cha) |
+| 6  | pu-erh | Post-fermented (Pu-erh, Hei Cha) |
 
-Use `product_type`, `tags`, collection name, or name patterns to determine oxidation level.
+Use `product_type`, `tags`, collection name, or name patterns to determine tea category.
 
 ### Scraper Versioning
 

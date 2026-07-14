@@ -7,13 +7,13 @@ const SCRAPER_VERSION = "yunnansourcing@v2";
 const BASE_URL = "https://yunnansourcing.com";
 
 const COLLECTIONS = [
-  { path: "/collections/raw-pu-erh-tea/products.json", oxidationLevel: "Dark" },
-  { path: "/collections/ripe-pu-erh/products.json", oxidationLevel: "Dark" },
-  { path: "/collections/black-tea/products.json", oxidationLevel: "Black" },
-  { path: "/collections/green-tea/products.json", oxidationLevel: "Green" },
-  { path: "/collections/oolong-tea/products.json", oxidationLevel: "Oolong" },
-  { path: "/collections/white-tea/products.json", oxidationLevel: "White" },
-  { path: "/collections/hei-cha/products.json", oxidationLevel: "Dark" },
+  { path: "/collections/raw-pu-erh-tea/products.json", teaCategory: "Pu-erh" },
+  { path: "/collections/ripe-pu-erh/products.json", teaCategory: "Pu-erh" },
+  { path: "/collections/black-tea/products.json", teaCategory: "Black" },
+  { path: "/collections/green-tea/products.json", teaCategory: "Green" },
+  { path: "/collections/oolong-tea/products.json", teaCategory: "Oolong" },
+  { path: "/collections/white-tea/products.json", teaCategory: "White" },
+  { path: "/collections/hei-cha/products.json", teaCategory: "Pu-erh" },
 ];
 
 const NON_TEA_PRODUCT_TYPES = [
@@ -50,7 +50,7 @@ async function scrape() {
   console.log(`🌿 Starting Yunnan Sourcing scraper${isDryRun ? " (DRY RUN)" : ""}`);
 
   let vendorId = 1;
-  let oxidationMap = new Map<string, number>();
+  let categoryMap = new Map<string, number>();
 
   if (!isDryRun) {
     vendorId = await upsertUnique(
@@ -60,14 +60,14 @@ async function scrape() {
     );
     console.log(`✓ Vendor: ${VENDOR_NAME} (id: ${vendorId})`);
 
-    const { data: oxidationLevels } = await supabase
-      .from("oxidation_level")
+    const { data: teaCategories } = await supabase
+      .from("tea_category")
       .select("id, key");
 
-    oxidationMap = new Map(
-      (oxidationLevels || []).map((r: any) => [r.key, r.id])
+    categoryMap = new Map(
+      (teaCategories || []).map((r: any) => [r.key, r.id])
     );
-    console.log(`✓ Reference data: ${oxidationMap.size} oxidation levels`);
+    console.log(`✓ Reference data: ${categoryMap.size} tea categories`);
   }
 
   let totalProducts = 0;
@@ -106,9 +106,9 @@ async function scrape() {
 
             if (existing) {
               if (isUpdate) {
-                let oxidationLevelId: number | null = null;
-                if (mapped.oxidationLevelKey) {
-                  oxidationLevelId = oxidationMap.get(mapped.oxidationLevelKey.toLowerCase()) || null;
+                let teaCategoryId: number | null = null;
+                if (mapped.teaCategoryKey) {
+                  teaCategoryId = categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
                 }
 
                 const { error: updateError } = await supabase
@@ -144,7 +144,7 @@ async function scrape() {
           if (isDryRun) {
             console.log(`\n   📄 ${mapped.name}`);
             console.log(`      URL: ${mapped.url}`);
-            console.log(`      Oxidation: ${mapped.oxidationLevelKey}`);
+            console.log(`      Category: ${mapped.teaCategoryKey}`);
             console.log(`      Processing: ${mapped.processingRaw}`);
             console.log(`      Origin: ${mapped.origin} (${mapped.originCountry})`);
             console.log(`      Producer: ${mapped.producerRaw}`);
@@ -157,16 +157,16 @@ async function scrape() {
             continue;
           }
 
-          let oxidationLevelId: number | null = null;
-          if (mapped.oxidationLevelKey) {
-            oxidationLevelId = oxidationMap.get(mapped.oxidationLevelKey.toLowerCase()) || null;
+          let teaCategoryId: number | null = null;
+          if (mapped.teaCategoryKey) {
+            teaCategoryId = categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
           }
 
           const teaRecord = {
             name: mapped.name,
             url: mapped.url,
             vendor: vendorId,
-            oxidation_level: oxidationLevelId,
+            tea_category: teaCategoryId,
             processing_raw: mapped.processingRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,

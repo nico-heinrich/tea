@@ -14,12 +14,12 @@ async function initDb() {
 }
 
 const CATEGORIES = [
-  { url: "https://www.yoshien.com/matcha/", oxidationLevel: "Green" },
-  { url: "https://www.yoshien.com/gruener-tee/", oxidationLevel: "Green" },
-  { url: "https://www.yoshien.com/weisser-tee/", oxidationLevel: "White" },
-  { url: "https://www.yoshien.com/oolong-tee/", oxidationLevel: "Oolong" },
-  { url: "https://www.yoshien.com/schwarzer-tee/", oxidationLevel: "Black" },
-  { url: "https://www.yoshien.com/pu-erh-tee/", oxidationLevel: "Dark" },
+  { url: "https://www.yoshien.com/matcha/", teaCategory: "Green" },
+  { url: "https://www.yoshien.com/gruener-tee/", teaCategory: "Green" },
+  { url: "https://www.yoshien.com/weisser-tee/", teaCategory: "White" },
+  { url: "https://www.yoshien.com/oolong-tee/", teaCategory: "Oolong" },
+  { url: "https://www.yoshien.com/schwarzer-tee/", teaCategory: "Black" },
+  { url: "https://www.yoshien.com/pu-erh-tee/", teaCategory: "Pu-erh" },
 ];
 
 // Extract product URLs from category page HTML
@@ -52,7 +52,7 @@ async function scrape() {
   console.log(`🌿 Starting Yoshien scraper${isDryRun ? " (DRY RUN)" : ""}`);
 
   let vendorId = 1;
-  let oxidationMap = new Map<string, number>();
+  let categoryMap = new Map<string, number>();
 
   if (!isDryRun) {
     vendorId = await upsertUnique(
@@ -62,16 +62,16 @@ async function scrape() {
     );
     console.log(`✓ Vendor: ${VENDOR_NAME} (id: ${vendorId})`);
 
-    const { data: oxidationLevels } = await supabase
-      .from("oxidation_level")
+    const { data: teaCategories } = await supabase
+      .from("tea_category")
       .select("id, key");
 
-    oxidationMap = new Map(
-      (oxidationLevels || []).map((r: any) => [r.key, r.id])
+    categoryMap = new Map(
+      (teaCategories || []).map((r: any) => [r.key, r.id])
     );
 
     console.log(
-      `✓ Reference data: ${oxidationMap.size} oxidation levels`
+      `✓ Reference data: ${categoryMap.size} tea categories`
     );
   }
 
@@ -113,7 +113,7 @@ async function scrape() {
             continue;
           }
 
-          const mapped = mapToTeaRecord(detail, category.oxidationLevel);
+          const mapped = mapToTeaRecord(detail, category.teaCategory);
 
           const hasTeaMetadata = detail.cultivar || detail.ernte || detail.beschattung ||
                                 detail.charakter || detail.terroir || detail.anbau;
@@ -132,7 +132,7 @@ async function scrape() {
             console.log(`\n   📄 ${detail.name}`);
             console.log(`      URL: ${url}`);
             console.log(`      Category: ${detail.category}`);
-            console.log(`      Oxidation: ${mapped.oxidationLevelKey}`);
+            console.log(`      Category: ${mapped.teaCategoryKey}`);
             console.log(`      Processing: ${mapped.processingKey}`);
             console.log(`      Origin: ${mapped.origin}`);
             console.log(`      Country: ${mapped.originCountry}`);
@@ -150,16 +150,16 @@ async function scrape() {
           }
 
           // Resolve IDs
-          let oxidationLevelId: number | null = null;
-          if (mapped.oxidationLevelKey) {
-            oxidationLevelId = oxidationMap.get(mapped.oxidationLevelKey.toLowerCase()) || null;
+          let teaCategoryId: number | null = null;
+          if (mapped.teaCategoryKey) {
+            teaCategoryId = categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
           }
 
           const teaRecord = {
             name: detail.name,
             url,
             vendor: vendorId,
-            oxidation_level: oxidationLevelId,
+            tea_category: teaCategoryId,
             processing_raw: mapped.processingRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,

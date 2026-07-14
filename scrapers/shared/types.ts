@@ -39,7 +39,7 @@ export interface TeaRecord {
   name: string;
   url: string;
   vendor: number;
-  oxidation_level: number | null;
+  tea_category: number | null;
   processing_id: number | null;
   origin: string | null;
   origin_country: string | null;
