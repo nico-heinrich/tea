@@ -194,7 +194,7 @@ async function scrape() {
             if (offer.price > 0) {
               await supabase.from("price_snapshot").insert({
                 tea_id: teaData.id,
-                weight_grams: detail.weightGrams || offer.weightGrams,
+                weight_grams: offer.weightGrams || detail.weightGrams,
                 price: offer.price,
                 currency: "EUR",
               });

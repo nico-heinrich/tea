@@ -164,6 +164,11 @@ export function parseProductPage(html: string): YoshienProductDetail | null {
     }
   }
 
+  const availability = (Array.isArray(jsonData.offers?.offers)
+    ? jsonData.offers.offers[0]
+    : jsonData.offers?.offers
+  )?.availability || jsonData.offers?.availability || "";
+
   return {
     name: jsonData.name || "",
     sku: jsonData.sku || "",
@@ -172,7 +177,7 @@ export function parseProductPage(html: string): YoshienProductDetail | null {
     gtin13: jsonData.gtin13 || "",
     price: parseFloat(jsonData.offers?.price || "0"),
     currency: jsonData.offers?.priceCurrency || "EUR",
-    availability: jsonData.offers?.availability || "",
+    availability,
     offers,
     weightGrams,
 

@@ -41,6 +41,8 @@ async function fetchCollectionPage(path: string, page: number): Promise<ShopifyP
 
 async function scrape() {
   const isDryRun = process.argv.includes("--dry");
+  const isTest = process.argv.includes("--test");
+  const collections = isTest ? COLLECTIONS.slice(0, 1) : COLLECTIONS;
 
   if (!isDryRun) await initDb();
 
@@ -72,7 +74,7 @@ async function scrape() {
   let skippedProducts = 0;
   let skippedNonTea = 0;
 
-  for (const collection of COLLECTIONS) {
+  for (const collection of collections) {
     console.log(`\n📂 Fetching collection: ${collection.path}`);
     let page = 1;
 
@@ -122,6 +124,7 @@ async function scrape() {
             console.log(`      Origin: ${mapped.origin} (${mapped.originCountry})`);
             console.log(`      Producer: ${mapped.producerRaw}`);
             console.log(`      Cultivar: ${mapped.cultivarRaw}`);
+            console.log(`      Elevation: ${mapped.elevationMeters}m`);
             console.log(`      Season: ${mapped.harvestRaw}`);
             console.log(`      Year: ${mapped.harvestYear}`);
             console.log(`      Offers: ${mapped.offers.length}`);

@@ -64,6 +64,38 @@ function inferCountry(region: string | null, subRegion: string | null): string |
   return null;
 }
 
+function parseElevation(html: string): number | null {
+  const text = html.replace(/<[^>]+>/g, " ");
+  const patterns = [
+    /altitude[:\s]+(\d{1,5})\s*meters/i,
+    /elevation[:\s]+(\d{1,5})\s*meters/i,
+    /grown at[:\s]+(\d{1,5})\s*(?:meters|m\b)/i,
+    /(\d{1,5})\s*meters?\s*(?:altitude|elevation)/i,
+    /(\d{1,5})\s*m\b\s*(?:altitude|elevation)/i,
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match) return parseInt(match[1], 10);
+  }
+  return null;
+}
+
+function parseCultivar(html: string): string | null {
+  const text = html.replace(/<[^>]+>/g, " ");
+  const patterns = [
+    /ingredients?[:\s]+([^.]+?)(?:\.|produced by|processed by|packed by|$)/i,
+    /(?:varietal|cultivar)[:\s]+([^.]+?)(?:\.|produced by|processed by|packed by|$)/i,
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match) {
+      const value = match[1].trim().replace(/\s+/g, " ");
+      if (value.length > 3 && value.length < 150) return value;
+    }
+  }
+  return null;
+}
+
 const TEA_TYPE_TO_OXIDATION: Record<string, string> = {
   "Raw Pu-erh Tea": "Dark",
   "Ripe Pu-erh Tea": "Dark",
@@ -127,9 +159,10 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   const harvestRaw = tags.harvestSeason || null;
   const harvestYear = tags.yearOfProduction;
   const producerRaw = tags.producer || product.vendor || null;
-  const cultivarRaw = tags.cultivar || null;
+  const cultivarRaw = tags.cultivar || parseCultivar(product.body_html);
   const notesRaw = buildNotesRaw(product, tags);
   const available = product.variants.some(v => v.available);
+  const elevationMeters = parseElevation(product.body_html);
 
   const offers = product.variants.map(v => ({
     price: parseFloat(v.price),
@@ -144,7 +177,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
     processingRaw,
     origin,
     originCountry,
-    elevationMeters: null,
+    elevationMeters,
     harvestRaw,
     harvestYear,
     producerRaw,
