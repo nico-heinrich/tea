@@ -81,20 +81,26 @@ function parseElevation(html: string): number | null {
 }
 
 function parseCultivar(html: string): string | null {
-  const text = html.replace(/<[^>]+>/g, " ");
-  const patterns = [
-    /ingredients?[:\s]+([^.]+?)(?:\.|produced by|processed by|packed by|$)/i,
-    /(?:varietal|cultivar)[:\s]+([^.]+?)(?:\.|produced by|processed by|packed by|$)/i,
-  ];
-  for (const pattern of patterns) {
-    const match = text.match(pattern);
-    if (match) {
-      const value = match[1].trim().replace(/\s+/g, " ");
-      if (value.length > 3 && value.length < 150) return value;
-    }
+  const text = html.replace(/<\/?p[^>]*>/gi, "\n").replace(/<[^>]+>/g, " ").replace(/[ \t]+/g, " ").replace(/\n\s*/g, "\n");
+  const match = text.match(/(?:Cultivar|Varietal):\s*([\p{Lu}\u4e00-\u9fff][\p{L}\p{N}\s\-#().,\u4e00-\u9fff]{1,80}?)(?:\s*\n|\s+(?:Altitude|Elevation|Harvest|Style|Craft|Pluck|Pick|Area|Origin|Region|We |In |The |Some |It |This |Our |That |Also |From |Farm|Bush|Tree|Wild|Old|Fresh|Dry|Full|Light|Dark|Heavy|Smooth|Clean|Process|Roast|Season|Grade|Type|Flush|Note|Wrapper|Year|Vintage|Pressed|Cake|Sample|Gram|Kilo|among)|\.)/u);
+  if (match) {
+    let value = match[1].trim();
+    const cutoff = value.search(/\s(?:\d|Pure|Pluck|Late|Sweet|Growing|Bud|to|and|or)\b/);
+    if (cutoff > 0) value = value.slice(0, cutoff);
+    if (value.length < 3) return null;
+    return cleanCultivar(value);
   }
   return null;
 }
+
+function cleanCultivar(raw: string): string | null {
+  const value = raw.trim().replace(/<[^>]+>/g, "").trim();
+  if (GENERIC_LEAF.test(value)) return null;
+  if (/\b(this|that|the|and|but|with|which|is|are|have|has|gives|grows|growing|called|referred|fermented|from|region|tea|harvested|produced|large|small|sturdy|naturally|low|level|smooth|aromatic)\b/i.test(value)) return null;
+  return value || null;
+}
+
+const GENERIC_LEAF = /large.?leaf|small.?leaf|mixed.?(?:leaf|large|small)|pure assamica|ancient arbor|old arbor|wild.?arbor|sun.?dried/i;
 
 const TEA_TYPE_TO_OXIDATION: Record<string, string> = {
   "Raw Pu-erh Tea": "Dark",

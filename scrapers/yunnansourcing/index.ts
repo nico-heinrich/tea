@@ -3,7 +3,7 @@ import type { ShopifyProduct } from "./types.js";
 
 const VENDOR_NAME = "Yunnan Sourcing";
 const VENDOR_WEBSITE = "https://yunnansourcing.com";
-const SCRAPER_VERSION = "yunnansourcing@v1";
+const SCRAPER_VERSION = "yunnansourcing@v2";
 const BASE_URL = "https://yunnansourcing.com";
 
 const COLLECTIONS = [
