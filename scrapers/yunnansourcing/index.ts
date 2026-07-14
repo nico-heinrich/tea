@@ -42,6 +42,7 @@ async function fetchCollectionPage(path: string, page: number): Promise<ShopifyP
 async function scrape() {
   const isDryRun = process.argv.includes("--dry");
   const isTest = process.argv.includes("--test");
+  const isUpdate = process.argv.includes("--update");
   const collections = isTest ? COLLECTIONS.slice(0, 1) : COLLECTIONS;
 
   if (!isDryRun) await initDb();
@@ -71,6 +72,7 @@ async function scrape() {
 
   let totalProducts = 0;
   let newProducts = 0;
+  let updatedCount = 0;
   let skippedProducts = 0;
   let skippedNonTea = 0;
 
@@ -103,7 +105,30 @@ async function scrape() {
               .single();
 
             if (existing) {
-              skippedProducts++;
+              if (isUpdate) {
+                let oxidationLevelId: number | null = null;
+                if (mapped.oxidationLevelKey) {
+                  oxidationLevelId = oxidationMap.get(mapped.oxidationLevelKey.toLowerCase()) || null;
+                }
+
+                const { error: updateError } = await supabase
+                  .from("tea")
+                  .update({
+                    elevation_meters: mapped.elevationMeters,
+                    cultivar_raw: mapped.cultivarRaw,
+                    scraper_version: SCRAPER_VERSION,
+                  })
+                  .eq("id", existing.id);
+
+                if (updateError) {
+                  console.log(`      ❌ Update error: ${updateError.message}`);
+                } else {
+                  updatedCount++;
+                  console.log(`      ↻ ${mapped.name} (id: ${existing.id})`);
+                }
+              } else {
+                skippedProducts++;
+              }
               continue;
             }
           }
@@ -199,6 +224,7 @@ async function scrape() {
   console.log(`\n📊 Summary:`);
   console.log(`   Total products found: ${totalProducts}`);
   console.log(`   New products saved: ${newProducts}`);
+  console.log(`   Updated: ${updatedCount}`);
   console.log(`   Skipped (existing): ${skippedProducts}`);
   console.log(`   Skipped (non-tea): ${skippedNonTea}`);
 }
