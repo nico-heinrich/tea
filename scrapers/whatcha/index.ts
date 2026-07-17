@@ -5,7 +5,7 @@ import { mapToTeaRecord } from "./parse.js";
 
 const VENDOR_NAME = "What-Cha";
 const VENDOR_WEBSITE = "https://what-cha.com";
-const SCRAPER_VERSION = "whatcha@v2";
+const SCRAPER_VERSION = "whatcha@v3";
 const BASE_URL = "https://what-cha.com";
 
 const COLLECTIONS = [

@@ -1,4 +1,5 @@
 import type { ShopifyProduct, ParsedBodyHtml, TeaRecord } from "./types.ts";
+import { cleanTeaName } from "../shared/cleanName.js";
 
 const LABEL_PATTERNS: Array<{ key: keyof ParsedBodyHtml; labels: string[] }> = [
   { key: "tastingNotes", labels: ["Tasting Notes"] },
@@ -214,7 +215,7 @@ export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
     });
 
   return {
-    name: product.title,
+    name: cleanTeaName(product.title),
     url: `https://what-cha.com/products/${product.handle}`,
     teaCategoryKey,
     processingRaw,

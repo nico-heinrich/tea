@@ -1,4 +1,5 @@
 import type { ShopifyProduct, ParsedTags } from "./types.js";
+import { cleanTeaName } from "../shared/cleanName.js";
 
 function parseTags(tags: string[]): ParsedTags {
   let teaType: string | null = null;
@@ -157,7 +158,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
 } {
   const tags = parseTags(product.tags);
   const url = `https://yunnansourcing.com/products/${product.handle}`;
-  const name = product.title;
+  const name = cleanTeaName(product.title);
   const teaCategoryKey = inferTeaCategory(product.product_type, tags.teaType);
   const processingRaw = tags.teaType || product.product_type;
   const origin = tags.subRegion || tags.region || null;
