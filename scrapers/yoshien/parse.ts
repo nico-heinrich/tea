@@ -211,7 +211,7 @@ export function mapToTeaRecord(
   detail: YoshienProductDetail,
   category: string
 ): {
-  categoryKey: string | null;
+  typeKey: string | null;
   styleKey: string | null;
   styleRaw: string;
   origin: string | null;
@@ -241,7 +241,7 @@ export function mapToTeaRecord(
     .join("\n");
 
   return {
-    categoryKey: category,
+    typeKey: category,
     styleKey,
     styleRaw,
     origin,

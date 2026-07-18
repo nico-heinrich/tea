@@ -103,7 +103,7 @@ function cleanCultivar(raw: string): string | null {
 
 const GENERIC_LEAF = /large.?leaf|small.?leaf|mixed.?(?:leaf|large|small)|pure assamica|ancient arbor|old arbor|wild.?arbor|sun.?dried/i;
 
-const TEA_TYPE_TO_CATEGORY: Record<string, string> = {
+const TYPE_MAP: Record<string, string> = {
   "Raw Pu-erh Tea": "Dark",
   "Ripe Pu-erh Tea": "Dark",
   "Pu-erh Tea": "Dark",
@@ -115,9 +115,9 @@ const TEA_TYPE_TO_CATEGORY: Record<string, string> = {
   "Yellow Tea": "Yellow",
 };
 
-function inferTeaCategory(productType: string, teaType: string | null): string {
-  if (teaType && TEA_TYPE_TO_CATEGORY[teaType]) return TEA_TYPE_TO_CATEGORY[teaType];
-  if (TEA_TYPE_TO_CATEGORY[productType]) return TEA_TYPE_TO_CATEGORY[productType];
+function inferType(productType: string, teaType: string | null): string {
+  if (teaType && TYPE_MAP[teaType]) return TYPE_MAP[teaType];
+  if (TYPE_MAP[productType]) return TYPE_MAP[productType];
   const lower = (productType + " " + (teaType || "")).toLowerCase();
   if (lower.includes("pu-erh") || lower.includes("pu erh") || lower.includes("hei cha")) return "Dark";
   if (lower.includes("black")) return "Black";
@@ -142,7 +142,7 @@ function buildNotesRaw(product: ShopifyProduct, tags: ParsedTags): string {
 export function mapToTeaRecord(product: ShopifyProduct): {
   name: string;
   url: string;
-  categoryKey: string;
+  typeKey: string;
   styleRaw: string;
   origin: string | null;
   originCountry: string | null;
@@ -159,7 +159,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   const tags = parseTags(product.tags);
   const url = `https://yunnansourcing.com/products/${product.handle}`;
   const name = cleanTeaName(product.title);
-  const categoryKey = inferTeaCategory(product.product_type, tags.teaType);
+  const typeKey = inferType(product.product_type, tags.teaType);
   const styleRaw = tags.teaType || product.product_type;
   const origin = tags.subRegion || tags.region || null;
   const originCountry = inferCountry(tags.region, tags.subRegion);
@@ -180,7 +180,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   return {
     name,
     url,
-    categoryKey,
+    typeKey,
     styleRaw,
     origin,
     originCountry,

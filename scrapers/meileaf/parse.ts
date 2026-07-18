@@ -105,7 +105,7 @@ function inferTypeFromClasses(classes: string): string | null {
 }
 
 /** Resolve tea category key from product type or CSS classes */
-export function resolveTeaCategory(
+export function resolveType(
   productType: string,
   cssClasses: string
 ): string | null {
@@ -125,7 +125,7 @@ function buildNotesRaw(tastingNotes: MeiLeafTastingNote[]): string {
 
 /** Map a fully parsed MeiLeafProduct to our DB TeaRecord */
 export function mapToTeaRecord(product: MeiLeafProduct): TeaRecord {
-  const categoryKey = resolveTeaCategory(product.teaType, product.cssClasses) || "green";
+  const typeKey = resolveType(product.teaType, product.cssClasses) || "green";
 
   const origin = product.detail.origin;
   const originCountry = origin ? extractCountryFromOrigin(origin) : null;
@@ -156,7 +156,7 @@ export function mapToTeaRecord(product: MeiLeafProduct): TeaRecord {
   return {
     name: product.name,
     url: product.url,
-    categoryKey,
+    typeKey,
     styleRaw,
     origin,
     originCountry,

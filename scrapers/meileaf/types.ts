@@ -49,7 +49,7 @@ export interface MeiLeafProduct {
 export interface TeaRecord {
   name: string;
   url: string;
-  categoryKey: string;
+  typeKey: string;
   styleRaw: string | null;
   origin: string | null;
   originCountry: string | null;

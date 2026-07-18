@@ -9,12 +9,12 @@ const SCRAPER_VERSION = "whatcha@v3";
 const BASE_URL = "https://what-cha.com";
 
 const COLLECTIONS = [
-  { path: "/collections/black-tea/products.json", category: "black" },
-  { path: "/collections/green-tea/products.json", category: "green" },
-  { path: "/collections/oolong-tea/products.json", category: "oolong" },
-  { path: "/collections/puerh-tea/products.json", category: "dark" },
-  { path: "/collections/white-tea/products.json", category: "white" },
-  { path: "/collections/matcha/products.json", category: "green" },
+  { path: "/collections/black-tea/products.json", type: "black" },
+  { path: "/collections/green-tea/products.json", type: "green" },
+  { path: "/collections/oolong-tea/products.json", type: "oolong" },
+  { path: "/collections/puerh-tea/products.json", type: "dark" },
+  { path: "/collections/white-tea/products.json", type: "white" },
+  { path: "/collections/matcha/products.json", type: "green" },
 ];
 
 const NON_TEA_PRODUCT_TYPES: string[] = [];
@@ -76,7 +76,7 @@ async function scrape() {
   console.log(`🌿 Starting ${VENDOR_NAME} scraper${isDryRun ? " (DRY RUN)" : ""}`);
 
   let vendorId = 1;
-  let categoryMap = new Map<string, number>();
+  let typeMap = new Map<string, number>();
 
   if (!isDryRun) {
     vendorId = await upsertUnique(
@@ -87,13 +87,13 @@ async function scrape() {
     console.log(`✓ Vendor: ${VENDOR_NAME} (id: ${vendorId})`);
 
     const { data: teaCategories } = await supabase
-      .from("category")
+      .from("type")
       .select("id, key");
 
-    categoryMap = new Map(
+    typeMap = new Map(
       (teaCategories || []).map((r: any) => [r.key, r.id])
     );
-    console.log(`✓ Reference data: ${categoryMap.size} tea categories`);
+    console.log(`✓ Reference data: ${typeMap.size} tea types`);
   }
 
   let totalProducts = 0;
@@ -138,16 +138,16 @@ async function scrape() {
 
             if (existing) {
               if (isUpdate) {
-                let categoryId: number | null = null;
-                if (mapped.categoryKey) {
-                  categoryId = categoryMap.get(mapped.categoryKey.toLowerCase()) || null;
+                let typeId: number | null = null;
+                if (mapped.typeKey) {
+                  typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
                 }
 
                 const { error: updateError } = await supabase
                   .from("tea")
                   .update({
                     name: mapped.name,
-                    category: categoryId,
+                    type: typeId,
                     style_raw: mapped.styleRaw,
                     origin: mapped.origin,
                     elevation_meters: mapped.elevationMeters,
@@ -184,7 +184,7 @@ async function scrape() {
           if (isDryRun) {
             console.log(`\n   📄 ${mapped.name}`);
             console.log(`      URL: ${mapped.url}`);
-            console.log(`      Category: ${mapped.categoryKey}`);
+            console.log(`      Category: ${mapped.typeKey}`);
             console.log(`      Style: ${mapped.styleRaw}`);
             console.log(`      Origin: ${mapped.origin} (${mapped.originCountry})`);
             console.log(`      Producer: ${mapped.producerRaw}`);
@@ -197,16 +197,16 @@ async function scrape() {
             continue;
           }
 
-          let categoryId: number | null = null;
-          if (mapped.categoryKey) {
-            categoryId = categoryMap.get(mapped.categoryKey.toLowerCase()) || null;
+          let typeId: number | null = null;
+          if (mapped.typeKey) {
+            typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
           }
 
           const teaRecord = {
             name: mapped.name,
             url: mapped.url,
             vendor: vendorId,
-            category: categoryId,
+            type: typeId,
             style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,

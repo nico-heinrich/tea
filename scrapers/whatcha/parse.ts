@@ -156,7 +156,7 @@ export function parseHarvestYear(harvestRaw: string): number | null {
   return null;
 }
 
-export const TEA_CATEGORY_MAP: Record<string, string> = {
+export const TYPE_MAP: Record<string, string> = {
   "Black Tea": "black",
   "Green Tea": "green",
   "Oolong Tea": "oolong",
@@ -171,7 +171,7 @@ export const TEA_CATEGORY_MAP: Record<string, string> = {
 export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
   const parsed = parseBodyHtml(product.body_html);
 
-  const categoryKey = TEA_CATEGORY_MAP[product.product_type] || "green";
+  const typeKey = TYPE_MAP[product.product_type] || "green";
 
   const originCountry = inferCountry(product.vendor);
 
@@ -217,7 +217,7 @@ export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
   return {
     name: cleanTeaName(product.title),
     url: `https://what-cha.com/products/${product.handle}`,
-    categoryKey,
+    typeKey,
     styleRaw,
     origin: parsed.origin,
     originCountry,
