@@ -41,7 +41,7 @@ export interface ParsedBodyHtml {
 export interface TeaRecord {
   name: string;
   url: string;
-  teaCategoryKey: string;
+  categoryKey: string;
   styleRaw: string | null;
   origin: string | null;
   originCountry: string | null;

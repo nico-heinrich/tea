@@ -7,13 +7,13 @@ const SCRAPER_VERSION = "yunnansourcing@v3";
 const BASE_URL = "https://yunnansourcing.com";
 
 const COLLECTIONS = [
-  { path: "/collections/raw-pu-erh-tea/products.json", teaCategory: "Dark" },
-  { path: "/collections/ripe-pu-erh/products.json", teaCategory: "Dark" },
-  { path: "/collections/black-tea/products.json", teaCategory: "Black" },
-  { path: "/collections/green-tea/products.json", teaCategory: "Green" },
-  { path: "/collections/oolong-tea/products.json", teaCategory: "Oolong" },
-  { path: "/collections/white-tea/products.json", teaCategory: "White" },
-  { path: "/collections/hei-cha/products.json", teaCategory: "Dark" },
+  { path: "/collections/raw-pu-erh-tea/products.json", category: "Dark" },
+  { path: "/collections/ripe-pu-erh/products.json", category: "Dark" },
+  { path: "/collections/black-tea/products.json", category: "Black" },
+  { path: "/collections/green-tea/products.json", category: "Green" },
+  { path: "/collections/oolong-tea/products.json", category: "Oolong" },
+  { path: "/collections/white-tea/products.json", category: "White" },
+  { path: "/collections/hei-cha/products.json", category: "Dark" },
 ];
 
 const NON_TEA_PRODUCT_TYPES = [
@@ -61,7 +61,7 @@ async function scrape() {
     console.log(`✓ Vendor: ${VENDOR_NAME} (id: ${vendorId})`);
 
     const { data: teaCategories } = await supabase
-      .from("tea_category")
+      .from("category")
       .select("id, key");
 
     categoryMap = new Map(
@@ -106,16 +106,16 @@ async function scrape() {
 
             if (existing) {
               if (isUpdate) {
-                let teaCategoryId: number | null = null;
-                if (mapped.teaCategoryKey) {
-                  teaCategoryId = categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
+                let categoryId: number | null = null;
+                if (mapped.categoryKey) {
+                  categoryId = categoryMap.get(mapped.categoryKey.toLowerCase()) || null;
                 }
 
                 const { error: updateError } = await supabase
                   .from("tea")
                   .update({
                     name: mapped.name,
-                    tea_category: teaCategoryId,
+                    category: categoryId,
                     elevation_meters: mapped.elevationMeters,
                     cultivar_raw: mapped.cultivarRaw,
                     scraper_version: SCRAPER_VERSION,
@@ -146,7 +146,7 @@ async function scrape() {
           if (isDryRun) {
             console.log(`\n   📄 ${mapped.name}`);
             console.log(`      URL: ${mapped.url}`);
-            console.log(`      Category: ${mapped.teaCategoryKey}`);
+            console.log(`      Category: ${mapped.categoryKey}`);
             console.log(`      Style: ${mapped.styleRaw}`);
             console.log(`      Origin: ${mapped.origin} (${mapped.originCountry})`);
             console.log(`      Producer: ${mapped.producerRaw}`);
@@ -159,16 +159,16 @@ async function scrape() {
             continue;
           }
 
-          let teaCategoryId: number | null = null;
-          if (mapped.teaCategoryKey) {
-            teaCategoryId = categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
+          let categoryId: number | null = null;
+          if (mapped.categoryKey) {
+            categoryId = categoryMap.get(mapped.categoryKey.toLowerCase()) || null;
           }
 
           const teaRecord = {
             name: mapped.name,
             url: mapped.url,
             vendor: vendorId,
-            tea_category: teaCategoryId,
+            category: categoryId,
             style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,

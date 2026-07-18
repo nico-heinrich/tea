@@ -209,9 +209,9 @@ export function parseProductPage(html: string): YoshienProductDetail | null {
 // Map parsed data to our database schema
 export function mapToTeaRecord(
   detail: YoshienProductDetail,
-  teaCategory: string
+  category: string
 ): {
-  teaCategoryKey: string | null;
+  categoryKey: string | null;
   styleKey: string | null;
   styleRaw: string;
   origin: string | null;
@@ -241,7 +241,7 @@ export function mapToTeaRecord(
     .join("\n");
 
   return {
-    teaCategoryKey: teaCategory,
+    categoryKey: category,
     styleKey,
     styleRaw,
     origin,

@@ -142,7 +142,7 @@ function buildNotesRaw(product: ShopifyProduct, tags: ParsedTags): string {
 export function mapToTeaRecord(product: ShopifyProduct): {
   name: string;
   url: string;
-  teaCategoryKey: string;
+  categoryKey: string;
   styleRaw: string;
   origin: string | null;
   originCountry: string | null;
@@ -159,7 +159,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   const tags = parseTags(product.tags);
   const url = `https://yunnansourcing.com/products/${product.handle}`;
   const name = cleanTeaName(product.title);
-  const teaCategoryKey = inferTeaCategory(product.product_type, tags.teaType);
+  const categoryKey = inferTeaCategory(product.product_type, tags.teaType);
   const styleRaw = tags.teaType || product.product_type;
   const origin = tags.subRegion || tags.region || null;
   const originCountry = inferCountry(tags.region, tags.subRegion);
@@ -180,7 +180,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   return {
     name,
     url,
-    teaCategoryKey,
+    categoryKey,
     styleRaw,
     origin,
     originCountry,

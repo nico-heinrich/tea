@@ -15,12 +15,12 @@ async function initDb() {
 }
 
 const CATEGORIES = [
-  { url: "https://www.yoshien.com/matcha/", teaCategory: "Green" },
-  { url: "https://www.yoshien.com/gruener-tee/", teaCategory: "Green" },
-  { url: "https://www.yoshien.com/weisser-tee/", teaCategory: "White" },
-  { url: "https://www.yoshien.com/oolong-tee/", teaCategory: "Oolong" },
-  { url: "https://www.yoshien.com/schwarzer-tee/", teaCategory: "Black" },
-  { url: "https://www.yoshien.com/pu-erh-tee/", teaCategory: "Dark" },
+  { url: "https://www.yoshien.com/matcha/", category: "Green" },
+  { url: "https://www.yoshien.com/gruener-tee/", category: "Green" },
+  { url: "https://www.yoshien.com/weisser-tee/", category: "White" },
+  { url: "https://www.yoshien.com/oolong-tee/", category: "Oolong" },
+  { url: "https://www.yoshien.com/schwarzer-tee/", category: "Black" },
+  { url: "https://www.yoshien.com/pu-erh-tee/", category: "Dark" },
 ];
 
 // Extract product URLs from category page HTML
@@ -65,7 +65,7 @@ async function scrape() {
     console.log(`✓ Vendor: ${VENDOR_NAME} (id: ${vendorId})`);
 
     const { data: teaCategories } = await supabase
-      .from("tea_category")
+      .from("category")
       .select("id, key");
 
     categoryMap = new Map(
@@ -116,7 +116,7 @@ async function scrape() {
             continue;
           }
 
-          const mapped = mapToTeaRecord(detail, category.teaCategory);
+          const mapped = mapToTeaRecord(detail, category.category);
 
           if (!isDryRun && isUpdate) {
             const { data: existing } = await supabase
@@ -163,7 +163,7 @@ async function scrape() {
             console.log(`\n   📄 ${detail.name}`);
             console.log(`      URL: ${url}`);
             console.log(`      Category: ${detail.category}`);
-            console.log(`      Category: ${mapped.teaCategoryKey}`);
+            console.log(`      Category: ${mapped.categoryKey}`);
             console.log(`      Style: ${mapped.styleKey}`);
             console.log(`      Origin: ${mapped.origin}`);
             console.log(`      Country: ${mapped.originCountry}`);
@@ -181,16 +181,16 @@ async function scrape() {
           }
 
           // Resolve IDs
-          let teaCategoryId: number | null = null;
-          if (mapped.teaCategoryKey) {
-            teaCategoryId = categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
+          let categoryId: number | null = null;
+          if (mapped.categoryKey) {
+            categoryId = categoryMap.get(mapped.categoryKey.toLowerCase()) || null;
           }
 
           const teaRecord = {
             name: cleanTeaName(detail.name),
             url,
             vendor: vendorId,
-            tea_category: teaCategoryId,
+            category: categoryId,
             style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,

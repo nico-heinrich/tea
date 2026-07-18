@@ -125,7 +125,7 @@ function buildNotesRaw(tastingNotes: MeiLeafTastingNote[]): string {
 
 /** Map a fully parsed MeiLeafProduct to our DB TeaRecord */
 export function mapToTeaRecord(product: MeiLeafProduct): TeaRecord {
-  const teaCategoryKey = resolveTeaCategory(product.teaType, product.cssClasses) || "green";
+  const categoryKey = resolveTeaCategory(product.teaType, product.cssClasses) || "green";
 
   const origin = product.detail.origin;
   const originCountry = origin ? extractCountryFromOrigin(origin) : null;
@@ -156,7 +156,7 @@ export function mapToTeaRecord(product: MeiLeafProduct): TeaRecord {
   return {
     name: product.name,
     url: product.url,
-    teaCategoryKey,
+    categoryKey,
     styleRaw,
     origin,
     originCountry,

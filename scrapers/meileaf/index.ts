@@ -221,7 +221,7 @@ async function scrape() {
     console.log(`✓ Vendor: ${VENDOR_NAME} (id: ${vendorId})`);
 
     const { data: teaCategories } = await supabase
-      .from("tea_category")
+      .from("category")
       .select("id, key");
 
     categoryMap = new Map(
@@ -309,7 +309,7 @@ async function scrape() {
         if (isDryRun) {
           console.log();
           console.log(`      URL: ${mapped.url}`);
-          console.log(`      Category: ${mapped.teaCategoryKey}`);
+          console.log(`      Category: ${mapped.categoryKey}`);
           console.log(`      Style: ${mapped.styleRaw}`);
           console.log(`      Origin: ${mapped.origin} (${mapped.originCountry})`);
           console.log(`      Cultivar: ${mapped.cultivarRaw}`);
@@ -333,16 +333,16 @@ async function scrape() {
 
         if (existing) {
           if (isUpdate) {
-            let teaCategoryId: number | null = null;
-            if (mapped.teaCategoryKey) {
-              teaCategoryId =
-                categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
+            let categoryId: number | null = null;
+            if (mapped.categoryKey) {
+              categoryId =
+                categoryMap.get(mapped.categoryKey.toLowerCase()) || null;
             }
 
             const { error: updateError } = await supabase
               .from("tea")
               .update({
-                tea_category: teaCategoryId,
+                category: categoryId,
                 style_raw: mapped.styleRaw,
                 origin: mapped.origin,
                 origin_country: mapped.originCountry,
@@ -370,17 +370,17 @@ async function scrape() {
         }
 
         // Insert new tea
-        let teaCategoryId: number | null = null;
-        if (mapped.teaCategoryKey) {
-          teaCategoryId =
-            categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
+        let categoryId: number | null = null;
+        if (mapped.categoryKey) {
+          categoryId =
+            categoryMap.get(mapped.categoryKey.toLowerCase()) || null;
         }
 
         const teaRecord = {
           name: mapped.name,
           url: mapped.url,
           vendor: vendorId,
-          tea_category: teaCategoryId,
+          category: categoryId,
           style_raw: mapped.styleRaw,
           origin: mapped.origin,
           origin_country: mapped.originCountry,

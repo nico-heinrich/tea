@@ -9,12 +9,12 @@ const SCRAPER_VERSION = "whatcha@v3";
 const BASE_URL = "https://what-cha.com";
 
 const COLLECTIONS = [
-  { path: "/collections/black-tea/products.json", teaCategory: "black" },
-  { path: "/collections/green-tea/products.json", teaCategory: "green" },
-  { path: "/collections/oolong-tea/products.json", teaCategory: "oolong" },
-  { path: "/collections/puerh-tea/products.json", teaCategory: "dark" },
-  { path: "/collections/white-tea/products.json", teaCategory: "white" },
-  { path: "/collections/matcha/products.json", teaCategory: "green" },
+  { path: "/collections/black-tea/products.json", category: "black" },
+  { path: "/collections/green-tea/products.json", category: "green" },
+  { path: "/collections/oolong-tea/products.json", category: "oolong" },
+  { path: "/collections/puerh-tea/products.json", category: "dark" },
+  { path: "/collections/white-tea/products.json", category: "white" },
+  { path: "/collections/matcha/products.json", category: "green" },
 ];
 
 const NON_TEA_PRODUCT_TYPES: string[] = [];
@@ -87,7 +87,7 @@ async function scrape() {
     console.log(`✓ Vendor: ${VENDOR_NAME} (id: ${vendorId})`);
 
     const { data: teaCategories } = await supabase
-      .from("tea_category")
+      .from("category")
       .select("id, key");
 
     categoryMap = new Map(
@@ -138,16 +138,16 @@ async function scrape() {
 
             if (existing) {
               if (isUpdate) {
-                let teaCategoryId: number | null = null;
-                if (mapped.teaCategoryKey) {
-                  teaCategoryId = categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
+                let categoryId: number | null = null;
+                if (mapped.categoryKey) {
+                  categoryId = categoryMap.get(mapped.categoryKey.toLowerCase()) || null;
                 }
 
                 const { error: updateError } = await supabase
                   .from("tea")
                   .update({
                     name: mapped.name,
-                    tea_category: teaCategoryId,
+                    category: categoryId,
                     style_raw: mapped.styleRaw,
                     origin: mapped.origin,
                     elevation_meters: mapped.elevationMeters,
@@ -184,7 +184,7 @@ async function scrape() {
           if (isDryRun) {
             console.log(`\n   📄 ${mapped.name}`);
             console.log(`      URL: ${mapped.url}`);
-            console.log(`      Category: ${mapped.teaCategoryKey}`);
+            console.log(`      Category: ${mapped.categoryKey}`);
             console.log(`      Style: ${mapped.styleRaw}`);
             console.log(`      Origin: ${mapped.origin} (${mapped.originCountry})`);
             console.log(`      Producer: ${mapped.producerRaw}`);
@@ -197,16 +197,16 @@ async function scrape() {
             continue;
           }
 
-          let teaCategoryId: number | null = null;
-          if (mapped.teaCategoryKey) {
-            teaCategoryId = categoryMap.get(mapped.teaCategoryKey.toLowerCase()) || null;
+          let categoryId: number | null = null;
+          if (mapped.categoryKey) {
+            categoryId = categoryMap.get(mapped.categoryKey.toLowerCase()) || null;
           }
 
           const teaRecord = {
             name: mapped.name,
             url: mapped.url,
             vendor: vendorId,
-            tea_category: teaCategoryId,
+            category: categoryId,
             style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,

@@ -171,7 +171,7 @@ export const TEA_CATEGORY_MAP: Record<string, string> = {
 export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
   const parsed = parseBodyHtml(product.body_html);
 
-  const teaCategoryKey = TEA_CATEGORY_MAP[product.product_type] || "green";
+  const categoryKey = TEA_CATEGORY_MAP[product.product_type] || "green";
 
   const originCountry = inferCountry(product.vendor);
 
@@ -217,7 +217,7 @@ export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
   return {
     name: cleanTeaName(product.title),
     url: `https://what-cha.com/products/${product.handle}`,
-    teaCategoryKey,
+    categoryKey,
     styleRaw,
     origin: parsed.origin,
     originCountry,
