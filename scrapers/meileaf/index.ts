@@ -298,7 +298,7 @@ async function scrape() {
           mapped.harvestRaw ||
           mapped.notesRaw ||
           mapped.origin ||
-          mapped.processingRaw;
+          mapped.styleRaw;
 
         if (!hasTeaMetadata) {
           console.log("⏭️  (no metadata)");
@@ -310,7 +310,7 @@ async function scrape() {
           console.log();
           console.log(`      URL: ${mapped.url}`);
           console.log(`      Category: ${mapped.teaCategoryKey}`);
-          console.log(`      Processing: ${mapped.processingRaw}`);
+          console.log(`      Style: ${mapped.styleRaw}`);
           console.log(`      Origin: ${mapped.origin} (${mapped.originCountry})`);
           console.log(`      Cultivar: ${mapped.cultivarRaw}`);
           console.log(`      Elevation: ${mapped.elevationMeters}m`);
@@ -343,7 +343,7 @@ async function scrape() {
               .from("tea")
               .update({
                 tea_category: teaCategoryId,
-                processing_raw: mapped.processingRaw,
+                style_raw: mapped.styleRaw,
                 origin: mapped.origin,
                 origin_country: mapped.originCountry,
                 elevation_meters: mapped.elevationMeters,
@@ -381,7 +381,7 @@ async function scrape() {
           url: mapped.url,
           vendor: vendorId,
           tea_category: teaCategoryId,
-          processing_raw: mapped.processingRaw,
+          style_raw: mapped.styleRaw,
           origin: mapped.origin,
           origin_country: mapped.originCountry,
           elevation_meters: mapped.elevationMeters,

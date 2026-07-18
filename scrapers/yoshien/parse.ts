@@ -1,8 +1,8 @@
 import * as cheerio from "cheerio";
 import type { YoshienProductDetail } from "../shared/types.js";
 
-// Map German processing to our processing
-function inferProcessing(category: string, name: string): string | null {
+// Map German style to our style
+function inferStyle(category: string, name: string): string | null {
   const cat = category.toLowerCase();
   const nameLower = name.toLowerCase();
 
@@ -17,7 +17,7 @@ function inferProcessing(category: string, name: string): string | null {
   return null;
 }
 
-function getRawProcessing(category: string, name: string): string {
+function getRawStyle(category: string, name: string): string {
   const cat = category.toLowerCase();
   const nameLower = name.toLowerCase();
 
@@ -212,8 +212,8 @@ export function mapToTeaRecord(
   teaCategory: string
 ): {
   teaCategoryKey: string | null;
-  processingKey: string | null;
-  processingRaw: string;
+  styleKey: string | null;
+  styleRaw: string;
   origin: string | null;
   originCountry: string | null;
   elevationMeters: number | null;
@@ -223,8 +223,8 @@ export function mapToTeaRecord(
   shadingRaw: string | null;
   notesRaw: string;
 } {
-  const processingKey = inferProcessing(detail.category, detail.name);
-  const processingRaw = getRawProcessing(detail.category, detail.name);
+  const styleKey = inferStyle(detail.category, detail.name);
+  const styleRaw = getRawStyle(detail.category, detail.name);
 
   const { origin, country } = detail.terroir
     ? parseTerroir(detail.terroir)
@@ -242,8 +242,8 @@ export function mapToTeaRecord(
 
   return {
     teaCategoryKey: teaCategory,
-    processingKey,
-    processingRaw,
+    styleKey,
+    styleRaw,
     origin,
     originCountry: country,
     elevationMeters: elevation,

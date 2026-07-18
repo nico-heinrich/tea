@@ -38,16 +38,17 @@ export interface YoshienProductDetail {
 export interface TeaRecord {
   name: string;
   url: string;
-  vendor: number;
-  tea_category: number | null;
-  processing_id: number | null;
+  teaCategoryKey: string;
+  styleRaw: string | null;
   origin: string | null;
-  origin_country: string | null;
-  elevation_meters: number | null;
-  harvest_season: string | null;
-  harvest_year: number | null;
-  producer_id: number | null;
-  shading: string | null;
-  is_available: boolean;
-  raw_notes: string | null;
+  originCountry: string | null;
+  elevationMeters: number | null;
+  harvestRaw: string | null;
+  harvestYear: number | null;
+  producerRaw: string | null;
+  shadingRaw: string | null;
+  cultivarRaw: string | null;
+  notesRaw: string;
+  available: boolean;
+  offers: { price: number; weightGrams: number | null; available: boolean }[];
 }

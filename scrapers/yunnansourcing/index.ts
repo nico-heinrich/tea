@@ -7,13 +7,13 @@ const SCRAPER_VERSION = "yunnansourcing@v3";
 const BASE_URL = "https://yunnansourcing.com";
 
 const COLLECTIONS = [
-  { path: "/collections/raw-pu-erh-tea/products.json", teaCategory: "Pu-erh" },
-  { path: "/collections/ripe-pu-erh/products.json", teaCategory: "Pu-erh" },
+  { path: "/collections/raw-pu-erh-tea/products.json", teaCategory: "Dark" },
+  { path: "/collections/ripe-pu-erh/products.json", teaCategory: "Dark" },
   { path: "/collections/black-tea/products.json", teaCategory: "Black" },
   { path: "/collections/green-tea/products.json", teaCategory: "Green" },
   { path: "/collections/oolong-tea/products.json", teaCategory: "Oolong" },
   { path: "/collections/white-tea/products.json", teaCategory: "White" },
-  { path: "/collections/hei-cha/products.json", teaCategory: "Pu-erh" },
+  { path: "/collections/hei-cha/products.json", teaCategory: "Dark" },
 ];
 
 const NON_TEA_PRODUCT_TYPES = [
@@ -147,7 +147,7 @@ async function scrape() {
             console.log(`\n   📄 ${mapped.name}`);
             console.log(`      URL: ${mapped.url}`);
             console.log(`      Category: ${mapped.teaCategoryKey}`);
-            console.log(`      Processing: ${mapped.processingRaw}`);
+            console.log(`      Style: ${mapped.styleRaw}`);
             console.log(`      Origin: ${mapped.origin} (${mapped.originCountry})`);
             console.log(`      Producer: ${mapped.producerRaw}`);
             console.log(`      Cultivar: ${mapped.cultivarRaw}`);
@@ -169,7 +169,7 @@ async function scrape() {
             url: mapped.url,
             vendor: vendorId,
             tea_category: teaCategoryId,
-            processing_raw: mapped.processingRaw,
+            style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,
             elevation_meters: mapped.elevationMeters,

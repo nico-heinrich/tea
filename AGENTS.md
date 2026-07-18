@@ -12,7 +12,7 @@
 The `tea` table stores all tea data. Every field that stores unparsed/original text from the source uses the `_raw` suffix.
 
 **Normalized fields (IDs / structured):**
-- `tea_category` → FK to `tea_category` table (1=White, 2=Yellow, 3=Green, 4=Oolong, 5=Black, 6=Pu-erh). Must always be set.
+- `tea_category` → FK to `tea_category` table (1=White, 2=Yellow, 3=Green, 4=Oolong, 5=Black, 6=Dark). Must always be set.
 - `vendor` → FK to `vendor` table. One vendor per scraper (e.g., "Yoshi en", "Yunnan Sourcing").
 - `origin_country` → ISO 3166-1 alpha-2 country code (e.g., "JP", "CN", "IN"). Null if unknown.
 - `elevation_meters` → smallint, parsed from source. Null if not available.
@@ -20,7 +20,7 @@ The `tea` table stores all tea data. Every field that stores unparsed/original t
 - `scraper_version` → text, format `"{vendor_slug}@v{N}"` (e.g., `"yoshien@v1"`, `"yunnansourcing@v1"`).
 
 **Raw fields (unparsed text from source):**
-- `processing_raw` → text. Tea processing type as stated by the source (e.g., "Sheng Pu Erh", "Sencha", "Liu Bao Cha").
+- `style_raw` → text. Tea style/type as stated by the source (e.g., "Sheng Pu Erh", "Sencha", "Liu Bao Cha").
 - `cultivar_raw` → text. Tea cultivar/varietal as stated by the source.
 - `producer_raw` → text. Producer/farm name as stated by the source.
 - `shading_raw` → text. Shading information as stated by the source.
@@ -34,9 +34,9 @@ The `tea` table stores all tea data. Every field that stores unparsed/original t
 
 ### Naming Conventions
 
-- **DB columns**: snake_case (e.g., `processing_raw`, `origin_country`, `harvest_year`)
-- **Internal variables**: camelCase, matching the DB column (e.g., `processingRaw`, `originCountry`, `harvestYear`)
-- **Do NOT use**: `raw_notes` (use `notes_raw`), `is_available` (use `availability_snapshot`), `harvest_season` (use `harvest_raw`)
+- **DB columns**: snake_case (e.g., `style_raw`, `origin_country`, `harvest_year`)
+- **Internal variables**: camelCase, matching the DB column (e.g., `styleRaw`, `originCountry`, `harvestYear`)
+- **Do NOT use**: `raw_notes` (use `notes_raw`), `is_available` (use `availability_snapshot`), `harvest_season` (use `harvest_raw`), `processing_raw` (use `style_raw`)
 
 ### Scraper Structure
 
@@ -55,7 +55,7 @@ Shared code lives in `scrapers/shared/`:
 2. Extract product URLs or product data
 3. For each product: parse into internal record using `mapToTeaRecord()`
 4. Check: skip if no tea metadata (see below)
-5. Check: skip if `processing_raw` matches known non-tea patterns
+5. Check: skip if `style_raw` matches known non-tea patterns
 6. Upsert vendor, resolve tea_category ID
 7. Insert tea row
 8. Insert price_snapshot for each offer/variant
@@ -68,7 +68,7 @@ Every product must pass these checks before being saved:
 1. **Tea metadata check**: At least one of these must be present from the source data:
    - `cultivar_raw`, `harvest_raw`, `shading_raw`, `notes_raw` (non-empty), `origin`, `producer_raw`
 
-2. **Processing exclusion**: Skip if `processing_raw` contains any of:
+2. **Style exclusion**: Skip if `style_raw` contains any of:
    - `schokolade`, `teezubehör`, `glas`, `löffel`, `teekanne`, `teetasse`, `flasche`, `becher`
    - Adapt per vendor (e.g., for Shopify stores: skip "Teaware", "Accessories", "Puzzle" product types)
 
@@ -108,7 +108,7 @@ Map country names to ISO 3166-1 alpha-2 codes. Common mappings:
 | 3  | green  | Unoxidized, heated to halt oxidation |
 | 4  | oolong | Partially oxidized (10–85%) |
 | 5  | black  | Fully oxidized |
-| 6  | pu-erh | Post-fermented (Pu-erh, Hei Cha) |
+| 6  | dark   | Post-fermented (Pu-erh, Hei Cha) |
 
 Use `product_type`, `tags`, collection name, or name patterns to determine tea category.
 

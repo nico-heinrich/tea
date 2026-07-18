@@ -104,10 +104,10 @@ function cleanCultivar(raw: string): string | null {
 const GENERIC_LEAF = /large.?leaf|small.?leaf|mixed.?(?:leaf|large|small)|pure assamica|ancient arbor|old arbor|wild.?arbor|sun.?dried/i;
 
 const TEA_TYPE_TO_CATEGORY: Record<string, string> = {
-  "Raw Pu-erh Tea": "Pu-erh",
-  "Ripe Pu-erh Tea": "Pu-erh",
-  "Pu-erh Tea": "Pu-erh",
-  "Hei Cha": "Pu-erh",
+  "Raw Pu-erh Tea": "Dark",
+  "Ripe Pu-erh Tea": "Dark",
+  "Pu-erh Tea": "Dark",
+  "Hei Cha": "Dark",
   "Black Tea": "Black",
   "Green Tea": "Green",
   "Oolong Tea": "Oolong",
@@ -119,7 +119,7 @@ function inferTeaCategory(productType: string, teaType: string | null): string {
   if (teaType && TEA_TYPE_TO_CATEGORY[teaType]) return TEA_TYPE_TO_CATEGORY[teaType];
   if (TEA_TYPE_TO_CATEGORY[productType]) return TEA_TYPE_TO_CATEGORY[productType];
   const lower = (productType + " " + (teaType || "")).toLowerCase();
-  if (lower.includes("pu-erh") || lower.includes("pu erh") || lower.includes("hei cha")) return "Pu-erh";
+  if (lower.includes("pu-erh") || lower.includes("pu erh") || lower.includes("hei cha")) return "Dark";
   if (lower.includes("black")) return "Black";
   if (lower.includes("green")) return "Green";
   if (lower.includes("oolong")) return "Oolong";
@@ -143,7 +143,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   name: string;
   url: string;
   teaCategoryKey: string;
-  processingRaw: string;
+  styleRaw: string;
   origin: string | null;
   originCountry: string | null;
   elevationMeters: number | null;
@@ -160,7 +160,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   const url = `https://yunnansourcing.com/products/${product.handle}`;
   const name = cleanTeaName(product.title);
   const teaCategoryKey = inferTeaCategory(product.product_type, tags.teaType);
-  const processingRaw = tags.teaType || product.product_type;
+  const styleRaw = tags.teaType || product.product_type;
   const origin = tags.subRegion || tags.region || null;
   const originCountry = inferCountry(tags.region, tags.subRegion);
   const harvestRaw = tags.harvestSeason || null;
@@ -181,7 +181,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
     name,
     url,
     teaCategoryKey,
-    processingRaw,
+    styleRaw,
     origin,
     originCountry,
     elevationMeters,

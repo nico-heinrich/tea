@@ -42,7 +42,7 @@ export interface TeaRecord {
   name: string;
   url: string;
   teaCategoryKey: string;
-  processingRaw: string;
+  styleRaw: string | null;
   origin: string | null;
   originCountry: string | null;
   elevationMeters: number | null;

@@ -12,7 +12,7 @@ const COLLECTIONS = [
   { path: "/collections/black-tea/products.json", teaCategory: "black" },
   { path: "/collections/green-tea/products.json", teaCategory: "green" },
   { path: "/collections/oolong-tea/products.json", teaCategory: "oolong" },
-  { path: "/collections/puerh-tea/products.json", teaCategory: "pu-erh" },
+  { path: "/collections/puerh-tea/products.json", teaCategory: "dark" },
   { path: "/collections/white-tea/products.json", teaCategory: "white" },
   { path: "/collections/matcha/products.json", teaCategory: "green" },
 ];
@@ -148,7 +148,7 @@ async function scrape() {
                   .update({
                     name: mapped.name,
                     tea_category: teaCategoryId,
-                    processing_raw: mapped.processingRaw,
+                    style_raw: mapped.styleRaw,
                     origin: mapped.origin,
                     elevation_meters: mapped.elevationMeters,
                     harvest_raw: mapped.harvestRaw,
@@ -185,7 +185,7 @@ async function scrape() {
             console.log(`\n   📄 ${mapped.name}`);
             console.log(`      URL: ${mapped.url}`);
             console.log(`      Category: ${mapped.teaCategoryKey}`);
-            console.log(`      Processing: ${mapped.processingRaw}`);
+            console.log(`      Style: ${mapped.styleRaw}`);
             console.log(`      Origin: ${mapped.origin} (${mapped.originCountry})`);
             console.log(`      Producer: ${mapped.producerRaw}`);
             console.log(`      Cultivar: ${mapped.cultivarRaw}`);
@@ -207,7 +207,7 @@ async function scrape() {
             url: mapped.url,
             vendor: vendorId,
             tea_category: teaCategoryId,
-            processing_raw: mapped.processingRaw,
+            style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,
             elevation_meters: mapped.elevationMeters,

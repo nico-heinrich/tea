@@ -81,8 +81,8 @@ const TYPE_MAP: Record<string, string> = {
   Yellow: "yellow",
   Oolong: "oolong",
   Black: "black",
-  "Raw Puerh": "pu-erh",
-  Ripened: "pu-erh",
+  "Raw Puerh": "dark",
+  Ripened: "dark",
 };
 
 /** Infer tea type from CSS classes when data-product-type is empty */
@@ -94,8 +94,8 @@ function inferTypeFromClasses(classes: string): string | null {
     [/tea_type_yellow/, "yellow"],
     [/tea_type_oolong/, "oolong"],
     [/tea_type_black/, "black"],
-    [/tea_type_raw-puerh/, "pu-erh"],
-    [/tea_type_ripened/, "pu-erh"],
+    [/tea_type_raw-puerh/, "dark"],
+    [/tea_type_ripened/, "dark"],
   ];
 
   for (const [pattern, key] of classPatterns) {
@@ -137,7 +137,7 @@ export function mapToTeaRecord(product: MeiLeafProduct): TeaRecord {
   const harvestRaw = product.detail.season;
   const harvestYear = harvestRaw ? parseHarvestYear(harvestRaw) : null;
 
-  const processingRaw = product.detail.pickingProcessing;
+  const styleRaw = product.detail.pickingProcessing;
 
   const cultivarRaw = product.detail.cultivar;
 
@@ -157,7 +157,7 @@ export function mapToTeaRecord(product: MeiLeafProduct): TeaRecord {
     name: product.name,
     url: product.url,
     teaCategoryKey,
-    processingRaw,
+    styleRaw,
     origin,
     originCountry,
     elevationMeters,

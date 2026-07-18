@@ -160,12 +160,12 @@ export const TEA_CATEGORY_MAP: Record<string, string> = {
   "Black Tea": "black",
   "Green Tea": "green",
   "Oolong Tea": "oolong",
-  "Puerh Tea": "pu-erh",
+  "Puerh Tea": "dark",
   "White Tea": "white",
   "Yellow Tea": "yellow",
   Matcha: "green",
   "Scented Tea": "scented",
-  "Dark Tea": "pu-erh",
+  "Dark Tea": "dark",
 };
 
 export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
@@ -179,13 +179,13 @@ export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
 
   const harvestYear = parsed.harvest ? parseHarvestYear(parsed.harvest) : null;
 
-  const processingParts: string[] = [];
-  if (parsed.steamed) processingParts.push(`Steamed: ${parsed.steamed}`);
-  if (parsed.roast) processingParts.push(`Roast: ${parsed.roast}`);
-  if (parsed.oxidation) processingParts.push(`Oxidation: ${parsed.oxidation}`);
-  if (parsed.picking) processingParts.push(`Picking: ${parsed.picking}`);
-  const processingRaw = processingParts.length > 0
-    ? processingParts.join(", ")
+  const styleParts: string[] = [];
+  if (parsed.steamed) styleParts.push(`Steamed: ${parsed.steamed}`);
+  if (parsed.roast) styleParts.push(`Roast: ${parsed.roast}`);
+  if (parsed.oxidation) styleParts.push(`Oxidation: ${parsed.oxidation}`);
+  if (parsed.picking) styleParts.push(`Picking: ${parsed.picking}`);
+  const styleRaw = styleParts.length > 0
+    ? styleParts.join(", ")
     : null;
 
   const notesParts: string[] = [];
@@ -218,7 +218,7 @@ export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
     name: cleanTeaName(product.title),
     url: `https://what-cha.com/products/${product.handle}`,
     teaCategoryKey,
-    processingRaw,
+    styleRaw,
     origin: parsed.origin,
     originCountry,
     elevationMeters,

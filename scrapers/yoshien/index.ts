@@ -20,7 +20,7 @@ const CATEGORIES = [
   { url: "https://www.yoshien.com/weisser-tee/", teaCategory: "White" },
   { url: "https://www.yoshien.com/oolong-tee/", teaCategory: "Oolong" },
   { url: "https://www.yoshien.com/schwarzer-tee/", teaCategory: "Black" },
-  { url: "https://www.yoshien.com/pu-erh-tee/", teaCategory: "Pu-erh" },
+  { url: "https://www.yoshien.com/pu-erh-tee/", teaCategory: "Dark" },
 ];
 
 // Extract product URLs from category page HTML
@@ -153,9 +153,9 @@ async function scrape() {
             continue;
           }
 
-          const NON_TEA_PROCESSING = ["schokolade", "teezubehör", "glas", "löffel", "teekanne", "teetasse", "flasche", "becher"];
-          if (NON_TEA_PROCESSING.some(p => mapped.processingRaw.toLowerCase().includes(p))) {
-            console.log(`   ⚠️  Skipping (not tea): ${detail.name} [${mapped.processingRaw}]`);
+          const NON_TEA_STYLE = ["schokolade", "teezubehör", "glas", "löffel", "teekanne", "teetasse", "flasche", "becher"];
+          if (NON_TEA_STYLE.some(p => mapped.styleRaw.toLowerCase().includes(p))) {
+            console.log(`   ⚠️  Skipping (not tea): ${detail.name} [${mapped.styleRaw}]`);
             continue;
           }
 
@@ -164,7 +164,7 @@ async function scrape() {
             console.log(`      URL: ${url}`);
             console.log(`      Category: ${detail.category}`);
             console.log(`      Category: ${mapped.teaCategoryKey}`);
-            console.log(`      Processing: ${mapped.processingKey}`);
+            console.log(`      Style: ${mapped.styleKey}`);
             console.log(`      Origin: ${mapped.origin}`);
             console.log(`      Country: ${mapped.originCountry}`);
             console.log(`      Elevation: ${mapped.elevationMeters}m`);
@@ -191,7 +191,7 @@ async function scrape() {
             url,
             vendor: vendorId,
             tea_category: teaCategoryId,
-            processing_raw: mapped.processingRaw,
+            style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,
             elevation_meters: mapped.elevationMeters,
