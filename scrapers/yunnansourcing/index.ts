@@ -114,6 +114,8 @@ async function scrape() {
                 const { error: updateError } = await supabase
                   .from("tea")
                   .update({
+                    name: mapped.name,
+                    tea_category: teaCategoryId,
                     elevation_meters: mapped.elevationMeters,
                     cultivar_raw: mapped.cultivarRaw,
                     scraper_version: SCRAPER_VERSION,

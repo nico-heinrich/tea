@@ -1,8 +1,9 @@
 import { parseProductPage, mapToTeaRecord } from "./parse.js";
+import { cleanTeaName } from "../shared/cleanName.js";
 
 const VENDOR_NAME = "Yoshi en";
 const VENDOR_WEBSITE = "https://www.yoshien.com";
-const SCRAPER_VERSION = "yoshien@v1";
+const SCRAPER_VERSION = "yoshien@v2";
 
 let supabase: any = null;
 let upsertUnique: any = null;
@@ -128,6 +129,7 @@ async function scrape() {
               const { error: updateError } = await supabase
                 .from("tea")
                 .update({
+                  name: cleanTeaName(detail.name),
                   cultivar_raw: detail.cultivar,
                   scraper_version: SCRAPER_VERSION,
                 })
@@ -185,7 +187,7 @@ async function scrape() {
           }
 
           const teaRecord = {
-            name: detail.name,
+            name: cleanTeaName(detail.name),
             url,
             vendor: vendorId,
             tea_category: teaCategoryId,

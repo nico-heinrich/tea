@@ -1,27 +1,14 @@
-/**
- * Tea name cleaning utilities.
- *
- * Goal: strip text that is redundant with structured fields
- * (tea_category, harvest_year, origin_country).
- *
- * Applied BEFORE DB write, so the name column stays tidy.
- */
-
-// ---------- tea-type suffixes (redundant with tea_category) ----------
-
-// Strips redundant tea-type + optional format from the end of a name.
-// Handles: "Raw Pu-erh Tea Cake", "Black Tea", "Oolong Tea Brick", "Pu-erh Tea Tuo", etc.
-const TYPE_SUFFIX_RE = /\s+(?:Raw\s+|Ripe\s+)?(?:Pu-?erh|Pu\s*erh|Hei\s*Cha|Black|Green|Oolong|White|Yellow|Dark)\s+Tea(?:\s+(?:Cake|Brick|Tuo|Mushroom|Disc|Ball|Flake))?\s*$/i;
+// German prefix: "Pu Erh Tee - Sheng BANGWEI GUCHA 2017 Cake" → "BANGWEI GUCHA 2017 Cake"
+const GERMAN_PREFIX_RE = /^(?:Pu\s*Erh\s*Tee\s*-\s*(?:Sheng|Shou)\s+|Gr[üu]ner\s+Tee\s+|Schwarzer\s+Tee\s+|Weißer\s+Tee\s+|Gelber\s+Tee\s+)/i;
 
 const HARVEST_SEASON_RE = /\s*\*\s*(?:Spring|Summer|Autumn|Winter|Fall)\s+\d{4}\s*$/i;
 
-/**
- * Clean a tea product name by removing redundant suffixes.
- *
- * @param name   Raw product name from the source
- * @param opts   Cleaning options
- * @returns      Cleaned name (trimmed, never empty)
- */
+const PEST_FREE_RE = /\s*Pest\.?\s*(?:Free|frei|Frei|freilich|Freilich)\s*/gi;
+const P_FREE_RE = /\s*P\.?\s*FREE\b/gi;
+const PESTIZIDFREI_RE = /\s*Pestizidfrei\s*/gi;
+const BIO_RE = /\s*Bio\b/gi;
+const GERMAN_TEE_RE = /\s+Tee\b/gi;
+
 export function cleanTeaName(
   name: string,
   opts: { stripYear?: boolean } = {},
@@ -29,11 +16,16 @@ export function cleanTeaName(
   const { stripYear = true } = opts;
   let cleaned = name.trim();
 
-  cleaned = cleaned.replace(TYPE_SUFFIX_RE, "").trim();
+  cleaned = cleaned.replace(GERMAN_PREFIX_RE, "").trim();
   if (stripYear) {
     cleaned = cleaned.replace(HARVEST_SEASON_RE, "").trim();
   }
 
+  cleaned = cleaned.replace(PEST_FREE_RE, " ").trim();
+  cleaned = cleaned.replace(P_FREE_RE, " ").trim();
+  cleaned = cleaned.replace(PESTIZIDFREI_RE, " ").trim();
+  cleaned = cleaned.replace(BIO_RE, " ").trim();
+  cleaned = cleaned.replace(GERMAN_TEE_RE, " ").trim();
   cleaned = cleaned.replace(/\s{2,}/g, " ").trim();
   return cleaned || name.trim();
 }
