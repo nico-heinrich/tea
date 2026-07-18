@@ -123,6 +123,55 @@ function buildNotesRaw(tastingNotes: MeiLeafTastingNote[]): string {
     .join("\n");
 }
 
+/** Infer tea style from product name (Chinese name subtitle) */
+function inferStyleFromSubtitle(subtitle: string | null): string | null {
+  if (!subtitle) return null;
+  const lower = subtitle.toLowerCase();
+
+  const stylePatterns: Array<[RegExp, string]> = [
+    [/sencha/i, "Sencha"],
+    [/gyokuro/i, "Gyokuro"],
+    [/genmaicha/i, "Genmaicha"],
+    [/bancha/i, "Bancha"],
+    [/kukicha/i, "Kukicha"],
+    [/hojicha/i, "Hojicha"],
+    [/hocha/i, "Hojicha"],
+    [/matcha/i, "Matcha"],
+    [/fukamushi/i, "Fukamushi"],
+    [/kabusecha/i, "Kabusecha"],
+    [/tencha/i, "Tencha"],
+    [/shincha/i, "Shincha"],
+    [/tamaryokucha/i, "Tamaryokucha"],
+    [/long\s*jing/i, "Long Jing"],
+    [/dragonwell/i, "Long Jing"],
+    [/bi\s*luo\s*chun/i, "Bi Luo Chun"],
+    [/mao\s*feng/i, "Mao Feng"],
+    [/tie\s*guan\s*yin/i, "Tie Guan Yin"],
+    [/da\s*hong\s*pao/i, "Da Hong Pao"],
+    [/dong\s*ding/i, "Dong Ding"],
+    [/dan\s*cong/i, "Dan Cong"],
+    [/silver\s*needle/i, "Silver Needle"],
+    [/bai\s*hao\s*yin\s*zhen/i, "Silver Needle"],
+    [/bai\s*mu\s*dan/i, "Bai Mu Dan"],
+    [/white\s*peony/i, "White Peony"],
+    [/shou\s*mei/i, "Shou Mei"],
+    [/keemun/i, "Keemun"],
+    [/dian\s*hong/i, "Dian Hong"],
+    [/lapsang/i, "Lapsang Souchong"],
+    [/sheng.*pu/i, "Sheng Pu-Erh"],
+    [/shou.*pu/i, "Shou Pu-Erh"],
+    [/raw.*pu/i, "Sheng Pu-Erh"],
+    [/ripened.*pu/i, "Shou Pu-Erh"],
+  ];
+
+  for (const [pattern, style] of stylePatterns) {
+    if (pattern.test(subtitle)) return style;
+  }
+
+  // If no pattern matched, return the subtitle as-is (it's likely a style name)
+  return subtitle;
+}
+
 /** Map a fully parsed MeiLeafProduct to our DB TeaRecord */
 export function mapToTeaRecord(product: MeiLeafProduct): TeaRecord {
   const typeKey = resolveType(product.teaType, product.cssClasses) || "green";
@@ -137,11 +186,19 @@ export function mapToTeaRecord(product: MeiLeafProduct): TeaRecord {
   const harvestRaw = product.detail.season;
   const harvestYear = harvestRaw ? parseHarvestYear(harvestRaw) : null;
 
-  const styleRaw = product.detail.pickingProcessing;
+  // Use subtitle (Chinese name) as style, not picking/processing
+  const styleRaw = inferStyleFromSubtitle(product.subtitle);
 
   const cultivarRaw = product.detail.cultivar;
 
-  const notesRaw = buildNotesRaw(product.tastingNotes);
+  // Include picking/processing in notes since it's useful info
+  const notesParts: string[] = [];
+  if (product.detail.pickingProcessing) {
+    notesParts.push(`Picking & Processing: ${product.detail.pickingProcessing}`);
+  }
+  const tastingNotes = buildNotesRaw(product.tastingNotes);
+  if (tastingNotes) notesParts.push(tastingNotes);
+  const notesRaw = notesParts.join("\n");
 
   const available = product.variants.some((v) => v.inStock);
 
