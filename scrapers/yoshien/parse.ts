@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import type { YoshienProductDetail } from "../shared/types.js";
+import { extractSeason } from "../shared/harvest.js";
 
 // Map German style to our style
 function inferStyle(category: string, name: string): string | null {
@@ -219,6 +220,7 @@ export function mapToTeaRecord(
   elevationMeters: number | null;
   harvestRaw: string | null;
   harvestYear: number | null;
+  season: string | null;
   producerRaw: string | null;
   shadingRaw: string | null;
   notesRaw: string;
@@ -233,6 +235,7 @@ export function mapToTeaRecord(
   const elevation = detail.hoehenlage ? parseElevation(detail.hoehenlage) : null;
   const harvestRaw = detail.ernte || null;
   const harvestYear = detail.ernte ? parseHarvestYear(detail.ernte) : null;
+  const season = extractSeason(harvestRaw);
   const producerRaw = detail.teefarm || null;
   const shadingRaw = detail.beschattung || null;
 
@@ -249,6 +252,7 @@ export function mapToTeaRecord(
     elevationMeters: elevation,
     harvestRaw,
     harvestYear,
+    season,
     producerRaw,
     shadingRaw,
     notesRaw,

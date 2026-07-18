@@ -1,5 +1,6 @@
 import type { ShopifyProduct, ParsedTags } from "./types.js";
 import { cleanTeaName } from "../shared/cleanName.js";
+import { extractSeason } from "../shared/harvest.js";
 
 function parseTags(tags: string[]): ParsedTags {
   let teaType: string | null = null;
@@ -149,6 +150,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   elevationMeters: number | null;
   harvestRaw: string | null;
   harvestYear: number | null;
+  season: string | null;
   producerRaw: string | null;
   shadingRaw: string | null;
   cultivarRaw: string | null;
@@ -165,6 +167,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   const originCountry = inferCountry(tags.region, tags.subRegion);
   const harvestRaw = tags.harvestSeason || null;
   const harvestYear = tags.yearOfProduction;
+  const season = extractSeason(harvestRaw);
   const producerRaw = tags.producer || product.vendor || null;
   const cultivarRaw = tags.cultivar || parseCultivar(product.body_html);
   const notesRaw = buildNotesRaw(product, tags);
@@ -187,6 +190,7 @@ export function mapToTeaRecord(product: ShopifyProduct): {
     elevationMeters,
     harvestRaw,
     harvestYear,
+    season,
     producerRaw,
     shadingRaw: null,
     cultivarRaw,

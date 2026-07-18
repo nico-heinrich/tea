@@ -48,6 +48,7 @@ export interface TeaRecord {
   elevationMeters: number | null;
   harvestRaw: string | null;
   harvestYear: number | null;
+  season: string | null;
   producerRaw: string | null;
   shadingRaw: null;
   cultivarRaw: string | null;

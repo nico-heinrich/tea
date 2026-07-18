@@ -117,6 +117,8 @@ async function scrape() {
                     name: mapped.name,
                     type: typeId,
                     elevation_meters: mapped.elevationMeters,
+                    harvest_year: mapped.harvestYear,
+                    season: mapped.season,
                     cultivar_raw: mapped.cultivarRaw,
                     scraper_version: SCRAPER_VERSION,
                   })
@@ -175,6 +177,7 @@ async function scrape() {
             elevation_meters: mapped.elevationMeters,
             harvest_raw: mapped.harvestRaw,
             harvest_year: mapped.harvestYear,
+            season: mapped.season,
             producer_raw: mapped.producerRaw,
             shading_raw: mapped.shadingRaw,
             cultivar_raw: mapped.cultivarRaw,

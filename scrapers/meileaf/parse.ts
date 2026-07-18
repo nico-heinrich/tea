@@ -4,6 +4,7 @@ import type {
   TeaRecord,
 } from "./types.ts";
 import { matchStyle } from "../shared/matching.js";
+import { extractSeason } from "../shared/harvest.js";
 
 export const COUNTRY_MAP: Record<string, string> = {
   china: "CN",
@@ -144,6 +145,7 @@ export async function mapToTeaRecord(product: MeiLeafProduct): Promise<TeaRecord
 
   const harvestRaw = product.detail.season;
   const harvestYear = harvestRaw ? parseHarvestYear(harvestRaw) : null;
+  const season = extractSeason(harvestRaw);
 
   const styleRaw = await inferStyleFromSubtitle(product.subtitle);
 
@@ -177,6 +179,7 @@ export async function mapToTeaRecord(product: MeiLeafProduct): Promise<TeaRecord
     elevationMeters,
     harvestRaw,
     harvestYear,
+    season,
     producerRaw: null,
     shadingRaw: null,
     cultivarRaw,

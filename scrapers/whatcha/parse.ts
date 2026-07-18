@@ -1,6 +1,7 @@
 import type { ShopifyProduct, ParsedBodyHtml, TeaRecord } from "./types.ts";
 import { cleanTeaName } from "../shared/cleanName.js";
 import { matchStyle } from "../shared/matching.js";
+import { extractSeason } from "../shared/harvest.js";
 
 const LABEL_PATTERNS: Array<{ key: keyof ParsedBodyHtml; labels: string[] }> = [
   { key: "tastingNotes", labels: ["Tasting Notes"] },
@@ -185,6 +186,8 @@ export async function mapToTeaRecord(product: ShopifyProduct): Promise<TeaRecord
 
   const harvestYear = parsed.harvest ? parseHarvestYear(parsed.harvest) : null;
 
+  const season = extractSeason(parsed.harvest);
+
   const styleRaw = await inferStyleFromTitle(product.title);
 
   const notesParts: string[] = [];
@@ -227,6 +230,7 @@ export async function mapToTeaRecord(product: ShopifyProduct): Promise<TeaRecord
     elevationMeters,
     harvestRaw: parsed.harvest,
     harvestYear,
+    season,
     producerRaw: parsed.farmer,
     shadingRaw: null,
     cultivarRaw: parsed.cultivar,

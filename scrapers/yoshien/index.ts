@@ -131,6 +131,7 @@ async function scrape() {
                 .update({
                   name: cleanTeaName(detail.name),
                   cultivar_raw: detail.cultivar,
+                  season: mapped.season,
                   scraper_version: SCRAPER_VERSION,
                 })
                 .eq("id", existing.id);
@@ -197,6 +198,7 @@ async function scrape() {
             elevation_meters: mapped.elevationMeters,
             harvest_raw: mapped.harvestRaw,
             harvest_year: mapped.harvestYear,
+            season: mapped.season,
             producer_raw: mapped.producerRaw,
             shading_raw: mapped.shadingRaw,
             cultivar_raw: detail.cultivar,
