@@ -1,0 +1,460 @@
+- generic [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - navigation [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - generic [ref=f3e5]:
+          - link [ref=f3e6] [cursor=pointer]:
+            - /url: /
+            - img "Mei Leaf Logo" [ref=f3e7]
+          - generic "Germany" [ref=f3e9] [cursor=pointer]: € EUR
+        - generic [ref=f3e13]:
+          - list [ref=f3e14]:
+            - listitem [ref=f3e15]:
+              - generic [ref=f3e16]: "Learn:"
+              - link "Tea Articles" [ref=f3e17] [cursor=pointer]:
+                - /url: /tea-articles/
+            - listitem [ref=f3e18]:
+              - generic [ref=f3e19]: "Visit Us:"
+              - link "Teahouse" [ref=f3e20] [cursor=pointer]:
+                - /url: /tea-house/
+            - listitem [ref=f3e21]:
+              - generic [ref=f3e22]: "Find Out More:"
+              - link "About Mei Leaf" [ref=f3e23] [cursor=pointer]:
+                - /url: /about/
+          - generic [ref=f3e24]:
+            - searchbox "Search" [ref=f3e25]
+            - link "Search" [ref=f3e27] [cursor=pointer]:
+              - /url: /search
+      - link "Free delivery to Germany for €145 EUR and above" [ref=f3e33] [cursor=pointer]:
+        - /url: /about/free-shipping/
+      - generic [ref=f3e35]:
+        - list [ref=f3e36]:
+          - listitem [ref=f3e37]:
+            - link "Teas & Tisanes" [ref=f3e38] [cursor=pointer]:
+              - /url: /teas/
+            - button "Tea & tisanes" [ref=f3e41] [cursor=pointer]
+            - text: "|"
+          - listitem [ref=f3e43]:
+            - link "Teaware" [ref=f3e44] [cursor=pointer]:
+              - /url: /teawares/
+            - button "Teaware" [ref=f3e47] [cursor=pointer]
+            - text: "|"
+          - listitem [ref=f3e49]:
+            - link "Gifts & Sets" [ref=f3e50] [cursor=pointer]:
+              - /url: /gifts/
+            - text: "|"
+          - listitem [ref=f3e51]:
+            - link "What's New?" [ref=f3e52] [cursor=pointer]:
+              - /url: /c/just-arrived/
+            - button "What's New?" [ref=f3e54] [cursor=pointer]
+        - generic [ref=f3e56]:
+          - generic [ref=f3e58]:
+            - link "Log In" [ref=f3e59] [cursor=pointer]:
+              - /url: /login/
+            - link "Register" [ref=f3e60] [cursor=pointer]:
+              - /url: /register/
+          - generic [ref=f3e62]:
+            - link "0" [ref=f3e63] [cursor=pointer]:
+              - /url: "#"
+            - button "My Bag" [ref=f3e68] [cursor=pointer]
+  - main [ref=f3e70]:
+    - list [ref=f3e73]:
+      - listitem [ref=f3e74]:
+        - link "Tea & Tisanes •" [ref=f3e75] [cursor=pointer]:
+          - /url: /teas
+      - listitem [ref=f3e76]:
+        - link "White Tea •" [ref=f3e77] [cursor=pointer]:
+          - /url: /teas/white/
+      - listitem [ref=f3e78]:
+        - link "Heirloom Silver Needle" [ref=f3e79] [cursor=pointer]:
+          - /url: /p/tea-silc/
+    - generic [ref=f3e80]:
+      - generic [ref=f3e81]:
+        - generic [ref=f3e82]:
+          - heading "Heirloom Silver Needle" [level=1] [ref=f3e83]
+          - heading "Chuan Tong Bai Hao Yin Zhen" [level=2] [ref=f3e84]
+          - generic [ref=f3e85]:
+            - img "Leaf & Liquor" [ref=f3e86]
+            - list [ref=f3e87]:
+              - listitem [ref=f3e88]:
+                - link [ref=f3e89] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Leaf & Liquor" [ref=f3e90]
+              - listitem [ref=f3e92]:
+                - link [ref=f3e93] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Leaves" [ref=f3e94]
+              - listitem [ref=f3e96]:
+                - link [ref=f3e97] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Liquor" [ref=f3e98]
+              - listitem [ref=f3e100]:
+                - link [ref=f3e101] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Packet" [ref=f3e102]
+              - listitem [ref=f3e104]:
+                - link [ref=f3e105] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Pouch" [ref=f3e106]
+        - generic [ref=f3e108]:
+          - list [ref=f3e109]:
+            - listitem [ref=f3e110]:
+              - generic [ref=f3e111]: 96 %
+              - generic [ref=f3e114]:
+                - generic [ref=f3e115]: Community score
+                - link "219 reviews" [ref=f3e116] [cursor=pointer]:
+                  - /url: "#clicktip-community-score"
+            - listitem [ref=f3e117]:
+              - img "Illustration of seeds" [ref=f3e119]
+              - generic [ref=f3e120]:
+                - generic [ref=f3e121]: Earn 19 seeds
+                - link "What’s this?" [ref=f3e122] [cursor=pointer]:
+                  - /url: "#clicktip-seeds"
+          - generic [ref=f3e124]:
+            - generic [ref=f3e125]:
+              - generic [ref=f3e127] [cursor=pointer]:
+                - generic [ref=f3e128]: Packet 20g
+                - generic [ref=f3e130]:
+                  - generic [ref=f3e131]: ·
+                  - generic [ref=f3e132]: Available
+                - generic [ref=f3e133]: €22.98 (€1.15/g)
+              - generic [ref=f3e135] [cursor=pointer]:
+                - generic [ref=f3e136]: Pouch 120g
+                - generic [ref=f3e138]:
+                  - generic [ref=f3e139]: ·
+                  - generic [ref=f3e140]: Available
+                - generic [ref=f3e141]: €117.18 (€0.98/g)
+            - generic [ref=f3e143]:
+              - generic [ref=f3e144]:
+                - generic [ref=f3e145] [cursor=pointer]: "-"
+                - spinbutton [ref=f3e147]: "1"
+                - generic [ref=f3e148] [cursor=pointer]: +
+              - button "Add to Bag please select an option" [disabled] [ref=f3e149] [cursor=pointer]:
+                - text: Add to Bag
+                - generic [ref=f3e150]: please select an option
+          - generic [ref=f3e153]:
+            - link [ref=f3e154] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f3e158] [cursor=pointer]:
+              - /url: "#"
+      - list [ref=f3e164]:
+        - listitem [ref=f3e165]:
+          - img "White Tea of the Year 2020" [ref=f3e167]
+          - heading "White Tea of the Year 2020" [level=4] [ref=f3e169]
+      - generic [ref=f3e171]:
+        - list [ref=f3e173]:
+          - listitem [ref=f3e174]:
+            - generic [ref=f3e175]:
+              - img "Rank" [ref=f3e176]
+              - generic [ref=f3e177]: Son of Dragon
+            - generic [ref=f3e178]:
+              - paragraph [ref=f3e179]: Fresh hay, melon rind, and chilled sugar water. This is peak Silver Needle.
+              - generic [ref=f3e180]: Saturday, April 04, 2026
+        - generic [ref=f3e185] [cursor=pointer]:
+          - heading "Unlock this tea" [level=2] [ref=f3e186]
+          - paragraph [ref=f3e187]: to enter your tasting notes
+      - article [ref=f3e188]:
+        - generic [ref=f3e189]:
+          - complementary [ref=f3e190]:
+            - generic [ref=f3e191]:
+              - heading "Mei Leaf Tasting Notes" [level=2] [ref=f3e192]
+              - img "Heirloom Silver Needle Flavour Wheel" [ref=f3e194]
+              - generic [ref=f3e195]:
+                - term [ref=f3e196]: EYES - DRY LEAF
+                - definition [ref=f3e197]: Silver green, furry even buds.
+                - term [ref=f3e198]: NOSE - DRY LEAF
+                - definition [ref=f3e199]: Malt, nougat and steamed milk pudding.
+                - term [ref=f3e200]: NOSE - WET LEAF
+                - definition [ref=f3e201]: Sugared almonds, cereal milk, vanilla pudding, fennel tops and lily of the valley.
+                - term [ref=f3e202]: EYES - LIQUOR
+                - definition [ref=f3e203]: Bright, pale, chartreuse.
+                - term [ref=f3e204]: MOUTH - TEXTURE
+                - definition [ref=f3e205]: Thick, sticky yet creamy soft liquor.
+                - term [ref=f3e206]: MOUTH - TASTE
+                - definition [ref=f3e207]: Cooked soya milk, nougat, fresh nettle and warm summer meadows.
+                - term [ref=f3e208]: NOSE - EMPTY CUP
+                - definition [ref=f3e209]: Malted soya milk.
+                - term [ref=f3e210]: MOUTH - FINISH
+                - definition [ref=f3e211]: Soft and sticky with a fresh, cooling, almond jelly sweetness.
+                - term [ref=f3e212]: EYES - WET LEAF
+                - definition [ref=f3e213]: Pistachio green buds with soft sheen.
+                - term [ref=f3e214]: BODY SENSATION
+                - definition [ref=f3e215]: Settled, calm, and slightly warming.
+            - generic [ref=f3e216]:
+              - term [ref=f3e217]: SEASON
+              - definition [ref=f3e218]: March 2026
+              - term [ref=f3e219]: CULTIVAR
+              - definition [ref=f3e220]: Da Hao
+              - term [ref=f3e221]: ORIGIN
+              - definition [ref=f3e222]: Hulin village, Panxi, Fuding, Fujian, China
+              - term [ref=f3e223]: PICKING & PROCESSING
+              - definition [ref=f3e224]: Buds
+              - term [ref=f3e225]: ELEVATION
+              - definition [ref=f3e226]: 700m
+          - generic [ref=f3e227]:
+            - paragraph [ref=f3e228]: THIS IS THE REAL DEAL! Crafted using traditional methods, including sun withering and a secondary charcoal roasting, this tea is the taste of an heirloom Silver Needle.
+            - paragraph [ref=f3e229]: We have switched up our source for Heirloom Silver Needle to a producer in the famed village of Panxi. This legendary area is widely regarded as the birthplace of White tea, with a micro-terroir and tea culture which is perfect for the finest White tea cultivation.
+            - paragraph [ref=f3e230]: When we visited Panxi, we were so excited to taste the teas, but left disappointed because so many of the producers had switched production to make a more consistent (but kinda boring) tea. Withering was mostly done indoors and controlled by machine and there was no charcoal baking.
+            - paragraph [ref=f3e231]: "You can watch the video here:"
+            - paragraph [ref=f3e232]:
+              - generic [ref=f3e233]: CHINESE WHITE TEA - Everything you need to know (FUJIAN TEA TRIP PART 1)
+            - paragraph [ref=f3e235]: So, instead we found a producer in Taimu who made tea the old-school way (more on that method below). We have been buying from that producer for years, and his tea always won out in blind tastings.
+            - paragraph [ref=f3e236]: Until this year!
+            - paragraph [ref=f3e237]: In our tea tastings, I was smitten by this batch of Silver Needle and was surprised that my favourite tea was not from our producers in Taimu.
+            - paragraph [ref=f3e238]: So, this is properly sun-withered and charcoal baked Da Hao Yin Zhen from the most sought-after village on Earth.
+            - list [ref=f3e239]:
+              - listitem [ref=f3e240]: • This Heirloom silver needle is picked from 65 year-old tea bushes around Panxi. The picking is perfect - fat and furry Da Hao buds.
+              - listitem [ref=f3e241]: • The tea is partially sun withered in single layers and then left at body temperature for about 60 hours to develop flavour.
+              - listitem [ref=f3e242]: • The Silver Needle is left for a week in a room to release the green aromatics making a warmer and nuttier tea.
+              - listitem [ref=f3e243]: • The buds are then baked at about 50 degrees Celsius (120 Fahrenheit) until dry.
+              - listitem [ref=f3e244]: • The Silver Needle is then roasted in small batches by hand over charcoal at extremely low temperature (body temperature) for about 6 hours. This concentrates flavour, changes the character and taste of the tea to be warmer, adds thickness and smoothness to the texture and stickiness to the finish. The charcoal baking of tea will improve its ability for ageing.
+            - paragraph [ref=f3e245]: This tea is perfection - warm, malty and milky with sugared almonds, fennel tops and warm summer meadows. Thick, soft and rounded with a cooling finish.
+            - paragraph [ref=f3e246]: I expected to find out that the price of the Silver Needle was insane - a tradiitionally made Yin Zhen from Panxi would normally command the most ridiculous price tag. So you can imagine my amazement when I found out that the price was less than our Taimu source!
+            - paragraph [ref=f3e247]: I genuinely think that maybe they sent us the wrong price becuase I would expect to pay 2-3x the amount for such a special tea.
+            - paragraph [ref=f3e248]: But I kept quiet, bought the batch and have passed on the savings to you .
+            - paragraph [ref=f3e249]: Enjoy the luxury of the world's greatest White without taking out another mortgage.
+            - paragraph [ref=f3e250]: PS Do not expect next year's batch to be priced so low - this is almost certainly one of those unusual moments when a mega-tea is going for a relative steal.
+      - table [ref=f3e254]:
+        - rowgroup [ref=f3e255]:
+          - row [ref=f3e256]:
+            - columnheader [ref=f3e257]
+            - columnheader "Gong Fu Brewing" [ref=f3e258]
+            - columnheader "Western Brewing" [ref=f3e261]
+          - row [ref=f3e262]:
+            - columnheader "Water Temp" [ref=f3e263]: WaterTemp
+            - columnheader "Amount g per 100ml" [ref=f3e264]:
+              - text: Amount
+              - generic [ref=f3e265]: g per 100ml
+            - columnheader "1st Infusion seconds" [ref=f3e266]:
+              - text: 1st Infusion
+              - generic [ref=f3e267]: seconds
+            - columnheader "+ Infusions seconds" [ref=f3e268]:
+              - text: + Infusions
+              - generic [ref=f3e269]: seconds
+            - columnheader "Number of Infusions" [ref=f3e270]: Number ofInfusions
+            - columnheader "Amount g per 100ml" [ref=f3e271]:
+              - text: Amount
+              - generic [ref=f3e272]: g per 100ml
+            - columnheader "1st Infusion seconds" [ref=f3e273]:
+              - text: 1st Infusion
+              - generic [ref=f3e274]: seconds
+            - columnheader "+ Infusions seconds" [ref=f3e275]:
+              - text: + Infusions
+              - generic [ref=f3e276]: seconds
+            - columnheader "Number of Infusions" [ref=f3e277]: Number ofInfusions
+        - rowgroup [ref=f3e278]:
+          - row [ref=f3e279]:
+            - cell [ref=f3e280]
+            - cell "4" [ref=f3e284]
+            - cell "30" [ref=f3e288]
+            - cell "+5" [ref=f3e292]
+            - cell "7" [ref=f3e296]
+            - cell "0.6" [ref=f3e300]
+            - cell "180" [ref=f3e304]
+            - cell "+30" [ref=f3e308]
+            - cell "3" [ref=f3e312]
+      - generic [ref=f3e316]:
+        - heading "We think you’ll love:" [level=2] [ref=f3e317]
+        - generic [ref=f3e318]:
+          - generic [ref=f3e319]:
+            - link [ref=f3e321] [cursor=pointer]:
+              - /url: https://meileaf.com/p/cl-gfgs/
+              - img "Gong Fu Glass Pot" [ref=f3e322]
+            - generic [ref=f3e323]:
+              - generic [ref=f3e324]:
+                - heading [level=2] [ref=f3e326]:
+                  - link "Gong Fu Glass Pot" [ref=f3e327] [cursor=pointer]:
+                    - /url: /p/cl-gfgs/
+                - paragraph [ref=f3e331]: The essential Glass pot for all Gong Fu teaheads
+              - generic [ref=f3e332]: €15.66
+          - generic [ref=f3e334]:
+            - link "Silver Needle 88 % 801 reviews" [ref=f3e336] [cursor=pointer]:
+              - /url: https://meileaf.com/p/tea-sinc/
+              - img "Silver Needle" [ref=f3e337]
+              - generic:
+                - generic: 88 %
+                - generic [ref=f3e339]: 801 reviews
+            - generic [ref=f3e340]:
+              - generic [ref=f3e341]:
+                - heading [level=2] [ref=f3e343]:
+                  - link "Silver Needle" [ref=f3e344] [cursor=pointer]:
+                    - /url: /p/tea-sinc/
+                - heading "Bai Hao Yin Zhen" [level=3] [ref=f3e348]
+                - paragraph [ref=f3e349]: Early Spring Fengqing Silver Needle picked from over 60 year old tea trees. Kumquat jam, baked orange, caramel and semolina pudding.
+              - generic [ref=f3e351]:
+                - text: €10.55 Packet
+                - generic [ref=f3e352]: White
+          - generic [ref=f3e353]:
+            - link "Jade Star 9 95 % 31 reviews" [ref=f3e355] [cursor=pointer]:
+              - /url: https://meileaf.com/p/tea-jtic/
+              - img "Jade Star 9" [ref=f3e356]
+              - generic:
+                - generic: 95 %
+                - generic [ref=f3e358]: 31 reviews
+            - generic [ref=f3e359]:
+              - generic [ref=f3e360]:
+                - heading [level=2] [ref=f3e362]:
+                  - link "Jade Star 9" [ref=f3e363] [cursor=pointer]:
+                    - /url: /p/tea-jtic/
+                - heading "2008 Bai Mu Dan and Shou Mei" [level=3] [ref=f3e367]
+                - paragraph [ref=f3e368]: The legendary Jade Star ship has arrived with our 9th Edition. Exclusive blend of 2008 Fuding White tea. Apricot danish pastry, ice wine, rum soaked raisins, summer forests, hot pavements and macerated strawberries.
+              - generic [ref=f3e370]:
+                - text: €88.37 Cake
+                - generic [ref=f3e371]: White
+          - generic [ref=f3e372]:
+            - link "Imperial Green - First Pluck 88 % 1127 reviews Great Taste 2014 Two Star" [ref=f3e374] [cursor=pointer]:
+              - /url: https://meileaf.com/p/tea-impc/
+              - img "Imperial Green - First Pluck" [ref=f3e375]
+              - generic:
+                - generic: 88 %
+                - generic [ref=f3e377]: 1127 reviews
+              - img "Great Taste 2014 Two Star" [ref=f3e379]
+            - generic [ref=f3e380]:
+              - generic [ref=f3e381]:
+                - heading [level=2] [ref=f3e383]:
+                  - link "Imperial Green - First Pluck" [ref=f3e384] [cursor=pointer]:
+                    - /url: /p/tea-impc/
+                - heading "Long Jing - Dragonwell" [level=3] [ref=f3e388]
+                - paragraph [ref=f3e389]: The very first spring pickings of Long Jing tea after winter dormancy. Hazelnut butter, raspberry jam, custard apple, steamed borlotti beans and taro.
+              - generic [ref=f3e391]:
+                - text: €20.62 Packet
+                - generic [ref=f3e392]: Green
+  - contentinfo [ref=f3e393]:
+    - generic [ref=f3e394]:
+      - generic [ref=f3e395]:
+        - heading "Browse Teas" [level=6] [ref=f3e396]
+        - list [ref=f3e397]:
+          - listitem [ref=f3e398]:
+            - generic [ref=f3e399]: Type
+            - list [ref=f3e400]:
+              - listitem [ref=f3e401]:
+                - link "White" [ref=f3e402] [cursor=pointer]:
+                  - /url: /teas/white/
+              - listitem [ref=f3e403]:
+                - link "Green" [ref=f3e404] [cursor=pointer]:
+                  - /url: /teas/green/
+              - listitem [ref=f3e405]:
+                - link "Matcha" [ref=f3e406] [cursor=pointer]:
+                  - /url: /teas/matcha/
+              - listitem [ref=f3e407]:
+                - link "Yellow" [ref=f3e408] [cursor=pointer]:
+                  - /url: /teas/yellow/
+              - listitem [ref=f3e409]:
+                - link "Oolong" [ref=f3e410] [cursor=pointer]:
+                  - /url: /teas/oolong/
+              - listitem [ref=f3e411]:
+                - link "Black" [ref=f3e412] [cursor=pointer]:
+                  - /url: /teas/black/
+              - listitem [ref=f3e413]:
+                - link "Raw Puerh" [ref=f3e414] [cursor=pointer]:
+                  - /url: /teas/raw-puerh/
+              - listitem [ref=f3e415]:
+                - link "Ripened" [ref=f3e416] [cursor=pointer]:
+                  - /url: /teas/ripened/
+              - listitem [ref=f3e417]:
+                - link "Tisanes" [ref=f3e418] [cursor=pointer]:
+                  - /url: /teas/tisanes/
+              - listitem [ref=f3e419]:
+                - link "Medicinal Herbs" [ref=f3e420] [cursor=pointer]:
+                  - /url: /teas/herbs/
+          - listitem [ref=f3e421]:
+            - generic [ref=f3e422]: Style
+            - list [ref=f3e423]:
+              - listitem [ref=f3e424]:
+                - link "Pure" [ref=f3e425] [cursor=pointer]:
+                  - /url: /teas/pure/
+              - listitem [ref=f3e426]:
+                - link "Scented" [ref=f3e427] [cursor=pointer]:
+                  - /url: /teas/scented/
+              - listitem [ref=f3e428]:
+                - link "Blossoming" [ref=f3e429] [cursor=pointer]:
+                  - /url: /teas/blossoming/
+              - listitem [ref=f3e430]:
+                - link "Blend" [ref=f3e431] [cursor=pointer]:
+                  - /url: /teas/blends/
+          - listitem [ref=f3e432]:
+            - generic [ref=f3e433]: Functions
+            - list [ref=f3e434]:
+              - listitem [ref=f3e435]:
+                - link "Immune Boosting" [ref=f3e436] [cursor=pointer]:
+                  - /url: /teas/immune-boosting/
+              - listitem [ref=f3e437]:
+                - link "Digestion" [ref=f3e438] [cursor=pointer]:
+                  - /url: /teas/digestion/
+              - listitem [ref=f3e439]:
+                - link "Weight Control" [ref=f3e440] [cursor=pointer]:
+                  - /url: /teas/weight-control/
+              - listitem [ref=f3e441]:
+                - link "Detox" [ref=f3e442] [cursor=pointer]:
+                  - /url: /teas/detox/
+              - listitem [ref=f3e443]:
+                - link "Cardiovascular Health" [ref=f3e444] [cursor=pointer]:
+                  - /url: /teas/cardiovascular-health/
+              - listitem [ref=f3e445]:
+                - link "Stress Relief" [ref=f3e446] [cursor=pointer]:
+                  - /url: /teas/stress-relief/
+              - listitem [ref=f3e447]:
+                - link "Cognitive Ability" [ref=f3e448] [cursor=pointer]:
+                  - /url: /teas/cognitive-ability/
+              - listitem [ref=f3e449]:
+                - link "Respiratory" [ref=f3e450] [cursor=pointer]:
+                  - /url: /teas/respiratory/
+              - listitem [ref=f3e451]:
+                - link "Blood Sugar" [ref=f3e452] [cursor=pointer]:
+                  - /url: /teas/blood-sugar/
+      - generic [ref=f3e453]:
+        - generic [ref=f3e455]:
+          - link "Checkout our Facebook page" [ref=f3e456] [cursor=pointer]:
+            - /url: https://www.facebook.com/meileaf/
+          - link "Mei Leaf YouTube Channel" [ref=f3e460] [cursor=pointer]:
+            - /url: https://www.youtube.com/meileaf
+          - link "Tea adventures on Instagram" [ref=f3e464] [cursor=pointer]:
+            - /url: https://www.instagram.com/mei_leaf/
+          - link "Twitter updates" [ref=f3e468] [cursor=pointer]:
+            - /url: https://twitter.com/mei_leaf_tea
+          - link "Our favourite pins" [ref=f3e472] [cursor=pointer]:
+            - /url: https://au.pinterest.com/mei_leaf/
+        - generic [ref=f3e476]:
+          - generic [ref=f3e477]:
+            - link "Contact us" [ref=f3e479] [cursor=pointer]:
+              - /url: /contact/
+            - link "Subscribe" [ref=f3e481] [cursor=pointer]:
+              - /url: /subscribe/
+            - link "Press Enquiries" [ref=f3e483] [cursor=pointer]:
+              - /url: /contact/
+            - link "Wholesale" [ref=f3e485] [cursor=pointer]:
+              - /url: /about/wholesale/
+            - link "FAQ's" [ref=f3e487] [cursor=pointer]:
+              - /url: /about/our-teas/
+            - link "Shipping" [ref=f3e489] [cursor=pointer]:
+              - /url: /about/shipping/
+            - link "Returns & Refunds" [ref=f3e491] [cursor=pointer]:
+              - /url: /about/returns-refunds/
+            - link "Privacy policy & terms of use" [ref=f3e493] [cursor=pointer]:
+              - /url: /privacy-terms/
+            - link "Disclaimer" [ref=f3e495] [cursor=pointer]:
+              - /url: /disclaimer/
+          - generic [ref=f3e496]:
+            - link [ref=f3e497] [cursor=pointer]:
+              - /url: /
+              - img "Mei Leaf Logo" [ref=f3e498]
+            - paragraph [ref=f3e499]: 99-105 Camden High Street London, NW1 7JN, UK
+      - generic [ref=f3e500]: © Mei Group Ltd 2026
+  - dialog [ref=f3e501]:
+    - generic [ref=f3e502]:
+      - generic [ref=f3e503]:
+        - heading "Cookie time" [level=2] [ref=f3e504]
+        - paragraph [ref=f3e505]: Our website requires cookies to function securely and effectively. We also use basic third-party tools to track how you interact with our site. Accepting these additional cookies will help us to improve our website and communications.
+      - generic [ref=f3e506]:
+        - generic [ref=f3e507]:
+          - button "Fine by me!" [ref=f3e508] [cursor=pointer]
+          - button "Essential cookies only" [ref=f3e509] [cursor=pointer]
+        - button "Manage preferences" [ref=f3e511] [cursor=pointer]
+    - link "More info" [ref=f3e515] [cursor=pointer]:
+      - /url: /privacy-terms/
+  - generic [ref=f3e516]:
+    - iframe [ref=f3e517]:
+      
+    - iframe [ref=f3e518]:
+      
+  - text: ×

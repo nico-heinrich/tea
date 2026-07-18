@@ -1,0 +1,446 @@
+- generic [active] [ref=f20e1]:
+  - banner [ref=f20e2]:
+    - navigation [ref=f20e3]:
+      - generic [ref=f20e4]:
+        - generic [ref=f20e5]:
+          - link [ref=f20e6] [cursor=pointer]:
+            - /url: /
+            - img "Mei Leaf Logo" [ref=f20e7]
+          - generic "Germany" [ref=f20e9] [cursor=pointer]: € EUR
+        - generic [ref=f20e13]:
+          - list [ref=f20e14]:
+            - listitem [ref=f20e15]:
+              - generic [ref=f20e16]: "Learn:"
+              - link "Tea Articles" [ref=f20e17] [cursor=pointer]:
+                - /url: /tea-articles/
+            - listitem [ref=f20e18]:
+              - generic [ref=f20e19]: "Visit Us:"
+              - link "Teahouse" [ref=f20e20] [cursor=pointer]:
+                - /url: /tea-house/
+            - listitem [ref=f20e21]:
+              - generic [ref=f20e22]: "Find Out More:"
+              - link "About Mei Leaf" [ref=f20e23] [cursor=pointer]:
+                - /url: /about/
+          - generic [ref=f20e24]:
+            - searchbox "Search" [ref=f20e25]
+            - link "Search" [ref=f20e27] [cursor=pointer]:
+              - /url: /search
+      - link "Free delivery to Germany for €145 EUR and above" [ref=f20e33] [cursor=pointer]:
+        - /url: /about/free-shipping/
+      - generic [ref=f20e35]:
+        - list [ref=f20e36]:
+          - listitem [ref=f20e37]:
+            - link "Teas & Tisanes" [ref=f20e38] [cursor=pointer]:
+              - /url: /teas/
+            - button "Tea & tisanes" [ref=f20e41] [cursor=pointer]
+            - text: "|"
+          - listitem [ref=f20e43]:
+            - link "Teaware" [ref=f20e44] [cursor=pointer]:
+              - /url: /teawares/
+            - button "Teaware" [ref=f20e47] [cursor=pointer]
+            - text: "|"
+          - listitem [ref=f20e49]:
+            - link "Gifts & Sets" [ref=f20e50] [cursor=pointer]:
+              - /url: /gifts/
+            - text: "|"
+          - listitem [ref=f20e51]:
+            - link "What's New?" [ref=f20e52] [cursor=pointer]:
+              - /url: /c/just-arrived/
+            - button "What's New?" [ref=f20e54] [cursor=pointer]
+        - generic [ref=f20e56]:
+          - generic [ref=f20e58]:
+            - link "Log In" [ref=f20e59] [cursor=pointer]:
+              - /url: /login/
+            - link "Register" [ref=f20e60] [cursor=pointer]:
+              - /url: /register/
+          - generic [ref=f20e62]:
+            - link "0" [ref=f20e63] [cursor=pointer]:
+              - /url: "#"
+            - button "My Bag" [ref=f20e68] [cursor=pointer]
+  - main [ref=f20e70]:
+    - list [ref=f20e73]:
+      - listitem [ref=f20e74]:
+        - link "Tea & Tisanes •" [ref=f20e75] [cursor=pointer]:
+          - /url: /teas
+      - listitem [ref=f20e76]:
+        - link "Oolong Tea •" [ref=f20e77] [cursor=pointer]:
+          - /url: /teas/oolong/
+      - listitem [ref=f20e78]:
+        - link "Duck Sh*t Oolong" [ref=f20e79] [cursor=pointer]:
+          - /url: /p/tea-ducc/
+    - generic [ref=f20e80]:
+      - generic [ref=f20e81]:
+        - generic [ref=f20e82]:
+          - heading "Duck Sh*t Oolong" [level=1] [ref=f20e83]
+          - heading "Ya Shi Dan Cong" [level=2] [ref=f20e84]
+          - generic [ref=f20e85]:
+            - img "Leaves & Liquor" [ref=f20e86]
+            - list [ref=f20e87]:
+              - listitem [ref=f20e88]:
+                - link [ref=f20e89] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Leaves & Liquor" [ref=f20e90]:
+                    - img "Duck Sh*t Oolong" [ref=f20e91]
+              - listitem [ref=f20e93]:
+                - link [ref=f20e94] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Leaves" [ref=f20e95]:
+                    - img "Duck Sh*t Oolong" [ref=f20e96]
+              - listitem [ref=f20e98]:
+                - link [ref=f20e99] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Liquor" [ref=f20e100]:
+                    - img "Duck Sh*t Oolong" [ref=f20e101]
+              - listitem [ref=f20e103]:
+                - link [ref=f20e104] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Packet" [ref=f20e105]
+              - listitem [ref=f20e107]:
+                - link [ref=f20e108] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Pouch" [ref=f20e109]
+              - listitem [ref=f20e111]:
+                - link [ref=f20e112] [cursor=pointer]:
+                  - /url: "#"
+                  - figure "Taster" [ref=f20e113]:
+                    - img "Duck Sh*t Oolong" [ref=f20e114]
+        - generic [ref=f20e116]:
+          - list [ref=f20e117]:
+            - listitem [ref=f20e118]:
+              - generic [ref=f20e119]: 90 %
+              - generic [ref=f20e122]:
+                - generic [ref=f20e123]: Community score
+                - link "664 reviews" [ref=f20e124] [cursor=pointer]:
+                  - /url: "#clicktip-community-score"
+            - listitem [ref=f20e125]:
+              - img "Illustration of seeds" [ref=f20e127]
+              - generic [ref=f20e128]:
+                - generic [ref=f20e129]: Earn 13 seeds
+                - link "What’s this?" [ref=f20e130] [cursor=pointer]:
+                  - /url: "#clicktip-seeds"
+          - generic [ref=f20e132]:
+            - generic [ref=f20e133]:
+              - generic [ref=f20e135] [cursor=pointer]:
+                - generic [ref=f20e136]: Packet 35g
+                - generic [ref=f20e138]:
+                  - generic [ref=f20e139]: ·
+                  - generic [ref=f20e140]: Available
+                - generic [ref=f20e141]: €29.46 (€0.98/g)
+              - generic [ref=f20e143] [cursor=pointer]:
+                - generic [ref=f20e144]: Taster 5g
+                - generic [ref=f20e146]:
+                  - generic [ref=f20e147]: ·
+                  - generic [ref=f20e148]: Low Stock
+                - generic [ref=f20e149]: €5.30 (€1.06/g)
+              - generic [ref=f20e151] [cursor=pointer]:
+                - generic [ref=f20e152]: Pouch 130g
+                - generic [ref=f20e154]:
+                  - generic [ref=f20e155]: ·
+                  - generic [ref=f20e156]: Low Stock
+                - generic [ref=f20e157]: €93.00 (€0.72/g)
+            - generic [ref=f20e159]:
+              - generic [ref=f20e160]:
+                - generic [ref=f20e161] [cursor=pointer]: "-"
+                - spinbutton [ref=f20e163]: "1"
+                - generic [ref=f20e164] [cursor=pointer]: +
+              - button "Add to Bag please select an option" [disabled] [ref=f20e165] [cursor=pointer]:
+                - text: Add to Bag
+                - generic [ref=f20e166]: please select an option
+          - generic [ref=f20e169]:
+            - link [ref=f20e170] [cursor=pointer]:
+              - /url: "#"
+            - link [ref=f20e174] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f20e179]:
+            - generic:
+              - iframe
+      - generic [ref=f20e181]:
+        - list [ref=f20e183]:
+          - listitem [ref=f20e184]:
+            - generic [ref=f20e185]:
+              - img "Rank" [ref=f20e186]
+              - generic [ref=f20e187]: Auspicious Seahorse
+            - generic [ref=f20e188]:
+              - paragraph [ref=f20e189]: Wet paper, morning dew, slight cigar note very faint, perfect balance of everything really. How could anyone not love this tea?
+              - generic [ref=f20e190]: Monday, December 01, 2025
+            - generic [ref=f20e191]: Recommends this tea
+        - generic [ref=f20e198] [cursor=pointer]:
+          - heading "Unlock this tea" [level=2] [ref=f20e199]
+          - paragraph [ref=f20e200]: to enter your tasting notes
+      - article [ref=f20e201]:
+        - generic [ref=f20e202]:
+          - complementary [ref=f20e203]:
+            - generic [ref=f20e204]:
+              - heading "Mei Leaf Tasting Notes" [level=2] [ref=f20e205]
+              - img "Duck Sh*t Oolong Flavour Wheel" [ref=f20e207]
+              - generic [ref=f20e208]:
+                - term [ref=f20e209]: EYES - DRY LEAF
+                - definition [ref=f20e210]: Lage twisted, tan and beaver brown leaves.
+                - term [ref=f20e211]: NOSE - DRY LEAF
+                - definition [ref=f20e212]: Deep baked cherry and frangipane tart.
+                - term [ref=f20e213]: NOSE - WET LEAF
+                - definition [ref=f20e214]: Almond pudding, cherry syrup, shortbread cookies and lotus flowers.
+                - term [ref=f20e215]: EYES - LIQUOR
+                - definition [ref=f20e216]: Light rose gold liquor.
+                - term [ref=f20e217]: MOUTH - TEXTURE
+                - definition [ref=f20e218]: Medium thick.
+                - term [ref=f20e219]: MOUTH - TASTE
+                - definition [ref=f20e220]: Magnolia, cherry blossom, butter cookies, fruit trifle and wet slate.
+                - term [ref=f20e221]: NOSE - EMPTY CUP
+                - definition [ref=f20e222]: Melted butter and raspberry jam.
+                - term [ref=f20e223]: MOUTH - FINISH
+                - definition [ref=f20e224]: Mineral moving to pear and custard juiciness.
+                - term [ref=f20e225]: EYES - WET LEAF
+                - definition [ref=f20e226]: Tortoiseshell green leaves.
+                - term [ref=f20e227]: BODY SENSATION
+                - definition [ref=f20e228]: Easy going energy.
+            - generic [ref=f20e229]:
+              - term [ref=f20e230]: SEASON
+              - definition [ref=f20e231]: 30/04/2025
+              - term [ref=f20e232]: CULTIVAR
+              - definition [ref=f20e233]: Ya Shi
+              - term [ref=f20e234]: ORIGIN
+              - definition [ref=f20e235]: Peng Keng Tou Village, Guangdong, China
+              - term [ref=f20e236]: PICKING & PROCESSING
+              - definition [ref=f20e237]: Up to third leaf
+              - term [ref=f20e238]: ELEVATION
+              - definition [ref=f20e239]: 900m
+          - generic [ref=f20e240]:
+            - paragraph [ref=f20e241]: There are dozens of Dan Cong cultivars all with their unique flavour profiles. The Ya Shi (Duck Sh*t) cultivar is one of the most delicious that we have tasted and despite its price we had to get a tiny quantity in for all the true tea lovers out there.
+            - paragraph [ref=f20e242]:
+              - text: This video is an extract from a
+              - link "longer tasting session" [ref=f20e243] [cursor=pointer]:
+                - /url: /article/tasting-four-dancongs
+              - text: .
+            - paragraph [ref=f20e244]
+            - paragraph [ref=f20e246]: First, let's get the name out of the way! The story is that farmers discovered a tea cultivar in Ping Keng Tou village producing a unique and delicious taste and did not want this cultivar to be exploited by other farmers. So they made up stories that the earth in this area (which is a light, yellow brown colour) was covered in a lot of duck poo in order to keep other producers away from their precious plants. As with most stories in China, it is impossible to know if this is true or not but clearly the villagers failed because now everyone in this area holds Duck Sh*t oolong in very high esteem and for good reason - it is a gorgeous tea.
+            - paragraph [ref=f20e247]: Tasting this tea is a delight for the senses. It has warm baked almonds, butter and custard aroma with hints of sweet flowers.
+            - paragraph [ref=f20e248]: The tea has a slight sour cherry aroma through the nose which works perfectly with the buttery almond flavour and silky feel of the liquor. We call this the bakewell tart of teas and it would work perfectly with a slice of cake although it is a complete experience drinking alone. The mouthfeel is luscious, generous and yet refreshing.
+            - paragraph [ref=f20e249]: To learn more about Dan Cong tea watch this video!
+            - paragraph [ref=f20e250]
+      - table [ref=f20e255]:
+        - rowgroup [ref=f20e256]:
+          - row [ref=f20e257]:
+            - columnheader [ref=f20e258]
+            - columnheader "Gong Fu Brewing" [ref=f20e259]
+            - columnheader "Western Brewing" [ref=f20e262]
+          - row [ref=f20e263]:
+            - columnheader "Water Temp" [ref=f20e264]: WaterTemp
+            - columnheader "Amount g per 100ml" [ref=f20e265]:
+              - text: Amount
+              - generic [ref=f20e266]: g per 100ml
+            - columnheader "1st Infusion seconds" [ref=f20e267]:
+              - text: 1st Infusion
+              - generic [ref=f20e268]: seconds
+            - columnheader "+ Infusions seconds" [ref=f20e269]:
+              - text: + Infusions
+              - generic [ref=f20e270]: seconds
+            - columnheader "Number of Infusions" [ref=f20e271]: Number ofInfusions
+            - columnheader "Amount g per 100ml" [ref=f20e272]:
+              - text: Amount
+              - generic [ref=f20e273]: g per 100ml
+            - columnheader "1st Infusion seconds" [ref=f20e274]:
+              - text: 1st Infusion
+              - generic [ref=f20e275]: seconds
+            - columnheader "+ Infusions seconds" [ref=f20e276]:
+              - text: + Infusions
+              - generic [ref=f20e277]: seconds
+            - columnheader "Number of Infusions" [ref=f20e278]: Number ofInfusions
+        - rowgroup [ref=f20e279]:
+          - row [ref=f20e280]:
+            - cell [ref=f20e281]
+            - cell "5" [ref=f20e285]
+            - cell "25" [ref=f20e289]
+            - cell "+5" [ref=f20e293]
+            - cell "9" [ref=f20e297]
+            - cell "0.8" [ref=f20e301]
+            - cell "120" [ref=f20e305]
+            - cell "+30" [ref=f20e309]
+            - cell "3" [ref=f20e313]
+      - generic [ref=f20e317]:
+        - heading "We think you’ll love:" [level=2] [ref=f20e318]
+        - generic [ref=f20e319]:
+          - generic [ref=f20e320]:
+            - link "Alishan Cream 87 % 1000 reviews" [ref=f20e322] [cursor=pointer]:
+              - /url: https://meileaf.com/p/tea-acoc/
+              - img "Alishan Cream" [ref=f20e323]
+              - generic:
+                - generic: 87 %
+                - generic [ref=f20e325]: 1000 reviews
+            - generic [ref=f20e326]:
+              - generic [ref=f20e327]:
+                - heading [level=2] [ref=f20e329]:
+                  - link "Alishan Cream" [ref=f20e330] [cursor=pointer]:
+                    - /url: /p/tea-acoc/
+                - heading "Alishan Jin Xuan" [level=3] [ref=f20e334]
+                - paragraph [ref=f20e335]: A rich and luxurious tea made from the naturally milky Jin Xuan cultivar. Tinned peaches and cream with toasted pound cake.
+              - generic [ref=f20e337]:
+                - text: €11.72 Packet
+                - generic [ref=f20e338]: Oolong
+          - generic [ref=f20e339]:
+            - link [ref=f20e341] [cursor=pointer]:
+              - /url: https://meileaf.com/p/cl-gfgs/
+              - img "Gong Fu Glass Pot" [ref=f20e342]
+            - generic [ref=f20e343]:
+              - generic [ref=f20e344]:
+                - heading [level=2] [ref=f20e346]:
+                  - link "Gong Fu Glass Pot" [ref=f20e347] [cursor=pointer]:
+                    - /url: /p/cl-gfgs/
+                - paragraph [ref=f20e351]: The essential Glass pot for all Gong Fu teaheads
+              - generic [ref=f20e352]: €15.66
+          - generic [ref=f20e354]:
+            - link "Royal Peach Orchid 92 % 624 reviews" [ref=f20e356] [cursor=pointer]:
+              - /url: https://meileaf.com/p/tea-phoc/
+              - img "Royal Peach Orchid" [ref=f20e357]
+              - generic:
+                - generic: 92 %
+                - generic [ref=f20e359]: 624 reviews
+            - generic [ref=f20e360]:
+              - generic [ref=f20e361]:
+                - heading [level=2] [ref=f20e363]:
+                  - link "Royal Peach Orchid" [ref=f20e364] [cursor=pointer]:
+                    - /url: /p/tea-phoc/
+                - heading "Mi Lan Xiang Dan Cong - Honey Orchid Oolong" [level=3] [ref=f20e368]
+                - paragraph [ref=f20e369]: Wildly fragrant higher mountain dan cong. peach candy , thyme honey , oregano , lychee and orange polenta cake.
+              - generic [ref=f20e371]:
+                - text: €25.33 Packet
+                - generic [ref=f20e372]: Oolong
+          - generic [ref=f20e373]:
+            - link "Butterscotch Temple 95 % 85 reviews" [ref=f20e375] [cursor=pointer]:
+              - /url: https://meileaf.com/p/tea-butc/
+              - img "Butterscotch Temple" [ref=f20e376]
+              - generic:
+                - generic: 95 %
+                - generic [ref=f20e378]: 85 reviews
+            - generic [ref=f20e379]:
+              - generic [ref=f20e380]:
+                - heading [level=2] [ref=f20e382]:
+                  - link "Butterscotch Temple" [ref=f20e383] [cursor=pointer]:
+                    - /url: /p/tea-butc/
+                - heading "Wusandi Lao Cong Shui Xian" [level=3] [ref=f20e387]
+                - paragraph [ref=f20e388]: Shui Xian perfection made from 60-year-old bushes growing high up in Wu San Di village. Butterscotch, roasted almonds, incense, moss, libraries, redcurrants and heritage apples
+              - generic [ref=f20e390]:
+                - text: €21.09 Packet
+                - generic [ref=f20e391]: Oolong
+  - contentinfo [ref=f20e392]:
+    - generic [ref=f20e393]:
+      - generic [ref=f20e394]:
+        - heading "Browse Teas" [level=6] [ref=f20e395]
+        - list [ref=f20e396]:
+          - listitem [ref=f20e397]:
+            - generic [ref=f20e398]: Type
+            - list [ref=f20e399]:
+              - listitem [ref=f20e400]:
+                - link "White" [ref=f20e401] [cursor=pointer]:
+                  - /url: /teas/white/
+              - listitem [ref=f20e402]:
+                - link "Green" [ref=f20e403] [cursor=pointer]:
+                  - /url: /teas/green/
+              - listitem [ref=f20e404]:
+                - link "Matcha" [ref=f20e405] [cursor=pointer]:
+                  - /url: /teas/matcha/
+              - listitem [ref=f20e406]:
+                - link "Yellow" [ref=f20e407] [cursor=pointer]:
+                  - /url: /teas/yellow/
+              - listitem [ref=f20e408]:
+                - link "Oolong" [ref=f20e409] [cursor=pointer]:
+                  - /url: /teas/oolong/
+              - listitem [ref=f20e410]:
+                - link "Black" [ref=f20e411] [cursor=pointer]:
+                  - /url: /teas/black/
+              - listitem [ref=f20e412]:
+                - link "Raw Puerh" [ref=f20e413] [cursor=pointer]:
+                  - /url: /teas/raw-puerh/
+              - listitem [ref=f20e414]:
+                - link "Ripened" [ref=f20e415] [cursor=pointer]:
+                  - /url: /teas/ripened/
+              - listitem [ref=f20e416]:
+                - link "Tisanes" [ref=f20e417] [cursor=pointer]:
+                  - /url: /teas/tisanes/
+              - listitem [ref=f20e418]:
+                - link "Medicinal Herbs" [ref=f20e419] [cursor=pointer]:
+                  - /url: /teas/herbs/
+          - listitem [ref=f20e420]:
+            - generic [ref=f20e421]: Style
+            - list [ref=f20e422]:
+              - listitem [ref=f20e423]:
+                - link "Pure" [ref=f20e424] [cursor=pointer]:
+                  - /url: /teas/pure/
+              - listitem [ref=f20e425]:
+                - link "Scented" [ref=f20e426] [cursor=pointer]:
+                  - /url: /teas/scented/
+              - listitem [ref=f20e427]:
+                - link "Blossoming" [ref=f20e428] [cursor=pointer]:
+                  - /url: /teas/blossoming/
+              - listitem [ref=f20e429]:
+                - link "Blend" [ref=f20e430] [cursor=pointer]:
+                  - /url: /teas/blends/
+          - listitem [ref=f20e431]:
+            - generic [ref=f20e432]: Functions
+            - list [ref=f20e433]:
+              - listitem [ref=f20e434]:
+                - link "Immune Boosting" [ref=f20e435] [cursor=pointer]:
+                  - /url: /teas/immune-boosting/
+              - listitem [ref=f20e436]:
+                - link "Digestion" [ref=f20e437] [cursor=pointer]:
+                  - /url: /teas/digestion/
+              - listitem [ref=f20e438]:
+                - link "Weight Control" [ref=f20e439] [cursor=pointer]:
+                  - /url: /teas/weight-control/
+              - listitem [ref=f20e440]:
+                - link "Detox" [ref=f20e441] [cursor=pointer]:
+                  - /url: /teas/detox/
+              - listitem [ref=f20e442]:
+                - link "Cardiovascular Health" [ref=f20e443] [cursor=pointer]:
+                  - /url: /teas/cardiovascular-health/
+              - listitem [ref=f20e444]:
+                - link "Stress Relief" [ref=f20e445] [cursor=pointer]:
+                  - /url: /teas/stress-relief/
+              - listitem [ref=f20e446]:
+                - link "Cognitive Ability" [ref=f20e447] [cursor=pointer]:
+                  - /url: /teas/cognitive-ability/
+              - listitem [ref=f20e448]:
+                - link "Respiratory" [ref=f20e449] [cursor=pointer]:
+                  - /url: /teas/respiratory/
+              - listitem [ref=f20e450]:
+                - link "Blood Sugar" [ref=f20e451] [cursor=pointer]:
+                  - /url: /teas/blood-sugar/
+      - generic [ref=f20e452]:
+        - generic [ref=f20e454]:
+          - link "Checkout our Facebook page" [ref=f20e455] [cursor=pointer]:
+            - /url: https://www.facebook.com/meileaf/
+          - link "Mei Leaf YouTube Channel" [ref=f20e459] [cursor=pointer]:
+            - /url: https://www.youtube.com/meileaf
+          - link "Tea adventures on Instagram" [ref=f20e463] [cursor=pointer]:
+            - /url: https://www.instagram.com/mei_leaf/
+          - link "Twitter updates" [ref=f20e467] [cursor=pointer]:
+            - /url: https://twitter.com/mei_leaf_tea
+          - link "Our favourite pins" [ref=f20e471] [cursor=pointer]:
+            - /url: https://au.pinterest.com/mei_leaf/
+        - generic [ref=f20e475]:
+          - generic [ref=f20e476]:
+            - link "Contact us" [ref=f20e478] [cursor=pointer]:
+              - /url: /contact/
+            - link "Subscribe" [ref=f20e480] [cursor=pointer]:
+              - /url: /subscribe/
+            - link "Press Enquiries" [ref=f20e482] [cursor=pointer]:
+              - /url: /contact/
+            - link "Wholesale" [ref=f20e484] [cursor=pointer]:
+              - /url: /about/wholesale/
+            - link "FAQ's" [ref=f20e486] [cursor=pointer]:
+              - /url: /about/our-teas/
+            - link "Shipping" [ref=f20e488] [cursor=pointer]:
+              - /url: /about/shipping/
+            - link "Returns & Refunds" [ref=f20e490] [cursor=pointer]:
+              - /url: /about/returns-refunds/
+            - link "Privacy policy & terms of use" [ref=f20e492] [cursor=pointer]:
+              - /url: /privacy-terms/
+            - link "Disclaimer" [ref=f20e494] [cursor=pointer]:
+              - /url: /disclaimer/
+          - generic [ref=f20e495]:
+            - link [ref=f20e496] [cursor=pointer]:
+              - /url: /
+              - img "Mei Leaf Logo" [ref=f20e497]
+            - paragraph [ref=f20e498]: 99-105 Camden High Street London, NW1 7JN, UK
+      - generic [ref=f20e499]: © Mei Group Ltd 2026
+  - text: ×

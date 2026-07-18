@@ -1,0 +1,780 @@
+- generic [active] [ref=f18e1]:
+  - banner [ref=f18e2]:
+    - navigation [ref=f18e3]:
+      - generic [ref=f18e4]:
+        - generic [ref=f18e5]:
+          - link [ref=f18e6] [cursor=pointer]:
+            - /url: /
+            - img "Mei Leaf Logo" [ref=f18e7]
+          - generic "Germany" [ref=f18e9] [cursor=pointer]: € EUR
+        - generic [ref=f18e13]:
+          - list [ref=f18e14]:
+            - listitem [ref=f18e15]:
+              - generic [ref=f18e16]: "Learn:"
+              - link "Tea Articles" [ref=f18e17] [cursor=pointer]:
+                - /url: /tea-articles/
+            - listitem [ref=f18e18]:
+              - generic [ref=f18e19]: "Visit Us:"
+              - link "Teahouse" [ref=f18e20] [cursor=pointer]:
+                - /url: /tea-house/
+            - listitem [ref=f18e21]:
+              - generic [ref=f18e22]: "Find Out More:"
+              - link "About Mei Leaf" [ref=f18e23] [cursor=pointer]:
+                - /url: /about/
+          - generic [ref=f18e24]:
+            - searchbox "Search" [ref=f18e25]
+            - link "Search" [ref=f18e27] [cursor=pointer]:
+              - /url: /search
+      - link "Free delivery to Germany for €145 EUR and above" [ref=f18e33] [cursor=pointer]:
+        - /url: /about/free-shipping/
+      - generic [ref=f18e35]:
+        - list [ref=f18e36]:
+          - listitem [ref=f18e37]:
+            - link "Teas & Tisanes" [ref=f18e38] [cursor=pointer]:
+              - /url: /teas/
+            - button "Tea & tisanes" [ref=f18e41] [cursor=pointer]
+            - text: "|"
+          - listitem [ref=f18e43]:
+            - link "Teaware" [ref=f18e44] [cursor=pointer]:
+              - /url: /teawares/
+            - button "Teaware" [ref=f18e47] [cursor=pointer]
+            - text: "|"
+          - listitem [ref=f18e49]:
+            - link "Gifts & Sets" [ref=f18e50] [cursor=pointer]:
+              - /url: /gifts/
+            - text: "|"
+          - listitem [ref=f18e51]:
+            - link "What's New?" [ref=f18e52] [cursor=pointer]:
+              - /url: /c/just-arrived/
+            - button "What's New?" [ref=f18e54] [cursor=pointer]
+        - generic [ref=f18e56]:
+          - generic [ref=f18e58]:
+            - link "Log In" [ref=f18e59] [cursor=pointer]:
+              - /url: /login/
+            - link "Register" [ref=f18e60] [cursor=pointer]:
+              - /url: /register/
+          - generic [ref=f18e62]:
+            - link "0" [ref=f18e63] [cursor=pointer]:
+              - /url: "#"
+            - button "My Bag" [ref=f18e68] [cursor=pointer]
+  - main [ref=f18e70]:
+    - generic [ref=f18e71]:
+      - list [ref=f18e73]:
+        - listitem [ref=f18e74]:
+          - link "Tea & Tisanes •" [ref=f18e75] [cursor=pointer]:
+            - /url: /teas
+        - listitem [ref=f18e76]:
+          - link "Green" [ref=f18e77] [cursor=pointer]:
+            - /url: /teas/green
+      - generic [ref=f18e78]:
+        - generic [ref=f18e79]:
+          - heading "Green Tea" [level=1] [ref=f18e80]
+          - link "5-Minute Guide" [ref=f18e82] [cursor=pointer]:
+            - /url: https://meileaf.com/article/what-is-green-tea/
+        - paragraph [ref=f18e83]: The poster child for tea and health. Sure it is very good for you but the real joy is tasting the youthful verve of spring leaves. From grassy to floral to nutty, the key to green tea is a light flavour with heady aromatics.
+      - generic [ref=f18e84]:
+        - generic [ref=f18e85]:
+          - text: Types
+          - button "All Types" [ref=f18e86] [cursor=pointer]
+        - generic [ref=f18e88]:
+          - text: Styles
+          - button "All Styles" [ref=f18e89] [cursor=pointer]
+        - generic [ref=f18e91]:
+          - text: Functions
+          - button "All Functions" [ref=f18e92] [cursor=pointer]
+        - generic [ref=f18e94]:
+          - text: Origins
+          - button "All Origins" [ref=f18e95] [cursor=pointer]
+        - generic [ref=f18e97]:
+          - text: Other
+          - button "All Other" [ref=f18e98] [cursor=pointer]
+    - generic [ref=f18e100]:
+      - generic [ref=f18e102]:
+        - generic [ref=f18e103]: "Sorting:"
+        - combobox [ref=f18e104] [cursor=pointer]:
+          - option "↑" [selected]
+          - option "↓"
+        - combobox [ref=f18e105] [cursor=pointer]:
+          - option "Default" [selected]
+          - option "Tea Name"
+          - option "Price"
+          - option "Tea Type"
+          - option "Community Rating"
+      - generic [ref=f18e107]:
+        - generic [ref=f18e108]: "Show:"
+        - combobox [ref=f18e109] [cursor=pointer]:
+          - option "All" [selected]
+          - option "On Sale"
+          - option "Just Arrived"
+          - option "Gift Ideas"
+      - generic [ref=f18e110]:
+        - generic [ref=f18e111]:
+          - generic [ref=f18e112]: "Hide:"
+          - text: None
+        - button "Hide" [ref=f18e114] [cursor=pointer]
+    - generic [ref=f18e116]:
+      - generic [ref=f18e117]:
+        - link [ref=f18e119] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-grthc/
+          - img "Green Tea Headliners" [ref=f18e120]
+          - img "Gift Idea" [ref=f18e122]
+        - generic [ref=f18e123]:
+          - generic [ref=f18e124]:
+            - heading [level=2] [ref=f18e126]:
+              - link "Green Tea Headliners" [ref=f18e127] [cursor=pointer]:
+                - /url: /p/gft-grthc/
+            - paragraph [ref=f18e131]: Give the Gift of Greens with this selection of three signature Green teas. Contains enough tea for at least 9 Gong Fu Sessions.
+          - generic [ref=f18e133]:
+            - text: €14.73
+            - generic [ref=f18e134]: Green
+      - generic [ref=f18e135]:
+        - link [ref=f18e137] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-msthc/
+          - img "Mei Leaf Tasting Selection" [ref=f18e138]
+          - img "Gift Idea" [ref=f18e140]
+        - generic [ref=f18e141]:
+          - generic [ref=f18e142]:
+            - heading [level=2] [ref=f18e144]:
+              - link "Mei Leaf Tasting Selection" [ref=f18e145] [cursor=pointer]:
+                - /url: /p/gft-msthc/
+            - paragraph [ref=f18e149]: A spectacular tea gift for yourself or to introduce another to the delights of Mei Leaf Tea. A total of eleven headliner teas covering most tea types.
+          - generic [ref=f18e151]:
+            - text: €22.33
+            - generic [ref=f18e152]: Blend
+      - generic [ref=f18e153]:
+        - link "Imperial Green - First Pluck 88 % 1127 reviews Great Taste 2014 Two Star" [ref=f18e155] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-impc/
+          - img "Imperial Green - First Pluck" [ref=f18e156]
+          - generic:
+            - generic: 88 %
+            - generic [ref=f18e158]: 1127 reviews
+          - img "Great Taste 2014 Two Star" [ref=f18e160]
+        - generic [ref=f18e161]:
+          - generic [ref=f18e162]:
+            - heading [level=2] [ref=f18e164]:
+              - link "Imperial Green - First Pluck" [ref=f18e165] [cursor=pointer]:
+                - /url: /p/tea-impc/
+            - heading "Long Jing - Dragonwell" [level=3] [ref=f18e169]
+            - paragraph [ref=f18e170]: The very first spring pickings of Long Jing tea after winter dormancy. Hazelnut butter, raspberry jam, custard apple, steamed borlotti beans and taro.
+          - generic [ref=f18e172]:
+            - text: €20.62 Packet
+            - generic [ref=f18e173]: Green
+      - generic [ref=f18e174]:
+        - link "Uji Saemidori Matcha 90 % 388 reviews" [ref=f18e176] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-orgc/
+          - img "Uji Saemidori Matcha" [ref=f18e177]
+          - generic:
+            - generic: 90 %
+            - generic [ref=f18e179]: 388 reviews
+        - generic [ref=f18e180]:
+          - generic [ref=f18e181]:
+            - heading [level=2] [ref=f18e183]:
+              - link "Uji Saemidori Matcha" [ref=f18e184] [cursor=pointer]:
+                - /url: /p/tea-orgc/
+            - heading "Uji Saemidori Matcha" [level=3] [ref=f18e188]
+            - paragraph [ref=f18e189]: Pinnacle Matcha from Uji family with long history of Matcha production. Creamy umami, chocolate and roasted almonds, soft bitters, green melon and lotus flower.
+          - generic [ref=f18e191]:
+            - text: €27.69 Porcelain Jar
+            - generic [ref=f18e192]: Green
+      - generic [ref=f18e193]:
+        - link "Dragon Pearl Jasmine 86 % 448 reviews" [ref=f18e195] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-peac/
+          - img "Dragon Pearl Jasmine" [ref=f18e196]
+          - generic:
+            - generic: 86 %
+            - generic [ref=f18e198]: 448 reviews
+        - generic [ref=f18e199]:
+          - generic [ref=f18e200]:
+            - heading [level=2] [ref=f18e202]:
+              - link "Dragon Pearl Jasmine" [ref=f18e203] [cursor=pointer]:
+                - /url: /p/tea-peac/
+            - heading "Mo Li Long Zhu" [level=3] [ref=f18e207]
+            - paragraph [ref=f18e208]: Hand rolled five times infused jasmine Green tea. Ripe strawberries, jasmine, orchid and dry stone leading to summery warm meadows.
+          - generic [ref=f18e210]:
+            - text: €12.90 Packet
+            - generic [ref=f18e211]: Green
+      - generic [ref=f18e212]:
+        - link "Cloud Lake 87 % 304 reviews" [ref=f18e214] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-cllc/
+          - img "Cloud Lake" [ref=f18e215]
+          - generic:
+            - generic: 87 %
+            - generic [ref=f18e217]: 304 reviews
+        - generic [ref=f18e218]:
+          - generic [ref=f18e219]:
+            - heading [level=2] [ref=f18e221]:
+              - link "Cloud Lake" [ref=f18e222] [cursor=pointer]:
+                - /url: /p/tea-cllc/
+            - heading "Yun Wu - Cloud & Mist Green" [level=3] [ref=f18e226]
+            - paragraph [ref=f18e227]: Fine picking, early spring Yun Wu Green. Roasted beans and candied chestnuts moving to cantaloupe melon and lemon oil fruitiness
+          - generic [ref=f18e229]:
+            - text: €11.72 Packet
+            - generic [ref=f18e230]: Green
+      - generic [ref=f18e231]:
+        - link "Kabuse Saeakari 89 % 113 reviews On Sale" [ref=f18e233] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-skac/
+          - img "Kabuse Saeakari" [ref=f18e234]
+          - generic:
+            - generic: 89 %
+            - generic [ref=f18e236]: 113 reviews
+          - img "On Sale" [ref=f18e238]
+        - generic [ref=f18e239]:
+          - generic [ref=f18e240]:
+            - heading [level=2] [ref=f18e242]:
+              - link "Kabuse Saeakari" [ref=f18e243] [cursor=pointer]:
+                - /url: /p/tea-skac/
+            - paragraph [ref=f18e247]: Shiga Kabusecha, which has been covered for 10 days before picking. Melon milk, buttered daikon, river pebbles, steamed rice and lotus leaves.
+          - generic [ref=f18e249]:
+            - text: €13.11
+            - generic [ref=f18e250]: €18.73
+            - text: Packet
+            - generic [ref=f18e251]: Green
+      - generic [ref=f18e252]:
+        - link "Jade Arrow - Pre Qing Ming 90 % 863 reviews Green Tea of the Year 2018 Green Tea of the Year 2017 Green Tea of the Year 2016" [ref=f18e254] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ajgc/
+          - img "Jade Arrow - Pre Qing Ming" [ref=f18e255]
+          - generic:
+            - generic: 90 %
+            - generic [ref=f18e257]: 863 reviews
+          - generic [ref=f18e258]:
+            - img "Green Tea of the Year 2018" [ref=f18e259]
+            - img "Green Tea of the Year 2017" [ref=f18e260]
+            - img "Green Tea of the Year 2016" [ref=f18e261]
+        - generic [ref=f18e262]:
+          - generic [ref=f18e263]:
+            - heading [level=2] [ref=f18e265]:
+              - link "Jade Arrow - Pre Qing Ming" [ref=f18e266] [cursor=pointer]:
+                - /url: /p/tea-ajgc/
+            - heading "Anji Bai Cha" [level=3] [ref=f18e270]
+            - paragraph [ref=f18e271]: Top shelf grade Pre Qing Ming Anji Green from old bushes. Salted yolk custard, bran flakes, fresh peas, lemon posset and light jasmine.
+          - generic [ref=f18e273]:
+            - text: €16.44 Packet
+            - generic [ref=f18e274]: Green
+      - generic [ref=f18e275]:
+        - link "Tenryu Tsuyuhikari Matcha 96 % 316 reviews" [ref=f18e277] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-hmmc/
+          - img "Tenryu Tsuyuhikari Matcha" [ref=f18e278]
+          - generic:
+            - generic: 96 %
+            - generic [ref=f18e280]: 316 reviews
+        - generic [ref=f18e281]:
+          - generic [ref=f18e282]:
+            - heading [level=2] [ref=f18e284]:
+              - link "Tenryu Tsuyuhikari Matcha" [ref=f18e285] [cursor=pointer]:
+                - /url: /p/tea-hmmc/
+            - heading "Tenryu Tsuyuhikari Matcha" [level=3] [ref=f18e289]
+            - paragraph [ref=f18e290]: Masterful 30-day-shaded, single cultivar Matcha from Tenryu. Whipped cream, chocolate oat milk, umami broth, pecan butter, galia melon and orchids.
+          - generic [ref=f18e292]:
+            - text: €34.17 Porcelain Jar
+            - generic [ref=f18e293]: Green
+      - generic [ref=f18e294]:
+        - link "Monkey Picked (handmade) 92 % 219 reviews" [ref=f18e296] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mkpc/
+          - img "Monkey Picked (handmade)" [ref=f18e297]
+          - generic:
+            - generic: 92 %
+            - generic [ref=f18e299]: 219 reviews
+        - generic [ref=f18e300]:
+          - generic [ref=f18e301]:
+            - heading [level=2] [ref=f18e303]:
+              - link "Monkey Picked (handmade)" [ref=f18e304] [cursor=pointer]:
+                - /url: /p/tea-mkpc/
+            - heading "Hou Kui - Monkey King" [level=3] [ref=f18e308]
+            - paragraph [ref=f18e309]: Handmade Taiping Hou Kui with deep Hou Yun sweetness. Guava, pineapple cakes, pine resin, soya milk and pumpkin seeds.
+          - generic [ref=f18e311]:
+            - text: €14.08 Packet
+            - generic [ref=f18e312]: Green
+      - generic [ref=f18e313]:
+        - link "Fur Peak Supreme 92 % 59 reviews" [ref=f18e315] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fpsc/
+          - img "Fur Peak Supreme" [ref=f18e316]
+          - generic:
+            - generic: 92 %
+            - generic [ref=f18e318]: 59 reviews
+        - generic [ref=f18e319]:
+          - generic [ref=f18e320]:
+            - heading [level=2] [ref=f18e322]:
+              - link "Fur Peak Supreme" [ref=f18e323] [cursor=pointer]:
+                - /url: /p/tea-fpsc/
+            - heading "Lao Cong Huangshan Mao Feng" [level=3] [ref=f18e327]
+            - paragraph [ref=f18e328]: Handmade Maofeng made from heirloom bushes in the Yellow mountains. Mountain breeze, whipped cream, spongecake and petrichor.
+          - generic [ref=f18e330]:
+            - text: €15.91 Packet
+            - generic [ref=f18e331]: Green
+      - generic [ref=f18e332]:
+        - link "Orchid Mist 91 % 15 reviews" [ref=f18e334] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-basc/
+          - img "Orchid Mist" [ref=f18e335]
+          - generic:
+            - generic: 91 %
+            - generic [ref=f18e337]: 15 reviews
+        - generic [ref=f18e338]:
+          - generic [ref=f18e339]:
+            - heading [level=2] [ref=f18e341]:
+              - link "Orchid Mist" [ref=f18e342] [cursor=pointer]:
+                - /url: /p/tea-basc/
+            - heading "Ba Shan Mao Feng Te Ji" [level=3] [ref=f18e346]
+            - paragraph [ref=f18e347]: Sweet nectar Sichuan Green from 50 year old heirloom bushes. Oat crackers, creme fraiche, orchid, lemon blossom, nettle, melon and stone.
+          - generic [ref=f18e349]:
+            - text: €18.97 Packet
+            - generic [ref=f18e350]: Green
+      - generic [ref=f18e351]:
+        - link "Long Jing Supreme 91 % 78 reviews" [ref=f18e353] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ljsc/
+          - img "Long Jing Supreme" [ref=f18e354]
+          - generic:
+            - generic: 91 %
+            - generic [ref=f18e356]: 78 reviews
+        - generic [ref=f18e357]:
+          - generic [ref=f18e358]:
+            - heading [level=2] [ref=f18e360]:
+              - link "Long Jing Supreme" [ref=f18e361] [cursor=pointer]:
+                - /url: /p/tea-ljsc/
+            - heading "Shifeng Long Jing" [level=3] [ref=f18e365]
+            - paragraph [ref=f18e366]: Pre-Qing Ming, authentic Xihu Long Jing from the revered Shifeng fields. Toasted rice, chestnut puree, candied nuts, green melon and lime cordial.
+          - generic [ref=f18e368]:
+            - text: €37.70 Packet
+            - generic [ref=f18e369]: Green
+      - generic [ref=f18e370]:
+        - link "Bamboo Sabre - Pre Qing Ming 88 % 149 reviews" [ref=f18e372] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-zyqc/
+          - img "Bamboo Sabre - Pre Qing Ming" [ref=f18e373]
+          - generic:
+            - generic: 88 %
+            - generic [ref=f18e375]: 149 reviews
+        - generic [ref=f18e376]:
+          - generic [ref=f18e377]:
+            - heading [level=2] [ref=f18e379]:
+              - link "Bamboo Sabre - Pre Qing Ming" [ref=f18e380] [cursor=pointer]:
+                - /url: /p/tea-zyqc/
+            - heading "Zhu Ye Qing - Bamboo Leaf Green" [level=3] [ref=f18e384]
+            - paragraph [ref=f18e385]: Early pluck of an heirloom Sichuan Green. Sweet soy milk, salted custard, dragon fruit, sugar snap peas and green bamboo.
+          - generic [ref=f18e387]:
+            - text: €17.08 Packet
+            - generic [ref=f18e388]: Green
+      - generic [ref=f18e389]:
+        - link "Dawn Dew 86 % 7 reviews" [ref=f18e391] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-heyc/
+          - img "Dawn Dew" [ref=f18e392]
+          - generic:
+            - generic: 86 %
+            - generic [ref=f18e394]: 7 reviews
+        - generic [ref=f18e395]:
+          - generic [ref=f18e396]:
+            - heading [level=2] [ref=f18e398]:
+              - link "Dawn Dew" [ref=f18e399] [cursor=pointer]:
+                - /url: /p/tea-heyc/
+            - heading "Hubei Enshi Yulu" [level=3] [ref=f18e403]
+            - paragraph [ref=f18e404]: One of China's only steamed Green teas made from rolled buds. Dew, pumpkin seeds, warm meadows and dill syrup.
+          - generic [ref=f18e406]:
+            - text: €14.08 Packet
+            - generic [ref=f18e407]: Green
+      - generic [ref=f18e408]:
+        - link "Hojicha 87 % 371 reviews" [ref=f18e410] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-hjcc/
+          - img "Hojicha" [ref=f18e411]
+          - generic:
+            - generic: 87 %
+            - generic [ref=f18e413]: 371 reviews
+        - generic [ref=f18e414]:
+          - generic [ref=f18e415]:
+            - heading [level=2] [ref=f18e417]:
+              - link "Hojicha" [ref=f18e418] [cursor=pointer]:
+                - /url: /p/tea-hjcc/
+            - heading "Hojicha" [level=3] [ref=f18e422]
+            - paragraph [ref=f18e423]: A roasted blend of three pickings of Bancha Green tea. Caramel soya sauce, hay and poached pears.
+          - generic [ref=f18e425]:
+            - text: €9.37 Pack
+            - generic [ref=f18e426]: Green
+      - generic [ref=f18e427]:
+        - link "Green Coil - Pre Qing Ming 88 % 409 reviews" [ref=f18e429] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-grcc/
+          - img "Green Coil - Pre Qing Ming" [ref=f18e430]
+          - generic:
+            - generic: 88 %
+            - generic [ref=f18e432]: 409 reviews
+        - generic [ref=f18e433]:
+          - generic [ref=f18e434]:
+            - heading [level=2] [ref=f18e436]:
+              - link "Green Coil - Pre Qing Ming" [ref=f18e437] [cursor=pointer]:
+                - /url: /p/tea-grcc/
+            - heading "Jiangsu Bi Luo Chun / Green Snail Spring" [level=3] [ref=f18e441]
+            - paragraph [ref=f18e442]: Fine and rich batch of Jiangsu Bi Luo Chun from heirloom varieties. Lotus seeds, buttered sweetcorn, pear and elderflower.
+          - generic [ref=f18e444]:
+            - text: €14.08 Packet
+            - generic [ref=f18e445]: Green
+      - generic [ref=f18e446]:
+        - link "Melon Seed Green 85 % 465 reviews" [ref=f18e448] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lagc/
+          - img "Melon Seed Green" [ref=f18e449]
+          - generic:
+            - generic: 85 %
+            - generic [ref=f18e451]: 465 reviews
+        - generic [ref=f18e452]:
+          - generic [ref=f18e453]:
+            - heading [level=2] [ref=f18e455]:
+              - link "Melon Seed Green" [ref=f18e456] [cursor=pointer]:
+                - /url: /p/tea-lagc/
+            - heading "Lu An Gua Pian" [level=3] [ref=f18e460]
+            - paragraph [ref=f18e461]: Unique Anhui Green flash roasted from larger pickings of old tea bushes. Cherry cheesecake, avocado, sauna and lemon oil.
+          - generic [ref=f18e463]:
+            - text: €17.08 Packet
+            - generic [ref=f18e464]: Green
+      - generic [ref=f18e465]:
+        - link "Jade Arrow Supreme 92 % 155 reviews" [ref=f18e467] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ajsc/
+          - img "Jade Arrow Supreme" [ref=f18e468]
+          - generic:
+            - generic: 92 %
+            - generic [ref=f18e470]: 155 reviews
+        - generic [ref=f18e471]:
+          - generic [ref=f18e472]:
+            - heading [level=2] [ref=f18e474]:
+              - link "Jade Arrow Supreme" [ref=f18e475] [cursor=pointer]:
+                - /url: /p/tea-ajsc/
+            - heading "Anji Bai Cha" [level=3] [ref=f18e479]
+            - paragraph [ref=f18e480]: Pinnacle 2026 Anji Bai Cha made with a unique cultivar. Honeydew melon, shiopan, warm milk, creamy marrow and gooseberries.
+          - generic [ref=f18e482]:
+            - text: €28.87 Packet
+            - generic [ref=f18e483]: Green
+      - generic [ref=f18e484]:
+        - link "Sweet Dew 87 % 214 reviews" [ref=f18e486] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gnlc/
+          - img "Sweet Dew" [ref=f18e487]
+          - generic:
+            - generic: 87 %
+            - generic [ref=f18e489]: 214 reviews
+        - generic [ref=f18e490]:
+          - generic [ref=f18e491]:
+            - heading [level=2] [ref=f18e493]:
+              - link "Sweet Dew" [ref=f18e494] [cursor=pointer]:
+                - /url: /p/tea-gnlc/
+            - heading "Mengding Gan Lu" [level=3] [ref=f18e498]
+            - paragraph [ref=f18e499]: Majestic, handmade green from Mengding mountain. Wok fired zucchini, saline mist, candied pecans and dried apples.
+          - generic [ref=f18e501]:
+            - text: €13.55 Packet
+            - generic [ref=f18e502]: Green
+      - generic [ref=f18e503]:
+        - link "Laoshan Green 90 % 278 reviews" [ref=f18e505] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lsgc/
+          - img "Laoshan Green" [ref=f18e506]
+          - generic:
+            - generic: 90 %
+            - generic [ref=f18e508]: 278 reviews
+        - generic [ref=f18e509]:
+          - generic [ref=f18e510]:
+            - heading [level=2] [ref=f18e512]:
+              - link "Laoshan Green" [ref=f18e513] [cursor=pointer]:
+                - /url: /p/tea-lsgc/
+            - paragraph [ref=f18e517]: Ephemeral Green made in the colder climate of Laoshan - the cradle of Taoism in China. Puffed rice cereal, jerusalem artichoke, candied potato and sugared lemon zests.
+          - generic [ref=f18e519]:
+            - text: €11.19 Packet
+            - generic [ref=f18e520]: Green
+      - generic [ref=f18e521]:
+        - link "Genmai Matcha 89 % 276 reviews" [ref=f18e523] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gmmc/
+          - img "Genmai Matcha" [ref=f18e524]
+          - generic:
+            - generic: 89 %
+            - generic [ref=f18e526]: 276 reviews
+        - generic [ref=f18e527]:
+          - generic [ref=f18e528]:
+            - heading [level=2] [ref=f18e530]:
+              - link "Genmai Matcha" [ref=f18e531] [cursor=pointer]:
+                - /url: /p/tea-gmmc/
+            - paragraph [ref=f18e535]: Matcha dusted Genmaicha. Soy sauce covered rice crackers and fresh cut green grass with a rich umami savoury sweetness.
+          - generic [ref=f18e537]:
+            - text: €12.90 Packet
+            - generic [ref=f18e538]: Blend
+      - generic [ref=f18e539]:
+        - link "Asahina Gyokuro 93 % 25 reviews" [ref=f18e541] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-asgc/
+          - img "Asahina Gyokuro" [ref=f18e542]
+          - generic:
+            - generic: 93 %
+            - generic [ref=f18e544]: 25 reviews
+        - generic [ref=f18e545]:
+          - generic [ref=f18e546]:
+            - heading [level=2] [ref=f18e548]:
+              - link "Asahina Gyokuro" [ref=f18e549] [cursor=pointer]:
+                - /url: /p/tea-asgc/
+            - paragraph [ref=f18e553]: Top shelf traditional, hand-picked, Komo shaded Gyokuro. Rich umami, sweetcorn, white chocolate, taro, nettle, lemon blossom and cake frosting.
+          - generic [ref=f18e555]:
+            - text: Out of stock
+            - generic [ref=f18e556]: Green
+      - generic [ref=f18e557]:
+        - link "Night Flower Sencha 90 % 60 reviews" [ref=f18e559] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-yabc/
+          - img "Night Flower Sencha" [ref=f18e560]
+          - generic:
+            - generic: 90 %
+            - generic [ref=f18e562]: 60 reviews
+        - generic [ref=f18e563]:
+          - generic [ref=f18e564]:
+            - heading [level=2] [ref=f18e566]:
+              - link "Night Flower Sencha" [ref=f18e567] [cursor=pointer]:
+                - /url: /p/tea-yabc/
+            - heading "Icho Sencha" [level=3] [ref=f18e571]
+            - paragraph [ref=f18e572]: Uniquely floral sencha withered overnight to develop rich aromatics. Jasmine, honeysuckle, cooked spinach, buttered potatoes, cherry jam and lemon zests.
+          - generic [ref=f18e574]:
+            - text: Out of stock
+            - generic [ref=f18e575]: Green
+      - generic [ref=f18e576]:
+        - link "Hojicha Powder 94 % 13 reviews" [ref=f18e578] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ghjc/
+          - img "Hojicha Powder" [ref=f18e579]
+          - generic:
+            - generic: 94 %
+            - generic [ref=f18e581]: 13 reviews
+        - generic [ref=f18e582]:
+          - generic [ref=f18e583]:
+            - heading [level=2] [ref=f18e585]:
+              - link "Hojicha Powder" [ref=f18e586] [cursor=pointer]:
+                - /url: /p/tea-ghjc/
+            - paragraph [ref=f18e590]: Smooth and comforting roasted Green tea, perfect for creamy drinks or on its own. Muscovado sugar, coffee beans, toasted barley, black licorice and cocoa.
+          - generic [ref=f18e592]:
+            - text: Out of stock
+            - generic [ref=f18e593]: Green
+      - generic [ref=f18e594]:
+        - link "Tianshan Mist 86 % 41 reviews" [ref=f18e596] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-tshc/
+          - img "Tianshan Mist" [ref=f18e597]
+          - generic:
+            - generic: 86 %
+            - generic [ref=f18e599]: 41 reviews
+        - generic [ref=f18e600]:
+          - generic [ref=f18e601]:
+            - heading [level=2] [ref=f18e603]:
+              - link "Tianshan Mist" [ref=f18e604] [cursor=pointer]:
+                - /url: /p/tea-tshc/
+            - heading "Tianshan Green" [level=3] [ref=f18e608]
+            - paragraph [ref=f18e609]: Early picked Tianshan Green from 60 year old bushes. Orchids, pine nuts, rhubarb fool, celery seeds, steamed rice and oxidised apple.
+          - generic [ref=f18e611]:
+            - text: Out of stock
+            - generic [ref=f18e612]: Green
+      - generic [ref=f18e613]:
+        - link "Wild Mabian 90 % 32 reviews" [ref=f18e615] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-wmbc/
+          - img "Wild Mabian" [ref=f18e616]
+          - generic:
+            - generic: 90 %
+            - generic [ref=f18e618]: 32 reviews
+        - generic [ref=f18e619]:
+          - generic [ref=f18e620]:
+            - heading [level=2] [ref=f18e622]:
+              - link "Wild Mabian" [ref=f18e623] [cursor=pointer]:
+                - /url: /p/tea-wmbc/
+            - heading "Tan Chun Ling Ya" [level=3] [ref=f18e627]
+            - paragraph [ref=f18e628]: Wild tea from the pristine mountains of Mabian. Creamy zucchini broth, steamed rice, greengage plums, orchid and rock sugar.
+          - generic [ref=f18e630]:
+            - text: Out of stock
+            - generic [ref=f18e631]: Green
+      - generic [ref=f18e632]:
+        - link "Sparrow's Tongue 90 % 44 reviews" [ref=f18e634] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sptc/
+          - img "Sparrow's Tongue" [ref=f18e635]
+          - generic:
+            - generic: 90 %
+            - generic [ref=f18e637]: 44 reviews
+        - generic [ref=f18e638]:
+          - generic [ref=f18e639]:
+            - heading [level=2] [ref=f18e641]:
+              - link "Sparrow's Tongue" [ref=f18e642] [cursor=pointer]:
+                - /url: /p/tea-sptc/
+            - heading "Que She" [level=3] [ref=f18e646]
+            - paragraph [ref=f18e647]: Famed bud tea from Sichuan using a small leaf cultivar for extra brightness. Starfruit, green mango, steamed rice and coconut milk.
+          - generic [ref=f18e649]:
+            - text: Out of stock
+            - generic [ref=f18e650]: Green
+    - generic [ref=f18e652]:
+      - heading "We think you’ll love:" [level=2] [ref=f18e653]
+      - generic [ref=f18e654]:
+        - generic [ref=f18e655]:
+          - link "Amber Gaba Oolong 94 % 1486 reviews Oolong Tea of the Year 2017 Oolong Tea of the Year 2016 Tea of the year 2016" [ref=f18e657] [cursor=pointer]:
+            - /url: https://meileaf.com/p/tea-agac/
+            - img "Amber Gaba Oolong" [ref=f18e658]
+            - generic:
+              - generic: 94 %
+              - generic [ref=f18e660]: 1486 reviews
+            - generic [ref=f18e661]:
+              - img "Oolong Tea of the Year 2017" [ref=f18e662]
+              - img "Oolong Tea of the Year 2016" [ref=f18e663]
+              - img "Tea of the year 2016" [ref=f18e664]
+          - generic [ref=f18e665]:
+            - generic [ref=f18e666]:
+              - heading [level=2] [ref=f18e668]:
+                - link "Amber Gaba Oolong" [ref=f18e669] [cursor=pointer]:
+                  - /url: /p/tea-agac/
+              - paragraph [ref=f18e673]: Taiwanese Oolong processed in low oxygen to increase GABA to 200mg per 100g. Summer rain, apricot jam, wet wood and chestnut honey.
+            - generic [ref=f18e674]: €19.44 Pack
+        - generic [ref=f18e676]:
+          - link "Jade Star 9 95 % 31 reviews" [ref=f18e678] [cursor=pointer]:
+            - /url: https://meileaf.com/p/tea-jtic/
+            - img "Jade Star 9" [ref=f18e679]
+            - generic:
+              - generic: 95 %
+              - generic [ref=f18e681]: 31 reviews
+          - generic [ref=f18e682]:
+            - generic [ref=f18e683]:
+              - heading [level=2] [ref=f18e685]:
+                - link "Jade Star 9" [ref=f18e686] [cursor=pointer]:
+                  - /url: /p/tea-jtic/
+              - heading "2008 Bai Mu Dan and Shou Mei" [level=3] [ref=f18e690]
+              - paragraph [ref=f18e691]: The legendary Jade Star ship has arrived with our 9th Edition. Exclusive blend of 2008 Fuding White tea. Apricot danish pastry, ice wine, rum soaked raisins, summer forests, hot pavements and macerated strawberries.
+            - generic [ref=f18e692]: €88.37 Cake
+        - generic [ref=f18e694]:
+          - link "90's Enigma Sheng 92 % 38 reviews" [ref=f18e696] [cursor=pointer]:
+            - /url: https://meileaf.com/p/tea-nigc/
+            - img "90's Enigma Sheng" [ref=f18e697]
+            - generic:
+              - generic: 92 %
+              - generic [ref=f18e699]: 38 reviews
+          - generic [ref=f18e700]:
+            - generic [ref=f18e701]:
+              - heading [level=2] [ref=f18e703]:
+                - link "90's Enigma Sheng" [ref=f18e704] [cursor=pointer]:
+                  - /url: /p/tea-nigc/
+              - heading "1990's Menghai Sheng PuErh" [level=3] [ref=f18e708]
+              - paragraph [ref=f18e709]: Antique Menghai Raw PuErh picked in the 1990's. Salted butter, brown bread, Chinese herbs, creme de violette, caramelised white chocolate, leather bound books and preserved bayberry.
+            - generic [ref=f18e710]: €22.39 Packet
+        - generic [ref=f18e712]:
+          - link "Imperial Green - First Pluck 88 % 1127 reviews Great Taste 2014 Two Star" [ref=f18e714] [cursor=pointer]:
+            - /url: https://meileaf.com/p/tea-impc/
+            - img "Imperial Green - First Pluck" [ref=f18e715]
+            - generic:
+              - generic: 88 %
+              - generic [ref=f18e717]: 1127 reviews
+            - img "Great Taste 2014 Two Star" [ref=f18e719]
+          - generic [ref=f18e720]:
+            - generic [ref=f18e721]:
+              - heading [level=2] [ref=f18e723]:
+                - link "Imperial Green - First Pluck" [ref=f18e724] [cursor=pointer]:
+                  - /url: /p/tea-impc/
+              - heading "Long Jing - Dragonwell" [level=3] [ref=f18e728]
+              - paragraph [ref=f18e729]: The very first spring pickings of Long Jing tea after winter dormancy. Hazelnut butter, raspberry jam, custard apple, steamed borlotti beans and taro.
+            - generic [ref=f18e730]: €20.62 Packet
+    - generic [ref=f18e733]:
+      - button "Revelation!" [ref=f18e735] [cursor=pointer]
+      - generic [ref=f18e737] [cursor=pointer]: Revelation!
+  - contentinfo [ref=f18e738]:
+    - generic [ref=f18e739]:
+      - generic [ref=f18e740]:
+        - heading "Browse Teas" [level=6] [ref=f18e741]
+        - list [ref=f18e742]:
+          - listitem [ref=f18e743]:
+            - generic [ref=f18e744]: Type
+            - list [ref=f18e745]:
+              - listitem [ref=f18e746]:
+                - link "White" [ref=f18e747] [cursor=pointer]:
+                  - /url: /teas/white/
+              - listitem [ref=f18e748]:
+                - link "Green" [ref=f18e749] [cursor=pointer]:
+                  - /url: /teas/green/
+              - listitem [ref=f18e750]:
+                - link "Matcha" [ref=f18e751] [cursor=pointer]:
+                  - /url: /teas/matcha/
+              - listitem [ref=f18e752]:
+                - link "Yellow" [ref=f18e753] [cursor=pointer]:
+                  - /url: /teas/yellow/
+              - listitem [ref=f18e754]:
+                - link "Oolong" [ref=f18e755] [cursor=pointer]:
+                  - /url: /teas/oolong/
+              - listitem [ref=f18e756]:
+                - link "Black" [ref=f18e757] [cursor=pointer]:
+                  - /url: /teas/black/
+              - listitem [ref=f18e758]:
+                - link "Raw Puerh" [ref=f18e759] [cursor=pointer]:
+                  - /url: /teas/raw-puerh/
+              - listitem [ref=f18e760]:
+                - link "Ripened" [ref=f18e761] [cursor=pointer]:
+                  - /url: /teas/ripened/
+              - listitem [ref=f18e762]:
+                - link "Tisanes" [ref=f18e763] [cursor=pointer]:
+                  - /url: /teas/tisanes/
+              - listitem [ref=f18e764]:
+                - link "Medicinal Herbs" [ref=f18e765] [cursor=pointer]:
+                  - /url: /teas/herbs/
+          - listitem [ref=f18e766]:
+            - generic [ref=f18e767]: Style
+            - list [ref=f18e768]:
+              - listitem [ref=f18e769]:
+                - link "Pure" [ref=f18e770] [cursor=pointer]:
+                  - /url: /teas/pure/
+              - listitem [ref=f18e771]:
+                - link "Scented" [ref=f18e772] [cursor=pointer]:
+                  - /url: /teas/scented/
+              - listitem [ref=f18e773]:
+                - link "Blossoming" [ref=f18e774] [cursor=pointer]:
+                  - /url: /teas/blossoming/
+              - listitem [ref=f18e775]:
+                - link "Blend" [ref=f18e776] [cursor=pointer]:
+                  - /url: /teas/blends/
+          - listitem [ref=f18e777]:
+            - generic [ref=f18e778]: Functions
+            - list [ref=f18e779]:
+              - listitem [ref=f18e780]:
+                - link "Immune Boosting" [ref=f18e781] [cursor=pointer]:
+                  - /url: /teas/immune-boosting/
+              - listitem [ref=f18e782]:
+                - link "Digestion" [ref=f18e783] [cursor=pointer]:
+                  - /url: /teas/digestion/
+              - listitem [ref=f18e784]:
+                - link "Weight Control" [ref=f18e785] [cursor=pointer]:
+                  - /url: /teas/weight-control/
+              - listitem [ref=f18e786]:
+                - link "Detox" [ref=f18e787] [cursor=pointer]:
+                  - /url: /teas/detox/
+              - listitem [ref=f18e788]:
+                - link "Cardiovascular Health" [ref=f18e789] [cursor=pointer]:
+                  - /url: /teas/cardiovascular-health/
+              - listitem [ref=f18e790]:
+                - link "Stress Relief" [ref=f18e791] [cursor=pointer]:
+                  - /url: /teas/stress-relief/
+              - listitem [ref=f18e792]:
+                - link "Cognitive Ability" [ref=f18e793] [cursor=pointer]:
+                  - /url: /teas/cognitive-ability/
+              - listitem [ref=f18e794]:
+                - link "Respiratory" [ref=f18e795] [cursor=pointer]:
+                  - /url: /teas/respiratory/
+              - listitem [ref=f18e796]:
+                - link "Blood Sugar" [ref=f18e797] [cursor=pointer]:
+                  - /url: /teas/blood-sugar/
+      - generic [ref=f18e798]:
+        - generic [ref=f18e800]:
+          - link "Checkout our Facebook page" [ref=f18e801] [cursor=pointer]:
+            - /url: https://www.facebook.com/meileaf/
+          - link "Mei Leaf YouTube Channel" [ref=f18e805] [cursor=pointer]:
+            - /url: https://www.youtube.com/meileaf
+          - link "Tea adventures on Instagram" [ref=f18e809] [cursor=pointer]:
+            - /url: https://www.instagram.com/mei_leaf/
+          - link "Twitter updates" [ref=f18e813] [cursor=pointer]:
+            - /url: https://twitter.com/mei_leaf_tea
+          - link "Our favourite pins" [ref=f18e817] [cursor=pointer]:
+            - /url: https://au.pinterest.com/mei_leaf/
+        - generic [ref=f18e821]:
+          - generic [ref=f18e822]:
+            - link "Contact us" [ref=f18e824] [cursor=pointer]:
+              - /url: /contact/
+            - link "Subscribe" [ref=f18e826] [cursor=pointer]:
+              - /url: /subscribe/
+            - link "Press Enquiries" [ref=f18e828] [cursor=pointer]:
+              - /url: /contact/
+            - link "Wholesale" [ref=f18e830] [cursor=pointer]:
+              - /url: /about/wholesale/
+            - link "FAQ's" [ref=f18e832] [cursor=pointer]:
+              - /url: /about/our-teas/
+            - link "Shipping" [ref=f18e834] [cursor=pointer]:
+              - /url: /about/shipping/
+            - link "Returns & Refunds" [ref=f18e836] [cursor=pointer]:
+              - /url: /about/returns-refunds/
+            - link "Privacy policy & terms of use" [ref=f18e838] [cursor=pointer]:
+              - /url: /privacy-terms/
+            - link "Disclaimer" [ref=f18e840] [cursor=pointer]:
+              - /url: /disclaimer/
+          - generic [ref=f18e841]:
+            - link [ref=f18e842] [cursor=pointer]:
+              - /url: /
+              - img "Mei Leaf Logo" [ref=f18e843]
+            - paragraph [ref=f18e844]: 99-105 Camden High Street London, NW1 7JN, UK
+      - generic [ref=f18e845]: © Mei Group Ltd 2026
+  - text: ×

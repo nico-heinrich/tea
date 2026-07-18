@@ -1,6 +1,8 @@
 // German prefix: "Pu Erh Tee - Sheng BANGWEI GUCHA 2017 Cake" → "BANGWEI GUCHA 2017 Cake"
 const GERMAN_PREFIX_RE = /^(?:Pu\s*Erh\s*Tee\s*-\s*(?:Sheng|Shou)\s+|Gr[üu]ner\s+Tee\s+|Schwarzer\s+Tee\s+|Weißer\s+Tee\s+|Gelber\s+Tee\s+)/i;
 
+const QUOTED_NAME_RE = /["\u201C]([^"\u201C\u201D]+)["\u201D]/;
+
 const HARVEST_SEASON_RE = /\s*\*\s*(?:Spring|Summer|Autumn|Winter|Fall)\s+\d{4}\s*$/i;
 
 const PEST_FREE_RE = /\s*Pest\.?\s*(?:Free|frei|Frei|freilich|Freilich)\s*/gi;
@@ -17,6 +19,9 @@ export function cleanTeaName(
   let cleaned = name.trim();
 
   cleaned = cleaned.replace(GERMAN_PREFIX_RE, "").trim();
+
+  const quotedMatch = cleaned.match(QUOTED_NAME_RE);
+  if (quotedMatch) return quotedMatch[1].trim();
   if (stripYear) {
     cleaned = cleaned.replace(HARVEST_SEASON_RE, "").trim();
   }

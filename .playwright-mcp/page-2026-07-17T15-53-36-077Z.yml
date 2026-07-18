@@ -1,0 +1,3685 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - link [ref=e6] [cursor=pointer]:
+            - /url: /
+            - img "Mei Leaf Logo" [ref=e7]
+          - generic "Germany" [ref=e9] [cursor=pointer]: € EUR
+        - generic [ref=e13]:
+          - list [ref=e14]:
+            - listitem [ref=e15]:
+              - generic [ref=e16]: "Learn:"
+              - link "Tea Articles" [ref=e17] [cursor=pointer]:
+                - /url: /tea-articles/
+            - listitem [ref=e18]:
+              - generic [ref=e19]: "Visit Us:"
+              - link "Teahouse" [ref=e20] [cursor=pointer]:
+                - /url: /tea-house/
+            - listitem [ref=e21]:
+              - generic [ref=e22]: "Find Out More:"
+              - link "About Mei Leaf" [ref=e23] [cursor=pointer]:
+                - /url: /about/
+          - generic [ref=e24]:
+            - searchbox "Search" [ref=e25]
+            - link "Search" [ref=e27] [cursor=pointer]:
+              - /url: /search
+      - link "Free delivery to Germany for €145 EUR and above" [ref=e33] [cursor=pointer]:
+        - /url: /about/free-shipping/
+      - generic [ref=e35]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "Teas & Tisanes" [ref=e38] [cursor=pointer]:
+              - /url: /teas/
+            - button "Tea & tisanes" [ref=e41] [cursor=pointer]
+            - text: "|"
+          - listitem [ref=e43]:
+            - link "Teaware" [ref=e44] [cursor=pointer]:
+              - /url: /teawares/
+            - button "Teaware" [ref=e47] [cursor=pointer]
+            - text: "|"
+          - listitem [ref=e49]:
+            - link "Gifts & Sets" [ref=e50] [cursor=pointer]:
+              - /url: /gifts/
+            - text: "|"
+          - listitem [ref=e51]:
+            - link "What's New?" [ref=e52] [cursor=pointer]:
+              - /url: /c/just-arrived/
+            - button "What's New?" [ref=e54] [cursor=pointer]
+        - generic [ref=e56]:
+          - generic [ref=e58]:
+            - link "Log In" [ref=e59] [cursor=pointer]:
+              - /url: /login/
+            - link "Register" [ref=e60] [cursor=pointer]:
+              - /url: /register/
+          - generic [ref=e62]:
+            - link "0" [ref=e63] [cursor=pointer]:
+              - /url: "#"
+            - button "My Bag" [ref=e68] [cursor=pointer]
+  - main [ref=e70]:
+    - generic [ref=e71]:
+      - list [ref=e73]:
+        - listitem [ref=e74]:
+          - link "Teas & Tisanes" [ref=e75] [cursor=pointer]:
+            - /url: /teas/teas-tisanes
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - heading "Teas & Tisanes" [level=1] [ref=e78]
+          - link "5-Minute Guide" [ref=e80] [cursor=pointer]:
+            - /url: https://meileaf.com/article/the-six-types-of-tea/
+        - paragraph [ref=e81]: Welcome to our lovingly curated selection of leaves which I have personally sourced and approved myself. To be a Mei Leaf tea we set very stringent criteria - it has to represent the pinnacle of TRUE TEA with distinctive character and flavour. I do not choose any tea that I would not proudly serve to my best friends - we don't do fillers or keep standard lists. As such, this selection is continuously changing and we are always hunting for fresh treasures for you teaheads. Play with our filters and dive in!
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - text: Types
+          - button "All Types" [ref=e84] [cursor=pointer]
+        - generic [ref=e86]:
+          - text: Styles
+          - button "All Styles" [ref=e87] [cursor=pointer]
+        - generic [ref=e89]:
+          - text: Functions
+          - button "All Functions" [ref=e90] [cursor=pointer]
+        - generic [ref=e92]:
+          - text: Origins
+          - button "All Origins" [ref=e93] [cursor=pointer]
+        - generic [ref=e95]:
+          - text: Other
+          - button "All Other" [ref=e96] [cursor=pointer]
+    - generic [ref=e98]:
+      - generic [ref=e100]:
+        - generic [ref=e101]: "Sorting:"
+        - combobox [ref=e102] [cursor=pointer]:
+          - option "↑" [selected]
+          - option "↓"
+        - combobox [ref=e103] [cursor=pointer]:
+          - option "Default" [selected]
+          - option "Tea Name"
+          - option "Price"
+          - option "Tea Type"
+          - option "Community Rating"
+      - generic [ref=e105]:
+        - generic [ref=e106]: "Show:"
+        - combobox [ref=e107] [cursor=pointer]:
+          - option "All" [selected]
+          - option "On Sale"
+          - option "Just Arrived"
+          - option "Gift Ideas"
+      - generic [ref=e108]:
+        - generic [ref=e109]:
+          - generic [ref=e110]: "Hide:"
+          - text: None
+        - button "Hide" [ref=e112] [cursor=pointer]
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - link "Heirloom Silver Needle 96 % 219 reviews White Tea of the Year 2020 Gift Idea" [ref=e117] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-silc/
+          - img "Heirloom Silver Needle" [ref=e118]
+          - generic:
+            - generic: 96 %
+            - generic [ref=e120]: 219 reviews
+          - img "White Tea of the Year 2020" [ref=e122]
+          - img "Gift Idea" [ref=e124]
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - heading [level=2] [ref=e128]:
+              - link "Heirloom Silver Needle" [ref=e129] [cursor=pointer]:
+                - /url: /p/tea-silc/
+            - heading "Chuan Tong Bai Hao Yin Zhen" [level=3] [ref=e133]
+            - paragraph [ref=e134]: Immaculate Yin Zhen crafted with strict traditional methods. Sun withered and charcoal baked in tiny batches. Cooked soya milk, nougat, fresh nettle and warm summer meadows.
+          - generic [ref=e136]:
+            - text: €22.98 Packet
+            - generic [ref=e137]: White
+      - generic [ref=e138]:
+        - link "Monkey Picked (handmade) 92 % 219 reviews" [ref=e140] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mkpc/
+          - img "Monkey Picked (handmade)" [ref=e141]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e143]: 219 reviews
+        - generic [ref=e144]:
+          - generic [ref=e145]:
+            - heading [level=2] [ref=e147]:
+              - link "Monkey Picked (handmade)" [ref=e148] [cursor=pointer]:
+                - /url: /p/tea-mkpc/
+            - heading "Hou Kui - Monkey King" [level=3] [ref=e152]
+            - paragraph [ref=e153]: Handmade Taiping Hou Kui with deep Hou Yun sweetness. Guava, pineapple cakes, pine resin, soya milk and pumpkin seeds.
+          - generic [ref=e155]:
+            - text: €14.08 Packet
+            - generic [ref=e156]: Green
+      - generic [ref=e157]:
+        - link "Melon Seed Green 85 % 465 reviews" [ref=e159] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lagc/
+          - img "Melon Seed Green" [ref=e160]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e162]: 465 reviews
+        - generic [ref=e163]:
+          - generic [ref=e164]:
+            - heading [level=2] [ref=e166]:
+              - link "Melon Seed Green" [ref=e167] [cursor=pointer]:
+                - /url: /p/tea-lagc/
+            - heading "Lu An Gua Pian" [level=3] [ref=e171]
+            - paragraph [ref=e172]: Unique Anhui Green flash roasted from larger pickings of old tea bushes. Cherry cheesecake, avocado, sauna and lemon oil.
+          - generic [ref=e174]:
+            - text: €17.08 Packet
+            - generic [ref=e175]: Green
+      - generic [ref=e176]:
+        - link "Duck Sh*t Oolong 90 % 664 reviews" [ref=e178] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ducc/
+          - img "Duck Sh*t Oolong" [ref=e179]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e181]: 664 reviews
+        - generic [ref=e182]:
+          - generic [ref=e183]:
+            - heading [level=2] [ref=e185]:
+              - link "Duck Sh*t Oolong" [ref=e186] [cursor=pointer]:
+                - /url: /p/tea-ducc/
+            - heading "Ya Shi Dan Cong" [level=3] [ref=e190]
+            - paragraph [ref=e191]: Masterful Dan Cong Oolong made from the Ya Shi Cultivar. Magnolia, cherry blossom, butter cookies, fruit trifle and wet slate.
+          - generic [ref=e193]:
+            - text: €29.46 Packet
+            - generic [ref=e194]: Oolong
+      - generic [ref=e195]:
+        - link "Tenryu Tsuyuhikari Matcha 96 % 316 reviews" [ref=e197] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-hmmc/
+          - img "Tenryu Tsuyuhikari Matcha" [ref=e198]
+          - generic:
+            - generic: 96 %
+            - generic [ref=e200]: 316 reviews
+        - generic [ref=e201]:
+          - generic [ref=e202]:
+            - heading [level=2] [ref=e204]:
+              - link "Tenryu Tsuyuhikari Matcha" [ref=e205] [cursor=pointer]:
+                - /url: /p/tea-hmmc/
+            - heading "Tenryu Tsuyuhikari Matcha" [level=3] [ref=e209]
+            - paragraph [ref=e210]: Masterful 30-day-shaded, single cultivar Matcha from Tenryu. Whipped cream, chocolate oat milk, umami broth, pecan butter, galia melon and orchids.
+          - generic [ref=e212]:
+            - text: €34.17 Porcelain Jar
+            - generic [ref=e213]: Green
+      - generic [ref=e214]:
+        - link "Imperial Green - First Pluck 88 % 1127 reviews Great Taste 2014 Two Star" [ref=e216] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-impc/
+          - img "Imperial Green - First Pluck" [ref=e217]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e219]: 1127 reviews
+          - img "Great Taste 2014 Two Star" [ref=e221]
+        - generic [ref=e222]:
+          - generic [ref=e223]:
+            - heading [level=2] [ref=e225]:
+              - link "Imperial Green - First Pluck" [ref=e226] [cursor=pointer]:
+                - /url: /p/tea-impc/
+            - heading "Long Jing - Dragonwell" [level=3] [ref=e230]
+            - paragraph [ref=e231]: The very first spring pickings of Long Jing tea after winter dormancy. Hazelnut butter, raspberry jam, custard apple, steamed borlotti beans and taro.
+          - generic [ref=e233]:
+            - text: €20.62 Packet
+            - generic [ref=e234]: Green
+      - generic [ref=e235]:
+        - link "Summer Haze 89 % 546 reviews Gift Idea" [ref=e237] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sumc/
+          - img "Summer Haze" [ref=e238]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e240]: 546 reviews
+          - img "Gift Idea" [ref=e242]
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - heading [level=2] [ref=e246]:
+              - link "Summer Haze" [ref=e247] [cursor=pointer]:
+                - /url: /p/tea-sumc/
+            - heading "Hu Xiao Qi Lan" [level=3] [ref=e251]
+            - paragraph [ref=e252]: Uniquely light Wuyi Oolong cultivar. Summery mix of hay, asian pear, mangosteen and meadow flowers with a charcoal warmth.
+          - generic [ref=e254]:
+            - text: €14.08 Packet
+            - generic [ref=e255]: Oolong
+      - generic [ref=e256]:
+        - link "Empress Oolong 89 % 743 reviews" [ref=e258] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-empc/
+          - img "Empress Oolong" [ref=e259]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e261]: 743 reviews
+        - generic [ref=e262]:
+          - generic [ref=e263]:
+            - heading [level=2] [ref=e265]:
+              - link "Empress Oolong" [ref=e266] [cursor=pointer]:
+                - /url: /p/tea-empc/
+            - heading "Da Hong Pao Qi Dan (Big Red Robe)" [level=3] [ref=e270]
+            - paragraph [ref=e271]: Medium roasted Da Hong Pao made from 45 year old Qi Dan bushes. Cherry sponge cake, new car, mangosteen, agave syrup and macerated strawberries.
+          - generic [ref=e273]:
+            - text: €17.56 Packet
+            - generic [ref=e274]: Oolong
+      - generic [ref=e275]:
+        - link "Royal Peach Orchid 92 % 624 reviews" [ref=e277] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-phoc/
+          - img "Royal Peach Orchid" [ref=e278]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e280]: 624 reviews
+        - generic [ref=e281]:
+          - generic [ref=e282]:
+            - heading [level=2] [ref=e284]:
+              - link "Royal Peach Orchid" [ref=e285] [cursor=pointer]:
+                - /url: /p/tea-phoc/
+            - heading "Mi Lan Xiang Dan Cong - Honey Orchid Oolong" [level=3] [ref=e289]
+            - paragraph [ref=e290]: Wildly fragrant higher mountain dan cong. peach candy , thyme honey , oregano , lychee and orange polenta cake.
+          - generic [ref=e292]:
+            - text: €25.33 Packet
+            - generic [ref=e293]: Oolong
+      - generic [ref=e294]:
+        - link "Silver Needle 88 % 801 reviews" [ref=e296] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sinc/
+          - img "Silver Needle" [ref=e297]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e299]: 801 reviews
+        - generic [ref=e300]:
+          - generic [ref=e301]:
+            - heading [level=2] [ref=e303]:
+              - link "Silver Needle" [ref=e304] [cursor=pointer]:
+                - /url: /p/tea-sinc/
+            - heading "Bai Hao Yin Zhen" [level=3] [ref=e308]
+            - paragraph [ref=e309]: Early Spring Fengqing Silver Needle picked from over 60 year old tea trees. Kumquat jam, baked orange, caramel and semolina pudding.
+          - generic [ref=e311]:
+            - text: €10.55 Packet
+            - generic [ref=e312]: White
+      - generic [ref=e313]:
+        - link "White Peony 88 % 800 reviews" [ref=e315] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-wpyc/
+          - img "White Peony" [ref=e316]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e318]: 800 reviews
+        - generic [ref=e319]:
+          - generic [ref=e320]:
+            - heading [level=2] [ref=e322]:
+              - link "White Peony" [ref=e323] [cursor=pointer]:
+                - /url: /p/tea-wpyc/
+            - heading "Bai Mu Dan" [level=3] [ref=e327]
+            - paragraph [ref=e328]: Authentically sun-dried Fuding Mu Dan from mature Da Bai bushes. Orchid, apricot and almond cake, warm milk, orange zest and raw oats.
+          - generic [ref=e330]:
+            - text: €9.37 Packet
+            - generic [ref=e331]: White
+      - generic [ref=e332]:
+        - link "Superior Iron Goddess 88 % 839 reviews Great Taste 2014 Two Star" [ref=e334] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sgoc/
+          - img "Superior Iron Goddess" [ref=e335]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e337]: 839 reviews
+          - img "Great Taste 2014 Two Star" [ref=e339]
+        - generic [ref=e340]:
+          - generic [ref=e341]:
+            - heading [level=2] [ref=e343]:
+              - link "Superior Iron Goddess" [ref=e344] [cursor=pointer]:
+                - /url: /p/tea-sgoc/
+            - heading "Xiao Qing Tie Guan Yin" [level=3] [ref=e348]
+            - paragraph [ref=e349]: Bright yet balanced Qing Xiang Tie Guan Yin fro the legendary Xiping village in Anxi. Sea air, honeysuckle, green apples, sponge pudding and coconut cream.
+          - generic [ref=e351]:
+            - text: €14.02 Packet
+            - generic [ref=e352]: Oolong
+      - generic [ref=e353]:
+        - link "Souchong Liquor 92 % 948 reviews Black Tea of the Year 2020 Black Tea of the Year 2018" [ref=e355] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-slqc/
+          - img "Souchong Liquor" [ref=e356]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e358]: 948 reviews
+          - generic [ref=e359]:
+            - img "Black Tea of the Year 2020" [ref=e360]
+            - img "Black Tea of the Year 2018" [ref=e361]
+        - generic [ref=e362]:
+          - generic [ref=e363]:
+            - heading [level=2] [ref=e365]:
+              - link "Souchong Liquor" [ref=e366] [cursor=pointer]:
+                - /url: /p/tea-slqc/
+            - heading "Tong Mu Zhengshan Xiaozhong" [level=3] [ref=e370]
+            - paragraph [ref=e371]: An unsmoked Lapsang that shows the true depth of flavour of this famous tea. Dark cocoa, charred bourbon casks and rambutan.
+          - generic [ref=e373]:
+            - text: €12.90 Packet
+            - generic [ref=e374]: Black
+      - generic [ref=e375]:
+        - link [ref=e377] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sfsc/
+          - img "Stonefruit Sap" [ref=e378]
+        - generic [ref=e379]:
+          - generic [ref=e380]:
+            - heading [level=2] [ref=e382]:
+              - link "Stonefruit Sap" [ref=e383] [cursor=pointer]:
+                - /url: /p/tea-sfsc/
+            - heading "Tuo Suan Tie Guan Yin" [level=3] [ref=e387]
+            - paragraph [ref=e388]: Fruit and mineral Tie Guan Yin made in the Tuo Suan style. Custard apple, asian pear, mountain streams, pebbles, young coconut and nectarines.
+          - generic [ref=e390]:
+            - text: €11.19 Packet
+            - generic [ref=e391]: Oolong
+      - generic [ref=e392]:
+        - link [ref=e394] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mzqc/
+          - img "Young Gushu 2026" [ref=e395]
+        - generic [ref=e396]:
+          - generic [ref=e397]:
+            - heading [level=2] [ref=e399]:
+              - link "Young Gushu 2026" [ref=e400] [cursor=pointer]:
+                - /url: /p/tea-mzqc/
+            - heading "Spring 2026 Mei Zi Qing Gushu Sheng" [level=3] [ref=e404]
+            - paragraph [ref=e405]: Ancient tree Lincang PuErh from Mei Zi Qing village. Fresh apricots, salted maple syrup, pine nuts, bitter almonds, milk soda and summer pavements.
+          - generic [ref=e407]:
+            - text: €17.32 Packet
+            - generic [ref=e408]: Raw Puerh
+      - generic [ref=e409]:
+        - link [ref=e411] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gofc/
+          - img "Golden Fable" [ref=e412]
+          - img "On Sale" [ref=e414]
+        - generic [ref=e415]:
+          - generic [ref=e416]:
+            - heading [level=2] [ref=e418]:
+              - link "Golden Fable" [ref=e419] [cursor=pointer]:
+                - /url: /p/tea-gofc/
+            - heading "2015 Fuding Shou Mei" [level=3] [ref=e423]
+            - paragraph [ref=e424]: Aged 2015 Fuding white from 45 year old seed grown bushes. Cooked strawberries, pannacotta, summer forests, date syrup and mountain herbs.
+          - generic [ref=e426]:
+            - text: €63.09
+            - generic [ref=e427]: €74.23
+            - text: Cake
+            - generic [ref=e428]: White
+      - generic [ref=e429]:
+        - link "Amber Gaba Oolong 94 % 1486 reviews Oolong Tea of the Year 2017 Oolong Tea of the Year 2016 Tea of the year 2016" [ref=e431] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-agac/
+          - img "Amber Gaba Oolong" [ref=e432]
+          - generic:
+            - generic: 94 %
+            - generic [ref=e434]: 1486 reviews
+          - generic [ref=e435]:
+            - img "Oolong Tea of the Year 2017" [ref=e436]
+            - img "Oolong Tea of the Year 2016" [ref=e437]
+            - img "Tea of the year 2016" [ref=e438]
+        - generic [ref=e439]:
+          - generic [ref=e440]:
+            - heading [level=2] [ref=e442]:
+              - link "Amber Gaba Oolong" [ref=e443] [cursor=pointer]:
+                - /url: /p/tea-agac/
+            - paragraph [ref=e447]: Taiwanese Oolong processed in low oxygen to increase GABA to 200mg per 100g. Summer rain, apricot jam, wet wood and chestnut honey.
+          - generic [ref=e449]:
+            - text: €19.44 Pack
+            - generic [ref=e450]: Oolong
+      - generic [ref=e451]:
+        - link "Jade Star 9 95 % 31 reviews" [ref=e453] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-jtic/
+          - img "Jade Star 9" [ref=e454]
+          - generic:
+            - generic: 95 %
+            - generic [ref=e456]: 31 reviews
+        - generic [ref=e457]:
+          - generic [ref=e458]:
+            - heading [level=2] [ref=e460]:
+              - link "Jade Star 9" [ref=e461] [cursor=pointer]:
+                - /url: /p/tea-jtic/
+            - heading "2008 Bai Mu Dan and Shou Mei" [level=3] [ref=e465]
+            - paragraph [ref=e466]: The legendary Jade Star ship has arrived with our 9th Edition. Exclusive blend of 2008 Fuding White tea. Apricot danish pastry, ice wine, rum soaked raisins, summer forests, hot pavements and macerated strawberries.
+          - generic [ref=e468]:
+            - text: €88.37 Cake
+            - generic [ref=e469]: White
+      - generic [ref=e470]:
+        - link "90's Enigma Sheng 92 % 38 reviews" [ref=e472] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-nigc/
+          - img "90's Enigma Sheng" [ref=e473]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e475]: 38 reviews
+        - generic [ref=e476]:
+          - generic [ref=e477]:
+            - heading [level=2] [ref=e479]:
+              - link "90's Enigma Sheng" [ref=e480] [cursor=pointer]:
+                - /url: /p/tea-nigc/
+            - heading "1990's Menghai Sheng PuErh" [level=3] [ref=e484]
+            - paragraph [ref=e485]: Antique Menghai Raw PuErh picked in the 1990's. Salted butter, brown bread, Chinese herbs, creme de violette, caramelised white chocolate, leather bound books and preserved bayberry.
+          - generic [ref=e487]:
+            - text: €22.39 Packet
+            - generic [ref=e488]: Raw Puerh
+      - generic [ref=e489]:
+        - link "Rocky Road Ripe 93 % 36 reviews" [ref=e491] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-rrrc/
+          - img "Rocky Road Ripe" [ref=e492]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e494]: 36 reviews
+        - generic [ref=e495]:
+          - generic [ref=e496]:
+            - heading [level=2] [ref=e498]:
+              - link "Rocky Road Ripe" [ref=e499] [cursor=pointer]:
+                - /url: /p/tea-rrrc/
+            - heading "2017 Menghai Shu" [level=3] [ref=e503]
+            - paragraph [ref=e504]: Smooth and comforting 2017 Ripe PuErh made from 80 year old trees. Cherry ripple chocolate brownie, cream soda and orange candy.
+          - generic [ref=e506]:
+            - text: €18.73 Packet
+            - generic [ref=e507]: Ripened
+      - generic [ref=e508]:
+        - link "Butterscotch Temple 95 % 85 reviews" [ref=e510] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-butc/
+          - img "Butterscotch Temple" [ref=e511]
+          - generic:
+            - generic: 95 %
+            - generic [ref=e513]: 85 reviews
+        - generic [ref=e514]:
+          - generic [ref=e515]:
+            - heading [level=2] [ref=e517]:
+              - link "Butterscotch Temple" [ref=e518] [cursor=pointer]:
+                - /url: /p/tea-butc/
+            - heading "Wusandi Lao Cong Shui Xian" [level=3] [ref=e522]
+            - paragraph [ref=e523]: Shui Xian perfection made from 60-year-old bushes growing high up in Wu San Di village. Butterscotch, roasted almonds, incense, moss, libraries, redcurrants and heritage apples
+          - generic [ref=e525]:
+            - text: €21.09 Packet
+            - generic [ref=e526]: Oolong
+      - generic [ref=e527]:
+        - link "Nug Potion 95 % 257 reviews" [ref=e529] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ngpc/
+          - img "Nug Potion" [ref=e530]
+          - generic:
+            - generic: 95 %
+            - generic [ref=e532]: 257 reviews
+        - generic [ref=e533]:
+          - generic [ref=e534]:
+            - heading [level=2] [ref=e536]:
+              - link "Nug Potion" [ref=e537] [cursor=pointer]:
+                - /url: /p/tea-ngpc/
+            - heading "Mengku Lao Cha Tou 2017" [level=3] [ref=e541]
+            - paragraph [ref=e542]: Rich and powerful Mengku Lao Cha Tou made from 100 year-old trees. Prune brandy, fennel seeds, caramel, wine cellar, licorice and sandalwood incense.
+          - generic [ref=e544]:
+            - text: €14.73 Packet
+            - generic [ref=e545]: Ripened
+      - generic [ref=e546]:
+        - link "Tiger Eye Gaba 94 % 157 reviews" [ref=e548] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-tegc/
+          - img "Tiger Eye Gaba" [ref=e549]
+          - generic:
+            - generic: 94 %
+            - generic [ref=e551]: 157 reviews
+        - generic [ref=e552]:
+          - generic [ref=e553]:
+            - heading [level=2] [ref=e555]:
+              - link "Tiger Eye Gaba" [ref=e556] [cursor=pointer]:
+                - /url: /p/tea-tegc/
+            - paragraph [ref=e560]: Vacuum fermented Jin Xuan variety Oolong to boost GABA. Peach taffy, almond syrup, creamed coconut, 7up. balsawood and honey lozenges.
+          - generic [ref=e562]:
+            - text: €19.44 Packet
+            - generic [ref=e563]: Oolong
+      - generic [ref=e564]:
+        - link "Young Gushu 2025 90 % 62 reviews On Sale" [ref=e566] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-zgwc/
+          - img "Young Gushu 2025" [ref=e567]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e569]: 62 reviews
+          - img "On Sale" [ref=e571]
+        - generic [ref=e572]:
+          - generic [ref=e573]:
+            - heading [level=2] [ref=e575]:
+              - link "Young Gushu 2025" [ref=e576] [cursor=pointer]:
+                - /url: /p/tea-zgwc/
+            - heading "Spring 2025 Zhangwai Sheng Gushu" [level=3] [ref=e580]
+            - paragraph [ref=e581]: Ancient tree pickings from the obscure Zhangwai village in Mengku. Salted egg yolk custard, cannabis, chamomile, butterscotch, nashi pear, rice pudding and apricot jam.
+          - generic [ref=e583]:
+            - text: €10.31
+            - generic [ref=e584]: €14.73
+            - text: Packet
+            - generic [ref=e585]: Raw Puerh
+      - generic [ref=e586]:
+        - link "Cocoa Malt Queen 93 % 347 reviews" [ref=e588] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-cmqc/
+          - img "Cocoa Malt Queen" [ref=e589]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e591]: 347 reviews
+        - generic [ref=e592]:
+          - generic [ref=e593]:
+            - heading [level=2] [ref=e595]:
+              - link "Cocoa Malt Queen" [ref=e596] [cursor=pointer]:
+                - /url: /p/tea-cmqc/
+            - heading "Jin Jun Mei" [level=3] [ref=e600]
+            - paragraph [ref=e601]: Luxury, fine picked and hand rolled Tong Mu Black Jin Jun Mei. Cocoa cookies, rose, cherries and warm malted milk.
+          - generic [ref=e603]:
+            - text: €14.08 Packet
+            - generic [ref=e604]: Black
+      - generic [ref=e605]:
+        - link "Uji Saemidori Matcha 90 % 388 reviews" [ref=e607] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-orgc/
+          - img "Uji Saemidori Matcha" [ref=e608]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e610]: 388 reviews
+        - generic [ref=e611]:
+          - generic [ref=e612]:
+            - heading [level=2] [ref=e614]:
+              - link "Uji Saemidori Matcha" [ref=e615] [cursor=pointer]:
+                - /url: /p/tea-orgc/
+            - heading "Uji Saemidori Matcha" [level=3] [ref=e619]
+            - paragraph [ref=e620]: Pinnacle Matcha from Uji family with long history of Matcha production. Creamy umami, chocolate and roasted almonds, soft bitters, green melon and lotus flower.
+          - generic [ref=e622]:
+            - text: €27.69 Porcelain Jar
+            - generic [ref=e623]: Green
+      - generic [ref=e624]:
+        - link "Off The Apps 85 % 19 reviews" [ref=e626] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-otac/
+          - img "Off The Apps" [ref=e627]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e629]: 19 reviews
+        - generic [ref=e630]:
+          - generic [ref=e631]:
+            - heading [level=2] [ref=e633]:
+              - link "Off The Apps" [ref=e634] [cursor=pointer]:
+                - /url: /p/tea-otac/
+            - heading "Yiwu 2025 Gushu Huangpian PuErh" [level=3] [ref=e638]
+            - paragraph [ref=e639]: Huangpian Raw Gushu PuErh made from 200+ year old tea trees growing in the forests of Gao Shan village in Yiwu. Ripe persimmon, pomelo, dill syrup, slate and icing sugar.
+          - generic [ref=e641]:
+            - text: €45.95 Cake
+            - generic [ref=e642]: Raw Puerh
+      - generic [ref=e643]:
+        - link "Sultan's Quill 91 % 91 reviews" [ref=e645] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sunc/
+          - img "Sultan's Quill" [ref=e646]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e648]: 91 reviews
+        - generic [ref=e649]:
+          - generic [ref=e650]:
+            - heading [level=2] [ref=e652]:
+              - link "Sultan's Quill" [ref=e653] [cursor=pointer]:
+                - /url: /p/tea-sunc/
+            - heading "Fengqing Golden Needle" [level=3] [ref=e657]
+            - paragraph [ref=e658]: Fruity and spicy golden bud Black from 80-year-old trees. Saffron toffee, rosehip syrup, tomato jam, cinnamon, and sweet fennel fronds.
+          - generic [ref=e660]:
+            - text: €11.13 Packet
+            - generic [ref=e661]: Black
+      - generic [ref=e662]:
+        - link "Dragon Pearl Jasmine 86 % 448 reviews" [ref=e664] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-peac/
+          - img "Dragon Pearl Jasmine" [ref=e665]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e667]: 448 reviews
+        - generic [ref=e668]:
+          - generic [ref=e669]:
+            - heading [level=2] [ref=e671]:
+              - link "Dragon Pearl Jasmine" [ref=e672] [cursor=pointer]:
+                - /url: /p/tea-peac/
+            - heading "Mo Li Long Zhu" [level=3] [ref=e676]
+            - paragraph [ref=e677]: Hand rolled five times infused jasmine Green tea. Ripe strawberries, jasmine, orchid and dry stone leading to summery warm meadows.
+          - generic [ref=e679]:
+            - text: €12.90 Packet
+            - generic [ref=e680]: Green
+      - generic [ref=e681]:
+        - link "Cloud Lake 87 % 304 reviews" [ref=e683] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-cllc/
+          - img "Cloud Lake" [ref=e684]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e686]: 304 reviews
+        - generic [ref=e687]:
+          - generic [ref=e688]:
+            - heading [level=2] [ref=e690]:
+              - link "Cloud Lake" [ref=e691] [cursor=pointer]:
+                - /url: /p/tea-cllc/
+            - heading "Yun Wu - Cloud & Mist Green" [level=3] [ref=e695]
+            - paragraph [ref=e696]: Fine picking, early spring Yun Wu Green. Roasted beans and candied chestnuts moving to cantaloupe melon and lemon oil fruitiness
+          - generic [ref=e698]:
+            - text: €11.72 Packet
+            - generic [ref=e699]: Green
+      - generic [ref=e700]:
+        - link "Catching Candy Clouds 89 % 42 reviews" [ref=e702] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-cgjc/
+          - img "Catching Candy Clouds" [ref=e703]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e705]: 42 reviews
+        - generic [ref=e706]:
+          - generic [ref=e707]:
+            - heading [level=2] [ref=e709]:
+              - link "Catching Candy Clouds" [ref=e710] [cursor=pointer]:
+                - /url: /p/tea-cgjc/
+            - heading "2021 Fu Zhuan" [level=3] [ref=e714]
+            - paragraph [ref=e715]: Heirloom variety Fu Brick made from 50-100 year old trees. and processed without any wheat inoculation. Chocolate fudge, antique woods, lilac candy, sugared nuts, toasted rice and caramel.
+          - generic [ref=e717]:
+            - text: €98.97 Brick
+            - generic [ref=e718]: Ripened
+      - generic [ref=e719]:
+        - link "Wildwood Gold 93 % 141 reviews" [ref=e721] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-wwgc/
+          - img "Wildwood Gold" [ref=e722]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e724]: 141 reviews
+        - generic [ref=e725]:
+          - generic [ref=e726]:
+            - heading [level=2] [ref=e728]:
+              - link "Wildwood Gold" [ref=e729] [cursor=pointer]:
+                - /url: /p/tea-wwgc/
+            - heading "Gushu Dianhong" [level=3] [ref=e733]
+            - paragraph [ref=e734]: Ancient tree Golden Bud Black tea representing the highest level of Dianhong. Brown bread, butter and chocolate spread, hazelnuts, lilac, rock sugar and candied pecans.
+          - generic [ref=e736]:
+            - text: €12.90 Packet
+            - generic [ref=e737]: Black
+      - generic [ref=e738]:
+        - link "Lotus Peak Rou Gui 91 % 23 reviews" [ref=e740] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lprc/
+          - img "Lotus Peak Rou Gui" [ref=e741]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e743]: 23 reviews
+        - generic [ref=e744]:
+          - generic [ref=e745]:
+            - heading [level=2] [ref=e747]:
+              - link "Lotus Peak Rou Gui" [ref=e748] [cursor=pointer]:
+                - /url: /p/tea-lprc/
+            - heading "Lian Hua Feng Rou Gui" [level=3] [ref=e752]
+            - paragraph [ref=e753]: A unique expression of Rou Gui from Lotus Peak. Richly mineral with bright fruits of grapefruit, nectarine and guava amongst woods and varnish. Strong, woozy and emotive energy.
+          - generic [ref=e755]:
+            - text: €21.15 Packet
+            - generic [ref=e756]: Oolong
+      - generic [ref=e757]:
+        - link "Sweet Treat Envoy 86 % 24 reviews" [ref=e759] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-swtc/
+          - img "Sweet Treat Envoy" [ref=e760]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e762]: 24 reviews
+        - generic [ref=e763]:
+          - generic [ref=e764]:
+            - heading [level=2] [ref=e766]:
+              - link "Sweet Treat Envoy" [ref=e767] [cursor=pointer]:
+                - /url: /p/tea-swtc/
+            - heading "Yiwu Spring 2025 Gushu Sheng" [level=3] [ref=e771]
+            - paragraph [ref=e772]: Ancient Tree Yiwu PuErh from Gao Shan village. Honeycomb, river pebbles, papaya, pandan and pecan butter.
+          - generic [ref=e774]:
+            - text: €164.95 Cake
+            - generic [ref=e775]: Raw Puerh
+      - generic [ref=e776]:
+        - link "Autumn Light 88 % 494 reviews" [ref=e778] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-atlc/
+          - img "Autumn Light" [ref=e779]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e781]: 494 reviews
+        - generic [ref=e782]:
+          - generic [ref=e783]:
+            - heading [level=2] [ref=e785]:
+              - link "Autumn Light" [ref=e786] [cursor=pointer]:
+                - /url: /p/tea-atlc/
+            - heading "Royal PuErh 2013" [level=3] [ref=e790]
+            - paragraph [ref=e791]: A lighter ferment Ripe PuEhr to maintain more of the natural liveliness of the raw tea. Brazil nuts, red bean paste and sweet orange peel.
+          - generic [ref=e793]:
+            - text: €8.84 Packet
+            - generic [ref=e794]: Ripened
+      - generic [ref=e795]:
+        - link "Kabuse Saeakari 89 % 113 reviews On Sale" [ref=e797] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-skac/
+          - img "Kabuse Saeakari" [ref=e798]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e800]: 113 reviews
+          - img "On Sale" [ref=e802]
+        - generic [ref=e803]:
+          - generic [ref=e804]:
+            - heading [level=2] [ref=e806]:
+              - link "Kabuse Saeakari" [ref=e807] [cursor=pointer]:
+                - /url: /p/tea-skac/
+            - paragraph [ref=e811]: Shiga Kabusecha, which has been covered for 10 days before picking. Melon milk, buttered daikon, river pebbles, steamed rice and lotus leaves.
+          - generic [ref=e813]:
+            - text: €13.11
+            - generic [ref=e814]: €18.73
+            - text: Packet
+            - generic [ref=e815]: Green
+      - generic [ref=e816]:
+        - link "Iron Monk 92 % 119 reviews" [ref=e818] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-thhc/
+          - img "Iron Monk" [ref=e819]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e821]: 119 reviews
+        - generic [ref=e822]:
+          - generic [ref=e823]:
+            - heading [level=2] [ref=e825]:
+              - link "Iron Monk" [ref=e826] [cursor=pointer]:
+                - /url: /p/tea-thhc/
+            - heading "Tie Luo Han - Iron Arhat" [level=3] [ref=e830]
+            - paragraph [ref=e831]: Old Bush Tie Luo Han from the core Zhengyan region. Blackcurrant taffy candy, sherbet, mangosteen, gardenia, varnish, new notebooks, snow and watermelon.
+          - generic [ref=e833]:
+            - text: €18.79 Pack
+            - generic [ref=e834]: Oolong
+      - generic [ref=e835]:
+        - link "Wenzhou Gold 92 % 107 reviews" [ref=e837] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-pnyc/
+          - img "Wenzhou Gold" [ref=e838]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e840]: 107 reviews
+        - generic [ref=e841]:
+          - generic [ref=e842]:
+            - heading [level=2] [ref=e844]:
+              - link "Wenzhou Gold" [ref=e845] [cursor=pointer]:
+                - /url: /p/tea-pnyc/
+            - heading "Pingyang Huangtang" [level=3] [ref=e849]
+            - paragraph [ref=e850]: Small batch Pinyang Yellow with a deep and warm character from many rounds of baking and yellowing. Malted barley, hazelnut gelato, starfruit, slate and high mountain meadows.
+          - generic [ref=e852]:
+            - text: €18.79 Packet
+            - generic [ref=e853]: Yellow
+      - generic [ref=e854]:
+        - link "Old Bush Yashi 94 % 13 reviews" [ref=e856] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sgpc/
+          - img "Old Bush Yashi" [ref=e857]
+          - generic:
+            - generic: 94 %
+            - generic [ref=e859]: 13 reviews
+        - generic [ref=e860]:
+          - generic [ref=e861]:
+            - heading [level=2] [ref=e863]:
+              - link "Old Bush Yashi" [ref=e864] [cursor=pointer]:
+                - /url: /p/tea-sgpc/
+            - heading "Shiguping Lao Cong Ya Shi" [level=3] [ref=e868]
+            - paragraph [ref=e869]: Duck Sh*t Oolong from 40-70 year old trees growing around Shiguping village. Magnolia, chestnut honey, pine resin with beeswax and steamed sponge pudding.
+          - generic [ref=e871]:
+            - text: €29.46 Packet
+            - generic [ref=e872]: Oolong
+      - generic [ref=e873]:
+        - link "Jade Arrow - Pre Qing Ming 90 % 863 reviews Green Tea of the Year 2018 Green Tea of the Year 2017 Green Tea of the Year 2016" [ref=e875] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ajgc/
+          - img "Jade Arrow - Pre Qing Ming" [ref=e876]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e878]: 863 reviews
+          - generic [ref=e879]:
+            - img "Green Tea of the Year 2018" [ref=e880]
+            - img "Green Tea of the Year 2017" [ref=e881]
+            - img "Green Tea of the Year 2016" [ref=e882]
+        - generic [ref=e883]:
+          - generic [ref=e884]:
+            - heading [level=2] [ref=e886]:
+              - link "Jade Arrow - Pre Qing Ming" [ref=e887] [cursor=pointer]:
+                - /url: /p/tea-ajgc/
+            - heading "Anji Bai Cha" [level=3] [ref=e891]
+            - paragraph [ref=e892]: Top shelf grade Pre Qing Ming Anji Green from old bushes. Salted yolk custard, bran flakes, fresh peas, lemon posset and light jasmine.
+          - generic [ref=e894]:
+            - text: €16.44 Packet
+            - generic [ref=e895]: Green
+      - generic [ref=e896]:
+        - link "2003 Antique Nectar 93 % 48 reviews" [ref=e898] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gqlc/
+          - img "2003 Antique Nectar" [ref=e899]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e901]: 48 reviews
+        - generic [ref=e902]:
+          - generic [ref=e903]:
+            - heading [level=2] [ref=e905]:
+              - link "2003 Antique Nectar" [ref=e906] [cursor=pointer]:
+                - /url: /p/tea-gqlc/
+            - heading "2003 Gui Qing Liu Bao" [level=3] [ref=e910]
+            - paragraph [ref=e911]: Exemplary aged 2003 Liu Bao made from heirloom Gui Qing cultivar. Brown sugar, dried orange peel, incense, church crypts, leather and antique woods.
+          - generic [ref=e913]:
+            - text: €22.62 Packet
+            - generic [ref=e914]: Ripened
+      - generic [ref=e915]:
+        - link "Find Your Sunshine 3 90 % 56 reviews" [ref=e917] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fync/
+          - img "Find Your Sunshine 3" [ref=e918]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e920]: 56 reviews
+        - generic [ref=e921]:
+          - generic [ref=e922]:
+            - heading [level=2] [ref=e924]:
+              - link "Find Your Sunshine 3" [ref=e925] [cursor=pointer]:
+                - /url: /p/tea-fync/
+            - paragraph [ref=e929]: Rich blend of creamy old-tree 2012 Bulang Shu and eleven year aged Xinhui tangerine peel. Babka, orange chocolate, chrysanthemum, chinese herbs, dank basement and parma violets.
+          - generic [ref=e931]:
+            - text: €56.56 Cake
+            - generic [ref=e932]: Ripened
+      - generic [ref=e933]:
+        - link "Lemon Blossom Frost 88 % 31 reviews" [ref=e935] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lbfc/
+          - img "Lemon Blossom Frost" [ref=e936]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e938]: 31 reviews
+        - generic [ref=e939]:
+          - generic [ref=e940]:
+            - heading [level=2] [ref=e942]:
+              - link "Lemon Blossom Frost" [ref=e943] [cursor=pointer]:
+                - /url: /p/tea-lbfc/
+            - heading "Parkside Nilgiri Frost" [level=3] [ref=e947]
+            - paragraph [ref=e948]: High-mountain Parkside Nilgiri Frost with overflowing florals and spice. Lemon blossom, wintergreen, wet stone, soft rose and bay leaves.
+          - generic [ref=e950]:
+            - text: €18.73 Packet
+            - generic [ref=e951]: Black
+      - generic [ref=e952]:
+        - link "Ruby Black 87 % 719 reviews Great Taste 2014 One Star Black Tea of the Year 2016" [ref=e954] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-rrbc/
+          - img "Ruby Black" [ref=e955]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e957]: 719 reviews
+          - generic [ref=e958]:
+            - img "Great Taste 2014 One Star" [ref=e959]
+            - img "Black Tea of the Year 2016" [ref=e960]
+        - generic [ref=e961]:
+          - generic [ref=e962]:
+            - heading [level=2] [ref=e964]:
+              - link "Ruby Black" [ref=e965] [cursor=pointer]:
+                - /url: /p/tea-rrbc/
+            - heading "Sun Moon Lake Black Tea - Ruby 18" [level=3] [ref=e969]
+            - paragraph [ref=e970]: Captivating Black tea unlike any other tea available. Camphor, lilacs and menthol with cinnamon sweetness leading to a quenching minerality.
+          - generic [ref=e972]:
+            - text: €10.55 Packet
+            - generic [ref=e973]: Black
+      - generic [ref=e974]:
+        - link "Ancient Haze 90 % 478 reviews" [ref=e976] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-anhc/
+          - img "Ancient Haze" [ref=e977]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e979]: 478 reviews
+        - generic [ref=e980]:
+          - generic [ref=e981]:
+            - heading [level=2] [ref=e983]:
+              - link "Ancient Haze" [ref=e984] [cursor=pointer]:
+                - /url: /p/tea-anhc/
+            - heading "Ye Sheng Hong" [level=3] [ref=e988]
+            - paragraph [ref=e989]: Made from an ancient variety of the tea tree and picked from trees over 100 years old. Zesty grapefruit and hoppy IPA, barrel-aged rum, malt and muscatel.
+          - generic [ref=e991]:
+            - text: €11.72 Packet
+            - generic [ref=e992]: Black
+      - generic [ref=e993]:
+        - link "Alishan Cream 87 % 1000 reviews" [ref=e995] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-acoc/
+          - img "Alishan Cream" [ref=e996]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e998]: 1000 reviews
+        - generic [ref=e999]:
+          - generic [ref=e1000]:
+            - heading [level=2] [ref=e1002]:
+              - link "Alishan Cream" [ref=e1003] [cursor=pointer]:
+                - /url: /p/tea-acoc/
+            - heading "Alishan Jin Xuan" [level=3] [ref=e1007]
+            - paragraph [ref=e1008]: A rich and luxurious tea made from the naturally milky Jin Xuan cultivar. Tinned peaches and cream with toasted pound cake.
+          - generic [ref=e1010]:
+            - text: €11.72 Packet
+            - generic [ref=e1011]: Oolong
+      - generic [ref=e1012]:
+        - link "Legend Of The Limelight 87 % 48 reviews" [ref=e1014] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lolc/
+          - img "Legend Of The Limelight" [ref=e1015]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e1017]: 48 reviews
+        - generic [ref=e1018]:
+          - generic [ref=e1019]:
+            - heading [level=2] [ref=e1021]:
+              - link "Legend Of The Limelight" [ref=e1022] [cursor=pointer]:
+                - /url: /p/tea-lolc/
+            - heading "Yibang 2005 and Bulang 2009 Gushu Sheng PuErh" [level=3] [ref=e1026]
+            - paragraph [ref=e1027]: Crafted blend of aged Gushu Sheng from Yibang and Bulang with distinctly different storage styles. Russet apples, camphor, honey, dried cherries, leather, clay and autumn leaves.
+          - generic [ref=e1029]:
+            - text: €128.43 Cake
+            - generic [ref=e1030]: Raw Puerh
+      - generic [ref=e1031]:
+        - link "Honeycomb Black 91 % 178 reviews" [ref=e1033] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-hncc/
+          - img "Honeycomb Black" [ref=e1034]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e1036]: 178 reviews
+        - generic [ref=e1037]:
+          - generic [ref=e1038]:
+            - heading [level=2] [ref=e1040]:
+              - link "Honeycomb Black" [ref=e1041] [cursor=pointer]:
+                - /url: /p/tea-hncc/
+            - heading "Dashu Dianhong" [level=3] [ref=e1045]
+            - paragraph [ref=e1046]: Deep and rich Yunnan Dianhong made from more than 100 year old trees. Dark chocolate, honeycomb, oat biscuits, apple skin and lime flower.
+          - generic [ref=e1048]:
+            - text: €11.72 Packet
+            - generic [ref=e1049]: Black
+      - generic [ref=e1050]:
+        - link [ref=e1052] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-msthc/
+          - img "Mei Leaf Tasting Selection" [ref=e1053]
+          - img "Gift Idea" [ref=e1055]
+        - generic [ref=e1056]:
+          - generic [ref=e1057]:
+            - heading [level=2] [ref=e1059]:
+              - link "Mei Leaf Tasting Selection" [ref=e1060] [cursor=pointer]:
+                - /url: /p/gft-msthc/
+            - paragraph [ref=e1064]: A spectacular tea gift for yourself or to introduce another to the delights of Mei Leaf Tea. A total of eleven headliner teas covering most tea types.
+          - generic [ref=e1066]:
+            - text: €22.33
+            - generic [ref=e1067]: Blend
+      - generic [ref=e1068]:
+        - link "Bliss Beholder 91 % 40 reviews" [ref=e1070] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-bhrc/
+          - img "Bliss Beholder" [ref=e1071]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e1073]: 40 reviews
+        - generic [ref=e1074]:
+          - generic [ref=e1075]:
+            - heading [level=2] [ref=e1077]:
+              - link "Bliss Beholder" [ref=e1078] [cursor=pointer]:
+                - /url: /p/tea-bhrc/
+            - heading "Spring 2023 Man Zhuan Gushu Sheng" [level=3] [ref=e1082]
+            - paragraph [ref=e1083]: Historic ancient mountain teas made from 300 year old tea trees growing in Man Zhuan. Rich minerality and dancing aromatics of oud, lily, alphonso mango, tinned pineapple, coconut and sweet apple. Divine tea high.
+          - generic [ref=e1085]:
+            - text: €159.06 Cake
+            - generic [ref=e1086]: Raw Puerh
+      - generic [ref=e1087]:
+        - link "Osmanthus Oolong 83 % 401 reviews" [ref=e1089] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-osmc/
+          - img "Osmanthus Oolong" [ref=e1090]
+          - generic:
+            - generic: 83 %
+            - generic [ref=e1092]: 401 reviews
+        - generic [ref=e1093]:
+          - generic [ref=e1094]:
+            - heading [level=2] [ref=e1096]:
+              - link "Osmanthus Oolong" [ref=e1097] [cursor=pointer]:
+                - /url: /p/tea-osmc/
+            - heading "Gui Hua Wulong" [level=3] [ref=e1101]
+            - paragraph [ref=e1102]: Aromatic Oolong scented with Osmanthus flowers. Raw almond and butter start, sweet osmanthus middle and fresh green grass finish.
+          - generic [ref=e1104]:
+            - text: €8.19 Packet
+            - generic [ref=e1105]: Blend
+      - generic [ref=e1106]:
+        - link "Fur Peak Supreme 92 % 59 reviews" [ref=e1108] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fpsc/
+          - img "Fur Peak Supreme" [ref=e1109]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e1111]: 59 reviews
+        - generic [ref=e1112]:
+          - generic [ref=e1113]:
+            - heading [level=2] [ref=e1115]:
+              - link "Fur Peak Supreme" [ref=e1116] [cursor=pointer]:
+                - /url: /p/tea-fpsc/
+            - heading "Lao Cong Huangshan Mao Feng" [level=3] [ref=e1120]
+            - paragraph [ref=e1121]: Handmade Maofeng made from heirloom bushes in the Yellow mountains. Mountain breeze, whipped cream, spongecake and petrichor.
+          - generic [ref=e1123]:
+            - text: €15.91 Packet
+            - generic [ref=e1124]: Green
+      - generic [ref=e1125]:
+        - link "Simple Dreams 3 89 % 50 reviews" [ref=e1127] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sdtc/
+          - img "Simple Dreams 3" [ref=e1128]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e1130]: 50 reviews
+        - generic [ref=e1131]:
+          - generic [ref=e1132]:
+            - heading [level=2] [ref=e1134]:
+              - link "Simple Dreams 3" [ref=e1135] [cursor=pointer]:
+                - /url: /p/tea-sdtc/
+            - heading "2019 Fuding Shou Mei" [level=3] [ref=e1139]
+            - paragraph [ref=e1140]: Soft and thick 2019 aged Shou Mei from Fuding. Pear drops, plum jam, summer forests. sherbet powder, lychee, vanilla and pink peppercorn.
+          - generic [ref=e1142]:
+            - text: €45.95 Cake
+            - generic [ref=e1143]: White
+      - generic [ref=e1144]:
+        - link "Little Tong Mu 91 % 831 reviews" [ref=e1146] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-tonc/
+          - img "Little Tong Mu" [ref=e1147]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e1149]: 831 reviews
+        - generic [ref=e1150]:
+          - generic [ref=e1151]:
+            - heading [level=2] [ref=e1153]:
+              - link "Little Tong Mu" [ref=e1154] [cursor=pointer]:
+                - /url: /p/tea-tonc/
+            - heading "Tong Mu Zhengshan Xiaozhong" [level=3] [ref=e1158]
+            - paragraph [ref=e1159]: Unsmoked Lapsang from the famed Tong Mu village. Yellow roses, raspberries and orange almond cake and melted butter.
+          - generic [ref=e1161]:
+            - text: €11.72 Packet
+            - generic [ref=e1162]: Black
+      - generic [ref=e1163]:
+        - link "Honey Duchess 91 % 510 reviews" [ref=e1165] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-hcbc/
+          - img "Honey Duchess" [ref=e1166]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e1168]: 510 reviews
+        - generic [ref=e1169]:
+          - generic [ref=e1170]:
+            - heading [level=2] [ref=e1172]:
+              - link "Honey Duchess" [ref=e1173] [cursor=pointer]:
+                - /url: /p/tea-hcbc/
+            - heading "Gui Fei Oolong" [level=3] [ref=e1177]
+            - paragraph [ref=e1178]: Bug-bitten Taiwanese Oolong with knockout aromatics. Muscatel, cedar, orchid and honeyed apricots.
+          - generic [ref=e1180]:
+            - text: €17.61 Packet
+            - generic [ref=e1181]: Oolong
+      - generic [ref=e1182]:
+        - link "Amethyst Gaba 86 % 539 reviews" [ref=e1184] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-amgc/
+          - img "Amethyst Gaba" [ref=e1185]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e1187]: 539 reviews
+        - generic [ref=e1188]:
+          - generic [ref=e1189]:
+            - heading [level=2] [ref=e1191]:
+              - link "Amethyst Gaba" [ref=e1192] [cursor=pointer]:
+                - /url: /p/tea-amgc/
+            - paragraph [ref=e1196]: Dark and smooth GABA tea. Deep roasted nuts, tarmac and coffee. Fleeting spices like black cardamom, antique wood and black liquorice.
+          - generic [ref=e1198]:
+            - text: €21.80 Packet
+            - generic [ref=e1199]: Oolong
+      - generic [ref=e1200]:
+        - link "Amachazuru Five Leaf Loose Tea 84 % 196 reviews Tisane of the Year 2016" [ref=e1202] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-amac/
+          - img "Amachazuru Five Leaf Loose Tea" [ref=e1203]
+          - generic:
+            - generic: 84 %
+            - generic [ref=e1205]: 196 reviews
+          - img "Tisane of the Year 2016" [ref=e1207]
+        - generic [ref=e1208]:
+          - generic [ref=e1209]:
+            - heading [level=2] [ref=e1211]:
+              - link "Amachazuru Five Leaf Loose Tea" [ref=e1212] [cursor=pointer]:
+                - /url: /p/tea-amac/
+            - heading "Jiao Gu Lan - Gynostemma pentaphyllum" [level=3] [ref=e1216]
+            - paragraph [ref=e1217]: A powerful immune boosting adaptogenic herb with a vast variety of reported health benefits. Licorice sweet and grassy.
+          - generic [ref=e1219]:
+            - text: €8.19 Packet
+            - generic [ref=e1220]: Tisanes
+      - generic [ref=e1221]:
+        - link "Amber Mountain 87 % 661 reviews Yellow Tea of the Year 2017 Great Taste 2014 One Star Yellow Tea of the Year 2016" [ref=e1223] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ammc/
+          - img "Amber Mountain" [ref=e1224]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e1226]: 661 reviews
+          - generic [ref=e1227]:
+            - img "Yellow Tea of the Year 2017" [ref=e1228]
+            - img "Great Taste 2014 One Star" [ref=e1229]
+            - img "Yellow Tea of the Year 2016" [ref=e1230]
+        - generic [ref=e1231]:
+          - generic [ref=e1232]:
+            - heading [level=2] [ref=e1234]:
+              - link "Amber Mountain" [ref=e1235] [cursor=pointer]:
+                - /url: /p/tea-ammc/
+            - heading "Huo Shan Huang Ya" [level=3] [ref=e1239]
+            - paragraph [ref=e1240]: Hand made Yellow tea made from 32 year old trees. Pumpkin seeds, vegetable broth, creme fraiche and elderflower fool.
+          - generic [ref=e1242]:
+            - text: €8.84 Packet
+            - generic [ref=e1243]: Yellow
+      - generic [ref=e1244]:
+        - link "Black Rose 87 % 221 reviews" [ref=e1246] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-exmc/
+          - img "Black Rose" [ref=e1247]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e1249]: 221 reviews
+        - generic [ref=e1250]:
+          - generic [ref=e1251]:
+            - heading [level=2] [ref=e1253]:
+              - link "Black Rose" [ref=e1254] [cursor=pointer]:
+                - /url: /p/tea-exmc/
+            - heading "Rose Gongfu" [level=3] [ref=e1258]
+            - paragraph [ref=e1259]: A luxurious combination of Jin Jun Mei black tea scented with pink rosebuds. Malt loaf, rose and dark-baked chocolate brownies.
+          - generic [ref=e1261]:
+            - text: €11.72 Packet
+            - generic [ref=e1262]: Blend
+      - generic [ref=e1263]:
+        - link "White Blossom 81 % 49 reviews Great Taste 2014 One Star" [ref=e1265] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-floc/
+          - img "White Blossom" [ref=e1266]
+          - generic:
+            - generic: 81 %
+            - generic [ref=e1268]: 49 reviews
+          - img "Great Taste 2014 One Star" [ref=e1270]
+        - generic [ref=e1271]:
+          - generic [ref=e1272]:
+            - heading [level=2] [ref=e1274]:
+              - link "White Blossom" [ref=e1275] [cursor=pointer]:
+                - /url: /p/tea-floc/
+            - paragraph [ref=e1279]: Fragrant combination of Jasmine Silver Needle and Chrysanthemum. Wild strawberries, sweet flowers and river pebbles.
+          - generic [ref=e1281]:
+            - text: €8.19 Packet
+            - generic [ref=e1282]: Blend
+      - generic [ref=e1283]:
+        - link "Ginkgo Leaf Tips 85 % 65 reviews" [ref=e1285] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ginc/
+          - img "Ginkgo Leaf Tips" [ref=e1286]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e1288]: 65 reviews
+        - generic [ref=e1289]:
+          - generic [ref=e1290]:
+            - heading [level=2] [ref=e1292]:
+              - link "Ginkgo Leaf Tips" [ref=e1293] [cursor=pointer]:
+                - /url: /p/tea-ginc/
+            - heading "Yin Xing Ye" [level=3] [ref=e1297]
+            - paragraph [ref=e1298]: Renowned Chinese herb for improved circulation, memory and cognitive protection. Hints of marine water with medicinal herbs and a lingering sweetness.
+          - generic [ref=e1300]:
+            - text: €4.65 Packet
+            - generic [ref=e1301]: Tisanes
+      - generic [ref=e1302]:
+        - link "Chrysanthemum Flowers 86 % 143 reviews" [ref=e1304] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-juhc/
+          - img "Chrysanthemum Flowers" [ref=e1305]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e1307]: 143 reviews
+        - generic [ref=e1308]:
+          - generic [ref=e1309]:
+            - heading [level=2] [ref=e1311]:
+              - link "Chrysanthemum Flowers" [ref=e1312] [cursor=pointer]:
+                - /url: /p/tea-juhc/
+            - heading "Huang Ju Hua - Chrysanthemum morifolium" [level=3] [ref=e1316]
+            - paragraph [ref=e1317]: Cooling and calming tisane to drink by itself or blend with dark teas like PuErh. Sherbet sweets and floral meadow air.
+          - generic [ref=e1319]:
+            - text: €4.65 Packet
+            - generic [ref=e1320]: Tisanes
+      - generic [ref=e1321]:
+        - link "Creeping Lily Turf Root 87 % 11 reviews" [ref=e1323] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mmdc/
+          - img "Creeping Lily Turf Root" [ref=e1324]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e1326]: 11 reviews
+        - generic [ref=e1327]:
+          - generic [ref=e1328]:
+            - heading [level=2] [ref=e1330]:
+              - link "Creeping Lily Turf Root" [ref=e1331] [cursor=pointer]:
+                - /url: /p/tea-mmdc/
+            - heading "Mai Men Dong - Tuber Ophiopogonis Japonici" [level=3] [ref=e1335]
+            - paragraph [ref=e1336]: Said to replenish vital essence and to promote the secretion of body fluids. May help relieve dry coughs, dry throats and dry stools.
+          - generic [ref=e1338]:
+            - text: €4.87 Packet
+            - generic [ref=e1339]: Herbs
+      - generic [ref=e1340]:
+        - link "Peppermint Leaf 89 % 74 reviews" [ref=e1342] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-pepc/
+          - img "Peppermint Leaf" [ref=e1343]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e1345]: 74 reviews
+        - generic [ref=e1346]:
+          - generic [ref=e1347]:
+            - heading [level=2] [ref=e1349]:
+              - link "Peppermint Leaf" [ref=e1350] [cursor=pointer]:
+                - /url: /p/tea-pepc/
+            - heading "Mentha Peperita" [level=3] [ref=e1354]
+            - paragraph [ref=e1355]: Sweet and cooling with a slight toffee warmth. An uplifting tisane by itself or to add a little brightness to any other brew.
+          - generic [ref=e1357]:
+            - text: €3.48 Packet
+            - generic [ref=e1358]: Tisanes
+      - generic [ref=e1359]:
+        - link "Dandelion Leaf 86 % 57 reviews" [ref=e1361] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-pgyc/
+          - img "Dandelion Leaf" [ref=e1362]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e1364]: 57 reviews
+        - generic [ref=e1365]:
+          - generic [ref=e1366]:
+            - heading [level=2] [ref=e1368]:
+              - link "Dandelion Leaf" [ref=e1369] [cursor=pointer]:
+                - /url: /p/tea-pgyc/
+            - heading "Pu Gong Ying - Taraxacum officinale" [level=3] [ref=e1373]
+            - paragraph [ref=e1374]: Known to increase the elimination of toxins through the liver and kidneys. Liquorice, mint and drying hay with a gentle herbal bitters.
+          - generic [ref=e1376]:
+            - text: €4.12 Packet
+            - generic [ref=e1377]: Tisanes
+      - generic [ref=e1378]:
+        - link "River High 86 % 358 reviews" [ref=e1380] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-rivc/
+          - img "River High" [ref=e1381]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e1383]: 358 reviews
+        - generic [ref=e1384]:
+          - generic [ref=e1385]:
+            - heading [level=2] [ref=e1387]:
+              - link "River High" [ref=e1388] [cursor=pointer]:
+                - /url: /p/tea-rivc/
+            - heading "Ren Shen Wulong" [level=3] [ref=e1392]
+            - paragraph [ref=e1393]: Combination of Anxi Oolong and Ginseng for a natural energy boost. Hazelnut syrup, liquorice and creamy nougat.
+          - generic [ref=e1395]:
+            - text: €10.55 Packet
+            - generic [ref=e1396]: Blend
+      - generic [ref=e1397]:
+        - link "Rose Buds 93 % 51 reviews" [ref=e1399] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-rosc/
+          - img "Rose Buds" [ref=e1400]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e1402]: 51 reviews
+        - generic [ref=e1403]:
+          - generic [ref=e1404]:
+            - heading [level=2] [ref=e1406]:
+              - link "Rose Buds" [ref=e1407] [cursor=pointer]:
+                - /url: /p/tea-rosc/
+            - heading "Mei Gui Hua - Rosa chinensis" [level=3] [ref=e1411]
+            - paragraph [ref=e1412]: Delicate, light and zesty floral tisane to drink by itself or blend with tea. Sweet rose and grapefruits with a soft and clean finish.
+          - generic [ref=e1414]:
+            - text: €7.66 Packet
+            - generic [ref=e1415]: Tisanes
+      - generic [ref=e1416]:
+        - link "Baby Leaf Kuding 80 % 111 reviews" [ref=e1418] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-wbtc/
+          - img "Baby Leaf Kuding" [ref=e1419]
+          - generic:
+            - generic: 80 %
+            - generic [ref=e1421]: 111 reviews
+        - generic [ref=e1422]:
+          - generic [ref=e1423]:
+            - heading [level=2] [ref=e1425]:
+              - link "Baby Leaf Kuding" [ref=e1426] [cursor=pointer]:
+                - /url: /p/tea-wbtc/
+            - heading "Yesheng Kuding - Ligustrum robustum" [level=3] [ref=e1430]
+            - paragraph [ref=e1431]: A light and dancing flavour from fresh to slightly bitter then moving to floral sweetness. Traditionally used to calm, cool and relax.
+          - generic [ref=e1433]:
+            - text: €9.37 Packet
+            - generic [ref=e1434]: Tisanes
+      - generic [ref=e1435]:
+        - link "White Jasmine 86 % 228 reviews" [ref=e1437] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-wjac/
+          - img "White Jasmine" [ref=e1438]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e1440]: 228 reviews
+        - generic [ref=e1441]:
+          - generic [ref=e1442]:
+            - heading [level=2] [ref=e1444]:
+              - link "White Jasmine" [ref=e1445] [cursor=pointer]:
+                - /url: /p/tea-wjac/
+            - heading "Mo Li Yin Zhen" [level=3] [ref=e1449]
+            - paragraph [ref=e1450]: Siver Needle made from 70 year old bushes scented with Jasmine flowers. Jasmine, starfruit, lime zest and pineapple candy over a slate minerality.
+          - generic [ref=e1452]:
+            - text: €11.72 Packet
+            - generic [ref=e1453]: White
+      - generic [ref=e1454]:
+        - link "Green Coil - Pre Qing Ming 88 % 409 reviews" [ref=e1456] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-grcc/
+          - img "Green Coil - Pre Qing Ming" [ref=e1457]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e1459]: 409 reviews
+        - generic [ref=e1460]:
+          - generic [ref=e1461]:
+            - heading [level=2] [ref=e1463]:
+              - link "Green Coil - Pre Qing Ming" [ref=e1464] [cursor=pointer]:
+                - /url: /p/tea-grcc/
+            - heading "Jiangsu Bi Luo Chun / Green Snail Spring" [level=3] [ref=e1468]
+            - paragraph [ref=e1469]: Fine and rich batch of Jiangsu Bi Luo Chun from heirloom varieties. Lotus seeds, buttered sweetcorn, pear and elderflower.
+          - generic [ref=e1471]:
+            - text: €14.08 Packet
+            - generic [ref=e1472]: Green
+      - generic [ref=e1473]:
+        - link "Lemon Verbena 88 % 86 reviews" [ref=e1475] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-olvc/
+          - img "Lemon Verbena" [ref=e1476]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e1478]: 86 reviews
+        - generic [ref=e1479]:
+          - generic [ref=e1480]:
+            - heading [level=2] [ref=e1482]:
+              - link "Lemon Verbena" [ref=e1483] [cursor=pointer]:
+                - /url: /p/tea-olvc/
+            - heading "Aloysia citrodora" [level=3] [ref=e1487]
+            - paragraph [ref=e1488]: Cleansing, uplifting and calming tisane. Sweet lemons, thyme and fresh grass.
+          - generic [ref=e1490]:
+            - text: €4.65 Packet
+            - generic [ref=e1491]: Tisanes
+      - generic [ref=e1492]:
+        - link "Blossoming Jewels 83 % 75 reviews" [ref=e1494] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-bloc/
+          - img "Blossoming Jewels" [ref=e1495]
+          - generic:
+            - generic: 83 %
+            - generic [ref=e1497]: 75 reviews
+        - generic [ref=e1498]:
+          - generic [ref=e1499]:
+            - heading [level=2] [ref=e1501]:
+              - link "Blossoming Jewels" [ref=e1502] [cursor=pointer]:
+                - /url: /p/tea-bloc/
+            - paragraph [ref=e1506]: Hand produced blossoming tea created by Chinese artisans. Beautiful floral display blossom in your glass. Made from white tea buds for a light and elegant flavour.
+          - generic [ref=e1508]:
+            - text: €9.37 Packet
+            - generic [ref=e1509]: White
+      - generic [ref=e1510]:
+        - link "Chamomile Flowers 90 % 136 reviews" [ref=e1512] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ochc/
+          - img "Chamomile Flowers" [ref=e1513]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e1515]: 136 reviews
+        - generic [ref=e1516]:
+          - generic [ref=e1517]:
+            - heading [level=2] [ref=e1519]:
+              - link "Chamomile Flowers" [ref=e1520] [cursor=pointer]:
+                - /url: /p/tea-ochc/
+            - heading "Matricaria recutita" [level=3] [ref=e1524]
+            - paragraph [ref=e1525]: Warming and soothing tisane with a gentle floral sweetness with a slight fenugreek spice.
+          - generic [ref=e1527]:
+            - text: €4.65 Packet
+            - generic [ref=e1528]: Tisanes
+      - generic [ref=e1529]:
+        - link "Raspberry Leaf 86 % 36 reviews" [ref=e1531] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-orac/
+          - img "Raspberry Leaf" [ref=e1532]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e1534]: 36 reviews
+        - generic [ref=e1535]:
+          - generic [ref=e1536]:
+            - heading [level=2] [ref=e1538]:
+              - link "Raspberry Leaf" [ref=e1539] [cursor=pointer]:
+                - /url: /p/tea-orac/
+            - heading "Rubus Idaeus" [level=3] [ref=e1543]
+            - paragraph [ref=e1544]: Bright and refreshing tisane traditionally used by women after 32 weeks of pregnancy to strengthen uterine muscles for an easier birth.
+          - generic [ref=e1546]:
+            - text: €4.12 Packet
+            - generic [ref=e1547]: Tisanes
+      - generic [ref=e1548]:
+        - link "Hibiscus Flowers 91 % 93 reviews" [ref=e1550] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ohic/
+          - img "Hibiscus Flowers" [ref=e1551]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e1553]: 93 reviews
+        - generic [ref=e1554]:
+          - generic [ref=e1555]:
+            - heading [level=2] [ref=e1557]:
+              - link "Hibiscus Flowers" [ref=e1558] [cursor=pointer]:
+                - /url: /p/tea-ohic/
+            - heading "Hibiscus rosa-sinensis" [level=3] [ref=e1562]
+            - paragraph [ref=e1563]: Dark sangria red flowers rich in anthocyanins for a healthy cardiovascular system. Sour berries and a fresh earthy foundation. Sweeten to taste.
+          - generic [ref=e1565]:
+            - text: €4.65 Packet
+            - generic [ref=e1566]: Tisanes
+      - generic [ref=e1567]:
+        - link "Purple Bud 88 % 425 reviews" [ref=e1569] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-pbuc/
+          - img "Purple Bud" [ref=e1570]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e1572]: 425 reviews
+        - generic [ref=e1573]:
+          - generic [ref=e1574]:
+            - heading [level=2] [ref=e1576]:
+              - link "Purple Bud" [ref=e1577] [cursor=pointer]:
+                - /url: /p/tea-pbuc/
+            - heading "Ye Sheng Zi Ya" [level=3] [ref=e1581]
+            - paragraph [ref=e1582]: Made from lateral buds of ancient Purple trees in Yunnan estimated at 300 years-old. Sun processed for a rich character. Peach sherbet, elderflower and pine.
+          - generic [ref=e1584]:
+            - text: €10.55 Packet
+            - generic [ref=e1585]: White
+      - generic [ref=e1586]:
+        - link "Rooibos 88 % 74 reviews" [ref=e1588] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-oroc/
+          - img "Rooibos" [ref=e1589]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e1591]: 74 reviews
+        - generic [ref=e1592]:
+          - generic [ref=e1593]:
+            - heading [level=2] [ref=e1595]:
+              - link "Rooibos" [ref=e1596] [cursor=pointer]:
+                - /url: /p/tea-oroc/
+            - heading "Aspalathus linearis" [level=3] [ref=e1600]
+            - paragraph [ref=e1601]: Soft, rich and warming with much of the satisfaction of black tea. Cherry, vanilla and honey with eucalyptus freshness.
+          - generic [ref=e1603]:
+            - text: €8.19 Packet
+            - generic [ref=e1604]: Tisanes
+      - generic [ref=e1605]:
+        - link "Ruby Gaba 86 % 529 reviews" [ref=e1607] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-rgoc/
+          - img "Ruby Gaba" [ref=e1608]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e1610]: 529 reviews
+        - generic [ref=e1611]:
+          - generic [ref=e1612]:
+            - heading [level=2] [ref=e1614]:
+              - link "Ruby Gaba" [ref=e1615] [cursor=pointer]:
+                - /url: /p/tea-rgoc/
+            - paragraph [ref=e1619]: Specially processed Oolong for high Gaba (over 250mg per 100g). Roasted coconut and burnt pine depth with a rosehip acidity and lingering eucalyptus sweetness.
+          - generic [ref=e1621]:
+            - text: €19.44 Packet
+            - generic [ref=e1622]: Oolong
+      - generic [ref=e1623]:
+        - link "Frozen Summit Oolong 89 % 476 reviews" [ref=e1625] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fsoc/
+          - img "Frozen Summit Oolong" [ref=e1626]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e1628]: 476 reviews
+        - generic [ref=e1629]:
+          - generic [ref=e1630]:
+            - heading [level=2] [ref=e1632]:
+              - link "Frozen Summit Oolong" [ref=e1633] [cursor=pointer]:
+                - /url: /p/tea-fsoc/
+            - heading "Dong Ding Wulong" [level=3] [ref=e1637]
+            - paragraph [ref=e1638]: Special grade Dong Ding from shan lin Xi. Brown butter cakes, rye bread, custard apple, grenadine, lemon oil and cannabis.
+          - generic [ref=e1640]:
+            - text: €28.87 Packet
+            - generic [ref=e1641]: Oolong
+      - generic [ref=e1642]:
+        - link "Moonlight White 89 % 467 reviews" [ref=e1644] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mlwc/
+          - img "Moonlight White" [ref=e1645]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e1647]: 467 reviews
+        - generic [ref=e1648]:
+          - generic [ref=e1649]:
+            - heading [level=2] [ref=e1651]:
+              - link "Moonlight White" [ref=e1652] [cursor=pointer]:
+                - /url: /p/tea-mlwc/
+            - heading "Yue Guang Bai" [level=3] [ref=e1656]
+            - paragraph [ref=e1657]: Enigmatic White tea made from 150 year old Camellia Taliensis trees in Yunnan. Mango vanilla pudding, hay, custard cream biscuits.
+          - generic [ref=e1659]:
+            - text: €11.19 Packet
+            - generic [ref=e1660]: White
+      - generic [ref=e1661]:
+        - link "Sniffles 89 % 23 reviews" [ref=e1663] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-wirc/
+          - img "Sniffles" [ref=e1664]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e1666]: 23 reviews
+        - generic [ref=e1667]:
+          - generic [ref=e1668]:
+            - heading [level=2] [ref=e1670]:
+              - link "Sniffles" [ref=e1671] [cursor=pointer]:
+                - /url: /p/bld-wirc/
+            - paragraph [ref=e1675]: Blend of Chinese herbs designed to help relieve the symptoms of colds and flu.
+          - generic [ref=e1677]:
+            - text: €6.57 Pack
+            - generic [ref=e1678]: Blend
+      - generic [ref=e1679]:
+        - link "Hojicha 87 % 371 reviews" [ref=e1681] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-hjcc/
+          - img "Hojicha" [ref=e1682]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e1684]: 371 reviews
+        - generic [ref=e1685]:
+          - generic [ref=e1686]:
+            - heading [level=2] [ref=e1688]:
+              - link "Hojicha" [ref=e1689] [cursor=pointer]:
+                - /url: /p/tea-hjcc/
+            - heading "Hojicha" [level=3] [ref=e1693]
+            - paragraph [ref=e1694]: A roasted blend of three pickings of Bancha Green tea. Caramel soya sauce, hay and poached pears.
+          - generic [ref=e1696]:
+            - text: €9.37 Pack
+            - generic [ref=e1697]: Green
+      - generic [ref=e1698]:
+        - link "Genmai Matcha 89 % 276 reviews" [ref=e1700] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gmmc/
+          - img "Genmai Matcha" [ref=e1701]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e1703]: 276 reviews
+        - generic [ref=e1704]:
+          - generic [ref=e1705]:
+            - heading [level=2] [ref=e1707]:
+              - link "Genmai Matcha" [ref=e1708] [cursor=pointer]:
+                - /url: /p/tea-gmmc/
+            - paragraph [ref=e1712]: Matcha dusted Genmaicha. Soy sauce covered rice crackers and fresh cut green grass with a rich umami savoury sweetness.
+          - generic [ref=e1714]:
+            - text: €12.90 Packet
+            - generic [ref=e1715]: Blend
+      - generic [ref=e1716]:
+        - link "Baked Goods 88 % 563 reviews" [ref=e1718] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-bakc/
+          - img "Baked Goods" [ref=e1719]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e1721]: 563 reviews
+        - generic [ref=e1722]:
+          - generic [ref=e1723]:
+            - heading [level=2] [ref=e1725]:
+              - link "Baked Goods" [ref=e1726] [cursor=pointer]:
+                - /url: /p/tea-bakc/
+            - heading "Nong Xiang Xiping Huang Dan" [level=3] [ref=e1730]
+            - paragraph [ref=e1731]: Tie Guan Yin style Oolong made from the Huang Dan cultivar and roasted for 9 hours over Longan wood charcoal. Vanilla fudge, baked panna cotta and oxidised pear.
+          - generic [ref=e1733]:
+            - text: €10.55 Packet
+            - generic [ref=e1734]: Oolong
+      - generic [ref=e1735]:
+        - link "Elder White 85 % 687 reviews" [ref=e1737] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-elwc/
+          - img "Elder White" [ref=e1738]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e1740]: 687 reviews
+        - generic [ref=e1741]:
+          - generic [ref=e1742]:
+            - heading [level=2] [ref=e1744]:
+              - link "Elder White" [ref=e1745] [cursor=pointer]:
+                - /url: /p/tea-elwc/
+            - heading "Ye Sheng Ya Bao" [level=3] [ref=e1749]
+            - paragraph [ref=e1750]: Blended pickings of lateral buds picked in late winter from PuErh trees approximately 200 years of age. Elderflower, pinewood, gooseberry crean, fresh apricots and ginger flowers.
+          - generic [ref=e1752]:
+            - text: €8.48 Packet
+            - generic [ref=e1753]: White
+      - generic [ref=e1754]:
+        - link "Diamond Peak 87 % 520 reviews Yellow Tea of the Year 2020 Yellow Tea of the Year 2018" [ref=e1756] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-junc/
+          - img "Diamond Peak" [ref=e1757]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e1759]: 520 reviews
+          - generic [ref=e1760]:
+            - img "Yellow Tea of the Year 2020" [ref=e1761]
+            - img "Yellow Tea of the Year 2018" [ref=e1762]
+        - generic [ref=e1763]:
+          - generic [ref=e1764]:
+            - heading [level=2] [ref=e1766]:
+              - link "Diamond Peak" [ref=e1767] [cursor=pointer]:
+                - /url: /p/tea-junc/
+            - heading "Junshan Yinzhen" [level=3] [ref=e1771]
+            - paragraph [ref=e1772]: Fragrant Yellow bud tea made from 44 year old tea bushes. Guava, sunflower seeds, salted egg yolk and fresh meadow mountain air.
+          - generic [ref=e1774]:
+            - text: €16.44 Packet
+            - generic [ref=e1775]: Yellow
+      - generic [ref=e1776]:
+        - link "Jade Arrow Supreme 92 % 155 reviews" [ref=e1778] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ajsc/
+          - img "Jade Arrow Supreme" [ref=e1779]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e1781]: 155 reviews
+        - generic [ref=e1782]:
+          - generic [ref=e1783]:
+            - heading [level=2] [ref=e1785]:
+              - link "Jade Arrow Supreme" [ref=e1786] [cursor=pointer]:
+                - /url: /p/tea-ajsc/
+            - heading "Anji Bai Cha" [level=3] [ref=e1790]
+            - paragraph [ref=e1791]: Pinnacle 2026 Anji Bai Cha made with a unique cultivar. Honeydew melon, shiopan, warm milk, creamy marrow and gooseberries.
+          - generic [ref=e1793]:
+            - text: €28.87 Packet
+            - generic [ref=e1794]: Green
+      - generic [ref=e1795]:
+        - link [ref=e1797] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-cothc/
+          - img "China Oolong Tea Headliners" [ref=e1798]
+          - img "Gift Idea" [ref=e1800]
+        - generic [ref=e1801]:
+          - generic [ref=e1802]:
+            - heading [level=2] [ref=e1804]:
+              - link "China Oolong Tea Headliners" [ref=e1805] [cursor=pointer]:
+                - /url: /p/gft-cothc/
+            - paragraph [ref=e1809]: Three of our signature Chinese Oolongs to taste the variety in this type of tea. Contains enough tea for at least 9 Gong Fu Sessions.
+          - generic [ref=e1811]:
+            - text: €22.33
+            - generic [ref=e1812]: Oolong
+      - generic [ref=e1813]:
+        - link [ref=e1815] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-grthc/
+          - img "Green Tea Headliners" [ref=e1816]
+          - img "Gift Idea" [ref=e1818]
+        - generic [ref=e1819]:
+          - generic [ref=e1820]:
+            - heading [level=2] [ref=e1822]:
+              - link "Green Tea Headliners" [ref=e1823] [cursor=pointer]:
+                - /url: /p/gft-grthc/
+            - paragraph [ref=e1827]: Give the Gift of Greens with this selection of three signature Green teas. Contains enough tea for at least 9 Gong Fu Sessions.
+          - generic [ref=e1829]:
+            - text: €14.73
+            - generic [ref=e1830]: Green
+      - generic [ref=e1831]:
+        - link [ref=e1833] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-whthc/
+          - img "White Tea Headliners" [ref=e1834]
+          - img "Gift Idea" [ref=e1836]
+        - generic [ref=e1837]:
+          - generic [ref=e1838]:
+            - heading [level=2] [ref=e1840]:
+              - link "White Tea Headliners" [ref=e1841] [cursor=pointer]:
+                - /url: /p/gft-whthc/
+            - paragraph [ref=e1845]: Three of our most loved White teas to taste the wonder of Whites. Contains enough tea for at least 9 Gong Fu Sessions.
+          - generic [ref=e1847]:
+            - text: €11.72
+            - generic [ref=e1848]: White
+      - generic [ref=e1849]:
+        - link [ref=e1851] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-blthc/
+          - img "Black Tea Headliners" [ref=e1852]
+          - img "Gift Idea" [ref=e1854]
+        - generic [ref=e1855]:
+          - generic [ref=e1856]:
+            - heading [level=2] [ref=e1858]:
+              - link "Black Tea Headliners" [ref=e1859] [cursor=pointer]:
+                - /url: /p/gft-blthc/
+            - paragraph [ref=e1863]: Three of our signature Black teas to taste the boldness of Blacks. Contains enough tea for at least 9 Gong Fu Sessions.
+          - generic [ref=e1865]:
+            - text: €14.08
+            - generic [ref=e1866]: Black
+      - generic [ref=e1867]:
+        - link [ref=e1869] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-puthc/
+          - img "PuErh Tea Headliners" [ref=e1870]
+          - img "Gift Idea" [ref=e1872]
+        - generic [ref=e1873]:
+          - generic [ref=e1874]:
+            - heading [level=2] [ref=e1876]:
+              - link "PuErh Tea Headliners" [ref=e1877] [cursor=pointer]:
+                - /url: /p/gft-puthc/
+            - paragraph [ref=e1881]: Three of our favourite PuErhs to experience the unbridled taste and potency of PuErh. Contains enough tea for at least 9 Gong Fu Sessions.
+          - generic [ref=e1883]:
+            - text: €16.44
+            - generic [ref=e1884]: Raw Puerh
+      - generic [ref=e1885]:
+        - link [ref=e1887] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-tothc/
+          - img "Taiwan Oolong Tea Headliners" [ref=e1888]
+          - img "Gift Idea" [ref=e1890]
+        - generic [ref=e1891]:
+          - generic [ref=e1892]:
+            - heading [level=2] [ref=e1894]:
+              - link "Taiwan Oolong Tea Headliners" [ref=e1895] [cursor=pointer]:
+                - /url: /p/gft-tothc/
+            - paragraph [ref=e1899]: Three of our signature Taiwanese Oolongs to sample some of our favourite Formosas. Contains enough tea for at least 9 Gong Fu Sessions.
+          - generic [ref=e1901]:
+            - text: €16.44
+            - generic [ref=e1902]: Oolong
+      - generic [ref=e1903]:
+        - link "Fencha 86 % 66 reviews" [ref=e1905] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fenc/
+          - img "Fencha" [ref=e1906]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e1908]: 66 reviews
+        - generic [ref=e1909]:
+          - generic [ref=e1910]:
+            - heading [level=2] [ref=e1912]:
+              - link "Fencha" [ref=e1913] [cursor=pointer]:
+                - /url: /p/tea-fenc/
+            - paragraph [ref=e1917]: A special blend of stone-ground tea for calm and creative energy.
+          - generic [ref=e1919]:
+            - text: €23.51
+            - generic [ref=e1920]: Blend
+      - generic [ref=e1921]:
+        - link "Cherry Storm 88 % 130 reviews" [ref=e1923] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-cslc/
+          - img "Cherry Storm" [ref=e1924]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e1926]: 130 reviews
+        - generic [ref=e1927]:
+          - generic [ref=e1928]:
+            - heading [level=2] [ref=e1930]:
+              - link "Cherry Storm" [ref=e1931] [cursor=pointer]:
+                - /url: /p/tea-cslc/
+            - heading "Rou Gui Yan Cha" [level=3] [ref=e1935]
+            - paragraph [ref=e1936]: Fragrant and fruity Rou Gui Yancha. Cherries, custard apple, salty nougat and cassia with petrichor and ozone.
+          - generic [ref=e1938]:
+            - text: €13.55 Packet
+            - generic [ref=e1939]: Oolong
+      - generic [ref=e1940]:
+        - link "Snow Phoenix 91 % 179 reviews" [ref=e1942] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-snpc/
+          - img "Snow Phoenix" [ref=e1943]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e1945]: 179 reviews
+        - generic [ref=e1946]:
+          - generic [ref=e1947]:
+            - heading [level=2] [ref=e1949]:
+              - link "Snow Phoenix" [ref=e1950] [cursor=pointer]:
+                - /url: /p/tea-snpc/
+            - heading "Snowflake - Xue Pian Ya Shi" [level=3] [ref=e1954]
+            - paragraph [ref=e1955]: Ultra-fragrant Winter Dancong Oolong made from the final pickings of the Duck Sh*t cultivar. Yellow cherries, chestnut honey, vines, sweet milk, snow and persimmon.
+          - generic [ref=e1957]:
+            - text: €17.67 Packet
+            - generic [ref=e1958]: Oolong
+      - generic [ref=e1959]:
+        - link "Sweet Dew 87 % 214 reviews" [ref=e1961] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gnlc/
+          - img "Sweet Dew" [ref=e1962]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e1964]: 214 reviews
+        - generic [ref=e1965]:
+          - generic [ref=e1966]:
+            - heading [level=2] [ref=e1968]:
+              - link "Sweet Dew" [ref=e1969] [cursor=pointer]:
+                - /url: /p/tea-gnlc/
+            - heading "Mengding Gan Lu" [level=3] [ref=e1973]
+            - paragraph [ref=e1974]: Majestic, handmade green from Mengding mountain. Wok fired zucchini, saline mist, candied pecans and dried apples.
+          - generic [ref=e1976]:
+            - text: €13.55 Packet
+            - generic [ref=e1977]: Green
+      - generic [ref=e1978]:
+        - link "Bamboo Sabre - Pre Qing Ming 88 % 149 reviews" [ref=e1980] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-zyqc/
+          - img "Bamboo Sabre - Pre Qing Ming" [ref=e1981]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e1983]: 149 reviews
+        - generic [ref=e1984]:
+          - generic [ref=e1985]:
+            - heading [level=2] [ref=e1987]:
+              - link "Bamboo Sabre - Pre Qing Ming" [ref=e1988] [cursor=pointer]:
+                - /url: /p/tea-zyqc/
+            - heading "Zhu Ye Qing - Bamboo Leaf Green" [level=3] [ref=e1992]
+            - paragraph [ref=e1993]: Early pluck of an heirloom Sichuan Green. Sweet soy milk, salted custard, dragon fruit, sugar snap peas and green bamboo.
+          - generic [ref=e1995]:
+            - text: €17.08 Packet
+            - generic [ref=e1996]: Green
+      - generic [ref=e1997]:
+        - link "Purple Rose 92 % 97 reviews" [ref=e1999] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-purc/
+          - img "Purple Rose" [ref=e2000]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e2002]: 97 reviews
+        - generic [ref=e2003]:
+          - generic [ref=e2004]:
+            - heading [level=2] [ref=e2006]:
+              - link "Purple Rose" [ref=e2007] [cursor=pointer]:
+                - /url: /p/tea-purc/
+            - paragraph [ref=e2011]: Deeper and fruitier purple rose. Apple cider, cherry sweets and honey.
+          - generic [ref=e2013]:
+            - text: €4.12 Packet
+            - generic [ref=e2014]: Tisanes
+      - generic [ref=e2015]:
+        - link "Laoshan Green 90 % 278 reviews" [ref=e2017] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lsgc/
+          - img "Laoshan Green" [ref=e2018]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e2020]: 278 reviews
+        - generic [ref=e2021]:
+          - generic [ref=e2022]:
+            - heading [level=2] [ref=e2024]:
+              - link "Laoshan Green" [ref=e2025] [cursor=pointer]:
+                - /url: /p/tea-lsgc/
+            - paragraph [ref=e2029]: Ephemeral Green made in the colder climate of Laoshan - the cradle of Taoism in China. Puffed rice cereal, jerusalem artichoke, candied potato and sugared lemon zests.
+          - generic [ref=e2031]:
+            - text: €11.19 Packet
+            - generic [ref=e2032]: Green
+      - generic [ref=e2033]:
+        - link "Sweet Spice JJM 92 % 173 reviews" [ref=e2035] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ssjc/
+          - img "Sweet Spice JJM" [ref=e2036]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e2038]: 173 reviews
+        - generic [ref=e2039]:
+          - generic [ref=e2040]:
+            - heading [level=2] [ref=e2042]:
+              - link "Sweet Spice JJM" [ref=e2043] [cursor=pointer]:
+                - /url: /p/tea-ssjc/
+            - heading "Jin Jun Mei" [level=3] [ref=e2047]
+            - paragraph [ref=e2048]: Straight bud Jin Jun Mei from Tong Mu village. Toasted malt loaf, cinnamon, lilacs, papaya milk and agave syrup.
+          - generic [ref=e2050]:
+            - text: €15.91 Packet
+            - generic [ref=e2051]: Black
+      - generic [ref=e2052]:
+        - link "Bailu Gold 92 % 134 reviews" [ref=e2054] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gblc/
+          - img "Bailu Gold" [ref=e2055]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e2057]: 134 reviews
+        - generic [ref=e2058]:
+          - generic [ref=e2059]:
+            - heading [level=2] [ref=e2061]:
+              - link "Bailu Gold" [ref=e2062] [cursor=pointer]:
+                - /url: /p/tea-gblc/
+            - heading "Huang Jin Bai Lu" [level=3] [ref=e2066]
+            - paragraph [ref=e2067]: Elite and micro-batch Black made from semi-wild, old tree, ultra-fine buds from Sichuan. Malted chocolate, salted caramel pecans, raisins, rose and lychee.
+          - generic [ref=e2069]:
+            - text: €23.51 Packet
+            - generic [ref=e2070]: Black
+      - generic [ref=e2071]:
+        - link "Playground Rendez-Vous 90 % 314 reviews" [ref=e2073] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-prvc/
+          - img "Playground Rendez-Vous" [ref=e2074]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e2076]: 314 reviews
+        - generic [ref=e2077]:
+          - generic [ref=e2078]:
+            - heading [level=2] [ref=e2080]:
+              - link "Playground Rendez-Vous" [ref=e2081] [cursor=pointer]:
+                - /url: /p/tea-prvc/
+            - heading "Kombucha Fermented 2019 Bulang Gushu Shu PuErh" [level=3] [ref=e2085]
+            - paragraph [ref=e2086]: Kombucha fermented Gushu PuErh made in bamboo barrels. Intense, sweet, herbal liqueur, custard and preserved plums.
+          - generic [ref=e2088]:
+            - text: €81.30 Cake
+            - generic [ref=e2089]: Ripened
+      - generic [ref=e2090]:
+        - link "Orchard Stream 89 % 90 reviews" [ref=e2092] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sprcc/
+          - img "Orchard Stream" [ref=e2093]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2095]: 90 reviews
+        - generic [ref=e2096]:
+          - generic [ref=e2097]:
+            - heading [level=2] [ref=e2099]:
+              - link "Orchard Stream" [ref=e2100] [cursor=pointer]:
+                - /url: /p/tea-sprcc/
+            - heading "Tao Ren Rou Gui" [level=3] [ref=e2104]
+            - paragraph [ref=e2105]: Special grade Rou Gui with a uniquely bright and fruity character. Peach sherbet, mangosteen, mastic, oregano and cedar.
+          - generic [ref=e2107]:
+            - text: €25.86 Packet
+            - generic [ref=e2108]: Oolong
+      - generic [ref=e2109]:
+        - link "Mulberry Leaf Powder 87 % 81 reviews" [ref=e2111] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mlpc/
+          - img "Mulberry Leaf Powder" [ref=e2112]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e2114]: 81 reviews
+        - generic [ref=e2115]:
+          - generic [ref=e2116]:
+            - heading [level=2] [ref=e2118]:
+              - link "Mulberry Leaf Powder" [ref=e2119] [cursor=pointer]:
+                - /url: /p/tea-mlpc/
+            - paragraph [ref=e2123]: Mulberry 'Matcha' from Japan is rich in potent phytonutrients for good health. Rich milk pudding and creamed avocado.
+          - generic [ref=e2125]:
+            - text: €15.26 Pack
+            - generic [ref=e2126]: Tisanes
+      - generic [ref=e2127]:
+        - link "Long Jing Supreme 91 % 78 reviews" [ref=e2129] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ljsc/
+          - img "Long Jing Supreme" [ref=e2130]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e2132]: 78 reviews
+        - generic [ref=e2133]:
+          - generic [ref=e2134]:
+            - heading [level=2] [ref=e2136]:
+              - link "Long Jing Supreme" [ref=e2137] [cursor=pointer]:
+                - /url: /p/tea-ljsc/
+            - heading "Shifeng Long Jing" [level=3] [ref=e2141]
+            - paragraph [ref=e2142]: Pre-Qing Ming, authentic Xihu Long Jing from the revered Shifeng fields. Toasted rice, chestnut puree, candied nuts, green melon and lime cordial.
+          - generic [ref=e2144]:
+            - text: €37.70 Packet
+            - generic [ref=e2145]: Green
+      - generic [ref=e2146]:
+        - link "Heaven Surveyor 89 % 115 reviews Gift Idea" [ref=e2148] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-hsuc/
+          - img "Heaven Surveyor" [ref=e2149]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2151]: 115 reviews
+          - img "Gift Idea" [ref=e2153]
+        - generic [ref=e2154]:
+          - generic [ref=e2155]:
+            - heading [level=2] [ref=e2157]:
+              - link "Heaven Surveyor" [ref=e2158] [cursor=pointer]:
+                - /url: /p/tea-hsuc/
+            - heading "Man Song Sheng Dashu Spring 2021" [level=3] [ref=e2162]
+            - paragraph [ref=e2163]: Prized old tree tea from the Qing Dynasty Tribute forests of Man Song. Apricots, tonic water, sherbet, persimmon and gardenia. A rising and mind-focusing energy.
+          - generic [ref=e2165]:
+            - text: €159.06 Cake
+            - generic [ref=e2166]: Raw Puerh
+      - generic [ref=e2167]:
+        - link "Stone Milk 91 % 166 reviews" [ref=e2169] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-stmc/
+          - img "Stone Milk" [ref=e2170]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e2172]: 166 reviews
+        - generic [ref=e2173]:
+          - generic [ref=e2174]:
+            - heading [level=2] [ref=e2176]:
+              - link "Stone Milk" [ref=e2177] [cursor=pointer]:
+                - /url: /p/tea-stmc/
+            - heading "Shi Ru" [level=3] [ref=e2181]
+            - paragraph [ref=e2182]: Ancient heirloom cultivar Yan Cha Oolong famous in the Song Dynasty. Magnolia, buttercream icing, frankincense, guava and peach taffy.
+          - generic [ref=e2184]:
+            - text: €18.79 Packet
+            - generic [ref=e2185]: Oolong
+      - generic [ref=e2186]:
+        - link "Fig Butter Black 90 % 203 reviews" [ref=e2188] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fbuc/
+          - img "Fig Butter Black" [ref=e2189]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e2191]: 203 reviews
+        - generic [ref=e2192]:
+          - generic [ref=e2193]:
+            - heading [level=2] [ref=e2195]:
+              - link "Fig Butter Black" [ref=e2196] [cursor=pointer]:
+                - /url: /p/tea-fbuc/
+            - heading "Jin Mu Dan - Golden Peony" [level=3] [ref=e2200]
+            - paragraph [ref=e2201]: Wuyi mountain Black tea made from the Jin Mu Dan cultivar mostly used for Oolongs. Fresh figs, brown butter, gardenia, violets and lilac.
+          - generic [ref=e2203]:
+            - text: €9.90 Packet
+            - generic [ref=e2204]: Black
+      - generic [ref=e2205]:
+        - link "Castleton Muscatel - Special Reserve Lot 87 % 127 reviews" [ref=e2207] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-cmlc/
+          - img "Castleton Muscatel - Special Reserve Lot" [ref=e2208]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e2210]: 127 reviews
+        - generic [ref=e2211]:
+          - generic [ref=e2212]:
+            - heading [level=2] [ref=e2214]:
+              - link "Castleton Muscatel - Special Reserve Lot" [ref=e2215] [cursor=pointer]:
+                - /url: /p/tea-cmlc/
+            - heading "Castleton Muscatel Darjeeling" [level=3] [ref=e2219]
+            - paragraph [ref=e2220]: Exemplary batch of Castleton Muscatel Darjeeling - the original Muscatel tea. Made from old, seeded Chinese bushes. Mangosteen, muscatel, saffron, mango, fresh turmeric, kumquat and green peppercorns.
+          - generic [ref=e2222]:
+            - text: €19.97 Packet
+            - generic [ref=e2223]: Black
+      - generic [ref=e2224]:
+        - link "Love-Struck Rascal 89 % 111 reviews" [ref=e2226] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lsrc/
+          - img "Love-Struck Rascal" [ref=e2227]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2229]: 111 reviews
+        - generic [ref=e2230]:
+          - generic [ref=e2231]:
+            - heading [level=2] [ref=e2233]:
+              - link "Love-Struck Rascal" [ref=e2234] [cursor=pointer]:
+                - /url: /p/tea-lsrc/
+            - heading "Spring 2022 Bang Dong Gushu Sheng" [level=3] [ref=e2238]
+            - paragraph [ref=e2239]: Mengku ancient tree PuErh with a powerful body buzz. Steamed lotus seed dumplings in bamboo baskets, oat cookies, persimmon and young coconut flesh.
+          - generic [ref=e2241]:
+            - text: €84.83 Cake
+            - generic [ref=e2242]: Raw Puerh
+      - generic [ref=e2243]:
+        - link "Koji Plum 83 % 119 reviews" [ref=e2245] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ynac/
+          - img "Koji Plum" [ref=e2246]
+          - generic:
+            - generic: 83 %
+            - generic [ref=e2248]: 119 reviews
+        - generic [ref=e2249]:
+          - generic [ref=e2250]:
+            - heading [level=2] [ref=e2252]:
+              - link "Koji Plum" [ref=e2253] [cursor=pointer]:
+                - /url: /p/tea-ynac/
+            - heading "Yamabuki Nadeshiko" [level=3] [ref=e2257]
+            - paragraph [ref=e2258]: Unique Japanese tea fermented with Koji. Brown sugar, Teh Tarik, roasted barley, preserved plums, dried apricots and dates.
+          - generic [ref=e2260]:
+            - text: €15.26 Packet
+            - generic [ref=e2261]: Ripened
+      - generic [ref=e2262]:
+        - link "Pernickety Pleasureseeker 89 % 102 reviews Gift Idea" [ref=e2264] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-pplc/
+          - img "Pernickety Pleasureseeker" [ref=e2265]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2267]: 102 reviews
+          - img "Gift Idea" [ref=e2269]
+        - generic [ref=e2270]:
+          - generic [ref=e2271]:
+            - heading [level=2] [ref=e2273]:
+              - link "Pernickety Pleasureseeker" [ref=e2274] [cursor=pointer]:
+                - /url: /p/tea-pplc/
+            - heading "Spring 2022 Bing Dao Gushu Sheng PuErh" [level=3] [ref=e2278]
+            - paragraph [ref=e2279]: Distinctly epicurean Bing Dao Gushu PuErh. Dark caramelised waffles and butterscotch, uni, pea-shoots, blackberries and love hearts.
+          - generic [ref=e2281]:
+            - text: €147.28 Cake
+            - generic [ref=e2282]: Raw Puerh
+      - generic [ref=e2283]:
+        - link "Breezy Bohemian 89 % 114 reviews" [ref=e2285] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-bboc/
+          - img "Breezy Bohemian" [ref=e2286]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2288]: 114 reviews
+        - generic [ref=e2289]:
+          - generic [ref=e2290]:
+            - heading [level=2] [ref=e2292]:
+              - link "Breezy Bohemian" [ref=e2293] [cursor=pointer]:
+                - /url: /p/tea-bboc/
+            - heading "Spring 2022 Pasha Gushu Sheng PuErh" [level=3] [ref=e2297]
+            - paragraph [ref=e2298]: PuErh from 200 year old trees growing in the revered forests of Pasha. Melted butter, pecan, nougat, melon, rose apples, allspice, rocks and mountain flowers.
+          - generic [ref=e2300]:
+            - text: €104.86 Cake
+            - generic [ref=e2301]: Raw Puerh
+      - generic [ref=e2302]:
+        - link "Bright Heart 2021 84 % 128 reviews" [ref=e2304] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-nslc/
+          - img "Bright Heart 2021" [ref=e2305]
+          - generic:
+            - generic: 84 %
+            - generic [ref=e2307]: 128 reviews
+        - generic [ref=e2308]:
+          - generic [ref=e2309]:
+            - heading [level=2] [ref=e2311]:
+              - link "Bright Heart 2021" [ref=e2312] [cursor=pointer]:
+                - /url: /p/tea-nslc/
+            - heading "2021 Liu Bao" [level=3] [ref=e2316]
+            - paragraph [ref=e2317]: Vibrant 2021 Liu Bao from Qinzhou. Brown sugar, salted plums, sherbet, iron-rich rocks and aged tangerine.
+          - generic [ref=e2319]:
+            - text: €8.19 Packet
+            - generic [ref=e2320]: Ripened
+      - generic [ref=e2321]:
+        - link "Consort's Smile 91 % 164 reviews" [ref=e2323] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fzxc/
+          - img "Consort's Smile" [ref=e2324]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e2326]: 164 reviews
+        - generic [ref=e2327]:
+          - generic [ref=e2328]:
+            - heading [level=2] [ref=e2330]:
+              - link "Consort's Smile" [ref=e2331] [cursor=pointer]:
+                - /url: /p/tea-fzxc/
+            - heading "Fei Zi Xiao" [level=3] [ref=e2335]
+            - paragraph [ref=e2336]: Immensely fruity and sweet Black tea from 25 year old bushes in Tong Mu. Tinned lychee, guava, magnolia, buttercream and fresh notebooks leading to a bright minerality.
+          - generic [ref=e2338]:
+            - text: €14.73 Packet
+            - generic [ref=e2339]: Black
+      - generic [ref=e2340]:
+        - link "Sovereign Bud 95 % 82 reviews" [ref=e2342] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mdyc/
+          - img "Sovereign Bud" [ref=e2343]
+          - generic:
+            - generic: 95 %
+            - generic [ref=e2345]: 82 reviews
+        - generic [ref=e2346]:
+          - generic [ref=e2347]:
+            - heading [level=2] [ref=e2349]:
+              - link "Sovereign Bud" [ref=e2350] [cursor=pointer]:
+                - /url: /p/tea-mdyc/
+            - heading "Mengding Huang Ya" [level=3] [ref=e2354]
+            - paragraph [ref=e2355]: Master Li award-winning Yellow tea handmade from the original heirloom bushes in Sichuan. Candied pecans, salted caramel, hazelnut cream, hay baked jerusalem artichokes, sweet soya, orchids and sugar biscuits.
+          - generic [ref=e2357]:
+            - text: €37.70 Packet
+            - generic [ref=e2358]: Yellow
+      - generic [ref=e2359]:
+        - link "Jam Ambassador 87 % 120 reviews" [ref=e2361] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-jmbc/
+          - img "Jam Ambassador" [ref=e2362]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e2364]: 120 reviews
+        - generic [ref=e2365]:
+          - generic [ref=e2366]:
+            - heading [level=2] [ref=e2368]:
+              - link "Jam Ambassador" [ref=e2369] [cursor=pointer]:
+                - /url: /p/tea-jmbc/
+            - heading "Spring 2022 Jing Mai & Ba Da Gushu Sheng PuErh" [level=3] [ref=e2373]
+            - paragraph [ref=e2374]: Elusive blend of Jing Mai and Ba Da ancient tree PuErh. Strawberry jam, calamansi, burnt sugars and kumquat marmalade.
+          - generic [ref=e2376]:
+            - text: €88.37 Cake
+            - generic [ref=e2377]: Raw Puerh
+      - generic [ref=e2378]:
+        - link "Pomelo Flower Honey 92 % 101 reviews" [ref=e2380] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-flhc/
+          - img "Pomelo Flower Honey" [ref=e2381]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e2383]: 101 reviews
+        - generic [ref=e2384]:
+          - generic [ref=e2385]:
+            - heading [level=2] [ref=e2387]:
+              - link "Pomelo Flower Honey" [ref=e2388] [cursor=pointer]:
+                - /url: /p/tea-flhc/
+            - heading "You Zi Xiang Dan Cong" [level=3] [ref=e2392]
+            - paragraph [ref=e2393]: Pinnacle batch of Pomelo Dan Cong from old trees. Thyme honey, pomelo zest, jasmine, lime flowers, strawberry jam and butter pastry.
+          - generic [ref=e2395]:
+            - text: €29.46 Packet
+            - generic [ref=e2396]: Oolong
+      - generic [ref=e2397]:
+        - link "Lao Cong Milan 94 % 36 reviews" [ref=e2399] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lcmc/
+          - img "Lao Cong Milan" [ref=e2400]
+          - generic:
+            - generic: 94 %
+            - generic [ref=e2402]: 36 reviews
+        - generic [ref=e2403]:
+          - generic [ref=e2404]:
+            - heading [level=2] [ref=e2406]:
+              - link "Lao Cong Milan" [ref=e2407] [cursor=pointer]:
+                - /url: /p/tea-lcmc/
+            - heading "Lao Cong Mi Lan Xiang Dan Cong" [level=3] [ref=e2411]
+            - paragraph [ref=e2412]: Top tier micro-batch Dan Cong from 95-year-old trees. Rich and resinous with fresh oregano and griddled peaches glazed in thyme honey.
+          - generic [ref=e2414]:
+            - text: €31.81 Packet
+            - generic [ref=e2415]: Oolong
+      - generic [ref=e2416]:
+        - link "Rockabilly Dreamboat 86 % 94 reviews" [ref=e2418] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-rdrc/
+          - img "Rockabilly Dreamboat" [ref=e2419]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e2421]: 94 reviews
+        - generic [ref=e2422]:
+          - generic [ref=e2423]:
+            - heading [level=2] [ref=e2425]:
+              - link "Rockabilly Dreamboat" [ref=e2426] [cursor=pointer]:
+                - /url: /p/tea-rdrc/
+            - heading "Spring 2023 He Beng Sheng Gushu PuErh" [level=3] [ref=e2430]
+            - paragraph [ref=e2431]: Ancient tree PuErh showcasing the uniquely creamy and deep character of He Beng village. Prunes, malted chocolate milkshake, apple skins, tonic water and lotus flowers.
+          - generic [ref=e2433]:
+            - text: €87.19 Cake
+            - generic [ref=e2434]: Raw Puerh
+      - generic [ref=e2435]:
+        - link "2007 Treacle TGY 85 % 70 reviews" [ref=e2437] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-troc/
+          - img "2007 Treacle TGY" [ref=e2438]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e2440]: 70 reviews
+        - generic [ref=e2441]:
+          - generic [ref=e2442]:
+            - heading [level=2] [ref=e2444]:
+              - link "2007 Treacle TGY" [ref=e2445] [cursor=pointer]:
+                - /url: /p/tea-troc/
+            - heading "2007 Anxi Tie Guan Yin" [level=3] [ref=e2449]
+            - paragraph [ref=e2450]: Aged Tie Guan Yin Oolong stored for over 16 years in Fujian. Treacle flapjacks, sweet soy, toffee paper, roasting coffee, sauna stones and rosehip.
+          - generic [ref=e2452]:
+            - text: €34.17 Packet
+            - generic [ref=e2453]: Oolong
+      - generic [ref=e2454]:
+        - link "Gateau Flapper 85 % 141 reviews" [ref=e2456] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gfrc1/
+          - img "Gateau Flapper" [ref=e2457]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e2459]: 141 reviews
+        - generic [ref=e2460]:
+          - generic [ref=e2461]:
+            - heading [level=2] [ref=e2463]:
+              - link "Gateau Flapper" [ref=e2464] [cursor=pointer]:
+                - /url: /p/tea-gfrc1/
+            - heading "2014 Da Shu Menghai Shu PuErh" [level=3] [ref=e2468]
+            - paragraph [ref=e2469]: Rich Menghai PuErh from 100-year-old trees picked in 2014. Cocoa cookies, chocolate sponge, vanilla fudge, iron supplements, rosehip and overipe cherries.
+          - generic [ref=e2471]:
+            - text: €62.45 Cake
+            - generic [ref=e2472]: Ripened
+      - generic [ref=e2473]:
+        - link "Cookie Fruit Barrel 90 % 103 reviews" [ref=e2475] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-jmdc/
+          - img "Cookie Fruit Barrel" [ref=e2476]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e2478]: 103 reviews
+        - generic [ref=e2479]:
+          - generic [ref=e2480]:
+            - heading [level=2] [ref=e2482]:
+              - link "Cookie Fruit Barrel" [ref=e2483] [cursor=pointer]:
+                - /url: /p/tea-jmdc/
+            - heading "Jin Mu Dan - Golden Peony" [level=3] [ref=e2487]
+            - paragraph [ref=e2488]: Golden Peony cultivar Rock Oolong from 32 year old bushes. Baked tangerine peel, gingerbread cookies, cherry liqueur, kraft paper and vanilla bourbon.
+          - generic [ref=e2490]:
+            - text: €14.08 Packet
+            - generic [ref=e2491]: Oolong
+      - generic [ref=e2492]:
+        - link "Joy Rider 93 % 59 reviews" [ref=e2494] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-joyc/
+          - img "Joy Rider" [ref=e2495]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e2497]: 59 reviews
+        - generic [ref=e2498]:
+          - generic [ref=e2499]:
+            - heading [level=2] [ref=e2501]:
+              - link "Joy Rider" [ref=e2502] [cursor=pointer]:
+                - /url: /p/tea-joyc/
+            - heading "2022 Gua Feng Zhai Yiwu Da Shu Sheng" [level=3] [ref=e2506]
+            - paragraph [ref=e2507]: Rich, bamboo-roasted Gua Feng Zhai Yiwu PuErh from 150-200 year old trees. Apricot tart, baked strawberries, watermelon pie, fenugreek, scorched chilli peppers, charcuterie spices, pine forests, tobacco and incense.
+          - generic [ref=e2509]:
+            - text: €182.63 Stick
+            - generic [ref=e2510]: Raw Puerh
+      - generic [ref=e2511]:
+        - link "90's Vintage Stem 85 % 48 reviews" [ref=e2513] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-nilc/
+          - img "90's Vintage Stem" [ref=e2514]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e2516]: 48 reviews
+        - generic [ref=e2517]:
+          - generic [ref=e2518]:
+            - heading [level=2] [ref=e2520]:
+              - link "90's Vintage Stem" [ref=e2521] [cursor=pointer]:
+                - /url: /p/tea-nilc/
+            - heading "Lao Cha Geng Liu Bao" [level=3] [ref=e2525]
+            - paragraph [ref=e2526]: Vintage Liu Bao made in the mid 1990's mostly from stems for a sweet and clean character. Brown sugar, grain porridge, clay, laundry, peanut butter and love hearts.
+          - generic [ref=e2528]:
+            - text: €18.79 Packet
+            - generic [ref=e2529]: Ripened
+      - generic [ref=e2530]:
+        - link "Lush Disciple 87 % 74 reviews" [ref=e2532] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lusc/
+          - img "Lush Disciple" [ref=e2533]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e2535]: 74 reviews
+        - generic [ref=e2536]:
+          - generic [ref=e2537]:
+            - heading [level=2] [ref=e2539]:
+              - link "Lush Disciple" [ref=e2540] [cursor=pointer]:
+                - /url: /p/tea-lusc/
+            - heading "Spring 2023 Da Xue Shan Gushu Sheng PuErh" [level=3] [ref=e2544]
+            - paragraph [ref=e2545]: A PuErh potion from ancient trees of the Big Snowy Mountain with the most enduring floral sweetness and powerful tea high. Angel's trumpets, pomelo, humid jungle, slate and agave syrup.
+          - generic [ref=e2547]:
+            - text: €111.93 Cake
+            - generic [ref=e2548]: Raw Puerh
+      - generic [ref=e2549]:
+        - link "Amulet Majesty 89 % 122 reviews" [ref=e2551] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-kcmc/
+          - img "Amulet Majesty" [ref=e2552]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2554]: 122 reviews
+        - generic [ref=e2555]:
+          - generic [ref=e2556]:
+            - heading [level=2] [ref=e2558]:
+              - link "Amulet Majesty" [ref=e2559] [cursor=pointer]:
+                - /url: /p/tea-kcmc/
+            - heading "Spring 2015 Gong Ting Zi Juan Ripe PuErh" [level=3] [ref=e2563]
+            - paragraph [ref=e2564]: Fruity and creamy fermented tea made from the purple Zi Juan cultivar. Blueberries, chocolate brioche, orange boiled sweets, sweet bean paste, and cranberry fudge.
+          - generic [ref=e2566]:
+            - text: €56.56 Cake
+            - generic [ref=e2567]: Ripened
+      - generic [ref=e2568]:
+        - link "Moonbeam Voyager 86 % 59 reviews" [ref=e2570] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mbvc/
+          - img "Moonbeam Voyager" [ref=e2571]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e2573]: 59 reviews
+        - generic [ref=e2574]:
+          - generic [ref=e2575]:
+            - heading [level=2] [ref=e2577]:
+              - link "Moonbeam Voyager" [ref=e2578] [cursor=pointer]:
+                - /url: /p/tea-mbvc/
+            - heading "Autumn 2022 Xi Yuan Gushu Sheng PuErh" [level=3] [ref=e2582]
+            - paragraph [ref=e2583]: Sweet, rich and fragrant ancient tree PuErh picked in Autumn. Pancake batter, rum and vanilla syrup, orange blossom custard, candied papaya, watermelon rind and wet rocks.
+          - generic [ref=e2585]:
+            - text: €87.19 Cake
+            - generic [ref=e2586]: Raw Puerh
+      - generic [ref=e2587]:
+        - link "Midnight Oracle 91 % 118 reviews" [ref=e2589] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mioc/
+          - img "Midnight Oracle" [ref=e2590]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e2592]: 118 reviews
+        - generic [ref=e2593]:
+          - generic [ref=e2594]:
+            - heading [level=2] [ref=e2596]:
+              - link "Midnight Oracle" [ref=e2597] [cursor=pointer]:
+                - /url: /p/tea-mioc/
+            - heading "Spring 2010 Lincang Dashu Sheng" [level=3] [ref=e2601]
+            - paragraph [ref=e2602]: Spring 2010 old-tree PuErh from Lincang with vibrating body sensation. Apple candy, apricots, overipe pineapple, chestnut honey, incense, flint, leather, dark soy and prune juice.
+          - generic [ref=e2604]:
+            - text: €134.32 Cake
+            - generic [ref=e2605]: Raw Puerh
+      - generic [ref=e2606]:
+        - link "Summer Garden Crush 91 % 49 reviews" [ref=e2608] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sgcc/
+          - img "Summer Garden Crush" [ref=e2609]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e2611]: 49 reviews
+        - generic [ref=e2612]:
+          - generic [ref=e2613]:
+            - heading [level=2] [ref=e2615]:
+              - link "Summer Garden Crush" [ref=e2616] [cursor=pointer]:
+                - /url: /p/tea-sgcc/
+            - heading "Da Wu Ye Dan Cong" [level=3] [ref=e2620]
+            - paragraph [ref=e2621]: Powerhouse Dan Cong with blossoming fragrance of flowers, fruits and puddings. Apricot custard, gardenia, pomelo zest and thyme honey.
+          - generic [ref=e2623]:
+            - text: €20.62 Packet
+            - generic [ref=e2624]: Oolong
+      - generic [ref=e2625]:
+        - link "Luxe Frontier 93 % 90 reviews" [ref=e2627] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-yzcc/
+          - img "Luxe Frontier" [ref=e2628]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e2630]: 90 reviews
+        - generic [ref=e2631]:
+          - generic [ref=e2632]:
+            - heading [level=2] [ref=e2634]:
+              - link "Luxe Frontier" [ref=e2635] [cursor=pointer]:
+                - /url: /p/tea-yzcc/
+            - heading "Yaan Zang Cha" [level=3] [ref=e2639]
+            - paragraph [ref=e2640]: Crazy fine grade ancient frontier tea produced for Tibetan highlanders. Cherry chocolate liqueur, dried strawberries, wine gums, wet rocks, sawn pine, sauna, farmyard and worn leather.
+          - generic [ref=e2642]:
+            - text: €32.93 Packet
+            - generic [ref=e2643]: Ripened
+      - generic [ref=e2644]:
+        - link "Aroma Composer 89 % 43 reviews" [ref=e2646] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-romc/
+          - img "Aroma Composer" [ref=e2647]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2649]: 43 reviews
+        - generic [ref=e2650]:
+          - generic [ref=e2651]:
+            - heading [level=2] [ref=e2653]:
+              - link "Aroma Composer" [ref=e2654] [cursor=pointer]:
+                - /url: /p/tea-romc/
+            - heading "Yiwu Spring 2024 Gushu Sheng" [level=3] [ref=e2658]
+            - paragraph [ref=e2659]: Immaculate Ancient Tree Yiwu PuErh from Gao Shan village. Caramel, honey, milk powder, dried apricots, sandalwood and forest streams.
+          - generic [ref=e2661]:
+            - text: €164.95 Cake
+            - generic [ref=e2662]: Raw Puerh
+      - generic [ref=e2663]:
+        - link "Butterfly Pea Flower 85 % 25 reviews" [ref=e2665] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-bpfc/
+          - img "Butterfly Pea Flower" [ref=e2666]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e2668]: 25 reviews
+        - generic [ref=e2669]:
+          - generic [ref=e2670]:
+            - heading [level=2] [ref=e2672]:
+              - link "Butterfly Pea Flower" [ref=e2673] [cursor=pointer]:
+                - /url: /p/tea-bpfc/
+            - paragraph [ref=e2677]: Remarkable flower creating a deep indigo blue liquor. White corn and honeycomb candy.
+          - generic [ref=e2679]:
+            - text: €5.30 Packet
+            - generic [ref=e2680]: Tisanes
+      - generic [ref=e2681]:
+        - link "Hunting For Pralines 89 % 104 reviews" [ref=e2683] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-rjdc/
+          - img "Hunting For Pralines" [ref=e2684]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2686]: 104 reviews
+        - generic [ref=e2687]:
+          - generic [ref=e2688]:
+            - heading [level=2] [ref=e2690]:
+              - link "Hunting For Pralines" [ref=e2691] [cursor=pointer]:
+                - /url: /p/tea-rjdc/
+            - paragraph [ref=e2695]: Heirloom and wild Fu brick made from over 60-year-old trees and processed without wheat inoculation. Brioche, mandarin marmalade, carrot juice, lady fingers, leather, Speyside whisky and candied pecans.
+          - generic [ref=e2697]:
+            - text: €104.86 Brick
+            - generic [ref=e2698]: Ripened
+      - generic [ref=e2699]:
+        - link "Renegade Butterfly 89 % 79 reviews On Sale" [ref=e2701] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-rgbc/
+          - img "Renegade Butterfly" [ref=e2702]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2704]: 79 reviews
+          - img "On Sale" [ref=e2706]
+        - generic [ref=e2707]:
+          - generic [ref=e2708]:
+            - heading [level=2] [ref=e2710]:
+              - link "Renegade Butterfly" [ref=e2711] [cursor=pointer]:
+                - /url: /p/tea-rgbc/
+            - heading "Bamboo Roasted White" [level=3] [ref=e2715]
+            - paragraph [ref=e2716]: Bamboo roasted White tea from 150 year old assamica trees. Sticky dates, panela sugar, almond brittle, longan honey, grape taffy and rum raisin.
+          - generic [ref=e2718]:
+            - text: €45.36
+            - generic [ref=e2719]: €90.72
+            - text: Stick
+            - generic [ref=e2720]: White
+      - generic [ref=e2721]:
+        - link "Mystic Tree Guardian 89 % 70 reviews" [ref=e2723] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mtfc/
+          - img "Mystic Tree Guardian" [ref=e2724]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e2726]: 70 reviews
+        - generic [ref=e2727]:
+          - generic [ref=e2728]:
+            - heading [level=2] [ref=e2730]:
+              - link "Mystic Tree Guardian" [ref=e2731] [cursor=pointer]:
+                - /url: /p/tea-mtfc/
+            - heading "1999 Royal Bulang Dashu Shu PuErh" [level=3] [ref=e2735]
+            - paragraph [ref=e2736]: Smooth and buttery vintage PuErh from 1999 pickings of 140 year old Bulang trees. Guinness and chocolate cake, heirloom apples, leather, bookshops, butter and grenadine.
+          - generic [ref=e2738]:
+            - text: €94.26 Cake
+            - generic [ref=e2739]: Ripened
+      - generic [ref=e2740]:
+        - link "Tranquility Leaper 87 % 46 reviews" [ref=e2742] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-tlrc/
+          - img "Tranquility Leaper" [ref=e2743]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e2745]: 46 reviews
+        - generic [ref=e2746]:
+          - generic [ref=e2747]:
+            - heading [level=2] [ref=e2749]:
+              - link "Tranquility Leaper" [ref=e2750] [cursor=pointer]:
+                - /url: /p/tea-tlrc/
+            - heading "Spring 2024 Mengku Gushu Sheng" [level=3] [ref=e2754]
+            - paragraph [ref=e2755]: Fruity & creamy Gushu PuErh from 200 year old trees in Mengku. Orange creamsicle, brioche, peach nectar, aperal, marmalade muffin, tree resin, coconut and waxy flowers. Floaty Tea drunkenness.
+          - generic [ref=e2757]:
+            - text: €103.68 Cake
+            - generic [ref=e2758]: Raw Puerh
+      - generic [ref=e2759]:
+        - link [ref=e2761] [cursor=pointer]:
+          - /url: https://meileaf.com/p/gft-tkthc/
+          - img "Tea Drunk Headliner" [ref=e2762]
+        - generic [ref=e2763]:
+          - generic [ref=e2764]:
+            - heading [level=2] [ref=e2766]:
+              - link "Tea Drunk Headliner" [ref=e2767] [cursor=pointer]:
+                - /url: /p/gft-tkthc/
+            - paragraph [ref=e2771]: Our selection of delicious and powerful teas across three different tea types. These brews are likely to get you Tea Drunk!
+          - generic [ref=e2773]:
+            - text: €23.51
+            - generic [ref=e2774]: White
+      - generic [ref=e2775]:
+        - link "Rubyland Poet 88 % 49 reviews" [ref=e2777] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-rlpc/
+          - img "Rubyland Poet" [ref=e2778]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e2780]: 49 reviews
+        - generic [ref=e2781]:
+          - generic [ref=e2782]:
+            - heading [level=2] [ref=e2784]:
+              - link "Rubyland Poet" [ref=e2785] [cursor=pointer]:
+                - /url: /p/tea-rlpc/
+            - heading "Autumn 2023 Mengku Gushu Sheng" [level=3] [ref=e2789]
+            - paragraph [ref=e2790]: Fruit-forward Autumn Sheng made from Ancient Tree pickings from Bang Dong and Najiao in Mengku. Blackcurrant candy, fresh apricots, salted custard, toffee, baked banana, sherbet, rocks and fresh air.
+          - generic [ref=e2792]:
+            - text: €101.33 Cake
+            - generic [ref=e2793]: Raw Puerh
+      - generic [ref=e2794]:
+        - link "Bodega Spectator 92 % 49 reviews" [ref=e2796] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-bodc/
+          - img "Bodega Spectator" [ref=e2797]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e2799]: 49 reviews
+        - generic [ref=e2800]:
+          - generic [ref=e2801]:
+            - heading [level=2] [ref=e2803]:
+              - link "Bodega Spectator" [ref=e2804] [cursor=pointer]:
+                - /url: /p/tea-bodc/
+            - heading "Spring 2024 Zheng Qi Tang Gushu Sheng" [level=3] [ref=e2808]
+            - paragraph [ref=e2809]: Ethereal Ancient Tree PuErh from the small village of Zheng Qi Tang high up in the mountains of Mengku. Bright minerality, fresh apricots, rhubarb, white grapes, strawberry milk and jasmine.
+          - generic [ref=e2811]:
+            - text: €111.93 Cake
+            - generic [ref=e2812]: Raw Puerh
+      - generic [ref=e2813]:
+        - link "Midori Black 87 % 59 reviews" [ref=e2815] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-midc/
+          - img "Midori Black" [ref=e2816]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e2818]: 59 reviews
+        - generic [ref=e2819]:
+          - generic [ref=e2820]:
+            - heading [level=2] [ref=e2822]:
+              - link "Midori Black" [ref=e2823] [cursor=pointer]:
+                - /url: /p/tea-midc/
+            - heading "Okumidori Wakoucha" [level=3] [ref=e2827]
+            - paragraph [ref=e2828]: Smooth and silky Black tea with unusual flowery green character. Parma violets, maple syrup, poppy seed desserts, toasted nori, fuji apples and meringue.
+          - generic [ref=e2830]:
+            - text: €11.72 Packet
+            - generic [ref=e2831]: Black
+      - generic [ref=e2832]:
+        - link "Glam Countess 88 % 40 reviews" [ref=e2834] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gcoc/
+          - img "Glam Countess" [ref=e2835]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e2837]: 40 reviews
+        - generic [ref=e2838]:
+          - generic [ref=e2839]:
+            - heading [level=2] [ref=e2841]:
+              - link "Glam Countess" [ref=e2842] [cursor=pointer]:
+                - /url: /p/tea-gcoc/
+            - paragraph [ref=e2846]: Exclusive blend of 2019 Yiwu tea from three famous villages. Resinous and fruity. Port, forest floor, mint toffee, strawberry jam, cherry sweets, cough syrup and liquorice gelato.
+          - generic [ref=e2848]:
+            - text: €106.04 Cake
+            - generic [ref=e2849]: Raw Puerh
+      - generic [ref=e2850]:
+        - link "Lost Origin White 92 % 31 reviews" [ref=e2852] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lvgc/
+          - img "Lost Origin White" [ref=e2853]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e2855]: 31 reviews
+        - generic [ref=e2856]:
+          - generic [ref=e2857]:
+            - heading [level=2] [ref=e2859]:
+              - link "Lost Origin White" [ref=e2860] [cursor=pointer]:
+                - /url: /p/tea-lvgc/
+            - heading "Xiao Bai Gong Mei" [level=3] [ref=e2864]
+            - paragraph [ref=e2865]: Indigenous small leaf cultivar for Fujian White teas. Orange blossom, whipped cream, raw peas, dill syrup and chinese pears.
+          - generic [ref=e2867]:
+            - text: €17.08 Packet
+            - generic [ref=e2868]: White
+      - generic [ref=e2869]:
+        - link "Orchid Mist 91 % 15 reviews" [ref=e2871] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-basc/
+          - img "Orchid Mist" [ref=e2872]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e2874]: 15 reviews
+        - generic [ref=e2875]:
+          - generic [ref=e2876]:
+            - heading [level=2] [ref=e2878]:
+              - link "Orchid Mist" [ref=e2879] [cursor=pointer]:
+                - /url: /p/tea-basc/
+            - heading "Ba Shan Mao Feng Te Ji" [level=3] [ref=e2883]
+            - paragraph [ref=e2884]: Sweet nectar Sichuan Green from 50 year old heirloom bushes. Oat crackers, creme fraiche, orchid, lemon blossom, nettle, melon and stone.
+          - generic [ref=e2886]:
+            - text: €18.97 Packet
+            - generic [ref=e2887]: Green
+      - generic [ref=e2888]:
+        - link "Dawn Dew 86 % 7 reviews" [ref=e2890] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-heyc/
+          - img "Dawn Dew" [ref=e2891]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e2893]: 7 reviews
+        - generic [ref=e2894]:
+          - generic [ref=e2895]:
+            - heading [level=2] [ref=e2897]:
+              - link "Dawn Dew" [ref=e2898] [cursor=pointer]:
+                - /url: /p/tea-heyc/
+            - heading "Hubei Enshi Yulu" [level=3] [ref=e2902]
+            - paragraph [ref=e2903]: One of China's only steamed Green teas made from rolled buds. Dew, pumpkin seeds, warm meadows and dill syrup.
+          - generic [ref=e2905]:
+            - text: €14.08 Packet
+            - generic [ref=e2906]: Green
+      - generic [ref=e2907]:
+        - link "Chill Patrol 92 % 7 reviews" [ref=e2909] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-chic/
+          - img "Chill Patrol" [ref=e2910]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e2912]: 7 reviews
+        - generic [ref=e2913]:
+          - generic [ref=e2914]:
+            - heading [level=2] [ref=e2916]:
+              - link "Chill Patrol" [ref=e2917] [cursor=pointer]:
+                - /url: /p/tea-chic/
+            - heading "2015 Menghai Bamboo Lao Shu Ripe" [level=3] [ref=e2921]
+            - paragraph [ref=e2922]: Old tree 2015 Menghai Ripe PuErh, steamed and roasted in fresh bamboo. Pancake batter, sherry raisins, antique woods, suede, biscuits and cherry soda.
+          - generic [ref=e2924]:
+            - text: €90.72 Stick
+            - generic [ref=e2925]: Ripened
+      - generic [ref=e2926]:
+        - link "Gleaming Brow 96 % 190 reviews Black Tea of the Year 2017" [ref=e2928] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gbrc/
+          - img "Gleaming Brow" [ref=e2929]
+          - generic:
+            - generic: 96 %
+            - generic [ref=e2931]: 190 reviews
+          - img "Black Tea of the Year 2017" [ref=e2933]
+        - generic [ref=e2934]:
+          - generic [ref=e2935]:
+            - heading [level=2] [ref=e2937]:
+              - link "Gleaming Brow" [ref=e2938] [cursor=pointer]:
+                - /url: /p/tea-gbrc/
+            - heading "Jin Jun Mei" [level=3] [ref=e2942]
+            - paragraph [ref=e2943]: Ultra luxurious Chinese Black Tea from Tong Mu. Over 13,000 hand picked buds per 100g. Turkish delight, dark chocolate, sandalwood, lychee and rosehip.
+          - generic [ref=e2945]:
+            - text: Out of stock
+            - generic [ref=e2946]: Black
+      - generic [ref=e2947]:
+        - link "Wild Slumber 93 % 77 reviews" [ref=e2949] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-wslc/
+          - img "Wild Slumber" [ref=e2950]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e2952]: 77 reviews
+        - generic [ref=e2953]:
+          - generic [ref=e2954]:
+            - heading [level=2] [ref=e2956]:
+              - link "Wild Slumber" [ref=e2957] [cursor=pointer]:
+                - /url: /p/tea-wslc/
+            - heading "2025 Wild White" [level=3] [ref=e2961]
+            - paragraph [ref=e2962]: Candy aromatic Fuding White made from medium pickings of old, wild-growing bushes with a raucous energy. Lotus, grapefruit cream candy, fermented honey and baked orange.
+          - generic [ref=e2964]:
+            - text: Out of stock
+            - generic [ref=e2965]: White
+      - generic [ref=e2966]:
+        - link "Pear Cloud 92 % 225 reviews Oolong Tea of the Year On Sale" [ref=e2968] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-shoc/
+          - img "Pear Cloud" [ref=e2969]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e2971]: 225 reviews
+          - img "Oolong Tea of the Year" [ref=e2973]
+          - img "On Sale" [ref=e2975]
+        - generic [ref=e2976]:
+          - generic [ref=e2977]:
+            - heading [level=2] [ref=e2979]:
+              - link "Pear Cloud" [ref=e2980] [cursor=pointer]:
+                - /url: /p/tea-shoc/
+            - heading "Fu Shou Lishan Qing Xin" [level=3] [ref=e2984]
+            - paragraph [ref=e2985]: The paragon of high mountain Oolong from Fu Shou farms over 2600m up in Lishan. Pomelo custard, pineapple cakes, coconut water, snowy air, gardenia and milk candy.
+          - generic [ref=e2987]:
+            - text: €32.17
+            - generic [ref=e2988]: €45.95
+            - text: Packet
+            - generic [ref=e2989]: Oolong
+      - generic [ref=e2990]:
+        - link "Yunnan Beauty 95 % 64 reviews" [ref=e2992] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ybyc/
+          - img "Yunnan Beauty" [ref=e2993]
+          - generic:
+            - generic: 95 %
+            - generic [ref=e2995]: 64 reviews
+        - generic [ref=e2996]:
+          - generic [ref=e2997]:
+            - heading [level=2] [ref=e2999]:
+              - link "Yunnan Beauty" [ref=e3000] [cursor=pointer]:
+                - /url: /p/tea-ybyc/
+            - heading "Gui Fu Lan Ruan Zhi" [level=3] [ref=e3004]
+            - paragraph [ref=e3005]: Exuberantly aromatic yet balanced Oriental Beauty style Oolong from Yunnan. Saffron, cinnamon, muscat grapes, peach candy, orange and melted butter.
+          - generic [ref=e3007]:
+            - text: Out of stock
+            - generic [ref=e3008]: Oolong
+      - generic [ref=e3009]:
+        - link "Blazing Heavens 93 % 132 reviews" [ref=e3011] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-bzhc/
+          - img "Blazing Heavens" [ref=e3012]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e3014]: 132 reviews
+        - generic [ref=e3015]:
+          - generic [ref=e3016]:
+            - heading [level=2] [ref=e3018]:
+              - link "Blazing Heavens" [ref=e3019] [cursor=pointer]:
+                - /url: /p/tea-bzhc/
+            - heading "2013 Fuding Shou Mei" [level=3] [ref=e3023]
+            - paragraph [ref=e3024]: Sweet and fermented 2013 aged Shou Mei from Fuding. Prunes, brown sugar, muscatel grapes, grenadine, hot summer forests, old books and wet stone with a jujube finish.
+          - generic [ref=e3026]:
+            - text: €74.23 Cake
+            - generic [ref=e3027]: White
+      - generic [ref=e3028]:
+        - link "Angelica Root 90 % 31 reviews" [ref=e3030] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-danc/
+          - img "Angelica Root" [ref=e3031]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e3033]: 31 reviews
+        - generic [ref=e3034]:
+          - generic [ref=e3035]:
+            - heading [level=2] [ref=e3037]:
+              - link "Angelica Root" [ref=e3038] [cursor=pointer]:
+                - /url: /p/tea-danc/
+            - heading "Dang Gui - Radix Angelicae Sinensis" [level=3] [ref=e3042]
+            - paragraph [ref=e3043]: An important blood tonic for women. It regulates hormones, menstruation & is valuable for problems relating to periods & menopause. It also enhances the function of the immune system.
+          - generic [ref=e3045]:
+            - text: Out of stock
+            - generic [ref=e3046]: Herbs
+      - generic [ref=e3047]:
+        - link "Liquorice Pack 89 % 35 reviews" [ref=e3049] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ganc/
+          - img "Liquorice Pack" [ref=e3050]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e3052]: 35 reviews
+        - generic [ref=e3053]:
+          - generic [ref=e3054]:
+            - heading [level=2] [ref=e3056]:
+              - link "Liquorice Pack" [ref=e3057] [cursor=pointer]:
+                - /url: /p/tea-ganc/
+            - heading "Gan Cao - Radix Glycyrrhizae" [level=3] [ref=e3061]
+            - paragraph [ref=e3062]: Sweet medicinal root known to enhance mood and help relieve sore throat, cough and asthma.
+          - generic [ref=e3064]:
+            - text: Out of stock
+            - generic [ref=e3065]: Herbs
+      - generic [ref=e3066]:
+        - link "Golden Bud 86 % 529 reviews" [ref=e3068] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gdbc/
+          - img "Golden Bud" [ref=e3069]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e3071]: 529 reviews
+        - generic [ref=e3072]:
+          - generic [ref=e3073]:
+            - heading [level=2] [ref=e3075]:
+              - link "Golden Bud" [ref=e3076] [cursor=pointer]:
+                - /url: /p/tea-gdbc/
+            - heading "Yunnan Dianhong" [level=3] [ref=e3080]
+            - paragraph [ref=e3081]: Fengqing Black tea made with a predominance of buds for a lighter tea. Dark toffee, black pepper and blackcurrants with a malty and minty fresh finish
+          - generic [ref=e3083]:
+            - text: €9.37 Packet
+            - generic [ref=e3084]: Black
+      - generic [ref=e3085]:
+        - link "Gou Ji Berries 94 % 52 reviews" [ref=e3087] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gqzc/
+          - img "Gou Ji Berries" [ref=e3088]
+          - generic:
+            - generic: 94 %
+            - generic [ref=e3090]: 52 reviews
+        - generic [ref=e3091]:
+          - generic [ref=e3092]:
+            - heading [level=2] [ref=e3094]:
+              - link "Gou Ji Berries" [ref=e3095] [cursor=pointer]:
+                - /url: /p/tea-gqzc/
+            - heading "Gou Qi Zi - Lycium barbarum" [level=3] [ref=e3099]
+            - paragraph [ref=e3100]: The 'Goji Berry'. Traditional Chinese Medicine superfruit grown at high altitude for superior health benefits.
+          - generic [ref=e3102]:
+            - text: Out of stock
+            - generic [ref=e3103]: Herbs
+      - generic [ref=e3104]:
+        - link "Cassia 87 % 30 reviews" [ref=e3106] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-jmzc/
+          - img "Cassia" [ref=e3107]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e3109]: 30 reviews
+        - generic [ref=e3110]:
+          - generic [ref=e3111]:
+            - heading [level=2] [ref=e3113]:
+              - link "Cassia" [ref=e3114] [cursor=pointer]:
+                - /url: /p/tea-jmzc/
+            - heading "Jue Ming Zi - Semen Cassiae Torae" [level=3] [ref=e3118]
+            - paragraph [ref=e3119]: Traditional Chinese Medicine used cassia seeds to help in the elimination of heat in the liver. Said to soothe bloodshot and/or sore inflamed eyes.
+          - generic [ref=e3121]:
+            - text: Out of stock
+            - generic [ref=e3122]: Herbs
+      - generic [ref=e3123]:
+        - link "Honeysuckle Flowers 79 % 64 reviews" [ref=e3125] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-jyhc/
+          - img "Honeysuckle Flowers" [ref=e3126]
+          - generic:
+            - generic: 79 %
+            - generic [ref=e3128]: 64 reviews
+        - generic [ref=e3129]:
+          - generic [ref=e3130]:
+            - heading [level=2] [ref=e3132]:
+              - link "Honeysuckle Flowers" [ref=e3133] [cursor=pointer]:
+                - /url: /p/tea-jyhc/
+            - heading "Jin Yin Hua - Lonicera japonica" [level=3] [ref=e3137]
+            - paragraph [ref=e3138]: A very popular flower used in Chinese Medicine for its anti-bacterial and anti-inflammatory properties. Taste of custard powder, buttercups and fresh reams of paper.
+          - generic [ref=e3140]:
+            - text: Out of stock
+            - generic [ref=e3141]: Tisanes
+      - generic [ref=e3142]:
+        - link "Boat Sterculia 93 % 35 reviews" [ref=e3144] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-pdhc/
+          - img "Boat Sterculia" [ref=e3145]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e3147]: 35 reviews
+        - generic [ref=e3148]:
+          - generic [ref=e3149]:
+            - heading [level=2] [ref=e3151]:
+              - link "Boat Sterculia" [ref=e3152] [cursor=pointer]:
+                - /url: /p/tea-pdhc/
+            - heading "Pang Da Hai -Sterculiae lychnophorae Semen" [level=3] [ref=e3156]
+            - paragraph [ref=e3157]: A seed to help moisten the lung and to clear the throat. May help the discomfort of tonsilitis and voice hoarseness.
+          - generic [ref=e3159]:
+            - text: Out of stock
+            - generic [ref=e3160]: Herbs
+      - generic [ref=e3161]:
+        - link "Black Yunnan Tuo 96 87 % 721 reviews" [ref=e3163] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-yubc/
+          - img "Black Yunnan Tuo 96" [ref=e3164]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e3166]: 721 reviews
+        - generic [ref=e3167]:
+          - generic [ref=e3168]:
+            - heading [level=2] [ref=e3170]:
+              - link "Black Yunnan Tuo 96" [ref=e3171] [cursor=pointer]:
+                - /url: /p/tea-yubc/
+            - heading "Fengqing Shu Tuo 1996" [level=3] [ref=e3175]
+            - paragraph [ref=e3176]: Ripe PuErh aged since 1996 in Yunnan. Wet cave, new leather, medicinal bark and the slightest earthy apple sweetness. Excellent digestif.
+          - generic [ref=e3178]:
+            - text: Out of stock
+            - generic [ref=e3179]: Ripened
+      - generic [ref=e3180]:
+        - link "Eastern Beauty Oolong 91 % 517 reviews Oolong Tea of the Year 2018" [ref=e3182] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-eboc/
+          - img "Eastern Beauty Oolong" [ref=e3183]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e3185]: 517 reviews
+          - img "Oolong Tea of the Year 2018" [ref=e3187]
+        - generic [ref=e3188]:
+          - generic [ref=e3189]:
+            - heading [level=2] [ref=e3191]:
+              - link "Eastern Beauty Oolong" [ref=e3192] [cursor=pointer]:
+                - /url: /p/tea-eboc/
+            - heading "Bai Hao Wulong - Dongfang Meiren" [level=3] [ref=e3196]
+            - paragraph [ref=e3197]: Terpene rich Oolong from Miaoli. Bright notes of elderflower, geranium and lychee and warmer notes of honey, rose and fermented overripe muscat grapes.
+          - generic [ref=e3199]:
+            - text: Out of stock
+            - generic [ref=e3200]: Oolong
+      - generic [ref=e3201]:
+        - link "Superior Keemun 88 % 284 reviews" [ref=e3203] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-qmmc/
+          - img "Superior Keemun" [ref=e3204]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e3206]: 284 reviews
+        - generic [ref=e3207]:
+          - generic [ref=e3208]:
+            - heading [level=2] [ref=e3210]:
+              - link "Superior Keemun" [ref=e3211] [cursor=pointer]:
+                - /url: /p/tea-qmmc/
+            - heading "Qimen Hao Ya" [level=3] [ref=e3215]
+            - paragraph [ref=e3216]: Exemplary batch of Keemun, handmade from 62 year-old tea trees. Wintergreen, cardamom, sweet milk, dried mango, cocoa and wisteria.
+          - generic [ref=e3218]:
+            - text: Out of stock
+            - generic [ref=e3219]: Black
+      - generic [ref=e3220]:
+        - link "Nettle 84 % 55 reviews" [ref=e3222] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ontc/
+          - img "Nettle" [ref=e3223]
+          - generic:
+            - generic: 84 %
+            - generic [ref=e3225]: 55 reviews
+        - generic [ref=e3226]:
+          - generic [ref=e3227]:
+            - heading [level=2] [ref=e3229]:
+              - link "Nettle" [ref=e3230] [cursor=pointer]:
+                - /url: /p/tea-ontc/
+            - heading "Urtica dioica" [level=3] [ref=e3234]
+            - paragraph [ref=e3235]: Sweet and herbaceous tisane with a multitude of benefits. Especially, shown to be effective at reducing rheumatic and arthritis pain.
+          - generic [ref=e3237]:
+            - text: Out of stock
+            - generic [ref=e3238]: Tisanes
+      - generic [ref=e3239]:
+        - link "Sweet Cheeks 84 % 56 reviews" [ref=e3241] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fscc/
+          - img "Sweet Cheeks" [ref=e3242]
+          - generic:
+            - generic: 84 %
+            - generic [ref=e3244]: 56 reviews
+        - generic [ref=e3245]:
+          - generic [ref=e3246]:
+            - heading [level=2] [ref=e3248]:
+              - link "Sweet Cheeks" [ref=e3249] [cursor=pointer]:
+                - /url: /p/tea-fscc/
+            - paragraph [ref=e3253]: Beautifying blend of White Peony, Rose and Red Dates. Herbaceous, minty sweet nut milk and warm honey.
+          - generic [ref=e3255]:
+            - text: Out of stock
+            - generic [ref=e3256]: Blend
+      - generic [ref=e3257]:
+        - link "Empress And The Earl 87 % 79 reviews" [ref=e3259] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-feec/
+          - img "Empress And The Earl" [ref=e3260]
+          - generic:
+            - generic: 87 %
+            - generic [ref=e3262]: 79 reviews
+        - generic [ref=e3263]:
+          - generic [ref=e3264]:
+            - heading [level=2] [ref=e3266]:
+              - link "Empress And The Earl" [ref=e3267] [cursor=pointer]:
+                - /url: /p/tea-feec/
+            - paragraph [ref=e3271]: Our reinvention of Earl Grey tea with a Chinese twist incorporating Wuyi Yancha. Contrast of cooling minty citrus and warming vanilla whisky.
+          - generic [ref=e3273]:
+            - text: Out of stock
+            - generic [ref=e3274]: Blend
+      - generic [ref=e3275]:
+        - link "Petal Heads 89 % 28 reviews" [ref=e3277] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fphc/
+          - img "Petal Heads" [ref=e3278]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e3280]: 28 reviews
+        - generic [ref=e3281]:
+          - generic [ref=e3282]:
+            - heading [level=2] [ref=e3284]:
+              - link "Petal Heads" [ref=e3285] [cursor=pointer]:
+                - /url: /p/tea-fphc/
+            - paragraph [ref=e3289]: Potent mix of summer flowers and Kuding. A calming brew with a perfumed brightness and a satisfying bitter sweet finish.
+          - generic [ref=e3291]:
+            - text: Out of stock
+            - generic [ref=e3292]: Blend
+      - generic [ref=e3293]:
+        - link "Chai High 85 % 80 reviews" [ref=e3295] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-fchc/
+          - img "Chai High" [ref=e3296]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e3298]: 80 reviews
+        - generic [ref=e3299]:
+          - generic [ref=e3300]:
+            - heading [level=2] [ref=e3302]:
+              - link "Chai High" [ref=e3303] [cursor=pointer]:
+                - /url: /p/tea-fchc/
+            - paragraph [ref=e3307]: Our house blend of ground chai spices with a Qimen Black tea. Malt and chocolate comfort with peppery heat and sweet spices.
+          - generic [ref=e3309]:
+            - text: Out of stock
+            - generic [ref=e3310]: Blend
+      - generic [ref=e3311]:
+        - link "Flying Monk 92 % 151 reviews" [ref=e3313] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-ffmc/
+          - img "Flying Monk" [ref=e3314]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e3316]: 151 reviews
+        - generic [ref=e3317]:
+          - generic [ref=e3318]:
+            - heading [level=2] [ref=e3320]:
+              - link "Flying Monk" [ref=e3321] [cursor=pointer]:
+                - /url: /p/tea-ffmc/
+            - paragraph [ref=e3325]: A powerful mood enhancing blend of Oolongs, Ginseng and Osmanthus Flowers. Sweet apricot and frangipane tarts.
+          - generic [ref=e3327]:
+            - text: Out of stock
+            - generic [ref=e3328]: Blend
+      - generic [ref=e3329]:
+        - link "Butterfly Light 88 % 101 reviews" [ref=e3331] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-bflc/
+          - img "Butterfly Light" [ref=e3332]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e3334]: 101 reviews
+        - generic [ref=e3335]:
+          - generic [ref=e3336]:
+            - heading [level=2] [ref=e3338]:
+              - link "Butterfly Light" [ref=e3339] [cursor=pointer]:
+                - /url: /p/bld-bflc/
+            - paragraph [ref=e3343]: A perfect digestif after a heavy meal and one of the secrets to keeping slim. Dark roasted plums and burnt vanilla wood with mulled dried orange.
+          - generic [ref=e3345]:
+            - text: Out of stock
+            - generic [ref=e3346]: Blend
+      - generic [ref=e3347]:
+        - link "Treasure 86 % 23 reviews" [ref=e3349] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-eigc/
+          - img "Treasure" [ref=e3350]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e3352]: 23 reviews
+        - generic [ref=e3353]:
+          - generic [ref=e3354]:
+            - heading [level=2] [ref=e3356]:
+              - link "Treasure" [ref=e3357] [cursor=pointer]:
+                - /url: /p/bld-eigc/
+            - paragraph [ref=e3361]: A blend of raw Chinese herbs to revitalise, cool excessive heat, calm impatience and reduce stress.
+          - generic [ref=e3363]:
+            - text: Out of stock
+            - generic [ref=e3364]: Blend
+      - generic [ref=e3365]:
+        - link "Heart 88 % 9 reviews" [ref=e3367] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-hrtc/
+          - img "Heart" [ref=e3368]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e3370]: 9 reviews
+        - generic [ref=e3371]:
+          - generic [ref=e3372]:
+            - heading [level=2] [ref=e3374]:
+              - link "Heart" [ref=e3375] [cursor=pointer]:
+                - /url: /p/bld-hrtc/
+            - paragraph [ref=e3379]: Clinically formulated blend of Chinese herbs which can support the Circulatory system of the body.
+          - generic [ref=e3381]:
+            - text: Out of stock
+            - generic [ref=e3382]: Blend
+      - generic [ref=e3383]:
+        - link "Focus 90 % 24 reviews" [ref=e3385] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-mifc/
+          - img "Focus" [ref=e3386]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e3388]: 24 reviews
+        - generic [ref=e3389]:
+          - generic [ref=e3390]:
+            - heading [level=2] [ref=e3392]:
+              - link "Focus" [ref=e3393] [cursor=pointer]:
+                - /url: /p/bld-mifc/
+            - paragraph [ref=e3397]: A synergistic blend of Chinese herbs to improve focus and optimise cognitive function.
+          - generic [ref=e3399]:
+            - text: Out of stock
+            - generic [ref=e3400]: Blend
+      - generic [ref=e3401]:
+        - link "Glow 80 % 20 reviews" [ref=e3403] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-natc/
+          - img "Glow" [ref=e3404]
+          - generic:
+            - generic: 80 %
+            - generic [ref=e3406]: 20 reviews
+        - generic [ref=e3407]:
+          - generic [ref=e3408]:
+            - heading [level=2] [ref=e3410]:
+              - link "Glow" [ref=e3411] [cursor=pointer]:
+                - /url: /p/bld-natc/
+            - paragraph [ref=e3415]: Blend of Chinese herbs for promoting radiant skin from the inside. Tonifies and nourishes the body, clearing any excess imbalance which affects skin health.
+          - generic [ref=e3417]:
+            - text: Out of stock
+            - generic [ref=e3418]: Blend
+      - generic [ref=e3419]:
+        - link "Calm 85 % 38 reviews" [ref=e3421] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-perc/
+          - img "Calm" [ref=e3422]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e3424]: 38 reviews
+        - generic [ref=e3425]:
+          - generic [ref=e3426]:
+            - heading [level=2] [ref=e3428]:
+              - link "Calm" [ref=e3429] [cursor=pointer]:
+                - /url: /p/bld-perc/
+            - paragraph [ref=e3433]: Blended formulation of Chinese herbs to help unwind and calm stress. Drink regularly for sustained anti-stress benefits.
+          - generic [ref=e3435]:
+            - text: Out of stock
+            - generic [ref=e3436]: Blend
+      - generic [ref=e3437]:
+        - link "Resistance 89 % 19 reviews" [ref=e3439] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-resc/
+          - img "Resistance" [ref=e3440]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e3442]: 19 reviews
+        - generic [ref=e3443]:
+          - generic [ref=e3444]:
+            - heading [level=2] [ref=e3446]:
+              - link "Resistance" [ref=e3447] [cursor=pointer]:
+                - /url: /p/bld-resc/
+            - paragraph [ref=e3451]: A blend of Chinese herbs that work synergistically to naturally strengthen the immune system.
+          - generic [ref=e3453]:
+            - text: Out of stock
+            - generic [ref=e3454]: Blend
+      - generic [ref=e3455]:
+        - link "Digestion 90 % 27 reviews" [ref=e3457] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-tumc/
+          - img "Digestion" [ref=e3458]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e3460]: 27 reviews
+        - generic [ref=e3461]:
+          - generic [ref=e3462]:
+            - heading [level=2] [ref=e3464]:
+              - link "Digestion" [ref=e3465] [cursor=pointer]:
+                - /url: /p/bld-tumc/
+            - paragraph [ref=e3469]: Soothing tisane containing a blend of raw herbs to strengthen the digestive system and relieve irritations and bloating.
+          - generic [ref=e3471]:
+            - text: Out of stock
+            - generic [ref=e3472]: Blend
+      - generic [ref=e3473]:
+        - link "Cleanse 84 % 22 reviews" [ref=e3475] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-vitc/
+          - img "Cleanse" [ref=e3476]
+          - generic:
+            - generic: 84 %
+            - generic [ref=e3478]: 22 reviews
+        - generic [ref=e3479]:
+          - generic [ref=e3480]:
+            - heading [level=2] [ref=e3482]:
+              - link "Cleanse" [ref=e3483] [cursor=pointer]:
+                - /url: /p/bld-vitc/
+            - paragraph [ref=e3487]: Chinese herbal blend designed to work together to strengthen the detox organs in order to assist the body to flush toxins.
+          - generic [ref=e3489]:
+            - text: Out of stock
+            - generic [ref=e3490]: Blend
+      - generic [ref=e3491]:
+        - link "Contour 84 % 18 reviews" [ref=e3493] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-wgtc/
+          - img "Contour" [ref=e3494]
+          - generic:
+            - generic: 84 %
+            - generic [ref=e3496]: 18 reviews
+        - generic [ref=e3497]:
+          - generic [ref=e3498]:
+            - heading [level=2] [ref=e3500]:
+              - link "Contour" [ref=e3501] [cursor=pointer]:
+                - /url: /p/bld-wgtc/
+            - paragraph [ref=e3505]: Blended, raw herbs to help achieve a healthy weight through clearing stagnation and improving fat processing.
+          - generic [ref=e3507]:
+            - text: Out of stock
+            - generic [ref=e3508]: Blend
+      - generic [ref=e3509]:
+        - link "Breathe 84 % 28 reviews" [ref=e3511] [cursor=pointer]:
+          - /url: https://meileaf.com/p/bld-brec/
+          - img "Breathe" [ref=e3512]
+          - generic:
+            - generic: 84 %
+            - generic [ref=e3514]: 28 reviews
+        - generic [ref=e3515]:
+          - generic [ref=e3516]:
+            - heading [level=2] [ref=e3518]:
+              - link "Breathe" [ref=e3519] [cursor=pointer]:
+                - /url: /p/bld-brec/
+            - paragraph [ref=e3523]: A blend of Chinese herbs that work synergistically on the respiratory system to reduce dryness, cleanse discharge and strengthen the lungs.
+          - generic [ref=e3525]:
+            - text: Out of stock
+            - generic [ref=e3526]: Blend
+      - generic [ref=e3527]:
+        - link "Lost Robe 89 % 466 reviews" [ref=e3529] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-bedc/
+          - img "Lost Robe" [ref=e3530]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e3532]: 466 reviews
+        - generic [ref=e3533]:
+          - generic [ref=e3534]:
+            - heading [level=2] [ref=e3536]:
+              - link "Lost Robe" [ref=e3537] [cursor=pointer]:
+                - /url: /p/tea-bedc/
+            - heading "Bei Dou Yi Hao - North Star" [level=3] [ref=e3541]
+            - paragraph [ref=e3542]: Cultivar developed from cuttings of the original Da Hong Pao mother plants. Asian pear, dark fudge, slate, white flowers and a touch of cough syrup.
+          - generic [ref=e3544]:
+            - text: Out of stock
+            - generic [ref=e3545]: Oolong
+      - generic [ref=e3546]:
+        - link "Mei Leaf Chai Spices 93 % 29 reviews" [ref=e3548] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-chsc/
+          - img "Mei Leaf Chai Spices" [ref=e3549]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e3551]: 29 reviews
+        - generic [ref=e3552]:
+          - generic [ref=e3553]:
+            - heading [level=2] [ref=e3555]:
+              - link "Mei Leaf Chai Spices" [ref=e3556] [cursor=pointer]:
+                - /url: /p/tea-chsc/
+            - paragraph [ref=e3560]: A sachet of our special recipe of 8 freshly ground spices to make the perfect Chai.
+          - generic [ref=e3562]:
+            - text: Out of stock
+            - generic [ref=e3563]: Blend
+      - generic [ref=e3564]:
+        - link "Greek Olympus Tisane 90 % 123 reviews" [ref=e3566] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gmtc/
+          - img "Greek Olympus Tisane" [ref=e3567]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e3569]: 123 reviews
+        - generic [ref=e3570]:
+          - generic [ref=e3571]:
+            - heading [level=2] [ref=e3573]:
+              - link "Greek Olympus Tisane" [ref=e3574] [cursor=pointer]:
+                - /url: /p/tea-gmtc/
+            - paragraph [ref=e3578]: Organic, high mountain tisane with cleansing, digestif qualities. The flavours of Mediterranean mountains. Oregano, thyme, orange zest and frankincense.
+          - generic [ref=e3580]:
+            - text: Out of stock
+            - generic [ref=e3581]: Tisanes
+      - generic [ref=e3582]:
+        - link "Golden Turtle 90 % 280 reviews" [ref=e3584] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sjgc/
+          - img "Golden Turtle" [ref=e3585]
+          - generic:
+            - generic: 90 %
+            - generic [ref=e3587]: 280 reviews
+        - generic [ref=e3588]:
+          - generic [ref=e3589]:
+            - heading [level=2] [ref=e3591]:
+              - link "Golden Turtle" [ref=e3592] [cursor=pointer]:
+                - /url: /p/tea-sjgc/
+            - heading "Shui Jin Gui" [level=3] [ref=e3596]
+            - paragraph [ref=e3597]: Immense rock oolong cultivar with potent yan yun ( rock rhyme). Almond brittle, polished leather , dried cherries , cannabis , mangosteen , pomelo and milk candy.
+          - generic [ref=e3599]:
+            - text: Out of stock
+            - generic [ref=e3600]: Oolong
+      - generic [ref=e3601]:
+        - link "Shifu's Pudding 92 % 195 reviews" [ref=e3603] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-tdtc/
+          - img "Shifu's Pudding" [ref=e3604]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e3606]: 195 reviews
+        - generic [ref=e3607]:
+          - generic [ref=e3608]:
+            - heading [level=2] [ref=e3610]:
+              - link "Shifu's Pudding" [ref=e3611] [cursor=pointer]:
+                - /url: /p/tea-tdtc/
+            - heading "Chuan Tong Tie Guan Yin" [level=3] [ref=e3615]
+            - paragraph [ref=e3616]: Traditional, heirloom Red Heart Tie Guan Yin. Coconut, creme fraiche and mangosteen moving to apricot jam.
+          - generic [ref=e3618]:
+            - text: Out of stock
+            - generic [ref=e3619]: Oolong
+      - generic [ref=e3620]:
+        - link "Eight Immortals Oolong 88 % 264 reviews" [ref=e3622] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-eioc/
+          - img "Eight Immortals Oolong" [ref=e3623]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e3625]: 264 reviews
+        - generic [ref=e3626]:
+          - generic [ref=e3627]:
+            - heading [level=2] [ref=e3629]:
+              - link "Eight Immortals Oolong" [ref=e3630] [cursor=pointer]:
+                - /url: /p/tea-eioc/
+            - heading "Ba Xian Dan Cong" [level=3] [ref=e3634]
+            - paragraph [ref=e3635]: Famed but lesser produced cultivar of Dancong Oolong. Medium roasted over charcoal. Magnolia, fresh apricots and almond milk.
+          - generic [ref=e3637]:
+            - text: Out of stock
+            - generic [ref=e3638]: Oolong
+      - generic [ref=e3639]:
+        - link "Lily Cream Whip 89 % 195 reviews" [ref=e3641] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-lcwc/
+          - img "Lily Cream Whip" [ref=e3642]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e3644]: 195 reviews
+        - generic [ref=e3645]:
+          - generic [ref=e3646]:
+            - heading [level=2] [ref=e3648]:
+              - link "Lily Cream Whip" [ref=e3649] [cursor=pointer]:
+                - /url: /p/tea-lcwc/
+            - heading "Alishan Jin Xuan" [level=3] [ref=e3653]
+            - paragraph [ref=e3654]: An ultra-deluxe Jin Xuan with extra creamy confection. Malted milk, creamed spinach, marshmallow and parma violets.
+          - generic [ref=e3656]:
+            - text: Out of stock
+            - generic [ref=e3657]: Oolong
+      - generic [ref=e3658]:
+        - link "Liu Bao 1988 92 % 92 reviews" [ref=e3660] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-liec/
+          - img "Liu Bao 1988" [ref=e3661]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e3663]: 92 reviews
+        - generic [ref=e3664]:
+          - generic [ref=e3665]:
+            - heading [level=2] [ref=e3667]:
+              - link "Liu Bao 1988" [ref=e3668] [cursor=pointer]:
+                - /url: /p/tea-liec/
+            - paragraph [ref=e3672]: Basket aged, small batch Liu Bao from 1988. Hazelnut syrup, lillies and raisin malt loaf.
+          - generic [ref=e3674]:
+            - text: Out of stock
+            - generic [ref=e3675]: Ripened
+      - generic [ref=e3676]:
+        - link "Forest Jam 91 % 253 reviews" [ref=e3678] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gflc/
+          - img "Forest Jam" [ref=e3679]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e3681]: 253 reviews
+        - generic [ref=e3682]:
+          - generic [ref=e3683]:
+            - heading [level=2] [ref=e3685]:
+              - link "Forest Jam" [ref=e3686] [cursor=pointer]:
+                - /url: /p/tea-gflc/
+            - heading "Gui Fu Lan Ruan Zhi" [level=3] [ref=e3690]
+            - paragraph [ref=e3691]: High altitude Yunnan Black made from a Taiwanese Oolong variety. Saffron, cedar, muscat grapes, eucalyptus, wintergreen and roasted peaches.
+          - generic [ref=e3693]:
+            - text: Out of stock
+            - generic [ref=e3694]: Black
+      - generic [ref=e3695]:
+        - link "Day Drinking Diva 85 % 197 reviews" [ref=e3697] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-davc/
+          - img "Day Drinking Diva" [ref=e3698]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e3700]: 197 reviews
+        - generic [ref=e3701]:
+          - generic [ref=e3702]:
+            - heading [level=2] [ref=e3704]:
+              - link "Day Drinking Diva" [ref=e3705] [cursor=pointer]:
+                - /url: /p/tea-davc/
+            - heading "Spring 2021 Nan Nuo and He Kai Gushu Sheng" [level=3] [ref=e3709]
+            - paragraph [ref=e3710]: Gushu blend of two famous, West Banna Mountains. Brown bread and caramelised pears moving to custard apples and juniper berry.
+          - generic [ref=e3712]:
+            - text: Out of stock
+            - generic [ref=e3713]: Raw Puerh
+      - generic [ref=e3714]:
+        - link "Candy Tree Black 93 % 314 reviews" [ref=e3716] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-wwbc/
+          - img "Candy Tree Black" [ref=e3717]
+          - generic:
+            - generic: 93 %
+            - generic [ref=e3719]: 314 reviews
+        - generic [ref=e3720]:
+          - generic [ref=e3721]:
+            - heading [level=2] [ref=e3723]:
+              - link "Candy Tree Black" [ref=e3724] [cursor=pointer]:
+                - /url: /p/tea-wwbc/
+            - paragraph [ref=e3728]: Remarkably fruity and sweet Black from the Wuyi mountains. Peach candy, palmier, guava jam, and wood lacquer.
+          - generic [ref=e3730]:
+            - text: Out of stock
+            - generic [ref=e3731]: Black
+      - generic [ref=e3732]:
+        - link "King Peony 91 % 167 reviews" [ref=e3734] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-wpkc/
+          - img "King Peony" [ref=e3735]
+          - generic:
+            - generic: 91 %
+            - generic [ref=e3737]: 167 reviews
+        - generic [ref=e3738]:
+          - generic [ref=e3739]:
+            - heading [level=2] [ref=e3741]:
+              - link "King Peony" [ref=e3742] [cursor=pointer]:
+                - /url: /p/tea-wpkc/
+            - heading "Bai Mu Dan Wang" [level=3] [ref=e3746]
+            - paragraph [ref=e3747]: Early flush Bai Mu Dan, picked with a fine yet balanced plucking. Vanilla custard, icing sugar, talcum powder, green acorns, and carnations.
+          - generic [ref=e3749]:
+            - text: Out of stock
+            - generic [ref=e3750]: White
+      - generic [ref=e3751]:
+        - link "Juice Journo 89 % 316 reviews" [ref=e3753] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-juic/
+          - img "Juice Journo" [ref=e3754]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e3756]: 316 reviews
+        - generic [ref=e3757]:
+          - generic [ref=e3758]:
+            - heading [level=2] [ref=e3760]:
+              - link "Juice Journo" [ref=e3761] [cursor=pointer]:
+                - /url: /p/tea-juic/
+            - heading "Da Shu Bulang PuErh Spring 2021" [level=3] [ref=e3765]
+            - paragraph [ref=e3766]: Old tree Bulang PuErh. Palm sugar, blackcurrant jam, sherbet and sweet minerals. Specially designed 'journal' wrappers.
+          - generic [ref=e3768]:
+            - text: Out of stock
+            - generic [ref=e3769]: Raw Puerh
+      - generic [ref=e3770]:
+        - link "Mist Pilgrim 89 % 106 reviews" [ref=e3772] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-mpgc/
+          - img "Mist Pilgrim" [ref=e3773]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e3775]: 106 reviews
+        - generic [ref=e3776]:
+          - generic [ref=e3777]:
+            - heading [level=2] [ref=e3779]:
+              - link "Mist Pilgrim" [ref=e3780] [cursor=pointer]:
+                - /url: /p/tea-mpgc/
+            - heading "Gao Shan Yiwu Gushu Sheng Spring 2021" [level=3] [ref=e3784]
+            - paragraph [ref=e3785]: Ancient tree Yiwu Gushu Puerh from Gao Shan village. Grape clafoutis, butter toffee, lotus flower and wet rocks.
+          - generic [ref=e3787]:
+            - text: Out of stock
+            - generic [ref=e3788]: Raw Puerh
+      - generic [ref=e3789]:
+        - link "Push Button Smile 88 % 160 reviews" [ref=e3791] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-puic/
+          - img "Push Button Smile" [ref=e3792]
+          - generic:
+            - generic: 88 %
+            - generic [ref=e3794]: 160 reviews
+        - generic [ref=e3795]:
+          - generic [ref=e3796]:
+            - heading [level=2] [ref=e3798]:
+              - link "Push Button Smile" [ref=e3799] [cursor=pointer]:
+                - /url: /p/tea-puic/
+            - paragraph [ref=e3803]: Old tree Black, low-oxygen cake aged in Yunnan for nearly three years. Chocolate raisins, sweet vermouth, raspberries, antique woods, leather and fernet-branca bitters.
+          - generic [ref=e3805]:
+            - text: Out of stock
+            - generic [ref=e3806]: Black
+      - generic [ref=e3807]:
+        - link "Grand Master Ripe 95 % 161 reviews" [ref=e3809] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-gmrc/
+          - img "Grand Master Ripe" [ref=e3810]
+          - generic:
+            - generic: 95 %
+            - generic [ref=e3812]: 161 reviews
+        - generic [ref=e3813]:
+          - generic [ref=e3814]:
+            - heading [level=2] [ref=e3816]:
+              - link "Grand Master Ripe" [ref=e3817] [cursor=pointer]:
+                - /url: /p/tea-gmrc/
+            - heading "2010 Bing Dao Gushu Ripe PuErh" [level=3] [ref=e3821]
+            - paragraph [ref=e3822]: Spectacular 2010 Bing Dao Ripe from ancient trees. Bourbon caramel, chocolate covered prunes, fennel seeds, suede and chocolate milk.
+          - generic [ref=e3824]:
+            - text: Out of stock
+            - generic [ref=e3825]: Ripened
+      - generic [ref=e3826]:
+        - link "Wild Resin Lapsang 86 % 105 reviews" [ref=e3828] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-wrlc/
+          - img "Wild Resin Lapsang" [ref=e3829]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e3831]: 105 reviews
+        - generic [ref=e3832]:
+          - generic [ref=e3833]:
+            - heading [level=2] [ref=e3835]:
+              - link "Wild Resin Lapsang" [ref=e3836] [cursor=pointer]:
+                - /url: /p/tea-wrlc/
+            - heading "Smoked Tong Mu Zhengshan Xiaozhong" [level=3] [ref=e3840]
+            - paragraph [ref=e3841]: Special grade Lapsang from Tong Mu smoked over old and extra resinous pine trees. Dried Longan, agarwood incense, clove, agave syrup and toasted marshmallow.
+          - generic [ref=e3843]:
+            - text: Out of stock
+            - generic [ref=e3844]: Black
+      - generic [ref=e3845]:
+        - link "Simple Dreams 2 89 % 146 reviews" [ref=e3847] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-sdsc/
+          - img "Simple Dreams 2" [ref=e3848]
+          - generic:
+            - generic: 89 %
+            - generic [ref=e3850]: 146 reviews
+        - generic [ref=e3851]:
+          - generic [ref=e3852]:
+            - heading [level=2] [ref=e3854]:
+              - link "Simple Dreams 2" [ref=e3855] [cursor=pointer]:
+                - /url: /p/tea-sdsc/
+            - heading "2021 Zhenghe Shou Mei Blend" [level=3] [ref=e3859]
+            - paragraph [ref=e3860]: An experimental blend of 'Green and Brown' Zhenghe White tea. Strawberry jam on buttered raisin scones, elderflower, honey, warm milk and lotus.
+          - generic [ref=e3862]:
+            - text: €45.95 Cake
+            - generic [ref=e3863]: Blend
+      - generic [ref=e3864]:
+        - link "Woozy Fruitcake 86 % 81 reviews" [ref=e3866] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-btjc/
+          - img "Woozy Fruitcake" [ref=e3867]
+          - generic:
+            - generic: 86 %
+            - generic [ref=e3869]: 81 reviews
+        - generic [ref=e3870]:
+          - generic [ref=e3871]:
+            - heading [level=2] [ref=e3873]:
+              - link "Woozy Fruitcake" [ref=e3874] [cursor=pointer]:
+                - /url: /p/tea-btjc/
+            - heading "2019 Wild Anhua Tian Jian" [level=3] [ref=e3878]
+            - paragraph [ref=e3879]: Top shelf Anhua dark tea made from 70-year-old wild trees. Fruitcake made with boozy soaked prunes, raisins and cherries, charred casks, rock sugar, mastic and pine resin.
+          - generic [ref=e3881]:
+            - text: €16.50 Packet
+            - generic [ref=e3882]: Ripened
+      - generic [ref=e3883]:
+        - link "Antique Street Market 85 % 94 reviews" [ref=e3885] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-asmc/
+          - img "Antique Street Market" [ref=e3886]
+          - generic:
+            - generic: 85 %
+            - generic [ref=e3888]: 94 reviews
+        - generic [ref=e3889]:
+          - generic [ref=e3890]:
+            - heading [level=2] [ref=e3892]:
+              - link "Antique Street Market" [ref=e3893] [cursor=pointer]:
+                - /url: /p/tea-asmc/
+            - heading "Spring 2023 Yiwu Gao Shan Huangpian Gushu Sheng PuErh" [level=3] [ref=e3897]
+            - paragraph [ref=e3898]: Huangpian Yiwu PuErh made from ancient trees growing in the forests of Gao Shan village. Caramel, dried mint, black pepper, plantain and rosehip.
+          - generic [ref=e3900]:
+            - text: Out of stock
+            - generic [ref=e3901]: Raw Puerh
+      - generic [ref=e3902]:
+        - link "Jade Star 8 92 % 171 reviews" [ref=e3904] [cursor=pointer]:
+          - /url: https://meileaf.com/p/tea-jsec/
+          - img "Jade Star 8" [ref=e3905]
+          - generic:
+            - generic: 92 %
+            - generic [ref=e3907]: 171 reviews
+        - generic [ref=e3908]:
+          - generic [ref=e3909]:
+            - heading [level=2] [ref=e3911]:
+              - link "Jade Star 8" [ref=e3912] [cursor=pointer]:
+                - /url: /p/tea-jsec/
+            - heading "2013/2014 Fuding Bai Mu Dan & 2018 Pan Xi Shou Mei" [level=3] [ref=e3916]
+            - paragraph [ref=e3917]: Custom blend of three aged White tea batches from Fuding including the legendary Panxi fields. Salted butter, apricot jam, marzipan, fresh dates and summer rain on hot pavements.
+          - generic [ref=e3919]:
+            - text: Out of stock
+            - generic [ref=e3920]: White
+    - generic [ref=e3922]:
+      - heading "We think you’ll love:" [level=2] [ref=e3923]
+      - generic [ref=e3924]:
+        - generic [ref=e3925]:
+          - link "Amber Gaba Oolong 94 % 1486 reviews Oolong Tea of the Year 2017 Oolong Tea of the Year 2016 Tea of the year 2016" [ref=e3927] [cursor=pointer]:
+            - /url: https://meileaf.com/p/tea-agac/
+            - img "Amber Gaba Oolong" [ref=e3928]
+            - generic:
+              - generic: 94 %
+              - generic [ref=e3930]: 1486 reviews
+            - generic [ref=e3931]:
+              - img "Oolong Tea of the Year 2017" [ref=e3932]
+              - img "Oolong Tea of the Year 2016" [ref=e3933]
+              - img "Tea of the year 2016" [ref=e3934]
+          - generic [ref=e3935]:
+            - generic [ref=e3936]:
+              - heading [level=2] [ref=e3938]:
+                - link "Amber Gaba Oolong" [ref=e3939] [cursor=pointer]:
+                  - /url: /p/tea-agac/
+              - paragraph [ref=e3943]: Taiwanese Oolong processed in low oxygen to increase GABA to 200mg per 100g. Summer rain, apricot jam, wet wood and chestnut honey.
+            - generic [ref=e3944]: €19.44 Pack
+        - generic [ref=e3946]:
+          - link "Jade Star 9 95 % 31 reviews" [ref=e3948] [cursor=pointer]:
+            - /url: https://meileaf.com/p/tea-jtic/
+            - img "Jade Star 9" [ref=e3949]
+            - generic:
+              - generic: 95 %
+              - generic [ref=e3951]: 31 reviews
+          - generic [ref=e3952]:
+            - generic [ref=e3953]:
+              - heading [level=2] [ref=e3955]:
+                - link "Jade Star 9" [ref=e3956] [cursor=pointer]:
+                  - /url: /p/tea-jtic/
+              - heading "2008 Bai Mu Dan and Shou Mei" [level=3] [ref=e3960]
+              - paragraph [ref=e3961]: The legendary Jade Star ship has arrived with our 9th Edition. Exclusive blend of 2008 Fuding White tea. Apricot danish pastry, ice wine, rum soaked raisins, summer forests, hot pavements and macerated strawberries.
+            - generic [ref=e3962]: €88.37 Cake
+        - generic [ref=e3964]:
+          - link "90's Enigma Sheng 92 % 38 reviews" [ref=e3966] [cursor=pointer]:
+            - /url: https://meileaf.com/p/tea-nigc/
+            - img "90's Enigma Sheng" [ref=e3967]
+            - generic:
+              - generic: 92 %
+              - generic [ref=e3969]: 38 reviews
+          - generic [ref=e3970]:
+            - generic [ref=e3971]:
+              - heading [level=2] [ref=e3973]:
+                - link "90's Enigma Sheng" [ref=e3974] [cursor=pointer]:
+                  - /url: /p/tea-nigc/
+              - heading "1990's Menghai Sheng PuErh" [level=3] [ref=e3978]
+              - paragraph [ref=e3979]: Antique Menghai Raw PuErh picked in the 1990's. Salted butter, brown bread, Chinese herbs, creme de violette, caramelised white chocolate, leather bound books and preserved bayberry.
+            - generic [ref=e3980]: €22.39 Packet
+        - generic [ref=e3982]:
+          - link "Imperial Green - First Pluck 88 % 1127 reviews Great Taste 2014 Two Star" [ref=e3984] [cursor=pointer]:
+            - /url: https://meileaf.com/p/tea-impc/
+            - img "Imperial Green - First Pluck" [ref=e3985]
+            - generic:
+              - generic: 88 %
+              - generic [ref=e3987]: 1127 reviews
+            - img "Great Taste 2014 Two Star" [ref=e3989]
+          - generic [ref=e3990]:
+            - generic [ref=e3991]:
+              - heading [level=2] [ref=e3993]:
+                - link "Imperial Green - First Pluck" [ref=e3994] [cursor=pointer]:
+                  - /url: /p/tea-impc/
+              - heading "Long Jing - Dragonwell" [level=3] [ref=e3998]
+              - paragraph [ref=e3999]: The very first spring pickings of Long Jing tea after winter dormancy. Hazelnut butter, raspberry jam, custard apple, steamed borlotti beans and taro.
+            - generic [ref=e4000]: €20.62 Packet
+    - generic [ref=e4003]:
+      - button "Revelation!" [ref=e4005] [cursor=pointer]
+      - generic [ref=e4007] [cursor=pointer]: Revelation!
+  - contentinfo [ref=e4008]:
+    - generic [ref=e4009]:
+      - generic [ref=e4010]:
+        - heading "Browse Teas" [level=6] [ref=e4011]
+        - list [ref=e4012]:
+          - listitem [ref=e4013]:
+            - generic [ref=e4014]: Type
+            - list [ref=e4015]:
+              - listitem [ref=e4016]:
+                - link "White" [ref=e4017] [cursor=pointer]:
+                  - /url: /teas/white/
+              - listitem [ref=e4018]:
+                - link "Green" [ref=e4019] [cursor=pointer]:
+                  - /url: /teas/green/
+              - listitem [ref=e4020]:
+                - link "Matcha" [ref=e4021] [cursor=pointer]:
+                  - /url: /teas/matcha/
+              - listitem [ref=e4022]:
+                - link "Yellow" [ref=e4023] [cursor=pointer]:
+                  - /url: /teas/yellow/
+              - listitem [ref=e4024]:
+                - link "Oolong" [ref=e4025] [cursor=pointer]:
+                  - /url: /teas/oolong/
+              - listitem [ref=e4026]:
+                - link "Black" [ref=e4027] [cursor=pointer]:
+                  - /url: /teas/black/
+              - listitem [ref=e4028]:
+                - link "Raw Puerh" [ref=e4029] [cursor=pointer]:
+                  - /url: /teas/raw-puerh/
+              - listitem [ref=e4030]:
+                - link "Ripened" [ref=e4031] [cursor=pointer]:
+                  - /url: /teas/ripened/
+              - listitem [ref=e4032]:
+                - link "Tisanes" [ref=e4033] [cursor=pointer]:
+                  - /url: /teas/tisanes/
+              - listitem [ref=e4034]:
+                - link "Medicinal Herbs" [ref=e4035] [cursor=pointer]:
+                  - /url: /teas/herbs/
+          - listitem [ref=e4036]:
+            - generic [ref=e4037]: Style
+            - list [ref=e4038]:
+              - listitem [ref=e4039]:
+                - link "Pure" [ref=e4040] [cursor=pointer]:
+                  - /url: /teas/pure/
+              - listitem [ref=e4041]:
+                - link "Scented" [ref=e4042] [cursor=pointer]:
+                  - /url: /teas/scented/
+              - listitem [ref=e4043]:
+                - link "Blossoming" [ref=e4044] [cursor=pointer]:
+                  - /url: /teas/blossoming/
+              - listitem [ref=e4045]:
+                - link "Blend" [ref=e4046] [cursor=pointer]:
+                  - /url: /teas/blends/
+          - listitem [ref=e4047]:
+            - generic [ref=e4048]: Functions
+            - list [ref=e4049]:
+              - listitem [ref=e4050]:
+                - link "Immune Boosting" [ref=e4051] [cursor=pointer]:
+                  - /url: /teas/immune-boosting/
+              - listitem [ref=e4052]:
+                - link "Digestion" [ref=e4053] [cursor=pointer]:
+                  - /url: /teas/digestion/
+              - listitem [ref=e4054]:
+                - link "Weight Control" [ref=e4055] [cursor=pointer]:
+                  - /url: /teas/weight-control/
+              - listitem [ref=e4056]:
+                - link "Detox" [ref=e4057] [cursor=pointer]:
+                  - /url: /teas/detox/
+              - listitem [ref=e4058]:
+                - link "Cardiovascular Health" [ref=e4059] [cursor=pointer]:
+                  - /url: /teas/cardiovascular-health/
+              - listitem [ref=e4060]:
+                - link "Stress Relief" [ref=e4061] [cursor=pointer]:
+                  - /url: /teas/stress-relief/
+              - listitem [ref=e4062]:
+                - link "Cognitive Ability" [ref=e4063] [cursor=pointer]:
+                  - /url: /teas/cognitive-ability/
+              - listitem [ref=e4064]:
+                - link "Respiratory" [ref=e4065] [cursor=pointer]:
+                  - /url: /teas/respiratory/
+              - listitem [ref=e4066]:
+                - link "Blood Sugar" [ref=e4067] [cursor=pointer]:
+                  - /url: /teas/blood-sugar/
+      - generic [ref=e4068]:
+        - generic [ref=e4070]:
+          - link "Checkout our Facebook page" [ref=e4071] [cursor=pointer]:
+            - /url: https://www.facebook.com/meileaf/
+          - link "Mei Leaf YouTube Channel" [ref=e4075] [cursor=pointer]:
+            - /url: https://www.youtube.com/meileaf
+          - link "Tea adventures on Instagram" [ref=e4079] [cursor=pointer]:
+            - /url: https://www.instagram.com/mei_leaf/
+          - link "Twitter updates" [ref=e4083] [cursor=pointer]:
+            - /url: https://twitter.com/mei_leaf_tea
+          - link "Our favourite pins" [ref=e4087] [cursor=pointer]:
+            - /url: https://au.pinterest.com/mei_leaf/
+        - generic [ref=e4091]:
+          - generic [ref=e4092]:
+            - link "Contact us" [ref=e4094] [cursor=pointer]:
+              - /url: /contact/
+            - link "Subscribe" [ref=e4096] [cursor=pointer]:
+              - /url: /subscribe/
+            - link "Press Enquiries" [ref=e4098] [cursor=pointer]:
+              - /url: /contact/
+            - link "Wholesale" [ref=e4100] [cursor=pointer]:
+              - /url: /about/wholesale/
+            - link "FAQ's" [ref=e4102] [cursor=pointer]:
+              - /url: /about/our-teas/
+            - link "Shipping" [ref=e4104] [cursor=pointer]:
+              - /url: /about/shipping/
+            - link "Returns & Refunds" [ref=e4106] [cursor=pointer]:
+              - /url: /about/returns-refunds/
+            - link "Privacy policy & terms of use" [ref=e4108] [cursor=pointer]:
+              - /url: /privacy-terms/
+            - link "Disclaimer" [ref=e4110] [cursor=pointer]:
+              - /url: /disclaimer/
+          - generic [ref=e4111]:
+            - link [ref=e4112] [cursor=pointer]:
+              - /url: /
+              - img "Mei Leaf Logo" [ref=e4113]
+            - paragraph [ref=e4114]: 99-105 Camden High Street London, NW1 7JN, UK
+      - generic [ref=e4115]: © Mei Group Ltd 2026
+  - generic [ref=e4117] [cursor=pointer]:
+    - img "notification" [ref=e4120]
+    - generic [ref=e4121]:
+      - generic [ref=e4122]: FREE WORLDWIDE SHIPPING
+      - generic [ref=e4123]: Taste our teas wherever you are!
+  - text: ×
