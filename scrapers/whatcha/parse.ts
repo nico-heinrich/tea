@@ -1,5 +1,6 @@
 import type { ShopifyProduct, ParsedBodyHtml, TeaRecord } from "./types.ts";
 import { cleanTeaName } from "../shared/cleanName.js";
+import { matchStyle } from "../shared/matching.js";
 
 const LABEL_PATTERNS: Array<{ key: keyof ParsedBodyHtml; labels: string[] }> = [
   { key: "tastingNotes", labels: ["Tasting Notes"] },
@@ -168,60 +169,12 @@ export const TYPE_MAP: Record<string, string> = {
   "Dark Tea": "dark",
 };
 
-/** Infer tea style from product title */
-function inferStyleFromTitle(title: string): string | null {
-  const lower = title.toLowerCase();
-
-  const stylePatterns: Array<[RegExp, string]> = [
-    [/sencha/i, "Sencha"],
-    [/gyokuro/i, "Gyokuro"],
-    [/genmaicha/i, "Genmaicha"],
-    [/bancha/i, "Bancha"],
-    [/kukicha/i, "Kukicha"],
-    [/hojicha/i, "Hojicha"],
-    [/matcha/i, "Matcha"],
-    [/fukamushi/i, "Fukamushi"],
-    [/kabusecha/i, "Kabusecha"],
-    [/tencha/i, "Tencha"],
-    [/shincha/i, "Shincha"],
-    [/tamaryokucha/i, "Tamaryokucha"],
-    [/long\s*jing/i, "Long Jing"],
-    [/dragonwell/i, "Long Jing"],
-    [/bi\s*luo\s*chun/i, "Bi Luo Chun"],
-    [/mao\s*feng/i, "Mao Feng"],
-    [/anji\s*bai/i, "Anji Bai Cha"],
-    [/tie\s*guan\s*yin/i, "Tie Guan Yin"],
-    [/da\s*hong\s*pao/i, "Da Hong Pao"],
-    [/dong\s*ding/i, "Dong Ding"],
-    [/dan\s*cong/i, "Dan Cong"],
-    [/phoenix/i, "Dan Cong"],
-    [/oriental\s*beauty/i, "Oriental Beauty"],
-    [/bao\s*zhong/i, "Bao Zhong"],
-    [/silver\s*needle/i, "Silver Needle"],
-    [/bai\s*mu\s*dan/i, "Bai Mu Dan"],
-    [/white\s*peony/i, "White Peony"],
-    [/shou\s*mei/i, "Shou Mei"],
-    [/keemun/i, "Keemun"],
-    [/dian\s*hong/i, "Dian Hong"],
-    [/earl\s*grey/i, "Earl Grey"],
-    [/lapsang/i, "Lapsang Souchong"],
-    [/liu\s*bao/i, "Liu Bao"],
-    [/sheng.*pu/i, "Sheng Pu-Erh"],
-    [/shou.*pu/i, "Shou Pu-Erh"],
-    [/raw.*pu/i, "Sheng Pu-Erh"],
-    [/ripened.*pu/i, "Shou Pu-Erh"],
-    [/balhyocha/i, "Balhyocha"],
-    [/gaba/i, "GABA"],
-  ];
-
-  for (const [pattern, style] of stylePatterns) {
-    if (pattern.test(title)) return style;
-  }
-
-  return null;
+async function inferStyleFromTitle(title: string): Promise<string | null> {
+  const result = await matchStyle(title);
+  return result?.key || null;
 }
 
-export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
+export async function mapToTeaRecord(product: ShopifyProduct): Promise<TeaRecord> {
   const parsed = parseBodyHtml(product.body_html);
 
   const typeKey = TYPE_MAP[product.product_type] || "green";
@@ -232,10 +185,8 @@ export function mapToTeaRecord(product: ShopifyProduct): TeaRecord {
 
   const harvestYear = parsed.harvest ? parseHarvestYear(parsed.harvest) : null;
 
-  // Infer style from product title (not from processing params)
-  const styleRaw = inferStyleFromTitle(product.title);
+  const styleRaw = await inferStyleFromTitle(product.title);
 
-  // Move processing params to notes since they're not styles
   const notesParts: string[] = [];
   if (parsed.steamed) notesParts.push(`Steamed: ${parsed.steamed}`);
   if (parsed.roast) notesParts.push(`Roast: ${parsed.roast}`);

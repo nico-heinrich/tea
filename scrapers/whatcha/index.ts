@@ -127,7 +127,7 @@ async function scrape() {
             continue;
           }
 
-          const mapped = mapToTeaRecord(product);
+          const mapped = await mapToTeaRecord(product);
 
           if (!isDryRun) {
             const { data: existing } = await supabase

@@ -290,7 +290,7 @@ async function scrape() {
           variants,
         };
 
-        const mapped = mapToTeaRecord(product);
+        const mapped = await mapToTeaRecord(product);
 
         // Check for tea metadata
         const hasTeaMetadata =
