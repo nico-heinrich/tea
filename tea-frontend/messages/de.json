@@ -1,0 +1,16 @@
+{
+	"search.placeholder": "Tees suchen...",
+	"search.noResults": "Keine Tees gefunden.",
+	"search.loading": "Suche läuft...",
+	"search.heading": "Suche nach Tee",
+	"language.english": "Englisch",
+	"language.german": "Deutsch",
+	"type.white": "Weiß",
+	"type.yellow": "Gelb",
+	"type.green": "Grün",
+	"type.oolong": "Oolong",
+	"type.black": "Schwarz",
+	"type.dark": "Dunkel",
+	"search.priceUnavailable": "Preis nicht verfügbar",
+	"search.loadMore": "Mehr laden"
+}

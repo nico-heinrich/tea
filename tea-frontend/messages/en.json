@@ -1,0 +1,16 @@
+{
+	"search.placeholder": "Search teas...",
+	"search.noResults": "No teas found.",
+	"search.loading": "Searching...",
+	"search.heading": "Search for tea",
+	"language.english": "English",
+	"language.german": "German",
+	"type.white": "White",
+	"type.yellow": "Yellow",
+	"type.green": "Green",
+	"type.oolong": "Oolong",
+	"type.black": "Black",
+	"type.dark": "Dark",
+	"search.priceUnavailable": "Price unavailable",
+	"search.loadMore": "Load more"
+}
