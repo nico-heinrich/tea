@@ -20,6 +20,7 @@ export interface YoshienProductDetail {
 
   // From HTML table
   charakter: string | null;
+  aroma: string | null;
   teefarm: string | null;
   terroir: string | null;
   ernte: string | null;

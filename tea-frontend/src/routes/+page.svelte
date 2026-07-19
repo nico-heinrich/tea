@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import * as m from "$lib/paraglide/messages.js";
-	import SearchInput from "$lib/components/search/SearchInput.svelte";
-	import SearchResults from "$lib/components/search/SearchResults.svelte";
-	import { getSearchActive, setSearchActive } from "$lib/stores/search-active.svelte.js";
-	import type { TeaResult } from "$lib/types/tea.js";
+	import * as m from '$lib/paraglide/messages.js';
+	import SearchInput from '$lib/components/search/SearchInput.svelte';
+	import SearchResults from '$lib/components/search/SearchResults.svelte';
+	import { getSearchActive, setSearchActive } from '$lib/stores/search-active.svelte.js';
+	import type { TeaResult } from '$lib/types/tea.js';
 
 	const PAGE_SIZE = 10;
 
@@ -86,10 +86,10 @@
 {#if !searchActive}
 	<div class="container pt-16">
 		<h1 class="mb-8 text-center text-4xl font-bold tracking-tight text-foreground">
-			{m["search.heading"]()}
+			{m['search.heading']()}
 		</h1>
 		<div class="mx-auto max-w-2xl">
-			<SearchInput onQueryCommit={handleQueryCommit} />
+			<SearchInput autofocus={true} onQueryCommit={handleQueryCommit} />
 		</div>
 	</div>
 {:else}

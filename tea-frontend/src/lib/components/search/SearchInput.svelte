@@ -10,18 +10,20 @@
 		placeholder = m['search.placeholder'](),
 		compact = false,
 		value = '',
+		autofocus = false,
 		onQueryCommit
 	}: {
 		placeholder?: string;
 		compact?: boolean;
 		value?: string;
+		autofocus: boolean;
 		onQueryCommit?: (query: string) => void;
 	} = $props();
 
 	let containerRef = $state<HTMLDivElement | null>(null);
 	let inputRef = $state<HTMLInputElement | null>(null);
 	let query = $state('');
-	let isFocused = $state(false);
+	let isFocused = $state(autofocus);
 	let activeIndex = $state(-1);
 	let recentSearches = $state<string[]>([]);
 	let popularSearches = $state<string[]>([]);
@@ -234,6 +236,7 @@
 			onkeydown={handleKeydown}
 			{placeholder}
 			class={cn('pr-8', compact ? 'h-9 text-sm' : '')}
+			{autofocus}
 		/>
 		{#if query}
 			<button

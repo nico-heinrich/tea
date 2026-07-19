@@ -3,7 +3,7 @@ import { cleanTeaName } from "../shared/cleanName.js";
 
 const VENDOR_NAME = "Yoshi en";
 const VENDOR_WEBSITE = "https://www.yoshien.com";
-const SCRAPER_VERSION = "yoshien@v2";
+const SCRAPER_VERSION = "yoshien@v3";
 
 let supabase: any = null;
 let upsertUnique: any = null;

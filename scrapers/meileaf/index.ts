@@ -6,7 +6,7 @@ import { mapToTeaRecord } from "./parse.ts";
 
 const VENDOR_NAME = "Mei Leaf";
 const VENDOR_WEBSITE = "https://meileaf.com";
-const SCRAPER_VERSION = "meileaf@v1";
+const SCRAPER_VERSION = "meileaf@v2";
 const BASE_URL = "https://meileaf.com";
 
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -347,6 +347,7 @@ async function scrape() {
             const { error: updateError } = await supabase
               .from("tea")
               .update({
+                name: mapped.name,
                 type: typeId,
                 style_raw: mapped.styleRaw,
                 origin: mapped.origin,

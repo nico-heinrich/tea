@@ -193,6 +193,22 @@ export function parseProductPage(html: string): YoshienProductDetail | null {
     weightGrams,
 
     charakter: tableData["Charakter"] || null,
+    aroma: (() => {
+      const aromaSection = $("#Aroma .product-details__info-content");
+      const headings = aromaSection.find("h3");
+      let verkostring = null;
+      headings.each(function () {
+        if ($(this).text().trim() === "Verkostung") {
+          let content = [];
+          $(this).nextAll().each(function () {
+            if ($(this).is("h3")) return false;
+            if ($(this).is("p")) content.push($(this).text().trim());
+          });
+          verkostring = content.join("\n");
+        }
+      });
+      return verkostring || null;
+    })(),
     teefarm: tableData["Teefarm"] || null,
     terroir: tableData["Terroir"] || null,
     ernte: tableData["Ernte"] || null,
@@ -239,7 +255,7 @@ export function mapToTeaRecord(
   const producerRaw = detail.teefarm || null;
   const shadingRaw = detail.beschattung || null;
 
-  const notesRaw = [detail.charakter, detail.anbau, detail.vermahhlung, detail.qualitaet]
+  const notesRaw = [detail.aroma, detail.charakter, detail.anbau, detail.vermahhlung, detail.qualitaet]
     .filter(Boolean)
     .join("\n");
 
