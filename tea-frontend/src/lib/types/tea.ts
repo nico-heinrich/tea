@@ -50,8 +50,8 @@ export interface Tea {
 export interface TeaSuggestion {
 	id: number;
 	name: string;
-	/** Tea style / type as stated by the source (maps to `style_raw` in the DB) */
-	style_raw: string | null;
+	/** Tea style / type as stated by the source (maps to `style.label` in the DB) */
+	style_label: string | null;
 	/** Resolved type key from the `type` table, e.g. "green", "oolong", "black" (maps to `type.key`) */
 	type_key: string;
 	/** Region / terroir */
@@ -67,7 +67,7 @@ export interface TeaSuggestion {
 export interface TeaResult {
 	id: number;
 	name: string;
-	style_raw: string | null;
+	style_label: string | null;
 	type_key: string;
 	origin: string | null;
 	origin_country: string | null;
@@ -76,6 +76,7 @@ export interface TeaResult {
 	currency: string | null;
 	weight_grams: number | null;
 	vendor_name: string | null;
+	harvest_year: number | null;
 }
 
 /**

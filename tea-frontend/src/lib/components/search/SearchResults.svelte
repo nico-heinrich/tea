@@ -139,9 +139,13 @@
 								aria-hidden="true"
 							></span>
 							{translateType(tea.type_key)}
-							{#if tea.style_raw}
+							{#if tea.style_label}
 								<span class="text-muted-foreground/60">·</span>
-								{tea.style_raw}
+								{tea.style_label}
+							{/if}
+							{#if tea.harvest_year}
+								<span class="text-muted-foreground/60">·</span>
+								{tea.harvest_year}
 							{/if}
 						</div>
 						<div class="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">

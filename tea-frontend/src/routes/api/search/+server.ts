@@ -41,7 +41,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
 		const results: TeaResult[] = raw.map((row) => ({
 			id: row.p_id as number,
 			name: row.p_name as string,
-			style_raw: (row.p_style_raw as string) ?? null,
+			style_label: (row.p_style_label as string) ?? null,
 			type_key: row.p_type_key as string,
 			origin: (row.p_origin as string) ?? null,
 			origin_country: (row.p_origin_country as string) ?? null,
@@ -50,6 +50,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
 			currency: (row.p_currency as string) ?? null,
 			weight_grams: row.p_weight_grams ? Number(row.p_weight_grams) : null,
 			vendor_name: (row.p_vendor_name as string) ?? null,
+			harvest_year: row.p_harvest_year ? Number(row.p_harvest_year) : null,
 		}));
 
 		// totalCount comes from the first row (same for all via window function)

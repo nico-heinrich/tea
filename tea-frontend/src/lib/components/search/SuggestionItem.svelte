@@ -138,12 +138,12 @@
 
 		<!-- Badges and origin row -->
 		<div class="flex flex-wrap items-center gap-1.5">
-			{#if suggestion.style_raw}
+			{#if suggestion.style_label}
 				<Badge
 					variant="outline"
 					class="text-[10px] leading-none px-1.5 py-0"
 				>
-					{suggestion.style_raw}
+					{suggestion.style_label}
 				</Badge>
 			{/if}
 

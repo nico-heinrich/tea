@@ -16,7 +16,7 @@
 		placeholder?: string;
 		compact?: boolean;
 		value?: string;
-		autofocus: boolean;
+		autofocus?: boolean;
 		onQueryCommit?: (query: string) => void;
 	} = $props();
 
