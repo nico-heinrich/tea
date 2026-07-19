@@ -1,9 +1,10 @@
 import { mapToTeaRecord } from "./parse.js";
 import type { ShopifyProduct } from "./types.js";
+import { resolveStyle } from "../shared/matching.js";
 
 const VENDOR_NAME = "Yunnan Sourcing";
 const VENDOR_WEBSITE = "https://yunnansourcing.com";
-const SCRAPER_VERSION = "yunnansourcing@v4";
+const SCRAPER_VERSION = "yunnansourcing@v5";
 const BASE_URL = "https://yunnansourcing.com";
 
 const COLLECTIONS = [
@@ -111,11 +112,14 @@ async function scrape() {
                   typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
                 }
 
+                const styleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
+
                 const { error: updateError } = await supabase
                   .from("tea")
                   .update({
                     name: mapped.name,
                     type: typeId,
+                    style: styleId,
                     elevation_meters: mapped.elevationMeters,
                     harvest_year: mapped.harvestYear,
                     season: mapped.season,
@@ -166,11 +170,14 @@ async function scrape() {
             typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
           }
 
+          const styleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
+
           const teaRecord = {
             name: mapped.name,
             url: mapped.url,
             vendor: vendorId,
             type: typeId,
+            style: styleId,
             style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,

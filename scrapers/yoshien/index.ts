@@ -1,9 +1,10 @@
 import { parseProductPage, mapToTeaRecord } from "./parse.js";
 import { cleanTeaName } from "../shared/cleanName.js";
+import { resolveStyle } from "../shared/matching.js";
 
 const VENDOR_NAME = "Yoshi en";
 const VENDOR_WEBSITE = "https://www.yoshien.com";
-const SCRAPER_VERSION = "yoshien@v3";
+const SCRAPER_VERSION = "yoshien@v4";
 
 let supabase: any = null;
 let upsertUnique: any = null;
@@ -126,10 +127,12 @@ async function scrape() {
               .single();
 
             if (existing) {
+              const updateStyleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
               const { error: updateError } = await supabase
                 .from("tea")
                 .update({
                   name: cleanTeaName(detail.name),
+                  style: updateStyleId,
                   cultivar_raw: detail.cultivar,
                   season: mapped.season,
                   scraper_version: SCRAPER_VERSION,
@@ -187,11 +190,14 @@ async function scrape() {
             typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
           }
 
+          const styleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
+
           const teaRecord = {
             name: cleanTeaName(detail.name),
             url,
             vendor: vendorId,
             type: typeId,
+            style: styleId,
             style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,

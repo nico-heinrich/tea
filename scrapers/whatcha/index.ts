@@ -2,10 +2,11 @@ import "dotenv/config";
 import { createClient } from "@supabase/supabase-js";
 import type { ShopifyProduct, TeaRecord } from "./types.ts";
 import { mapToTeaRecord } from "./parse.js";
+import { resolveStyle } from "../shared/matching.js";
 
 const VENDOR_NAME = "What-Cha";
 const VENDOR_WEBSITE = "https://what-cha.com";
-const SCRAPER_VERSION = "whatcha@v4";
+const SCRAPER_VERSION = "whatcha@v5";
 const BASE_URL = "https://what-cha.com";
 
 const COLLECTIONS = [
@@ -143,11 +144,14 @@ async function scrape() {
                   typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
                 }
 
+                const styleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
+
                 const { error: updateError } = await supabase
                   .from("tea")
                   .update({
                     name: mapped.name,
                     type: typeId,
+                    style: styleId,
                     style_raw: mapped.styleRaw,
                     origin: mapped.origin,
                     elevation_meters: mapped.elevationMeters,
@@ -203,11 +207,14 @@ async function scrape() {
             typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
           }
 
+          const styleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
+
           const teaRecord = {
             name: mapped.name,
             url: mapped.url,
             vendor: vendorId,
             type: typeId,
+            style: styleId,
             style_raw: mapped.styleRaw,
             origin: mapped.origin,
             origin_country: mapped.originCountry,

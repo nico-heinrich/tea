@@ -3,10 +3,11 @@ import { createClient } from "@supabase/supabase-js";
 import { chromium, type Page } from "playwright";
 import type { MeiLeafProductCard, MeiLeafProductDetail, MeiLeafTastingNote, MeiLeafVariant, MeiLeafProduct } from "./types.ts";
 import { mapToTeaRecord } from "./parse.ts";
+import { resolveStyle } from "../shared/matching.js";
 
 const VENDOR_NAME = "Mei Leaf";
 const VENDOR_WEBSITE = "https://meileaf.com";
-const SCRAPER_VERSION = "meileaf@v2";
+const SCRAPER_VERSION = "meileaf@v3";
 const BASE_URL = "https://meileaf.com";
 
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -344,11 +345,14 @@ async function scrape() {
                 typeMap.get(mapped.typeKey.toLowerCase()) || null;
             }
 
+            const styleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
+
             const { error: updateError } = await supabase
               .from("tea")
               .update({
                 name: mapped.name,
                 type: typeId,
+                style: styleId,
                 style_raw: mapped.styleRaw,
                 origin: mapped.origin,
                 origin_country: mapped.originCountry,
@@ -383,11 +387,14 @@ async function scrape() {
             typeMap.get(mapped.typeKey.toLowerCase()) || null;
         }
 
+        const styleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
+
         const teaRecord = {
           name: mapped.name,
           url: mapped.url,
           vendor: vendorId,
           type: typeId,
+          style: styleId,
           style_raw: mapped.styleRaw,
           origin: mapped.origin,
           origin_country: mapped.originCountry,

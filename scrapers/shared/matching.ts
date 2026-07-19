@@ -109,3 +109,14 @@ export async function matchStyleForType(
 
   return null;
 }
+
+export async function resolveStyle(
+  styleRaw: string | null,
+  typeKey: string | null
+): Promise<number | null> {
+  if (!styleRaw) return null;
+  const result = typeKey
+    ? await matchStyleForType(styleRaw, typeKey)
+    : await matchStyle(styleRaw);
+  return result?.id ?? null;
+}

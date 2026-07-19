@@ -5,9 +5,8 @@ const QUOTED_NAME_RE = /["\u201C]([^"\u201C\u201D]+)["\u201D]/;
 
 const HARVEST_SEASON_RE = /\s*\*\s*(?:Spring|Summer|Autumn|Winter|Fall)\s+\d{4}\s*$/i;
 
-const PEST_FREE_RE = /\s*Pest\.?\s*(?:Free|frei|Frei|freilich|Freilich)\s*/gi;
-const P_FREE_RE = /\s*P\.?\s*FREE\b/gi;
-const PESTIZIDFREI_RE = /\s*Pestizidfrei\s*/gi;
+// Pesticide-free variants: "Pest.Free Farming", "Pestfrei", "Pestizidfrei", "P.FREE", etc.
+const PEST_FREE_RE = /\s*(?:Pest\.?\s*(?:Free|frei|Frei|freilich|Freilich)|P\.?\s*FREE|Pestizidfrei)(?:\s+Farming)?\s*/gi;
 const BIO_RE = /\s*Bio\b/gi;
 const GERMAN_TEE_RE = /\s+Tee\b/gi;
 
@@ -29,8 +28,6 @@ export function cleanTeaName(
   }
 
   cleaned = cleaned.replace(PEST_FREE_RE, " ").trim();
-  cleaned = cleaned.replace(P_FREE_RE, " ").trim();
-  cleaned = cleaned.replace(PESTIZIDFREI_RE, " ").trim();
   cleaned = cleaned.replace(BIO_RE, " ").trim();
   cleaned = cleaned.replace(GERMAN_TEE_RE, " ").trim();
   cleaned = cleaned.replace(/\s{2,}/g, " ").trim();
