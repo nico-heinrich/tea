@@ -58,9 +58,17 @@ export async function loadStyles(): Promise<StyleEntry[]> {
   return styleCache;
 }
 
+function normalizeForMatch(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[-_]+/g, " ") // hyphens/underscores → spaces (slug normalization)
+    .replace(/\s+/g, " ")  // collapse multiple spaces
+    .trim();
+}
+
 function matchesTag(text: string, tags: string[]): boolean {
-  const lower = text.toLowerCase();
-  return tags.some((tag) => lower.includes(tag.toLowerCase()));
+  const normalizedText = normalizeForMatch(text);
+  return tags.some((tag) => normalizedText.includes(normalizeForMatch(tag)));
 }
 
 export async function matchType(text: string): Promise<MatchResult | null> {
@@ -92,7 +100,7 @@ export async function matchStyleForType(
   const types = await loadTypes();
   const styles = await loadStyles();
 
-  const typeEntry = types.find((t) => t.key === typeKey);
+  const typeEntry = types.find((t) => t.key === typeKey.toLowerCase());
   if (!typeEntry) return null;
 
   for (const s of styles) {
