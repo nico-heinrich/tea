@@ -2,6 +2,13 @@ import * as cheerio from "cheerio";
 import type { YoshienProductDetail } from "../shared/types.js";
 import { extractSeason } from "../shared/harvest.js";
 
+// Detect yellow tea by name patterns (Yoshien categorizes yellow under white)
+const YELLOW_TEA_PATTERNS = /huang\s*ya|huang\s*cha|gelber\s*tee|yellow\s*tea/i;
+
+function isYellowTea(name: string): boolean {
+  return YELLOW_TEA_PATTERNS.test(name);
+}
+
 // Map German style to our style
 function inferStyle(category: string, name: string): string | null {
   const cat = category.toLowerCase();
@@ -259,8 +266,10 @@ export function mapToTeaRecord(
     .filter(Boolean)
     .join("\n");
 
+  const typeKey = isYellowTea(detail.name) ? "Yellow" : category;
+
   return {
-    typeKey: category,
+    typeKey,
     styleKey,
     styleRaw,
     origin,

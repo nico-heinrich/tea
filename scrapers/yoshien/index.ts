@@ -4,7 +4,7 @@ import { resolveStyle } from "../shared/matching.js";
 
 const VENDOR_NAME = "Yoshi en";
 const VENDOR_WEBSITE = "https://www.yoshien.com";
-const SCRAPER_VERSION = "yoshien@v4";
+const SCRAPER_VERSION = "yoshien@v6";
 
 let supabase: any = null;
 let upsertUnique: any = null;
@@ -127,11 +127,16 @@ async function scrape() {
               .single();
 
             if (existing) {
+              let typeId: number | null = null;
+              if (mapped.typeKey) {
+                typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
+              }
               const updateStyleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
               const { error: updateError } = await supabase
                 .from("tea")
                 .update({
                   name: cleanTeaName(detail.name),
+                  type: typeId,
                   style: updateStyleId,
                   cultivar_raw: detail.cultivar,
                   season: mapped.season,
