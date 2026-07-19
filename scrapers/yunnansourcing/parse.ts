@@ -129,6 +129,42 @@ function inferType(productType: string, teaType: string | null): string {
   return "Green";
 }
 
+/**
+ * YS often tags products with generic tea type (e.g. "White Tea") even when the name
+ * contains a specific style. This detects known style patterns in the product title
+ * and returns a more specific styleRaw.
+ */
+function inferStyleFromName(name: string, genericType: string): string {
+  const lower = name.toLowerCase();
+  const STYLE_PATTERNS: { pattern: RegExp; style: string }[] = [
+    { pattern: /\b(bai hao yin zhen|silver needle)\b/, style: "Bai Hao Yin Zhen" },
+    { pattern: /\b(bai mu dan|bai peony|white peony)\b/, style: "Bai Mu Dan" },
+    { pattern: /\bya bao\b/, style: "Ya Bao" },
+    { pattern: /\b(shou mei)\b/, style: "Shou Mei" },
+    { pattern: /\b(gong mei)\b/, style: "Gong Mei" },
+    { pattern: /\b(moonlight)\b/, style: "Moonlight" },
+    { pattern: /\b(long jing|dragon well)\b/, style: "Long Jing" },
+    { pattern: /\b(bi luo chun)\b/, style: "Bi Luo Chun" },
+    { pattern: /\b(huang shan mao feng)\b/, style: "Huang Shan Mao Feng" },
+    { pattern: /\b(an ji bai cha)\b/, style: "Anji Bai Cha" },
+    { pattern: /\b(junshan yinzhen)\b/, style: "Junshan Yinzhen" },
+    { pattern: /\b(bing tuan|bing cha|cake|tuo)\b/i, style: "Bing Tuan" },
+    { pattern: /\b(liu bao)\b/, style: "Liu Bao" },
+    { pattern: /\b(fu zhuan)\b/, style: "Fu Zhuan" },
+    { pattern: /\b(qi zhuan)\b/, style: "Qi Zhuan" },
+    { pattern: /\b(dong ding)\b/, style: "Dong Ding" },
+    { pattern: /\b(ali mountain|a li shan)\b/, style: "Ali Shan" },
+    { pattern: /\b(li shan)\b/, style: "Li Shan" },
+    { pattern: /\b(he huan)\b/, style: "He Huan" },
+    { pattern: /\b(fu shou)\b/, style: "Fu Shou" },
+    { pattern: /\b(hong yin)\b/, style: "Hong Yin" },
+  ];
+  for (const { pattern, style } of STYLE_PATTERNS) {
+    if (pattern.test(lower)) return style;
+  }
+  return genericType;
+}
+
 function buildNotesRaw(product: ShopifyProduct, tags: ParsedTags): string {
   const parts = [tags.storageType, tags.shape].filter(Boolean);
   const desc = product.body_html
@@ -162,7 +198,8 @@ export function mapToTeaRecord(product: ShopifyProduct): {
   const url = `https://yunnansourcing.com/products/${product.handle}`;
   const name = cleanTeaName(product.title);
   const typeKey = inferType(product.product_type, tags.teaType);
-  const styleRaw = tags.teaType || product.product_type;
+  const genericStyle = tags.teaType || product.product_type;
+  const styleRaw = inferStyleFromName(product.title, genericStyle);
   const origin = tags.subRegion || tags.region || null;
   const originCountry = inferCountry(tags.region, tags.subRegion);
   const harvestRaw = tags.harvestSeason || null;

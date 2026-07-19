@@ -206,7 +206,7 @@ export function parseProductPage(html: string): YoshienProductDetail | null {
       let verkostring = null;
       headings.each(function () {
         if ($(this).text().trim() === "Verkostung") {
-          let content = [];
+          const content: string[] = [];
           $(this).nextAll().each(function () {
             if ($(this).is("h3")) return false;
             if ($(this).is("p")) content.push($(this).text().trim());

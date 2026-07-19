@@ -4,7 +4,7 @@ import { resolveStyle } from "../shared/matching.js";
 
 const VENDOR_NAME = "Yunnan Sourcing";
 const VENDOR_WEBSITE = "https://yunnansourcing.com";
-const SCRAPER_VERSION = "yunnansourcing@v5";
+const SCRAPER_VERSION = "yunnansourcing@v9";
 const BASE_URL = "https://yunnansourcing.com";
 
 const COLLECTIONS = [
@@ -114,18 +114,20 @@ async function scrape() {
 
                 const styleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
 
-                const { error: updateError } = await supabase
-                  .from("tea")
-                  .update({
+                const updatePayload: Record<string, unknown> = {
                     name: mapped.name,
                     type: typeId,
-                    style: styleId,
                     elevation_meters: mapped.elevationMeters,
                     harvest_year: mapped.harvestYear,
                     season: mapped.season,
                     cultivar_raw: mapped.cultivarRaw,
                     scraper_version: SCRAPER_VERSION,
-                  })
+                  };
+                if (styleId) updatePayload.style = styleId;
+
+                const { error: updateError } = await supabase
+                  .from("tea")
+                  .update(updatePayload)
                   .eq("id", existing.id);
 
                 if (updateError) {

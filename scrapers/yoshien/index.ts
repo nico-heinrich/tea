@@ -132,16 +132,18 @@ async function scrape() {
                 typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
               }
               const updateStyleId = await resolveStyle(mapped.styleRaw, mapped.typeKey);
-              const { error: updateError } = await supabase
-                .from("tea")
-                .update({
+              const updatePayload: Record<string, unknown> = {
                   name: cleanTeaName(detail.name),
                   type: typeId,
-                  style: updateStyleId,
                   cultivar_raw: detail.cultivar,
                   season: mapped.season,
                   scraper_version: SCRAPER_VERSION,
-                })
+                };
+              if (updateStyleId) updatePayload.style = updateStyleId;
+
+              const { error: updateError } = await supabase
+                .from("tea")
+                .update(updatePayload)
                 .eq("id", existing.id);
 
               if (updateError) {
