@@ -18,6 +18,8 @@ export function cleanTeaName(
   const { stripYear = true } = opts;
   let cleaned = name.trim();
 
+  cleaned = cleaned.replace(/^\*\s*/, "").trim();
+
   cleaned = cleaned.replace(GERMAN_PREFIX_RE, "").trim();
 
   const quotedMatch = cleaned.match(QUOTED_NAME_RE);

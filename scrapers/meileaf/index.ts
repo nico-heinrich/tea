@@ -86,6 +86,7 @@ async function extractProductDetail(page: Page): Promise<{
   detail: MeiLeafProductDetail;
   tastingNotes: MeiLeafTastingNote[];
   subtitle: string | null;
+  h1Name: string | null;
 }> {
   // Wait for product detail section to load
   await page.waitForSelector("dt.product-detail__title", { timeout: 15000 }).catch(() => {});
@@ -126,15 +127,18 @@ async function extractProductDetail(page: Page): Promise<{
       }
     });
 
-    // Extract subtitle (Chinese name after h1)
     const h1 = document.querySelector("h1");
+    let h1Name: string | null = null;
     let subtitle: string | null = null;
-    if (h1 && h1.nextElementSibling) {
-      const next = h1.nextElementSibling;
-      const text = next.textContent.trim();
-      // Only use if it's short (likely a Chinese name, not tasting notes)
-      if (text.length > 0 && text.length < 100) {
-        subtitle = text;
+    if (h1) {
+      h1Name = h1.textContent.trim();
+      if (h1.nextElementSibling) {
+        const next = h1.nextElementSibling;
+        const text = next.textContent.trim();
+        // Only use if it's short (likely a Chinese name, not tasting notes)
+        if (text.length > 0 && text.length < 100) {
+          subtitle = text;
+        }
       }
     }
 
@@ -154,13 +158,14 @@ async function extractProductDetail(page: Page): Promise<{
       }
     });
 
-    return { detail, subtitle, tastingNotes };
+    return { detail, subtitle, tastingNotes, h1Name };
   });
 
   return {
     detail: detailResult.detail as unknown as MeiLeafProductDetail,
     tastingNotes: detailResult.tastingNotes,
     subtitle: detailResult.subtitle,
+    h1Name: detailResult.h1Name,
   };
 }
 
@@ -280,7 +285,7 @@ async function scrape() {
         ]);
 
         const product: MeiLeafProduct = {
-          name: card.name,
+          name: detailResult.h1Name || card.name,
           url: canonicalUrl,
           subtitle: detailResult.subtitle,
           teaType: card.type,
