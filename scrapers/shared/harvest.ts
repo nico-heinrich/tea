@@ -3,18 +3,26 @@
  */
 
 const SEASON_PATTERNS: [RegExp, string][] = [
-  // German terms (Yoshien)
+  // German terms (Yoshien, InfiniTea)
   [/1\.\s*ernte/i, 'spring'],
   [/2\.\s*ernte/i, 'summer'],
   [/3\.\s*ernte/i, 'autumn'],
   [/4\.\s*ernte/i, 'winter'],
-  
+  [/frühling/i, 'spring'],
+  [/sommer/i, 'summer'],
+  [/herbst/i, 'autumn'],
+  [/winter/i, 'winter'],
+
   // English terms (What-Cha)
-  [/1st\s*flush/i, 'spring'],
-  [/2nd\s*flush/i, 'summer'],
-  [/3rd\s*flush/i, 'autumn'],
+  [/1st\s*(?:flush|harvest)/i, 'spring'],
+  [/2nd\s*(?:flush|harvest)/i, 'summer'],
+  [/3rd\s*(?:flush|harvest)/i, 'autumn'],
   [/autumnal/i, 'autumn'],
   [/monsoon/i, 'summer'],
+  [/spring/i, 'spring'],
+  [/summer/i, 'summer'],
+  [/autumn/i, 'autumn'],
+  [/fall/i, 'autumn'],
   
   // Japanese terms
   [/ichibancha/i, 'spring'],
@@ -27,13 +35,6 @@ const SEASON_PATTERNS: [RegExp, string][] = [
   [/夏茶/i, 'summer'],
   [/秋茶/i, 'autumn'],
   [/冬茶/i, 'winter'],
-  
-  // English seasons
-  [/spring/i, 'spring'],
-  [/summer/i, 'summer'],
-  [/autumn/i, 'autumn'],
-  [/fall/i, 'autumn'],
-  [/winter/i, 'winter'],
 ];
 
 /**
