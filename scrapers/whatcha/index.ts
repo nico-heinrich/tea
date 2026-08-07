@@ -1,12 +1,13 @@
 import "dotenv/config";
 import { createClient } from "@supabase/supabase-js";
-import type { ShopifyProduct, TeaRecord } from "./types.ts";
+import type { ShopifyProduct, TeaRecord } from "./types.js";
 import { mapToTeaRecord } from "./parse.js";
 import { resolveStyle } from "../shared/matching.js";
+import { normalizeToUsd100g } from "../shared/fx.js";
 
 const VENDOR_NAME = "What-Cha";
 const VENDOR_WEBSITE = "https://what-cha.com";
-const SCRAPER_VERSION = "whatcha@v5";
+const SCRAPER_VERSION = "whatcha@v6";
 const BASE_URL = "https://what-cha.com";
 
 const COLLECTIONS = [
@@ -249,11 +250,14 @@ async function scrape() {
 
           for (const offer of mapped.offers) {
             if (offer.price > 0) {
+              const fx = await normalizeToUsd100g(offer.price, offer.weightGrams, "GBP");
               await supabase.from("price_snapshot").insert({
                 tea_id: teaData.id,
                 weight_grams: offer.weightGrams,
                 price: offer.price,
                 currency: "GBP",
+                price_100g_usd: fx.price100gUsd,
+                fx_rate_usd: fx.fxRateUsd,
               });
             }
           }

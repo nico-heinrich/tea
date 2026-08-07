@@ -1,10 +1,11 @@
 import { mapToTeaRecord } from "./parse.js";
 import type { ShopifyProduct } from "./types.js";
 import { resolveStyle } from "../shared/matching.js";
+import { normalizeToUsd100g } from "../shared/fx.js";
 
 const VENDOR_NAME = "Yunnan Sourcing";
 const VENDOR_WEBSITE = "https://yunnansourcing.com";
-const SCRAPER_VERSION = "yunnansourcing@v9";
+const SCRAPER_VERSION = "yunnansourcing@v10";
 const BASE_URL = "https://yunnansourcing.com";
 
 const COLLECTIONS = [
@@ -212,11 +213,14 @@ async function scrape() {
 
           for (const offer of mapped.offers) {
             if (offer.price > 0) {
+              const fx = await normalizeToUsd100g(offer.price, offer.weightGrams, "USD");
               await supabase.from("price_snapshot").insert({
                 tea_id: teaData.id,
                 weight_grams: offer.weightGrams,
                 price: offer.price,
                 currency: "USD",
+                price_100g_usd: fx.price100gUsd,
+                fx_rate_usd: fx.fxRateUsd,
               });
             }
           }

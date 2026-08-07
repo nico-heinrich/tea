@@ -1,13 +1,14 @@
 import "dotenv/config";
 import { createClient } from "@supabase/supabase-js";
 import { chromium, type Page } from "playwright";
-import type { MeiLeafProductCard, MeiLeafProductDetail, MeiLeafTastingNote, MeiLeafVariant, MeiLeafProduct } from "./types.ts";
-import { mapToTeaRecord } from "./parse.ts";
+import type { MeiLeafProductCard, MeiLeafProductDetail, MeiLeafTastingNote, MeiLeafVariant, MeiLeafProduct } from "./types.js";
+import { mapToTeaRecord } from "./parse.js";
 import { resolveStyle } from "../shared/matching.js";
+import { normalizeToUsd100g } from "../shared/fx.js";
 
 const VENDOR_NAME = "Mei Leaf";
 const VENDOR_WEBSITE = "https://meileaf.com";
-const SCRAPER_VERSION = "meileaf@v3";
+const SCRAPER_VERSION = "meileaf@v5";
 const BASE_URL = "https://meileaf.com";
 
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -432,11 +433,14 @@ async function scrape() {
         // Insert price snapshots
         for (const offer of mapped.offers) {
           if (offer.price > 0) {
+            const fx = await normalizeToUsd100g(offer.price, offer.weightGrams, "EUR");
             await supabase.from("price_snapshot").insert({
               tea_id: teaData.id,
               weight_grams: offer.weightGrams,
               price: offer.price,
               currency: "EUR",
+              price_100g_usd: fx.price100gUsd,
+              fx_rate_usd: fx.fxRateUsd,
             });
           }
         }

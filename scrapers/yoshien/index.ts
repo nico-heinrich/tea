@@ -1,10 +1,11 @@
 import { parseProductPage, mapToTeaRecord } from "./parse.js";
 import { cleanTeaName } from "../shared/cleanName.js";
 import { resolveStyle } from "../shared/matching.js";
+import { normalizeToUsd100g } from "../shared/fx.js";
 
 const VENDOR_NAME = "Yoshi en";
 const VENDOR_WEBSITE = "https://www.yoshien.com";
-const SCRAPER_VERSION = "yoshien@v6";
+const SCRAPER_VERSION = "yoshien@v8";
 
 let supabase: any = null;
 let upsertUnique: any = null;
@@ -238,11 +239,15 @@ async function scrape() {
           // Insert all offers as price snapshots
           for (const offer of detail.offers) {
             if (offer.price > 0) {
+              const weight = offer.weightGrams || detail.weightGrams;
+              const fx = await normalizeToUsd100g(offer.price, weight, "EUR");
               await supabase.from("price_snapshot").insert({
                 tea_id: teaData.id,
-                weight_grams: offer.weightGrams || detail.weightGrams,
+                weight_grams: weight,
                 price: offer.price,
                 currency: "EUR",
+                price_100g_usd: fx.price100gUsd,
+                fx_rate_usd: fx.fxRateUsd,
               });
             }
           }
