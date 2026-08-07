@@ -13,6 +13,12 @@ const SEASON_PATTERNS: [RegExp, string][] = [
   [/herbst/i, 'autumn'],
   [/winter/i, 'winter'],
 
+  // German month names (Tea Addicts)
+  [/januar|februar|dezember/i, 'winter'],
+  [/märz|maerz|april|mai/i, 'spring'],
+  [/juni|juli|august/i, 'summer'],
+  [/september|oktober|november/i, 'autumn'],
+
   // English terms (What-Cha)
   [/1st\s*(?:flush|harvest)/i, 'spring'],
   [/2nd\s*(?:flush|harvest)/i, 'summer'],
