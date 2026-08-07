@@ -114,6 +114,33 @@ function parseVariantWeight(optionHtml: string): number | null {
   return null;
 }
 
+/**
+ * Some variants carry no gram weight in their label (e.g. "Mit Bambusrohr"),
+ * but data-params always includes the base price per unit (e.g. 49,80 € / 100 g).
+ * Derive the weight as price / basicPrice × unitGrams.
+ */
+function parseBasicPriceWeight(params: {
+  price?: number;
+  basicPrice?: number;
+  basicPriceUnit?: string;
+}): number | null {
+  if (
+    typeof params.price !== "number" ||
+    typeof params.basicPrice !== "number" ||
+    params.price <= 0 ||
+    params.basicPrice <= 0
+  ) {
+    return null;
+  }
+  const unitMatch = (params.basicPriceUnit || "").match(/(\d+(?:[.,]\d+)?)\s*g/i);
+  if (!unitMatch) return null;
+  const unitGrams = parseFloat(unitMatch[1].replace(",", "."));
+  if (!unitGrams || unitGrams <= 0) return null;
+  const weightGrams = (params.price / params.basicPrice) * unitGrams;
+  if (weightGrams <= 0) return null;
+  return Math.round(weightGrams * 10) / 10;
+}
+
 /** Parse variant offers from `<option class="j-product__variants__item" data-params="...">`. */
 function parseVariants(html: string): Variant[] {
   const variants: Variant[] = [];
@@ -122,7 +149,7 @@ function parseVariants(html: string): Variant[] {
     const paramsMatch = optionHtml.match(PARAMS_RE);
     if (!paramsMatch) continue;
 
-    let params: { price?: number; availability?: number };
+    let params: { price?: number; availability?: number; basicPrice?: number; basicPriceUnit?: string };
     try {
       // data-params JSON quotes are HTML-entity encoded (&quot;)
       params = JSON.parse(paramsMatch[1].replace(/&quot;/g, '"'));
@@ -133,8 +160,9 @@ function parseVariants(html: string): Variant[] {
     if (typeof params.price !== "number" || params.price <= 0) continue;
     // Jimdo availability: 1 = in stock, 2 = limited but available; 0/absent = sold out
     const availability = typeof params.availability === "number" ? params.availability : 0;
+    const weightGrams = parseVariantWeight(optionHtml) ?? parseBasicPriceWeight(params);
     variants.push({
-      weightGrams: parseVariantWeight(optionHtml),
+      weightGrams,
       price: params.price,
       available: availability >= 1,
     });

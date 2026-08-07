@@ -7,7 +7,7 @@ import { normalizeToUsd100g } from "../shared/fx.js";
 
 const VENDOR_NAME = "Tea Addicts";
 const VENDOR_WEBSITE = "https://www.tea-addicts.de";
-const SCRAPER_VERSION = "tea-addicts@v2";
+const SCRAPER_VERSION = "tea-addicts@v3";
 const BASE_URL = "https://www.tea-addicts.de";
 const BROWSER_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
