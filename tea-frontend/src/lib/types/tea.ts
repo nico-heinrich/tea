@@ -77,6 +77,12 @@ export interface TeaResult {
 	weight_grams: number | null;
 	vendor_name: string | null;
 	harvest_year: number | null;
+	/** Raw normalized price per 100g in USD (null for legacy rows). */
+	price_100g_usd: number | null;
+	/** Computed price per 100g in the display currency (or native for legacy). */
+	price_display: number | null;
+	/** Currency used for price_display (e.g. "EUR", "USD", or native). */
+	currency_display: string | null;
 }
 
 /**
@@ -94,3 +100,9 @@ export interface SearchResultsResponse {
 	results: TeaResult[];
 	totalCount: number;
 }
+
+/**
+ * Sort options for the search API: relevance (default) or representative
+ * price_100g_usd ascending/descending.
+ */
+export type SearchSort = 'relevance' | 'price_asc' | 'price_desc';

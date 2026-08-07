@@ -5,7 +5,8 @@
 	import SearchInput from '$lib/components/search/SearchInput.svelte';
 	import SearchResults from '$lib/components/search/SearchResults.svelte';
 	import { getSearchActive, setSearchActive } from '$lib/stores/search-active.svelte.js';
-	import type { TeaResult } from '$lib/types/tea.js';
+	import { getCurrency } from '$lib/stores/search.svelte.js';
+	import type { SearchSort, TeaResult } from '$lib/types/tea.js';
 
 	const PAGE_SIZE = 10;
 
@@ -15,11 +16,20 @@
 	let resultsLoading = $state(false);
 	let loadingMore = $state(false);
 	let totalCount = $state(0);
+	function readSortFromUrl(): SearchSort {
+		const s = $page.url.searchParams.get('sort');
+		return s === 'price_asc' || s === 'price_desc' ? s : 'relevance';
+	}
+
+	let sort = $derived(readSortFromUrl());
 
 	let hasMore = $derived(results.length < totalCount);
 
 	async function fetchResults(query: string, offset: number, append: boolean) {
-		const res = await fetch(`/api/search?q=${encodeURIComponent(query)}&offset=${offset}`);
+		const cur = getCurrency();
+		const res = await fetch(
+			`/api/search?q=${encodeURIComponent(query)}&offset=${offset}&currency=${encodeURIComponent(cur)}&sort=${sort}`
+		);
 		if (res.ok) {
 			const data = await res.json();
 			if (append) {
@@ -32,7 +42,6 @@
 	}
 
 	async function executeSearch(query: string) {
-		// Update URL
 		const url = new URL($page.url);
 		url.searchParams.set('q', query);
 		await goto(url, { replaceState: true });
@@ -65,7 +74,13 @@
 		executeSearch(query);
 	}
 
-	// On mount: if URL has ?q=, execute the search
+	function handleSortChange(value: SearchSort) {
+		const url = new URL($page.url);
+		if (value === 'relevance') url.searchParams.delete('sort');
+		else url.searchParams.set('sort', value);
+		goto(url, { replaceState: true });
+	}
+
 	$effect(() => {
 		const q = $page.url.searchParams.get('q');
 		if (q && !searchActive) {
@@ -80,6 +95,27 @@
 		}
 		window.addEventListener('tea-search', handleHeaderSearch);
 		return () => window.removeEventListener('tea-search', handleHeaderSearch);
+	});
+
+	let lastFetchedCurrency = $state(getCurrency());
+
+	$effect(() => {
+		const cur = getCurrency();
+		const active = searchActive;
+		const q = currentQuery;
+		if (cur === lastFetchedCurrency || !active || !q) return;
+		lastFetchedCurrency = cur;
+		executeSearch(q);
+	});
+
+	let lastFetchedSort = $state(readSortFromUrl());
+
+	$effect(() => {
+		const active = searchActive;
+		const q = currentQuery;
+		if (sort === lastFetchedSort || !active || !q) return;
+		lastFetchedSort = sort;
+		executeSearch(q);
 	});
 </script>
 
@@ -100,7 +136,9 @@
 			{hasMore}
 			{loadingMore}
 			loading={resultsLoading}
+			{sort}
 			onLoadMore={loadMore}
+			onSortChange={handleSortChange}
 		/>
 	</div>
 {/if}

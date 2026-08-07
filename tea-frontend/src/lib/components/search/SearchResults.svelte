@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TeaResult } from '$lib/types/tea.js';
+	import type { TeaResult, SearchSort } from '$lib/types/tea.js';
 	import * as m from '$lib/paraglide/messages.js';
 
 	let {
@@ -8,14 +8,18 @@
 		hasMore = false,
 		loadingMore = false,
 		loading = false,
-		onLoadMore
+		sort = 'relevance',
+		onLoadMore,
+		onSortChange
 	}: {
 		results?: TeaResult[];
 		totalCount?: number;
 		hasMore?: boolean;
 		loadingMore?: boolean;
 		loading?: boolean;
+		sort?: SearchSort;
 		onLoadMore?: () => void;
+		onSortChange?: (sort: SearchSort) => void;
 	} = $props();
 
 	const TYPE_COLORS: Record<string, string> = {
@@ -82,18 +86,15 @@
 		return map[code] ?? code;
 	}
 
-	function formatPrice(
-		price: number | null,
-		currency: string | null,
-		weightGrams: number | null
-	): string {
-		if (price === null) return m['search.priceUnavailable']();
-		const symbol = currency === 'EUR' ? '€' : currency === 'USD' ? '$' : currency ?? '€';
-		if (weightGrams !== null && weightGrams > 0) {
-			const per100g = (price / weightGrams) * 100;
-			return `${per100g.toFixed(2)} ${symbol} / 100g`;
-		}
-		return `${price.toFixed(2)} ${symbol}`;
+	function formatPrice(priceDisplay: number | null, currencyDisplay: string | null): string {
+		if (priceDisplay === null) return m['search.priceUnavailable']();
+		const symbol =
+			currencyDisplay === 'EUR'
+				? '\u20AC'
+				: currencyDisplay === 'USD'
+					? '$'
+					: (currencyDisplay ?? '\u20AC');
+		return `${priceDisplay.toFixed(2)} ${symbol} / 100g`;
 	}
 </script>
 
@@ -111,8 +112,25 @@
 	<div class="py-16 text-center text-sm text-muted-foreground">
 		{m['search.noResults']()}
 	</div>
-{:else}
-	<div class="space-y-2 mb-8">
+	{:else}
+		<div class="mb-4 flex items-center justify-between gap-4">
+			<span class="text-sm text-muted-foreground">
+				{m['search.resultCount']({ count: totalCount })}
+			</span>
+			<label class="flex items-center gap-2 text-sm text-muted-foreground">
+				{m['search.sortLabel']()}
+				<select
+					value={sort}
+					onchange={(e) => onSortChange?.(e.currentTarget.value as SearchSort)}
+					class="rounded-md border border-border/40 bg-background px-2 py-1 text-sm text-foreground transition-colors hover:bg-muted/50"
+				>
+					<option value="relevance">{m['search.sortRelevance']()}</option>
+					<option value="price_asc">{m['search.sortPriceAsc']()}</option>
+					<option value="price_desc">{m['search.sortPriceDesc']()}</option>
+				</select>
+			</label>
+		</div>
+		<div class="space-y-2 mb-8">
 		{#each results as tea}
 			<div class="rounded-lg border border-border/40 px-4 py-3 transition-colors hover:bg-muted/50">
 				<div class="flex items-start justify-between gap-4">
@@ -161,7 +179,7 @@
 						</div>
 					</div>
 					<div class="shrink-0 text-right text-sm text-muted-foreground">
-						{formatPrice(tea.price, tea.currency, tea.weight_grams)}
+						{formatPrice(tea.price_display, tea.currency_display)}
 					</div>
 				</div>
 			</div>

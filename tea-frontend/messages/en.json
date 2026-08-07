@@ -12,5 +12,12 @@
 	"type.black": "Black",
 	"type.dark": "Dark",
 	"search.priceUnavailable": "Price unavailable",
-	"search.loadMore": "Load more"
+	"search.loadMore": "Load more",
+	"currency.eur": "Euro",
+	"currency.usd": "US Dollar",
+	"search.sortLabel": "Sort by",
+	"search.sortRelevance": "Best results",
+	"search.sortPriceAsc": "Price: Low to High",
+	"search.sortPriceDesc": "Price: High to Low",
+	"search.resultCount": "Results: {count}"
 }
