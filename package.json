@@ -4,7 +4,9 @@
   "type": "module",
   "scripts": {
     "scrape:yoshien": "tsx scrapers/yoshien/index.ts",
-    "scrape:yoshien:dry": "tsx scrapers/yoshien/index.ts --dry"
+    "scrape:yoshien:dry": "tsx scrapers/yoshien/index.ts --dry",
+    "scrape:infinitealeaves": "tsx scrapers/infinitealeaves/index.ts",
+    "scrape:infinitealeaves:dry": "tsx scrapers/infinitealeaves/index.ts --dry"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",
