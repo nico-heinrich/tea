@@ -67,53 +67,40 @@ Run these migrations in your Supabase SQL Editor:
 ```sql
 -- 1. Enable pg_trgm extension for fuzzy search
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
+```
 
--- 2. Create the search function
-CREATE OR REPLACE FUNCTION search_teas(search_term text)
-RETURNS TABLE(
-  id bigint,
-  name text,
-  style_raw text,
-  type_key text,
-  origin text,
-  origin_country text
+### 2. The `search_teas` function
+
+Applied via Supabase migration `tokenized_multiword_search_teas`. Signature:
+
+```sql
+search_teas(
+  p_search_term text,               -- query string
+  p_limit integer DEFAULT 8,        -- page size
+  p_offset integer DEFAULT 0,       -- pagination offset
+  p_sort text DEFAULT 'relevance'   -- 'relevance' | 'price_asc' | 'price_desc'
 )
-LANGUAGE plpgsql IMMUTABLE
-AS $$
-BEGIN
-  RETURN QUERY
-  SELECT
-    tea.id,
-    tea.name,
-    tea.style_raw,
-    type.key,
-    tea.origin,
-    tea.origin_country
-  FROM tea
-  JOIN type ON tea.type = type.id
-  WHERE
-    word_similarity(search_term, tea.name) > 0.3
-    OR (tea.style_raw IS NOT NULL AND word_similarity(search_term, tea.style_raw) > 0.3)
-    OR word_similarity(search_term, type.key) > 0.3
-    OR (tea.origin IS NOT NULL AND word_similarity(search_term, tea.origin) > 0.3)
-  ORDER BY
-    GREATEST(
-      word_similarity(search_term, tea.name),
-      COALESCE(word_similarity(search_term, tea.style_raw), 0),
-      word_similarity(search_term, type.key),
-      COALESCE(word_similarity(search_term, tea.origin), 0)
-    ) DESC
-  LIMIT 8;
-END;
-$$;
+```
 
--- 3. (Optional) Add GIN indexes for better performance
+Matching behavior:
+
+- The query is split into lowercase tokens; stopwords (`tea`, `tee`, `the`, `a`, `an`, `and`, `of`) are dropped.
+- Every remaining token must match **at least one field** with `word_similarity > 0.7` — AND across tokens, OR across fields.
+- Fields compared: `tea.name`, `tea.style_raw`, `type.key`, `tea.origin`, `vendor.name`, `vendor.tags`, `style.tags`, `type.tags`.
+- Relevance ranking: average of per-token best-field similarity; `price_asc`/`price_desc` sort by normalized price per 100g (NULLS LAST).
+- Returns the latest price snapshot per tea (cheapest variant first) plus `p_total_count` for pagination.
+
+Returned columns: `p_id`, `p_name`, `p_style_label`, `p_type_key`, `p_origin`, `p_origin_country`, `p_url`, `p_price`, `p_currency`, `p_weight_grams`, `p_price_100g_usd`, `p_vendor_name`, `p_harvest_year`, `p_total_count`.
+
+### 3. (Optional) Add GIN indexes for better performance
+
+```sql
 CREATE INDEX IF NOT EXISTS idx_tea_name_trgm ON tea USING GIN (name gin_trgm_ops);
 CREATE INDEX IF NOT EXISTS idx_tea_style_raw_trgm ON tea USING GIN (style_raw gin_trgm_ops);
 CREATE INDEX IF NOT EXISTS idx_tea_origin_trgm ON tea USING GIN (origin gin_trgm_ops);
 ```
 
-The `tea` table should have columns: `id`, `name`, `style_raw`, `type` (FK to `type` table), `origin`, `origin_country`. The `type` table needs `id` and `key` columns.
+The `tea` table should have columns: `id`, `name`, `style_raw`, `type` (FK to `type` table), `origin`, `origin_country`, `vendor` (FK to `vendor` table). The `type` table needs `id`, `key`, and `tags` columns; `style` needs `id` and `tags`.
 
 ## Available Scripts
 
@@ -216,32 +203,46 @@ CMD ["node", "build"]
 
 ## Search API
 
-**Endpoint**: `GET /api/search?q=<term>`
+**Endpoint**: `GET /api/search?q=<term>&offset=<n>&currency=<EUR|USD>&sort=<relevance|price_asc|price_desc>`
 
 **Response**:
 ```json
 {
-  "suggestions": [
+  "results": [
     {
       "id": 123,
       "name": "Sencha Yamabuki",
-      "style_raw": "Sencha",
+      "style_label": "Sencha",
       "type_key": "green",
       "origin": "Fuji, Shizuoka",
-      "origin_country": "JP"
+      "origin_country": "JP",
+      "url": "https://...",
+      "vendor_name": "Yoshi en",
+      "harvest_year": 2025,
+      "price": 12.5,
+      "currency": "EUR",
+      "weight_grams": 50,
+      "price_100g_usd": 27.5,
+      "price_display": 27.5,
+      "currency_display": "EUR"
     }
-  ]
+  ],
+  "totalCount": 21
 }
 ```
 
 **Parameters**:
 - `q` (required): Search query string
+- `offset` (optional, default `0`): Pagination offset
+- `currency` (optional, default `EUR`): Display currency (`EUR` | `USD`)
+- `sort` (optional, default `relevance`): `relevance` | `price_asc` | `price_desc`
 
 **Behavior**:
-- Empty query → `{ suggestions: [] }`
+- Empty query → `{ results: [], totalCount: 0 }`
 - Debounced 300ms on client
-- Max 8 results
-- Fuzzy match threshold: `word_similarity > 0.3`
+- Paginated, 10 results per page
+- Multi-word queries: every token must match (AND), stopwords (`tea`, `tee`, `the`, ...) dropped
+- Fuzzy match threshold: per-token `word_similarity > 0.7` against name, style, type, origin, vendor, and tags
 
 ## Development Notes
 
