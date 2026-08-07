@@ -105,6 +105,28 @@ const NON_VARIANT_PRICE_RE = /itemprop="price" content="([\d.]+)"/;
 const BASIC_PRICE_UNIT_RE = /cc-shop-product-basic-price-unit">\s*([\d.,]+)\s*g/;
 const AVAILABILITY_META_RE = /<meta itemprop="availability" content="([^"]+)"/;
 
+// Info sections ("Teesorte" / "Herkunft" / "Ernte") on the product page render
+// a label, a value (h3.tea-information-1) and a following detail paragraph
+// (p.center-align) in a sibling module. The Teesorte detail sometimes names the
+// style itself, e.g. "Auch als Ya Bao bezeichnet kommt dieser Tee…".
+const TEESORTE_SUBTITLE_RE = new RegExp(
+  `<p class="headline-os-s center-align grey-333 add-top-10">\\s*Teesorte\\s*</p>` +
+    `[\\s\\S]*?<h3 class="tea-information-1 grey-333">[\\s\\S]*?</h3>` +
+    `\\s*(?:</div>\\s*)+` +
+    `<div id="[^"]*" class="j-module n j-text ">\\s*<p class="center-align">([\\s\\S]*?)</p>`,
+  "i"
+);
+const STYLE_SYNONYM_RE = /auch\s+als\s+([^,.]+?)\s+bezeichnet/i;
+
+/** "Auch als Ya Bao bezeichnet…" → "Ya Bao" (null when the subtitle names no style). */
+function extractStyleSynonym(html: string): string | null {
+  const section = html.match(TEESORTE_SUBTITLE_RE);
+  if (!section) return null;
+  const subtitle = decodeHtmlEntities(stripTags(section[1]));
+  const match = subtitle.match(STYLE_SYNONYM_RE);
+  return match ? match[1].trim() : null;
+}
+
 /** Weight comes from the option's `content`/`title` attribute (e.g. "100g"). */
 function parseVariantWeight(optionHtml: string): number | null {
   const content = optionHtml.match(/content="(\d+(?:\.\d+)?)\s*g/i);
@@ -231,6 +253,7 @@ export function parseProductPage(html: string): ProductDetail | null {
     name: nameMatch ? decodeHtmlEntities(stripTags(nameMatch[1])) : null,
     shortDesc,
     description,
+    styleSynonym: extractStyleSynonym(html),
     variants,
     available: variants.length > 0 ? variants.some((v) => v.available) : true,
   };
@@ -322,9 +345,10 @@ export function mapToTeaRecord(
 ): TeaRecord {
   const styleFromProduct =
     product?.shortDesc && !WEIGHT_ONLY_RE.test(product.shortDesc) ? product.shortDesc : null;
-  const styleRaw = card.styleRaw || styleFromProduct;
+  const styleFromInfo = product?.styleSynonym || null;
+  const styleRaw = styleFromInfo || card.styleRaw || styleFromProduct;
   const styleSearchText =
-    [card.styleRaw, styleFromProduct, card.typeLabel].filter(Boolean).join(" ").trim() ||
+    [styleFromInfo, card.styleRaw, styleFromProduct, card.typeLabel].filter(Boolean).join(" ").trim() ||
     card.name;
 
   const { origin, originCountry } = parseOrigin(card.originLabel);

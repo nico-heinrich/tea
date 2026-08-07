@@ -21,6 +21,7 @@ export interface ProductDetail {
   name: string | null;
   shortDesc: string | null;
   description: string | null;
+  styleSynonym: string | null;
   variants: Variant[];
   available: boolean;
 }
