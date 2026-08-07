@@ -32,6 +32,7 @@ export interface TeaRecord {
   typeKey: string;
   styleRaw: string | null;
   styleSearchText: string | null;
+  styleFallbackText: string | null;
   origin: string | null;
   originCountry: string | null;
   elevationMeters: number | null;

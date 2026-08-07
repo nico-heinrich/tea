@@ -127,6 +127,22 @@ function extractStyleSynonym(html: string): string | null {
   return match ? match[1].trim() : null;
 }
 
+// Comparison/category clauses must not contribute to style matching, e.g.
+// Long Leaf "inspiriert vom chinesischen Dianhong" (not a Dian Hong) and
+// Laos Special Pu'er "Kategorie Heicha … Dark Tea" (generic, not Hei Cha Zhuan).
+const STYLE_NOISE_RE =
+  /inspiriert\s+vom?[^.,;]+|vergleichbar\s+mit[^.,;]+|Kategorie\s+[^.,;]+/gi;
+
+/** Description slice used only as a style-matching fallback. */
+function styleHintFromDescription(description: string): string | null {
+  const hint = description
+    .replace(STYLE_NOISE_RE, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 500);
+  return hint || null;
+}
+
 /** Weight comes from the option's `content`/`title` attribute (e.g. "100g"). */
 function parseVariantWeight(optionHtml: string): number | null {
   const content = optionHtml.match(/content="(\d+(?:\.\d+)?)\s*g/i);
@@ -348,8 +364,11 @@ export function mapToTeaRecord(
   const styleFromInfo = product?.styleSynonym || null;
   const styleRaw = styleFromInfo || card.styleRaw || styleFromProduct;
   const styleSearchText =
-    [styleFromInfo, card.styleRaw, styleFromProduct, card.typeLabel].filter(Boolean).join(" ").trim() ||
-    card.name;
+    [styleFromInfo, card.styleRaw, styleFromProduct, card.name, card.typeLabel]
+      .filter(Boolean)
+      .join(" ")
+      .trim() || card.name;
+  const styleFallbackText = product?.description ? styleHintFromDescription(product.description) : null;
 
   const { origin, originCountry } = parseOrigin(card.originLabel);
   const harvestRaw = card.harvestLabel || null;
@@ -367,6 +386,7 @@ export function mapToTeaRecord(
     typeKey: inferTypeKey(card.typeLabel, categoryHint) || "green",
     styleRaw,
     styleSearchText,
+    styleFallbackText,
     origin,
     originCountry,
     elevationMeters: null,

@@ -7,7 +7,7 @@ import { normalizeToUsd100g } from "../shared/fx.js";
 
 const VENDOR_NAME = "Tea Addicts";
 const VENDOR_WEBSITE = "https://www.tea-addicts.de";
-const SCRAPER_VERSION = "tea-addicts@v4";
+const SCRAPER_VERSION = "tea-addicts@v5";
 const BASE_URL = "https://www.tea-addicts.de";
 const BROWSER_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
@@ -70,6 +70,12 @@ async function fetchHtml(url: string): Promise<string> {
     throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
   }
   return response.text();
+}
+
+async function resolveStyleWithFallback(mapped: TeaRecord): Promise<number | null> {
+  const primary = await resolveStyle(mapped.styleSearchText, mapped.typeKey);
+  if (primary !== null || !mapped.styleFallbackText) return primary;
+  return resolveStyle(mapped.styleFallbackText, mapped.typeKey);
 }
 
 async function scrape() {
@@ -192,7 +198,7 @@ async function scrape() {
             typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
           }
 
-          const styleId = await resolveStyle(mapped.styleSearchText, mapped.typeKey);
+          const styleId = await resolveStyleWithFallback(mapped);
 
           const updatePayload: Record<string, unknown> = {
             name: mapped.name,
@@ -250,7 +256,7 @@ async function scrape() {
       typeId = typeMap.get(mapped.typeKey.toLowerCase()) || null;
     }
 
-    const styleId = await resolveStyle(mapped.styleSearchText, mapped.typeKey);
+    const styleId = await resolveStyleWithFallback(mapped);
 
     const teaRecord = {
       name: mapped.name,
