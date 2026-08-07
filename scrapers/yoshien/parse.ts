@@ -94,7 +94,10 @@ function parseTerroir(terroir: string): {
 } {
   if (!terroir) return { origin: null, country: null };
 
-  const parts = terroir.split(",").map((p) => p.trim());
+  // Collapse all whitespace runs (newlines from <br>, NBSP, etc.) to single spaces
+  const normalized = terroir.replace(/\s+/g, " ").trim();
+
+  const parts = normalized.split(",").map((p) => p.trim());
   const countryRaw = parts[parts.length - 1] || null;
   const country = countryRaw ? countryNameToCode(countryRaw) : null;
   const origin = parts.slice(0, -1).join(", ") || null;

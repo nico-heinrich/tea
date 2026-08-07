@@ -2,7 +2,7 @@ import type {
   MeiLeafProduct,
   MeiLeafTastingNote,
   TeaRecord,
-} from "./types.ts";
+} from "./types.js";
 import { matchStyle } from "../shared/matching.js";
 import { extractSeason } from "../shared/harvest.js";
 
@@ -38,11 +38,18 @@ export const COUNTRY_MAP: Record<string, string> = {
   indonesia: "ID",
 };
 
-/** Extract country from origin string (last part after last comma) */
-export function extractCountryFromOrigin(origin: string): string | null {
+/** Parse origin into region (country stripped) and ISO country code: "Uji, Kyoto, Japan" → { origin: "Uji, Kyoto", country: "JP" } */
+export function parseOrigin(origin: string): {
+  origin: string | null;
+  country: string | null;
+} {
   const parts = origin.split(",").map((s) => s.trim());
-  const lastPart = parts[parts.length - 1]?.toLowerCase() || "";
-  return COUNTRY_MAP[lastPart] || null;
+  const lastPart = parts[parts.length - 1];
+  const normalized = lastPart.toLowerCase().replace(/[.\s]+$/, "");
+  const country = COUNTRY_MAP[normalized] || null;
+  if (!country) return { origin, country: null };
+  const region = parts.slice(0, -1).join(", ");
+  return { origin: region || null, country };
 }
 
 /** Parse elevation string like "700m", "800m approx" → number */
@@ -136,8 +143,9 @@ async function inferStyleFromSubtitle(
 export async function mapToTeaRecord(product: MeiLeafProduct): Promise<TeaRecord> {
   const typeKey = resolveType(product.teaType, product.cssClasses) || "green";
 
-  const origin = product.detail.origin;
-  const originCountry = origin ? extractCountryFromOrigin(origin) : null;
+  const { origin, country } = product.detail.origin
+    ? parseOrigin(product.detail.origin)
+    : { origin: null, country: null };
 
   const elevationMeters = product.detail.elevation
     ? parseElevation(product.detail.elevation)
@@ -175,7 +183,7 @@ export async function mapToTeaRecord(product: MeiLeafProduct): Promise<TeaRecord
     typeKey,
     styleRaw,
     origin,
-    originCountry,
+    originCountry: country,
     elevationMeters,
     harvestRaw,
     harvestYear,

@@ -1,4 +1,4 @@
-import type { ShopifyProduct, ParsedBodyHtml, TeaRecord } from "./types.ts";
+import type { ShopifyProduct, ParsedBodyHtml, TeaRecord } from "./types.js";
 import { cleanTeaName } from "../shared/cleanName.js";
 import { matchStyle } from "../shared/matching.js";
 import { extractSeason } from "../shared/harvest.js";
