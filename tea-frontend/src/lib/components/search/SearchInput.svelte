@@ -13,13 +13,11 @@
 
 	let {
 		placeholder = m['search.placeholder'](),
-		compact = false,
 		value = '',
 		autofocus = false,
 		onQueryCommit
 	}: {
 		placeholder?: string;
-		compact?: boolean;
 		value?: string;
 		autofocus?: boolean;
 		onQueryCommit?: (query: string) => void;
@@ -133,6 +131,15 @@
 		}
 	}
 
+	function removeRecent(searchQuery: string) {
+		recentSearches = recentSearches.filter((r) => r !== searchQuery);
+		try {
+			localStorage.setItem(RECENT_KEY, JSON.stringify(recentSearches));
+		} catch {
+			// localStorage unavailable
+		}
+	}
+
 	async function loadPopularSearches() {
 		try {
 			const res = await fetch('/api/popular-searches');
@@ -234,21 +241,21 @@
 
 <div
 	bind:this={containerRef}
-	class={cn('relative w-full', compact ? 'max-w-lg' : '')}
+	class="relative w-full"
 	onfocusin={handleFocusin}
 	onfocusout={handleFocusout}
 >
 	<Popover bind:open={popoverOpen}>
 		<PopoverPrimitive.Trigger disabled>
 			{#snippet child({ props })}
-				<div class="relative" {...props}>
+				<div class="relative flex items-center" {...props}>
 					<Input
 						bind:ref={inputRef}
 						value={query}
 						oninput={handleInput}
 						onkeydown={handleKeydown}
 						{placeholder}
-						class={cn('pr-8', compact ? 'h-9 text-sm' : '')}
+						class="px-4 h-11 rounded-full"
 						{autofocus}
 					/>
 					{#if query}
@@ -258,9 +265,9 @@
 							onclick={handleClear}
 							type="button"
 							aria-label="Clear search"
-							class="absolute right-1 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+							class="absolute right-2 text-muted-foreground hover:text-foreground"
 						>
-							<X class="size-4" />
+							<X class="size-4 shrink-0" />
 						</Button>
 					{/if}
 				</div>
@@ -272,19 +279,20 @@
 			sideOffset={8}
 			portalProps={{ disabled: true }}
 			wrapperClass="w-full"
-			class="w-full max-h-80 overflow-y-auto p-1"
+			class="w-full max-h-80 overflow-y-auto p-1 rounded-3xl"
 			trapFocus={false}
 			onOpenAutoFocus={(e) => e.preventDefault()}
 			onCloseAutoFocus={(e) => e.preventDefault()}
 		>
-			<div role="listbox" aria-label="Search suggestions">
+			<div role="listbox" aria-label="Search suggestions" class="rounded-[1.25rem] overflow-hidden">
 				{#each filteredSuggestions as suggestion, i}
 					<SuggestionItem
 						{suggestion}
 						{query}
 						recent={isRecent(suggestion)}
 						selected={i === activeIndex}
-						onSelect={(s) => commitSearch(typeof s === 'string' ? s : s.name)}
+						onSelect={commitSearch}
+						onRemove={removeRecent}
 						onmousedown={(e) => handleSuggestionMousedown(e, suggestion)}
 						onmouseenter={() => (activeIndex = i)}
 					/>

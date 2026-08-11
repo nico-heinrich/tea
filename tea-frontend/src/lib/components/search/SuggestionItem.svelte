@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Badge } from '$lib/components/ui/badge/index.js';
-	import { RotateCcwClock, Search } from '@lucide/svelte';
+	import { RotateCcwClock, Search, X } from '@lucide/svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import { cn } from '$lib/utils.js';
-	import type { TeaSuggestion } from '$lib/types/tea.js';
 
 	let {
 		suggestion,
@@ -10,36 +9,37 @@
 		onSelect,
 		selected = false,
 		recent = false,
+		onRemove,
 		class: className = '',
 		onmousedown,
 		onmouseenter
 	}: {
 		/** Search suggestion to display */
-		suggestion: TeaSuggestion | string;
+		suggestion: string;
 		/** Current search query for highlighting */
 		query: string;
 		/** Called when the suggestion is selected via click or keyboard */
-		onSelect: (suggestion: TeaSuggestion | string) => void;
+		onSelect: (suggestion: string) => void;
 		/** Whether this suggestion is the currently highlighted/active option */
 		selected?: boolean;
 		/** True when the suggestion comes from the user's recent searches (shows a clock icon). */
 		recent?: boolean;
+		/** Called when the user removes this suggestion from recent searches (only rendered for recent items). */
+		onRemove?: (suggestion: string) => void;
 		/** Additional CSS classes */
 		class?: string;
 		onmousedown?: (e: MouseEvent) => void;
 		onmouseenter?: (e: MouseEvent) => void;
 	} = $props();
 
-	let name = $derived(typeof suggestion === 'string' ? suggestion : suggestion.name);
-
 	/**
 	 * Split the suggestion name into highlighted and non-highlighted parts
 	 * based on the query string (case-insensitive).
 	 */
 	let nameParts = $derived.by(() => {
-		if (!query) return [{ text: name, highlight: false }];
+		if (!query) return [{ text: suggestion, highlight: false }];
 
-		const lowerName = name.toLowerCase();
+		const lowerName = suggestion.toLowerCase();
 		const lowerQuery = query.toLowerCase();
 		const parts: { text: string; highlight: boolean }[] = [];
 		let lastIndex = 0;
@@ -49,13 +49,13 @@
 			// Text before the match
 			if (matchIndex > lastIndex) {
 				parts.push({
-					text: name.slice(lastIndex, matchIndex),
+					text: suggestion.slice(lastIndex, matchIndex),
 					highlight: false
 				});
 			}
 			// The matched portion
 			parts.push({
-				text: name.slice(matchIndex, matchIndex + lowerQuery.length),
+				text: suggestion.slice(matchIndex, matchIndex + lowerQuery.length),
 				highlight: true
 			});
 			lastIndex = matchIndex + lowerQuery.length;
@@ -63,45 +63,14 @@
 		}
 
 		// Remaining text after the last match
-		if (lastIndex < name.length) {
+		if (lastIndex < suggestion.length) {
 			parts.push({
-				text: name.slice(lastIndex),
+				text: suggestion.slice(lastIndex),
 				highlight: false
 			});
 		}
 
 		return parts;
-	});
-
-	/**
-	 * Map the type_key to an appropriate Badge variant color.
-	 */
-	function badgeVariant(typeKey: string) {
-		switch (typeKey) {
-			case 'green':
-			case 'black':
-				return 'default';
-			case 'oolong':
-				return 'secondary';
-			case 'white':
-			case 'yellow':
-				return 'outline';
-			case 'dark':
-				return 'destructive';
-			default:
-				return 'secondary';
-		}
-	}
-
-	/**
-	 * Build a combined origin display string from origin and origin_country.
-	 */
-	let originDisplay = $derived.by(() => {
-		if (typeof suggestion === 'string') return null;
-		if (suggestion.origin && suggestion.origin_country) {
-			return `${suggestion.origin}, ${suggestion.origin_country}`;
-		}
-		return suggestion.origin ?? suggestion.origin_country ?? null;
 	});
 
 	function handleClick() {
@@ -116,13 +85,13 @@
 	}
 </script>
 
-<button
-	type="button"
+<div
 	role="option"
 	aria-selected={selected}
-	aria-label={name}
+	aria-label={suggestion}
+	tabindex="0"
 	class={cn(
-		'flex w-full items-start gap-3 px-3 py-2 text-left text-sm',
+		'flex w-full cursor-pointer items-start gap-3 px-3 py-2 text-left',
 		'transition-colors rounded-none',
 		'focus-visible:outline-none focus-visible:bg-muted focus-visible:text-foreground',
 		'hover:bg-muted hover:text-foreground',
@@ -135,17 +104,15 @@
 	{onmousedown}
 	{onmouseenter}
 >
-	<div class="flex min-w-0 flex-1 items-center gap-2">
-		{#if typeof suggestion === 'string'}
-			{#if recent}
-				<RotateCcwClock class="size-3 shrink-0 opacity-50" />
-			{:else}
-				<Search class="size-3 shrink-0 opacity-50" />
-			{/if}
+	<div class="flex min-w-0 flex-1 items-center gap-2 my-auto">
+		{#if recent}
+			<RotateCcwClock class="size-4 shrink-0 opacity-50" />
+		{:else}
+			<Search class="size-4 shrink-0 opacity-50" />
 		{/if}
 		<div class="flex min-w-0 flex-1 flex-col gap-1">
 			<!-- Tea name with query highlighting -->
-			<span class="truncate font-medium">
+			<span class="truncate text-base">
 				{#each nameParts as part}
 					{#if part.highlight}
 						<strong class="text-foreground decoration-foreground/30 underline-offset-2">
@@ -156,30 +123,26 @@
 					{/if}
 				{/each}
 			</span>
-
-			<!-- Badges and origin row (only for TeaSuggestion objects) -->
-			{#if typeof suggestion !== 'string'}
-				<div class="flex flex-wrap items-center gap-1.5">
-					{#if suggestion.style_label}
-						<Badge variant="outline" class="text-[10px] leading-none px-1.5 py-0">
-							{suggestion.style_label}
-						</Badge>
-					{/if}
-
-					<Badge
-						variant={badgeVariant(suggestion.type_key)}
-						class="text-[10px] leading-none px-1.5 py-0 capitalize"
-					>
-						{suggestion.type_key}
-					</Badge>
-
-					{#if originDisplay}
-						<span class="truncate text-xs text-muted-foreground">
-							{originDisplay}
-						</span>
-					{/if}
-				</div>
-			{/if}
 		</div>
 	</div>
-</button>
+	{#if recent && onRemove}
+		<Button
+			variant="ghost"
+			size="icon-sm"
+			type="button"
+			class="-mr-2 shrink-0 self-center text-muted-foreground/70 hover:bg-transparent hover:text-foreground"
+			aria-label={`Remove ${suggestion} from recent searches`}
+			onclick={(e) => {
+				e.stopPropagation();
+				onRemove(suggestion);
+			}}
+			onmousedown={(e) => {
+				e.preventDefault();
+				e.stopPropagation();
+			}}
+			onkeydown={(e) => e.stopPropagation()}
+		>
+			<X class="size-4 shrink-0" />
+		</Button>
+	{/if}
+</div>

@@ -27,7 +27,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<header class="border-b border-border/40 bg-background h-16 fixed top-0 left-0 right-0">
+<header class="border-b border-border/40 bg-background h-18 fixed top-0 left-0 right-0">
 	<div class="flex h-full items-center justify-between gap-4 container">
 		{#if searchActive}
 			<div class="flex-1 max-w-2xl">
@@ -63,6 +63,6 @@
 	</div>
 </header>
 
-<main class="pt-16">
+<main class="pt-18">
 	{@render children()}
 </main>

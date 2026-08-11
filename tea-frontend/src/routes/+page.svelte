@@ -25,8 +25,7 @@
 
 	let hasMore = $derived(results.length < totalCount);
 
-	async function fetchResults(query: string, offset: number, append: boolean) {
-		const cur = getCurrency();
+	async function fetchResults(query: string, sort: SearchSort, cur: string, offset: number, append: boolean) {
 		const res = await fetch(
 			`/api/search?q=${encodeURIComponent(query)}&offset=${offset}&currency=${encodeURIComponent(cur)}&sort=${sort}`
 		);
@@ -47,22 +46,13 @@
 		await goto(url, { replaceState: true });
 
 		setSearchActive(true);
-		resultsLoading = true;
-		try {
-			await fetchResults(query, 0, false);
-		} catch {
-			results = [];
-			totalCount = 0;
-		} finally {
-			resultsLoading = false;
-		}
 	}
 
 	async function loadMore() {
 		if (!currentQuery || loadingMore || !hasMore) return;
 		loadingMore = true;
 		try {
-			await fetchResults(currentQuery, results.length, true);
+			await fetchResults(currentQuery, sort, getCurrency(), results.length, true);
 		} catch {
 			// keep existing results on error
 		} finally {
@@ -81,13 +71,33 @@
 		goto(url, { replaceState: true });
 	}
 
+	// Single watcher: any change to query, sort, or currency re-runs the search.
+	// Covers initial load (URL ?q=), header search, and sort/currency switches.
 	$effect(() => {
-		const q = $page.url.searchParams.get('q');
-		if (q && !searchActive) {
-			executeSearch(q);
+		const q = $page.url.searchParams.get('q') ?? '';
+		if (!q) return;
+
+		const s = readSortFromUrl();
+		const cur = getCurrency();
+
+		// A query in the URL activates the results view (initial load / external navigation).
+		if (!searchActive) {
+			setSearchActive(true);
+			return;
 		}
+
+		resultsLoading = true;
+		fetchResults(q, s, cur, 0, false)
+			.catch(() => {
+				results = [];
+				totalCount = 0;
+			})
+			.finally(() => {
+				resultsLoading = false;
+			});
 	});
 
+	// Window event subscription — no derived alternative, kept as the only other effect.
 	$effect(() => {
 		function handleHeaderSearch(e: Event) {
 			const detail = (e as CustomEvent).detail as { query: string };
@@ -95,27 +105,6 @@
 		}
 		window.addEventListener('tea-search', handleHeaderSearch);
 		return () => window.removeEventListener('tea-search', handleHeaderSearch);
-	});
-
-	let lastFetchedCurrency = $state(getCurrency());
-
-	$effect(() => {
-		const cur = getCurrency();
-		const active = searchActive;
-		const q = currentQuery;
-		if (cur === lastFetchedCurrency || !active || !q) return;
-		lastFetchedCurrency = cur;
-		executeSearch(q);
-	});
-
-	let lastFetchedSort = $state(readSortFromUrl());
-
-	$effect(() => {
-		const active = searchActive;
-		const q = currentQuery;
-		if (sort === lastFetchedSort || !active || !q) return;
-		lastFetchedSort = sort;
-		executeSearch(q);
 	});
 </script>
 

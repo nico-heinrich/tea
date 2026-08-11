@@ -42,25 +42,6 @@ export interface Tea {
 }
 
 /**
- * Search suggestion returned by the `/api/search` endpoint.
- *
- * Matches the `search_teas()` SQL function return shape exactly
- * (snake_case columns from the Supabase RPC response).
- */
-export interface TeaSuggestion {
-	id: number;
-	name: string;
-	/** Tea style / type as stated by the source (maps to `style.label` in the DB) */
-	style_label: string | null;
-	/** Resolved type key from the `type` table, e.g. "green", "oolong", "black" (maps to `type.key`) */
-	type_key: string;
-	/** Region / terroir */
-	origin: string | null;
-	/** ISO 3166-1 alpha-2 country code */
-	origin_country: string | null;
-}
-
-/**
  * Full search result returned by the `/api/search` endpoint.
  * Includes pricing data from the Supabase RPC.
  */
@@ -83,14 +64,6 @@ export interface TeaResult {
 	price_display: number | null;
 	/** Currency used for price_display (e.g. "EUR", "USD", or native). */
 	currency_display: string | null;
-}
-
-/**
- * Wrapper returned by the search API endpoint.
- */
-export interface SearchResponse {
-	suggestions: TeaSuggestion[];
-	results: TeaResult[];
 }
 
 /**
