@@ -1,6 +1,9 @@
 <script lang="ts">
 	import type { TeaResult, SearchSort } from '$lib/types/tea.js';
 	import * as m from '$lib/paraglide/messages.js';
+	import { Skeleton } from '$lib/components/ui/skeleton/index.js';
+	import { Select, SelectTrigger, SelectContent, SelectItem } from '$lib/components/ui/select/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
 
 	let {
 		results = [],
@@ -96,15 +99,26 @@
 					: (currencyDisplay ?? '\u20AC');
 		return `${priceDisplay.toFixed(2)} ${symbol} / 100g`;
 	}
+
+	function sortLabel(sort: SearchSort): string {
+		switch (sort) {
+			case 'price_asc':
+				return m['search.sortPriceAsc']();
+			case 'price_desc':
+				return m['search.sortPriceDesc']();
+			default:
+				return m['search.sortRelevance']();
+		}
+	}
 </script>
 
 {#if loading}
 	<div class="space-y-3">
 		{#each [1, 2, 3] as _}
 			<div class="rounded-lg border border-border/40 p-4">
-				<div class="h-5 w-1/3 animate-pulse rounded bg-muted"></div>
-				<div class="mt-2 h-4 w-1/4 animate-pulse rounded bg-muted"></div>
-				<div class="mt-2 h-4 w-1/5 animate-pulse rounded bg-muted"></div>
+				<Skeleton class="h-5 w-1/3" />
+				<Skeleton class="mt-2 h-4 w-1/4" />
+				<Skeleton class="mt-2 h-4 w-1/5" />
 			</div>
 		{/each}
 	</div>
@@ -117,18 +131,19 @@
 			<span class="text-sm text-muted-foreground">
 				{m['search.resultCount']({ count: totalCount })}
 			</span>
-			<label class="flex items-center gap-2 text-sm text-muted-foreground">
+			<div class="flex items-center gap-2 text-sm text-muted-foreground">
 				{m['search.sortLabel']()}
-				<select
-					value={sort}
-					onchange={(e) => onSortChange?.(e.currentTarget.value as SearchSort)}
-					class="rounded-md border border-border/40 bg-background px-2 py-1 text-sm text-foreground transition-colors hover:bg-muted/50"
-				>
-					<option value="relevance">{m['search.sortRelevance']()}</option>
-					<option value="price_asc">{m['search.sortPriceAsc']()}</option>
-					<option value="price_desc">{m['search.sortPriceDesc']()}</option>
-				</select>
-			</label>
+				<Select type="single" value={sort} onValueChange={(v) => onSortChange?.(v as SearchSort)}>
+					<SelectTrigger size="sm" class="w-40" aria-label={m['search.sortLabel']()}>
+						{sortLabel(sort)}
+					</SelectTrigger>
+					<SelectContent>
+						<SelectItem value="relevance">{m['search.sortRelevance']()}</SelectItem>
+						<SelectItem value="price_asc">{m['search.sortPriceAsc']()}</SelectItem>
+						<SelectItem value="price_desc">{m['search.sortPriceDesc']()}</SelectItem>
+					</SelectContent>
+				</Select>
+			</div>
 		</div>
 		<div class="space-y-2 mb-8">
 		{#each results as tea}
@@ -187,17 +202,13 @@
 
 		{#if hasMore}
 			<div class="flex justify-center pt-2">
-				<button
-					onclick={() => onLoadMore?.()}
-					disabled={loadingMore}
-					class="rounded-md border border-border/40 bg-background px-4 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted/50 disabled:cursor-not-allowed disabled:opacity-50"
-				>
+				<Button variant="outline" onclick={() => onLoadMore?.()} disabled={loadingMore}>
 					{#if loadingMore}
 						{m['search.loading']()}
 					{:else}
 						{m['search.loadMore']()}
 					{/if}
-				</button>
+				</Button>
 			</div>
 		{/if}
 	</div>

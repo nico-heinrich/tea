@@ -1,17 +1,18 @@
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
 	import favicon from '$lib/assets/favicon.svg';
 	import LanguageSwitcher from '$lib/components/ui/LanguageSwitcher.svelte';
 	import SearchInput from '$lib/components/search/SearchInput.svelte';
 	import { getSearchActive } from '$lib/stores/search-active.svelte.js';
 	import { getCurrency, setCurrency } from '$lib/stores/search.svelte.js';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { cn } from '$lib/utils.js';
 
 	let { children } = $props();
 
 	let searchActive = $derived(getSearchActive());
-	let currentQuery = $derived($page.url.searchParams.get('q') ?? '');
+	let currentQuery = $derived(page.url.searchParams.get('q') ?? '');
 	let currentCurrency = $derived(getCurrency());
 
 	const CURRENCIES = ['EUR', 'USD'] as const;
@@ -26,8 +27,8 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<header class="border-b border-border/40 bg-background">
-	<div class="flex h-14 items-center justify-between gap-4 container">
+<header class="border-b border-border/40 bg-background h-16 fixed top-0 left-0 right-0">
+	<div class="flex h-full items-center justify-between gap-4 container">
 		{#if searchActive}
 			<div class="flex-1 max-w-2xl">
 				<SearchInput value={currentQuery} onQueryCommit={handleQueryCommit} />
@@ -40,16 +41,21 @@
 				aria-label="Currency"
 			>
 				{#each CURRENCIES as code (code)}
-					<button
+					<Button
 						type="button"
 						aria-pressed={currentCurrency === code}
 						onclick={() => setCurrency(code)}
-						class="px-2 py-1 transition-colors {currentCurrency === code
-							? 'bg-foreground text-background font-semibold'
-							: 'text-muted-foreground hover:text-foreground'}"
+						variant="ghost"
+						size="sm"
+						class={cn(
+							'rounded-none px-2 py-1 text-xs',
+							currentCurrency === code
+								? 'bg-foreground text-background font-semibold'
+								: 'text-muted-foreground hover:text-foreground'
+						)}
 					>
 						{CURRENCY_SYMBOLS[code] ?? code}
-					</button>
+					</Button>
 				{/each}
 			</div>
 			<LanguageSwitcher />
@@ -57,6 +63,6 @@
 	</div>
 </header>
 
-<main>
+<main class="pt-16">
 	{@render children()}
 </main>

@@ -1,7 +1,12 @@
 <script lang="ts">
 	import { Input } from '$lib/components/ui/input/index.js';
+	import { Popover, PopoverContent } from '$lib/components/ui/popover/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { X } from '@lucide/svelte';
+	import { Popover as PopoverPrimitive } from 'bits-ui';
 	import { cn } from '$lib/utils.js';
 	import * as m from '$lib/paraglide/messages.js';
+	import SuggestionItem from './SuggestionItem.svelte';
 
 	const RECENT_KEY = 'tea-recent-searches';
 	const MAX_RECENT = 5;
@@ -27,10 +32,15 @@
 	let activeIndex = $state(-1);
 	let recentSearches = $state<string[]>([]);
 	let popularSearches = $state<string[]>([]);
+	let popoverOpen = $state(false);
 
 	// Sync with external value prop
 	$effect(() => {
 		query = value;
+	});
+
+	$effect(() => {
+		popoverOpen = showPopover;
 	});
 
 	// Simple Levenshtein distance for fuzzy matching
@@ -228,91 +238,58 @@
 	onfocusin={handleFocusin}
 	onfocusout={handleFocusout}
 >
-	<div class="relative">
-		<Input
-			bind:ref={inputRef}
-			value={query}
-			oninput={handleInput}
-			onkeydown={handleKeydown}
-			{placeholder}
-			class={cn('pr-8', compact ? 'h-9 text-sm' : '')}
-			{autofocus}
-		/>
-		{#if query}
-			<button
-				onclick={handleClear}
-				type="button"
-				class="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-				aria-label="Clear search"
-			>
-				<svg
-					class="size-4"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				>
-					<path d="M18 6 6 18" /><path d="m6 6 12 12" />
-				</svg>
-			</button>
-		{/if}
-	</div>
-
-	{#if showPopover}
-		<div
-			class="absolute top-full left-0 right-0 z-50 mt-2 max-h-80 overflow-y-auto rounded-md border border-border bg-popover text-popover-foreground shadow-md"
+	<Popover bind:open={popoverOpen}>
+		<PopoverPrimitive.Trigger disabled>
+			{#snippet child({ props })}
+				<div class="relative" {...props}>
+					<Input
+						bind:ref={inputRef}
+						value={query}
+						oninput={handleInput}
+						onkeydown={handleKeydown}
+						{placeholder}
+						class={cn('pr-8', compact ? 'h-9 text-sm' : '')}
+						{autofocus}
+					/>
+					{#if query}
+						<Button
+							variant="ghost"
+							size="icon-sm"
+							onclick={handleClear}
+							type="button"
+							aria-label="Clear search"
+							class="absolute right-1 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+						>
+							<X class="size-4" />
+						</Button>
+					{/if}
+				</div>
+			{/snippet}
+		</PopoverPrimitive.Trigger>
+		<PopoverContent
+			align="start"
+			side="bottom"
+			sideOffset={8}
+			portalProps={{ disabled: true }}
+			wrapperClass="w-full"
+			class="w-full max-h-80 overflow-y-auto p-1"
+			trapFocus={false}
+			onOpenAutoFocus={(e) => e.preventDefault()}
+			onCloseAutoFocus={(e) => e.preventDefault()}
 		>
 			<div role="listbox" aria-label="Search suggestions">
 				{#each filteredSuggestions as suggestion, i}
-					<button
-						type="button"
-						role="option"
-						aria-selected={i === activeIndex}
-						class={cn(
-							'flex w-full items-center gap-2 px-3 py-2 text-left text-sm transition-colors',
-							i === activeIndex
-								? 'bg-muted text-foreground'
-								: 'text-muted-foreground hover:bg-muted hover:text-foreground'
-						)}
-						onmouseenter={() => (activeIndex = i)}
+					<SuggestionItem
+						{suggestion}
+						{query}
+						recent={isRecent(suggestion)}
+						selected={i === activeIndex}
+						onSelect={(s) => commitSearch(typeof s === 'string' ? s : s.name)}
 						onmousedown={(e) => handleSuggestionMousedown(e, suggestion)}
-					>
-						{#if isRecent(suggestion)}
-							<svg
-								class="size-3 shrink-0 opacity-50"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							>
-								<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path
-									d="M3 3v5h5"
-								/><path d="M12 7v5l4 2" />
-							</svg>
-						{:else}
-							<svg
-								class="size-3 shrink-0 opacity-50"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							>
-								<circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
-							</svg>
-						{/if}
-						<span>{suggestion}</span>
-					</button>
+						onmouseenter={() => (activeIndex = i)}
+					/>
 				{/each}
 			</div>
-		</div>
-	{/if}
+		</PopoverContent>
+	</Popover>
 </div>
