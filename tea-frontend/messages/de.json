@@ -1,4 +1,5 @@
 {
+	"backToTop.label": "Nach oben",
 	"search.placeholder": "Tees suchen...",
 	"search.noResults": "Keine Tees gefunden.",
 	"search.loading": "Suche läuft...",
@@ -16,8 +17,15 @@
 	"currency.eur": "Euro",
 	"currency.usd": "US-Dollar",
 	"search.sortLabel": "Sortieren nach",
+	"search.currencyLabel": "Währung",
 	"search.sortRelevance": "Beste Ergebnisse",
 	"search.sortPriceAsc": "Preis: Aufsteigend",
 	"search.sortPriceDesc": "Preis: Absteigend",
-	"search.resultCount": "Ergebnisse: {count}"
+	"search.resultCount": "Ergebnisse: {count}",
+	"footer.legal": "Impressum",
+	"footer.privacy": "Datenschutzerklärung",
+	"footer.about": "Über uns",
+	"footer.contact": "Kontakt",
+	"footer.language": "Sprache",
+	"page.placeholder": "Diese Seite wird gerade erstellt."
 }

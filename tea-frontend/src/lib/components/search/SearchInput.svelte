@@ -249,19 +249,13 @@
 		<PopoverPrimitive.Trigger disabled>
 			{#snippet child({ props })}
 				<div class="relative flex items-center" {...props}>
-					<img
-						src="/assets/images/logo.svg"
-						alt=""
-						aria-hidden="true"
-						class="pointer-events-none absolute left-3 size-6"
-					/>
 					<Input
 						bind:ref={inputRef}
 						value={query}
 						oninput={handleInput}
 						onkeydown={handleKeydown}
 						{placeholder}
-						class="pl-11 pr-4 h-12 rounded-full"
+						class="pl-4 pr-4 h-11 rounded-full"
 						{autofocus}
 					/>
 					{#if query}

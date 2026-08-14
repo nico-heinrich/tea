@@ -14,12 +14,12 @@
 			});
 		}}
 		class={currentLocale === 'en'
-			? 'font-semibold text-foreground underline underline-offset-4'
-			: 'text-muted-foreground hover:text-foreground transition-colors'}
+			? 'font-semibold text-background underline underline-offset-4 pointer-events-none'
+			: 'text-muted-background cursor-pointer'}
 	>
-		{m['language.english']()}
+		EN
 	</button>
-	<span class="text-muted-foreground/40" aria-hidden="true">/</span>
+	<span class="text-muted-background/40" aria-hidden="true">/</span>
 	<button
 		type="button"
 		onclick={() => {
@@ -28,9 +28,9 @@
 			});
 		}}
 		class={currentLocale === 'de'
-			? 'font-semibold text-foreground underline underline-offset-4'
-			: 'text-muted-foreground hover:text-foreground transition-colors'}
+			? 'font-semibold text-background underline underline-offset-4 pointer-events-none'
+			: 'text-muted-background cursor-pointer'}
 	>
-		{m['language.german']()}
+		DE
 	</button>
 </nav>

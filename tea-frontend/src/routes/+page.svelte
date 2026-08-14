@@ -13,7 +13,9 @@
 	let searchActive = $derived(getSearchActive());
 	let currentQuery = $derived($page.url.searchParams.get('q') ?? '');
 	let results = $state<TeaResult[]>([]);
-	let resultsLoading = $state(false);
+	// Start in loading state when the URL carries a query, so SSR/first paint
+	// shows the skeleton instead of "No teas found." before the first fetch.
+	let resultsLoading = $state($page.url.searchParams.has('q'));
 	let loadingMore = $state(false);
 	let totalCount = $state(0);
 	function readSortFromUrl(): SearchSort {
@@ -25,7 +27,13 @@
 
 	let hasMore = $derived(results.length < totalCount);
 
-	async function fetchResults(query: string, sort: SearchSort, cur: string, offset: number, append: boolean) {
+	async function fetchResults(
+		query: string,
+		sort: SearchSort,
+		cur: string,
+		offset: number,
+		append: boolean
+	) {
 		const res = await fetch(
 			`/api/search?q=${encodeURIComponent(query)}&offset=${offset}&currency=${encodeURIComponent(cur)}&sort=${sort}`
 		);
@@ -110,7 +118,8 @@
 
 {#if !searchActive}
 	<div class="container pt-16">
-		<h1 class="mb-8 text-center text-4xl font-bold tracking-tight text-foreground">
+		<img src="/assets/images/logo.svg" alt="" aria-hidden="true" class="mx-auto size-16" />
+		<h1 class="mt-6 mb-8 text-center text-4xl font-bold tracking-tight text-foreground">
 			{m['search.heading']()}
 		</h1>
 		<div class="mx-auto max-w-2xl">
@@ -118,7 +127,7 @@
 		</div>
 	</div>
 {:else}
-	<div class="container pt-8">
+	<div class="container pt-4">
 		<SearchResults
 			{results}
 			{totalCount}

@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-	--font-sans: avenir, system-ui, sans-serif;
+	--font-sans: 'Avenir', 'Avenir Next', 'Montserrat', sans-serif;
 	--color-primary: oklch(57.012% 0.11587 122.79);
 	--color-primary-50: oklch(96.879% 0.02148 118.22);
 	--color-primary-100: oklch(94.546% 0.03764 118.53);
@@ -26,6 +26,12 @@
 	--color-secondary-800: oklch(39.534% 0.08076 331.41);
 	--color-secondary-900: oklch(30.099% 0.05613 330.92);
 	--color-secondary-950: oklch(25.211% 0.04389 330.37);
+	--color-white-tea: oklch(0.8423 0.0925 128.51);
+	--color-green-tea: oklch(0.5511 0.1036 128.51);
+	--color-yellow-tea: oklch(0.8805 0.1172 115.81);
+	--color-oolong-tea: oklch(0.7024 0.0999 99.93);
+	--color-black-tea: oklch(0.3569 0.016 76.63);
+	--color-dark-tea: oklch(0.3968 0.0382 57.57);
 }
 
 @layer base {
@@ -104,6 +110,9 @@
 }
 
 body {
+	min-height: 100svh;
+	display: flex;
+	flex-direction: column;
 	background-color: var(--color-background);
 	color: var(--color-foreground);
 }

@@ -1,25 +1,41 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
 	import favicon from '$lib/assets/favicon.svg';
-	import LanguageSwitcher from '$lib/components/ui/LanguageSwitcher.svelte';
+	import BackToTop from '$lib/components/ui/back-to-top/BackToTop.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
 	import SearchInput from '$lib/components/search/SearchInput.svelte';
-	import { getSearchActive } from '$lib/stores/search-active.svelte.js';
-	import { getCurrency, setCurrency } from '$lib/stores/search.svelte.js';
-	import { Button } from '$lib/components/ui/button/index.js';
+	import { getSearchActive, setSearchActive } from '$lib/stores/search-active.svelte.js';
+	import { localizeHref } from '$lib/paraglide/runtime.js';
 	import { cn } from '$lib/utils.js';
 
 	let { children } = $props();
 
 	let searchActive = $derived(getSearchActive());
 	let currentQuery = $derived(page.url.searchParams.get('q') ?? '');
-	let currentCurrency = $derived(getCurrency());
 
-	const CURRENCIES = ['EUR', 'USD'] as const;
-	const CURRENCY_SYMBOLS: Record<string, string> = { EUR: '\u20AC', USD: '$' };
+	// Initialize the store from the URL before children render, so SSR/first paint
+	// already shows the results view when a query is present (no hero flash on refresh).
+	setSearchActive(page.url.searchParams.has('q'));
 
 	function handleQueryCommit(query: string) {
 		window.dispatchEvent(new CustomEvent('tea-search', { detail: { query } }));
+	}
+
+	async function handleLogoClick(e: MouseEvent) {
+		// Let modified clicks (cmd/ctrl/shift/middle) behave like a plain link.
+		if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)
+			return;
+		e.preventDefault();
+		try {
+			// Clear ?q= from the URL first; only then deactivate the results view.
+			// (Setting the store before navigation lets +page.svelte's URL watcher
+			// re-activate search while the query is still in the URL.)
+			await goto(localizeHref('/'));
+		} finally {
+			setSearchActive(false);
+		}
 	}
 </script>
 
@@ -27,47 +43,28 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<header
-	class={cn(
-		'bg-background h-18 top-0 left-0 right-0',
-		searchActive ? 'fixed border-b border-border/40' : 'static'
-	)}
->
-	<div class="flex h-full items-center justify-between gap-4 container">
-		{#if searchActive}
+{#if searchActive}
+	<header class="bg-background fixed z-40 top-0 left-0 right-0 h-18 border-b border-border/40">
+		<div class="flex h-full items-center gap-3 container">
+			<a
+				href={localizeHref('/')}
+				class="shrink-0"
+				aria-label="Tea Explorer"
+				onclick={handleLogoClick}
+			>
+				<img src="/assets/images/logo.svg" alt="" aria-hidden="true" class="size-11" />
+			</a>
 			<div class="flex-1 max-w-2xl">
 				<SearchInput value={currentQuery} onQueryCommit={handleQueryCommit} />
 			</div>
-		{/if}
-		<div class="ml-auto flex items-center gap-3">
-			<div
-				class="flex items-center rounded-md border border-border/40 text-xs"
-				role="group"
-				aria-label="Currency"
-			>
-				{#each CURRENCIES as code (code)}
-					<Button
-						type="button"
-						aria-pressed={currentCurrency === code}
-						onclick={() => setCurrency(code)}
-						variant="ghost"
-						size="sm"
-						class={cn(
-							'rounded-none px-2 py-1 text-xs',
-							currentCurrency === code
-								? 'bg-foreground text-background font-semibold'
-								: 'text-muted-foreground hover:text-foreground'
-						)}
-					>
-						{CURRENCY_SYMBOLS[code] ?? code}
-					</Button>
-				{/each}
-			</div>
-			<LanguageSwitcher />
 		</div>
-	</div>
-</header>
+	</header>
+{/if}
 
-<main class={searchActive ? 'pt-18' : ''}>
+<main class={cn('flex-1', searchActive ? 'pt-18' : '')}>
 	{@render children()}
 </main>
+
+<Footer />
+
+<BackToTop />

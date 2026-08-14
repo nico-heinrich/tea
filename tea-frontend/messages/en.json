@@ -1,4 +1,5 @@
 {
+	"backToTop.label": "Back to top",
 	"search.placeholder": "Search teas...",
 	"search.noResults": "No teas found.",
 	"search.loading": "Searching...",
@@ -16,8 +17,15 @@
 	"currency.eur": "Euro",
 	"currency.usd": "US Dollar",
 	"search.sortLabel": "Sort by",
+	"search.currencyLabel": "Currency",
 	"search.sortRelevance": "Best results",
 	"search.sortPriceAsc": "Price: Low to High",
 	"search.sortPriceDesc": "Price: High to Low",
-	"search.resultCount": "Results: {count}"
+	"search.resultCount": "Results: {count}",
+	"footer.legal": "Legal Notice",
+	"footer.privacy": "Privacy Policy",
+	"footer.about": "About",
+	"footer.contact": "Contact",
+	"footer.language": "Language",
+	"page.placeholder": "This page is under construction."
 }

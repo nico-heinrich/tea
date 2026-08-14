@@ -2,8 +2,9 @@
 	import type { TeaResult, SearchSort } from '$lib/types/tea.js';
 	import * as m from '$lib/paraglide/messages.js';
 	import { Skeleton } from '$lib/components/ui/skeleton/index.js';
-	import { Select, SelectTrigger, SelectContent, SelectItem } from '$lib/components/ui/select/index.js';
+	import * as NativeSelect from '$lib/components/ui/native-select/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { getCurrency, setCurrency } from '$lib/stores/search.svelte.js';
 
 	let {
 		results = [],
@@ -25,13 +26,15 @@
 		onSortChange?: (sort: SearchSort) => void;
 	} = $props();
 
+	let currentCurrency = $derived(getCurrency());
+
 	const TYPE_COLORS: Record<string, string> = {
-		white: 'bg-gray-300',
-		yellow: 'bg-yellow-400',
-		green: 'bg-green-500',
-		oolong: 'bg-blue-500',
-		black: 'bg-gray-900',
-		dark: 'bg-stone-600'
+		white: 'bg-white-tea',
+		yellow: 'bg-yellow-tea',
+		green: 'bg-green-tea',
+		oolong: 'bg-oolong-tea',
+		black: 'bg-black-tea',
+		dark: 'bg-dark-tea'
 	};
 
 	function typeColor(typeKey: string): string {
@@ -99,25 +102,21 @@
 					: (currencyDisplay ?? '\u20AC');
 		return `${priceDisplay.toFixed(2)} ${symbol} / 100g`;
 	}
-
-	function sortLabel(sort: SearchSort): string {
-		switch (sort) {
-			case 'price_asc':
-				return m['search.sortPriceAsc']();
-			case 'price_desc':
-				return m['search.sortPriceDesc']();
-			default:
-				return m['search.sortRelevance']();
-		}
-	}
 </script>
 
 {#if loading}
+	<div class="mb-4 flex items-center justify-between gap-4" aria-hidden="true">
+		<Skeleton class="h-4 w-24" />
+		<div class="flex items-center gap-3">
+			<Skeleton class="h-7 w-19" />
+			<Skeleton class="h-7 w-40" />
+		</div>
+	</div>
 	<div class="space-y-3">
 		{#each [1, 2, 3] as _}
 			<div class="rounded-lg border border-border/40 p-4">
 				<Skeleton class="h-5 w-1/3" />
-				<Skeleton class="mt-2 h-4 w-1/4" />
+				<Skeleton class="mt-2 h-4 w-" />
 				<Skeleton class="mt-2 h-4 w-1/5" />
 			</div>
 		{/each}
@@ -126,26 +125,43 @@
 	<div class="py-16 text-center text-sm text-muted-foreground">
 		{m['search.noResults']()}
 	</div>
-	{:else}
-		<div class="mb-4 flex items-center justify-between gap-4">
-			<span class="text-sm text-muted-foreground">
-				{m['search.resultCount']({ count: totalCount })}
-			</span>
-			<div class="flex items-center gap-2 text-sm text-muted-foreground">
-				{m['search.sortLabel']()}
-				<Select type="single" value={sort} onValueChange={(v) => onSortChange?.(v as SearchSort)}>
-					<SelectTrigger size="sm" class="w-40" aria-label={m['search.sortLabel']()}>
-						{sortLabel(sort)}
-					</SelectTrigger>
-					<SelectContent>
-						<SelectItem value="relevance">{m['search.sortRelevance']()}</SelectItem>
-						<SelectItem value="price_asc">{m['search.sortPriceAsc']()}</SelectItem>
-						<SelectItem value="price_desc">{m['search.sortPriceDesc']()}</SelectItem>
-					</SelectContent>
-				</Select>
+{:else}
+	<div class="mb-4 flex flex-wrap items-center justify-between gap-4">
+		<span class="text-sm text-muted-foreground">
+			{m['search.resultCount']({ count: totalCount })}
+		</span>
+		<div class="flex items-center gap-3 text-sm text-muted-foreground">
+			<div class="flex items-center gap-2">
+				<span class="hidden whitespace-nowrap sm:inline">{m['search.currencyLabel']()}</span>
+				<NativeSelect.Root
+					size="sm"
+					class="w-20"
+					value={currentCurrency}
+					aria-label={m['search.currencyLabel']()}
+					onchange={(e) => setCurrency(e.currentTarget.value as 'EUR' | 'USD')}
+				>
+					<NativeSelect.Option value="EUR">EUR</NativeSelect.Option>
+					<NativeSelect.Option value="USD">USD</NativeSelect.Option>
+				</NativeSelect.Root>
+			</div>
+			<div class="flex items-center gap-2">
+				<span class="hidden whitespace-nowrap sm:inline">{m['search.sortLabel']()}</span>
+				<NativeSelect.Root
+					size="sm"
+					class="w-40"
+					value={sort}
+					aria-label={m['search.sortLabel']()}
+					onchange={(e) => onSortChange?.(e.currentTarget.value as SearchSort)}
+				>
+					<NativeSelect.Option value="relevance">{m['search.sortRelevance']()}</NativeSelect.Option>
+					<NativeSelect.Option value="price_asc">{m['search.sortPriceAsc']()}</NativeSelect.Option>
+					<NativeSelect.Option value="price_desc">{m['search.sortPriceDesc']()}</NativeSelect.Option
+					>
+				</NativeSelect.Root>
 			</div>
 		</div>
-		<div class="space-y-2 mb-8">
+	</div>
+	<div class="space-y-2 mb-8">
 		{#each results as tea}
 			<div class="rounded-lg border border-border/40 px-4 py-3 transition-colors hover:bg-muted/50">
 				<div class="flex items-start justify-between gap-4">
