@@ -130,7 +130,7 @@
 			variant="ghost"
 			size="icon-sm"
 			type="button"
-			class="-mr-2 shrink-0 self-center text-muted-foreground/70 hover:bg-transparent hover:text-foreground"
+			class="-mr-2 -my-2 shrink-0 self-center text-muted-foreground/70 hover:bg-muted hover:text-foreground rounded-full"
 			aria-label={`Remove ${suggestion} from recent searches`}
 			onclick={(e) => {
 				e.stopPropagation();

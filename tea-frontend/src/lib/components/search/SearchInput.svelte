@@ -249,13 +249,19 @@
 		<PopoverPrimitive.Trigger disabled>
 			{#snippet child({ props })}
 				<div class="relative flex items-center" {...props}>
+					<img
+						src="/assets/images/logo.svg"
+						alt=""
+						aria-hidden="true"
+						class="pointer-events-none absolute left-3 size-6"
+					/>
 					<Input
 						bind:ref={inputRef}
 						value={query}
 						oninput={handleInput}
 						onkeydown={handleKeydown}
 						{placeholder}
-						class="px-4 h-11 rounded-full"
+						class="pl-11 pr-4 h-12 rounded-full"
 						{autofocus}
 					/>
 					{#if query}
@@ -265,7 +271,7 @@
 							onclick={handleClear}
 							type="button"
 							aria-label="Clear search"
-							class="absolute right-2 text-muted-foreground hover:text-foreground"
+							class="absolute right-2 text-muted-foreground hover:text-foreground rounded-full"
 						>
 							<X class="size-4 shrink-0" />
 						</Button>
