@@ -12,14 +12,14 @@ A SvelteKit frontend for searching teas with real-time fuzzy autocomplete. Built
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| Framework | SvelteKit 2 (Svelte 5) |
-| Styling | Tailwind CSS v4 |
+| Layer         | Technology                |
+| ------------- | ------------------------- |
+| Framework     | SvelteKit 2 (Svelte 5)    |
+| Styling       | Tailwind CSS v4           |
 | UI Components | shadcn-svelte (huntabyte) |
-| i18n | Paraglide (inlang) |
-| Database | Supabase (PostgreSQL) |
-| Search | pg_trgm `word_similarity` |
+| i18n          | Paraglide (inlang)        |
+| Database      | Supabase (PostgreSQL)     |
+| Search        | pg_trgm `word_similarity` |
 
 ## Prerequisites
 
@@ -104,14 +104,14 @@ The `tea` table should have columns: `id`, `name`, `style_raw`, `type` (FK to `t
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server with hot reload |
-| `npm run build` | Build for production |
+| Command           | Description                      |
+| ----------------- | -------------------------------- |
+| `npm run dev`     | Start dev server with hot reload |
+| `npm run build`   | Build for production             |
 | `npm run preview` | Preview production build locally |
-| `npm run check` | Run svelte-check (TypeScript) |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format with Prettier |
+| `npm run check`   | Run svelte-check (TypeScript)    |
+| `npm run lint`    | Run ESLint                       |
+| `npm run format`  | Format with Prettier             |
 
 ## Project Structure
 
@@ -128,17 +128,17 @@ tea-frontend/
 │   │   ├── server/
 │   │   │   └── supabase.ts                 # Server-side Supabase client
 │   │   ├── stores/
-│   │   │   └── search.svelte.ts            # Search state (Svelte 5 runes)
+│   │   │   └── search.svelte.ts            # Currency state (Svelte 5 runes)
 │   │   ├── types/
 │   │   │   └── tea.ts                      # TypeScript interfaces
-│   │   └── supabase.ts                     # Browser Supabase client
 │   ├── routes/
 │   │   ├── +layout.svelte                  # Root layout with header + language switcher
 │   │   ├── +page.svelte                    # Home page with search
 │   │   └── api/search/
 │   │       └── +server.ts                  # Search API endpoint
 │   ├── app.html
-│   └── hooks.client.ts                     # Paraglide client init
+│   ├── hooks.server.ts                     # Paraglide server init
+│   └── hooks.ts                            # Paraglide client init
 ├── messages/
 │   ├── en.json                             # English translations
 │   └── de.json                             # German translations
@@ -165,13 +165,13 @@ Paraglide is configured with **pathname strategy** (URL-based locale):
 
 ### Message Keys
 
-| Key | English | German |
-|-----|---------|--------|
-| `search.placeholder` | "Search teas..." | "Tees suchen..." |
-| `search.noResults` | "No teas found." | "Keine Tees gefunden." |
-| `search.loading` | "Searching..." | "Suche läuft..." |
-| `language.english` | "English" | "Englisch" |
-| `language.german` | "German" | "Deutsch" |
+| Key                  | English          | German                 |
+| -------------------- | ---------------- | ---------------------- |
+| `search.placeholder` | "Search teas..." | "Tees suchen..."       |
+| `search.noResults`   | "No teas found." | "Keine Tees gefunden." |
+| `search.loading`     | "Searching..."   | "Suche läuft..."       |
+| `language.english`   | "English"        | "Englisch"             |
+| `language.german`    | "German"         | "Deutsch"              |
 
 ## Deployment
 
@@ -206,38 +206,41 @@ CMD ["node", "build"]
 **Endpoint**: `GET /api/search?q=<term>&offset=<n>&currency=<EUR|USD>&sort=<relevance|price_asc|price_desc>`
 
 **Response**:
+
 ```json
 {
-  "results": [
-    {
-      "id": 123,
-      "name": "Sencha Yamabuki",
-      "style_label": "Sencha",
-      "type_key": "green",
-      "origin": "Fuji, Shizuoka",
-      "origin_country": "JP",
-      "url": "https://...",
-      "vendor_name": "Yoshi en",
-      "harvest_year": 2025,
-      "price": 12.5,
-      "currency": "EUR",
-      "weight_grams": 50,
-      "price_100g_usd": 27.5,
-      "price_display": 27.5,
-      "currency_display": "EUR"
-    }
-  ],
-  "totalCount": 21
+	"results": [
+		{
+			"id": 123,
+			"name": "Sencha Yamabuki",
+			"style_label": "Sencha",
+			"type_key": "green",
+			"origin": "Fuji, Shizuoka",
+			"origin_country": "JP",
+			"url": "https://...",
+			"vendor_name": "Yoshi en",
+			"harvest_year": 2025,
+			"price": 12.5,
+			"currency": "EUR",
+			"weight_grams": 50,
+			"price_100g_usd": 27.5,
+			"price_display": 27.5,
+			"currency_display": "EUR"
+		}
+	],
+	"totalCount": 21
 }
 ```
 
 **Parameters**:
+
 - `q` (required): Search query string
 - `offset` (optional, default `0`): Pagination offset
 - `currency` (optional, default `EUR`): Display currency (`EUR` | `USD`)
 - `sort` (optional, default `relevance`): `relevance` | `price_asc` | `price_desc`
 
 **Behavior**:
+
 - Empty query → `{ results: [], totalCount: 0 }`
 - Debounced 300ms on client
 - Paginated, 10 results per page
@@ -258,7 +261,7 @@ let loading = $state(false);
 let error = $state<string | null>(null);
 
 $effect(() => {
-  // Debounced fetch logic
+	// Debounced fetch logic
 });
 ```
 
