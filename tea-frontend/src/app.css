@@ -32,6 +32,7 @@
 	--color-oolong-tea: oklch(0.7024 0.0999 99.93);
 	--color-black-tea: oklch(0.3569 0.016 76.63);
 	--color-dark-tea: oklch(0.3968 0.0382 57.57);
+	--shadow-deep: 0px 12px 21px 5px rgba(0, 0, 0, 0.16), 0px 5px 9px -3px rgba(0, 0, 0, 0.33);
 }
 
 @layer base {
@@ -42,15 +43,15 @@
 		--radius-lg: var(--radius);
 		--radius-xl: calc(var(--radius) + 4px);
 		--background: white;
-		--foreground: var(--color-primary-900);
+		--foreground: black;
 		--card: white;
-		--card-foreground: var(--color-primary-900);
+		--card-foreground: black;
 		--popover: white;
-		--popover-foreground: var(--color-primary-900);
+		--popover-foreground: black;
 		--primary: var(--color-primary-500);
 		--primary-foreground: white;
 		--neutral: var(--color-neutral-500);
-		--neutral-foreground: var(--color-neutral-900);
+		--neutral-foreground: black;
 		--muted: var(--color-secondary-50);
 		--muted-foreground: var(--color-neutral-400);
 		--accent: var(--color-secondary-50);
