@@ -37,6 +37,29 @@
 			setSearchActive(false);
 		}
 	}
+
+	// Blur-gradient header backdrop (technique: exord.de/blog/blur-gradients-mit-css).
+	// Several thin layers, each blurred slightly more than the last, each masked so its
+	// opaque->transparent window sits one segment higher than the previous layer. Blur
+	// compounds where all layers overlap (top) and fades to sharp at the bottom edge,
+	// avoiding the "fogged glass" look of one large blur under an alpha-fade mask.
+	const BLUR_LAYERS = 6;
+	/** Height of the blurry→sharp transition zone in rem (header is h-18 = 4.5rem). */
+	const BLUR_GRADIENT_HEIGHT_REM = 2.25;
+
+	function blurLayerStyle(layer: number) {
+		const segmentRem = BLUR_GRADIENT_HEIGHT_REM / BLUR_LAYERS;
+		const blur = `${(layer * 0.5).toFixed(1)}px`;
+		const opaqueStop = `calc(100% - ${(segmentRem * layer).toFixed(3)}rem)`;
+		const transparentStop = `calc(100% - ${(segmentRem * (layer - 1)).toFixed(3)}rem)`;
+		const mask = `linear-gradient(to bottom, black ${opaqueStop}, transparent ${transparentStop})`;
+		return [
+			`backdrop-filter: blur(${blur})`,
+			`-webkit-backdrop-filter: blur(${blur})`,
+			`mask-image: ${mask}`,
+			`-webkit-mask-image: ${mask}`
+		].join('; ');
+	}
 </script>
 
 <svelte:head>
@@ -44,8 +67,15 @@
 </svelte:head>
 
 {#if searchActive}
-	<header class="bg-background/50 backdrop-blur-md fixed z-40 top-0 left-0 right-0 h-18">
-		<div class="flex h-full items-center gap-3 container">
+	<header class="fixed z-40 top-0 left-0 right-0 h-22">
+		{#each Array.from({ length: BLUR_LAYERS }, (_, i) => i + 1) as layer (layer)}
+			<div
+				aria-hidden="true"
+				class="pointer-events-none absolute inset-0 bg-background/10"
+				style={blurLayerStyle(layer)}
+			></div>
+		{/each}
+		<div class="relative flex h-full items-center gap-3 container pb-2">
 			<a
 				href={localizeHref('/')}
 				class="shrink-0"
@@ -61,7 +91,7 @@
 	</header>
 {/if}
 
-<main class={cn('flex-1', searchActive ? 'pt-16' : '')}>
+<main class={cn('flex-1', searchActive ? 'pt-18' : '')}>
 	{@render children()}
 </main>
 
