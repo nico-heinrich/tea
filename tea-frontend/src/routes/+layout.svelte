@@ -6,14 +6,39 @@
 	import BackToTop from '$lib/components/ui/back-to-top/BackToTop.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import SearchInput from '$lib/components/search/SearchInput.svelte';
+	import BurgerMenu from '$lib/components/ui/burger-menu/BurgerMenu.svelte';
 	import { getSearchActive, setSearchActive } from '$lib/stores/search-active.svelte.js';
-	import { localizeHref } from '$lib/paraglide/runtime.js';
-	import { cn } from '$lib/utils.js';
+	import { localizeHref, locales, baseLocale } from '$lib/paraglide/runtime.js';
+	import * as m from '$lib/paraglide/messages.js';
 
 	let { children } = $props();
 
 	let searchActive = $derived(getSearchActive());
 	let currentQuery = $derived(page.url.searchParams.get('q') ?? '');
+
+	// Check if we're on the root page (handles i18n: "/" or "/de" or "/de/")
+	let isRootPage = $derived.by(() => {
+		const path = page.url.pathname.replace(/\/$/, '') || '/';
+		return path === '/' || locales.some((l) => l !== baseLocale && path === `/${l}`);
+	});
+
+	// Map path segments to page titles
+	const pageTitleKeys: Record<string, () => string> = {
+		about: m['footer.about'],
+		contact: m['footer.contact'],
+		legal: m['footer.legal'],
+		privacy: m['footer.privacy']
+	};
+
+	let pageTitle = $derived.by(() => {
+		const path = page.url.pathname;
+		// Strip locale prefix if present
+		const segment = path
+			.replace(/^\/(en|de)\//, '')
+			.replace(/^\//, '')
+			.split('/')[0];
+		return segment && pageTitleKeys[segment] ? pageTitleKeys[segment]() : '';
+	});
 
 	// Initialize the store from the URL before children render, so SSR/first paint
 	// already shows the results view when a query is present (no hero flash on refresh).
@@ -66,8 +91,8 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-{#if searchActive}
-	<header class="fixed z-40 top-0 left-0 right-0 h-22">
+<header class="fixed z-40 top-0 left-0 right-0 h-22">
+	{#if searchActive || !isRootPage}
 		{#each Array.from({ length: BLUR_LAYERS }, (_, i) => i + 1) as layer (layer)}
 			<div
 				aria-hidden="true"
@@ -75,7 +100,9 @@
 				style={blurLayerStyle(layer)}
 			></div>
 		{/each}
-		<div class="relative flex h-full items-center gap-3 container pb-2">
+	{/if}
+	<div class="relative flex h-full items-center gap-3 container pb-2">
+		{#if searchActive || !isRootPage}
 			<a
 				href={localizeHref('/')}
 				class="shrink-0"
@@ -84,14 +111,21 @@
 			>
 				<img src="/assets/images/logo.svg" alt="" aria-hidden="true" class="size-11" />
 			</a>
+		{/if}
+		{#if isRootPage && searchActive}
 			<div class="flex-1 max-w-2xl">
 				<SearchInput value={currentQuery} onQueryCommit={handleQueryCommit} />
 			</div>
+		{:else if pageTitle}
+			<h1 class="flex-1 text-lg font-semibold tracking-tight text-foreground">{pageTitle}</h1>
+		{/if}
+		<div class="ml-auto">
+			<BurgerMenu />
 		</div>
-	</header>
-{/if}
+	</div>
+</header>
 
-<main class={cn('flex-1', searchActive ? 'pt-18' : '')}>
+<main class="flex-1 pt-18">
 	{@render children()}
 </main>
 

@@ -32,7 +32,7 @@
 	--color-oolong-tea: oklch(0.7024 0.0999 99.93);
 	--color-black-tea: oklch(0.3569 0.016 76.63);
 	--color-dark-tea: oklch(0.3968 0.0382 57.57);
-	--shadow-deep: 0px 12px 21px 5px rgba(0, 0, 0, 0.16), 0px 5px 9px -3px rgba(0, 0, 0, 0.33);
+	--shadow-deep: 0px 12px 21px 5px rgba(0, 0, 0, 0.1), 0px 5px 9px -3px rgba(0, 0, 0, 0.33);
 }
 
 @layer base {
@@ -52,14 +52,14 @@
 		--primary-foreground: white;
 		--neutral: var(--color-neutral-500);
 		--neutral-foreground: black;
-		--muted: var(--color-secondary-50);
+		--muted: var(--color-primary-50);
 		--muted-foreground: var(--color-neutral-400);
 		--accent: var(--color-secondary-50);
 		--accent-foreground: oklch(0.208 0.042 265.755);
 		--destructive: oklch(0.577 0.245 27.325);
 		--border: var(--color-neutral-400);
 		--input: var(--color-neutral-400);
-		--ring: var(--color-secondary-500);
+		--ring: var(--color-primary-500);
 	}
 
 	.dark {

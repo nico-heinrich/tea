@@ -22,6 +22,7 @@
 	"search.sortPriceAsc": "Preis: Aufsteigend",
 	"search.sortPriceDesc": "Preis: Absteigend",
 	"search.resultCount": "Ergebnisse: {count}",
+	"footer.search": "Suche",
 	"footer.legal": "Impressum",
 	"footer.privacy": "Datenschutzerklärung",
 	"footer.about": "Über uns",

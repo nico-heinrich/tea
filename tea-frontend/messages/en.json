@@ -22,6 +22,7 @@
 	"search.sortPriceAsc": "Price: Low to High",
 	"search.sortPriceDesc": "Price: High to Low",
 	"search.resultCount": "Results: {count}",
+	"footer.search": "Search",
 	"footer.legal": "Legal Notice",
 	"footer.privacy": "Privacy Policy",
 	"footer.about": "About",

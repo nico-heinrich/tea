@@ -91,7 +91,7 @@
 	aria-label={suggestion}
 	tabindex="0"
 	class={cn(
-		'flex w-full cursor-pointer items-start gap-3 px-3 py-2 text-left',
+		'group flex w-full cursor-pointer items-start gap-3 px-3 py-2 text-left',
 		'transition-colors rounded-none',
 		'focus-visible:outline-none focus-visible:bg-muted focus-visible:text-foreground',
 		'hover:bg-muted hover:text-foreground',
@@ -130,7 +130,7 @@
 			variant="ghost"
 			size="icon-sm"
 			type="button"
-			class="-mr-2 -my-2 shrink-0 self-center text-muted-foreground/70 hover:bg-muted hover:text-foreground rounded-full"
+			class="hidden group-hover:block -mr-2 -my-2 shrink-0 self-center text-foreground/50"
 			aria-label={`Remove ${suggestion} from recent searches`}
 			onclick={(e) => {
 				e.stopPropagation();
