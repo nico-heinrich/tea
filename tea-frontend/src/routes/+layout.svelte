@@ -44,7 +44,9 @@
 </svelte:head>
 
 {#if searchActive}
-	<header class="bg-background fixed z-40 top-0 left-0 right-0 h-18 border-b border-border/40">
+	<header
+		class="bg-background/50 backdrop-blur-md fixed z-40 top-0 left-0 right-0 h-18 border-b border-border/40"
+	>
 		<div class="flex h-full items-center gap-3 container">
 			<a
 				href={localizeHref('/')}

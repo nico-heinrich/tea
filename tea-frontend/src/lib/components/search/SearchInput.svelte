@@ -255,7 +255,7 @@
 						oninput={handleInput}
 						onkeydown={handleKeydown}
 						{placeholder}
-						class="pl-4 pr-4 h-11 rounded-full"
+						class="pl-4 pr-4 h-11 rounded-full bg-background"
 						{autofocus}
 					/>
 					{#if query}
