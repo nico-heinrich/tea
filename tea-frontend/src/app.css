@@ -152,6 +152,23 @@ body {
 	animation-duration: 0ms;
 }
 
+@keyframes scale-logo {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(0.9);
+	}
+	60% {
+		transform: scale(1.1);
+	}
+}
+
+.animate-scale-logo {
+	animation: scale-logo 0.8s 0.2s ease-out both;
+}
+
 @keyframes bounce-letter {
 	0%,
 	100% {
@@ -166,5 +183,5 @@ body {
 }
 
 .animate-bounce-letter {
-	animation: bounce-letter 0.4s ease-out both;
+	animation: bounce-letter 0.4s 2s ease-out both;
 }

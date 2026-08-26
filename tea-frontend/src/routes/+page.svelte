@@ -118,7 +118,7 @@
 			src="/assets/images/logo.svg"
 			alt=""
 			aria-hidden="true"
-			class="mx-auto size-16"
+			class="mx-auto size-16 animate-scale-logo"
 			style="view-transition-name: logo"
 		/>
 		<h1 class="mt-4 mb-8 text-center text-4xl font-bold tracking-tight text-foreground">
