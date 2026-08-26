@@ -9,7 +9,7 @@
 	import SuggestionItem from './SuggestionItem.svelte';
 
 	const RECENT_KEY = 'tea-recent-searches';
-	const MAX_RECENT = 5;
+	const MAX_RECENT = 10;
 
 	let {
 		placeholder = m['search.placeholder'](),
@@ -94,22 +94,26 @@
 		return false;
 	}
 
+	const MAX_SUGGESTIONS = 7;
+
 	// Filter suggestions based on query
 	let filteredSuggestions = $derived.by(() => {
 		const trimmed = query.trim().toLowerCase();
+		let results: string[];
 		if (!trimmed) {
-			// Show recent first, then popular (no filter)
-			return [...recentSearches, ...popularSearches.filter((p) => !recentSearches.includes(p))];
+			// On focus with empty query: show only recent searches
+			results = recentSearches;
+		} else {
+			// When typing: fuzzy filter recents, then popular
+			const recentFiltered = recentSearches.filter((r) => fuzzyMatch(trimmed, r.toLowerCase()));
+			const popularFiltered = popularSearches.filter((p) => fuzzyMatch(trimmed, p.toLowerCase()));
+			results = [...recentFiltered, ...popularFiltered.filter((p) => !recentFiltered.includes(p))];
 		}
-		// Fuzzy filter both by query
-		const recentFiltered = recentSearches.filter((r) => fuzzyMatch(trimmed, r.toLowerCase()));
-		const popularFiltered = popularSearches.filter((p) => fuzzyMatch(trimmed, p.toLowerCase()));
-		return [...recentFiltered, ...popularFiltered.filter((p) => !recentFiltered.includes(p))];
+		return results.slice(0, MAX_SUGGESTIONS);
 	});
 
-	let showPopover = $derived(
-		isFocused && filteredSuggestions.length > 0 && query.trim().length > 2
-	);
+	// Show popover on focus (with recents) or when typing and there are matches
+	let showPopover = $derived(isFocused && filteredSuggestions.length > 0);
 
 	function loadRecents() {
 		try {
@@ -284,7 +288,7 @@
 			onOpenAutoFocus={(e) => e.preventDefault()}
 			onCloseAutoFocus={(e) => e.preventDefault()}
 		>
-			<div role="listbox" aria-label="Search suggestions" class="rounded-[1.25rem] overflow-hidden">
+			<div role="listbox" aria-label="Search suggestions" class="rounded-[1.25rem] overflow-clip">
 				{#each filteredSuggestions as suggestion, i}
 					<SuggestionItem
 						{suggestion}

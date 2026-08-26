@@ -123,7 +123,7 @@
 			{m['search.heading']()}
 		</h1>
 		<div class="mx-auto max-w-2xl">
-			<SearchInput autofocus={true} onQueryCommit={handleQueryCommit} />
+			<SearchInput onQueryCommit={handleQueryCommit} />
 		</div>
 	</div>
 {:else}
