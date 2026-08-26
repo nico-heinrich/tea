@@ -125,7 +125,7 @@
 		{#if searchActive || !isRootPage}
 			<a
 				href={localizeHref('/')}
-				class="shrink-0"
+				class="shrink-0 hover:scale-105 active:scale-100 active:duration-75 transition-all"
 				aria-label="Tea Explorer"
 				onclick={handleLogoClick}
 			>
@@ -144,7 +144,7 @@
 			</div>
 		{:else if pageTitle}
 			<h1
-				class="w-full text-lg font-semibold tracking-tight text-foreground"
+				class="w-auto text-lg font-semibold tracking-tight text-foreground"
 				style="view-transition-name: heading"
 			>
 				{pageTitle}

@@ -285,10 +285,11 @@
 			sideOffset={8}
 			portalProps={{ disabled: true }}
 			wrapperClass="w-full"
-			class="w-full max-h-80 overflow-y-auto p-1 rounded-3xl"
+			class="w-full max-h-80 overflow-y-auto p-1 rounded-3xl shadow-deep"
 			trapFocus={false}
 			onOpenAutoFocus={(e) => e.preventDefault()}
 			onCloseAutoFocus={(e) => e.preventDefault()}
+			style="view-transition-name: search-input-popover"
 		>
 			<div role="listbox" aria-label="Search suggestions" class="rounded-[1.25rem] overflow-clip">
 				{#each filteredSuggestions as suggestion, i}

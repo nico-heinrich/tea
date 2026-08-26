@@ -138,13 +138,18 @@ body {
 
 ::view-transition-old(heading),
 ::view-transition-new(heading) {
-	width: auto;
+	width: 100%;
 	height: 100%;
 }
 
 ::view-transition-old(search-input-input),
 ::view-transition-new(search-input-input) {
 	height: 100%;
+}
+
+::view-transition-old(search-input-popover),
+::view-transition-new(search-input-popover) {
+	animation-duration: 0ms;
 }
 
 @keyframes bounce-letter {

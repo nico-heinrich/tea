@@ -113,7 +113,7 @@
 </script>
 
 {#if !searchActive}
-	<div class="container pt-16 flex flex-col items-center">
+	<div class="container pt-16">
 		<img
 			src="/assets/images/logo.svg"
 			alt=""
@@ -121,18 +121,14 @@
 			class="mx-auto size-16"
 			style="view-transition-name: logo"
 		/>
-		<h1
-			class="mt-6 mb-8 text-center text-4xl font-bold tracking-tight text-foreground inline-block"
-			style="view-transition-name: heading"
-		>
+		<h1 class="mt-4 mb-8 text-center text-4xl font-bold tracking-tight text-foreground">
 			{#each m['search.heading']().split('') as char, i}
-				<span
-					class="inline-block animate-bounce-letter"
-					style="animation-delay: {0.3 + i * 0.05}s"
-				>{char === ' ' ? '\u00A0' : char}</span>
+				<span class="inline-block animate-bounce-letter" style="animation-delay: {0.3 + i * 0.05}s"
+					>{char === ' ' ? '\u00A0' : char}</span
+				>
 			{/each}
 		</h1>
-		<div class="w-full max-w-2xl">
+		<div class="w-full max-w-2xl mx-auto">
 			<SearchInput onQueryCommit={handleQueryCommit} />
 		</div>
 	</div>
