@@ -5,7 +5,7 @@
 	const links = getNavLinks();
 </script>
 
-<footer class="bg-foreground text-sm text-background">
+<footer class="bg-foreground text-sm text-background" style="view-transition-name: footer">
 	<div class="container flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
 		<nav aria-label="Footer" class="flex flex-wrap items-center gap-6">
 			{#each links as link}

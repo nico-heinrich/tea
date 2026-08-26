@@ -129,3 +129,37 @@ body {
 		padding-inline: calc(var(--spacing) * 4);
 	}
 }
+
+/* View Transitions — page navigation */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: 300ms;
+}
+
+::view-transition-old(heading),
+::view-transition-new(heading) {
+	width: auto;
+	height: 100%;
+}
+
+::view-transition-old(search-input-input),
+::view-transition-new(search-input-input) {
+	height: 100%;
+}
+
+@keyframes bounce-letter {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-6px);
+	}
+	60% {
+		transform: translateY(-3px);
+	}
+}
+
+.animate-bounce-letter {
+	animation: bounce-letter 0.4s ease-out both;
+}

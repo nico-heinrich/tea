@@ -81,18 +81,14 @@
 
 	// Single watcher: any change to query, sort, or currency re-runs the search.
 	// Covers initial load (URL ?q=), header search, and sort/currency switches.
+	// NOTE: search activation is handled by onNavigate (layout) and layout init,
+	// NOT here — setting it here races with manual deactivation (e.g. logo click).
 	$effect(() => {
 		const q = $page.url.searchParams.get('q') ?? '';
 		if (!q) return;
 
 		const s = readSortFromUrl();
 		const cur = getCurrency();
-
-		// A query in the URL activates the results view (initial load / external navigation).
-		if (!searchActive) {
-			setSearchActive(true);
-			return;
-		}
 
 		resultsLoading = true;
 		fetchResults(q, s, cur, 0, false)
@@ -117,12 +113,26 @@
 </script>
 
 {#if !searchActive}
-	<div class="container pt-16">
-		<img src="/assets/images/logo.svg" alt="" aria-hidden="true" class="mx-auto size-16" />
-		<h1 class="mt-6 mb-8 text-center text-4xl font-bold tracking-tight text-foreground">
-			{m['search.heading']()}
+	<div class="container pt-16 flex flex-col items-center">
+		<img
+			src="/assets/images/logo.svg"
+			alt=""
+			aria-hidden="true"
+			class="mx-auto size-16"
+			style="view-transition-name: logo"
+		/>
+		<h1
+			class="mt-6 mb-8 text-center text-4xl font-bold tracking-tight text-foreground inline-block"
+			style="view-transition-name: heading"
+		>
+			{#each m['search.heading']().split('') as char, i}
+				<span
+					class="inline-block animate-bounce-letter"
+					style="animation-delay: {0.3 + i * 0.05}s"
+				>{char === ' ' ? '\u00A0' : char}</span>
+			{/each}
 		</h1>
-		<div class="mx-auto max-w-2xl">
+		<div class="w-full max-w-2xl">
 			<SearchInput onQueryCommit={handleQueryCommit} />
 		</div>
 	</div>

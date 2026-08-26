@@ -5,6 +5,7 @@
 	import { backdropBlur } from '$lib/transitions';
 	import { getNavLinks } from '$lib/config/navigation.js';
 	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 
 	let open = $state(false);
 
@@ -20,6 +21,14 @@
 		if (e.key === 'Escape') {
 			open = false;
 		}
+	}
+
+	const FLY_DURATION = 300;
+
+	function handleLinkClick(e: MouseEvent, href: string) {
+		e.preventDefault();
+		open = false;
+		setTimeout(() => goto(href), FLY_DURATION);
 	}
 
 	$effect(() => {
@@ -39,6 +48,7 @@
 		onclick={() => (open = !open)}
 		aria-label={open ? 'Close menu' : 'Open menu'}
 		aria-expanded={open}
+		style="view-transition-name: burger;"
 	>
 		{#if open}
 			<X class="size-5" />
@@ -60,7 +70,8 @@
 			<div
 				role="menu"
 				class="absolute flex flex-col inset-4 sm:inset-8 ml-auto max-w-full sm:max-w-sm bg-background p-6 shadow-deep rounded-3xl"
-				transition:fly={{ x: '100%', duration: 300 }}
+				in:fly={{ x: '100%', duration: 300 }}
+				out:fly={{ x: '100%', duration: 150 }}
 			>
 				<div class="flex justify-end mb-8">
 					<Button
@@ -81,7 +92,7 @@
 							class="block rounded-lg px-4 py-3 text-lg transition-colors {isActive(link.href)
 								? 'font-medium hover:bg-muted'
 								: 'hover:bg-muted'}"
-							onclick={() => (open = false)}
+							onclick={(e) => handleLinkClick(e, link.href)}
 						>
 							{link.label}
 						</a>

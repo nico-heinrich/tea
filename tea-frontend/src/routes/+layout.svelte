@@ -1,7 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
-	import { goto } from '$app/navigation';
+	import { goto, onNavigate } from '$app/navigation';
+	import { tick } from 'svelte';
 	import favicon from '$lib/assets/favicon.svg';
 	import BackToTop from '$lib/components/ui/back-to-top/BackToTop.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
@@ -44,6 +45,32 @@
 	// already shows the results view when a query is present (no hero flash on refresh).
 	setSearchActive(page.url.searchParams.has('q'));
 
+	onNavigate((navigation) => {
+		const toPath = navigation.to?.url.pathname.replace(/\/$/, '') || '/';
+		const isTargetRoot =
+			toPath === '/' || locales.some((l) => l !== baseLocale && toPath === `/${l}`);
+
+		if (!document.startViewTransition) {
+			// Fallback: apply state directly without transition
+			if (isTargetRoot) {
+				setSearchActive(navigation.to?.url.searchParams.has('q') ?? false);
+			}
+			return;
+		}
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				// Apply state changes INSIDE the callback so the transition
+				// captures the old DOM, then animates to the new DOM.
+				if (isTargetRoot) {
+					setSearchActive(navigation.to?.url.searchParams.has('q') ?? false);
+				}
+				await tick();
+				resolve();
+			});
+		});
+	});
+
 	function handleQueryCommit(query: string) {
 		window.dispatchEvent(new CustomEvent('tea-search', { detail: { query } }));
 	}
@@ -53,14 +80,7 @@
 		if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)
 			return;
 		e.preventDefault();
-		try {
-			// Clear ?q= from the URL first; only then deactivate the results view.
-			// (Setting the store before navigation lets +page.svelte's URL watcher
-			// re-activate search while the query is still in the URL.)
-			await goto(localizeHref('/'));
-		} finally {
-			setSearchActive(false);
-		}
+		await goto(localizeHref('/'));
 	}
 
 	// Blur-gradient header backdrop (technique: exord.de/blog/blur-gradients-mit-css).
@@ -109,7 +129,13 @@
 				aria-label="Tea Explorer"
 				onclick={handleLogoClick}
 			>
-				<img src="/assets/images/logo.svg" alt="" aria-hidden="true" class="size-11" />
+				<img
+					src="/assets/images/logo.svg"
+					alt=""
+					aria-hidden="true"
+					class="size-11"
+					style="view-transition-name: logo"
+				/>
 			</a>
 		{/if}
 		{#if isRootPage && searchActive}
@@ -117,7 +143,12 @@
 				<SearchInput value={currentQuery} onQueryCommit={handleQueryCommit} />
 			</div>
 		{:else if pageTitle}
-			<h1 class="flex-1 text-lg font-semibold tracking-tight text-foreground">{pageTitle}</h1>
+			<h1
+				class="w-full text-lg font-semibold tracking-tight text-foreground"
+				style="view-transition-name: heading"
+			>
+				{pageTitle}
+			</h1>
 		{/if}
 		<div class="ml-auto">
 			<BurgerMenu />

@@ -245,9 +245,10 @@
 
 <div
 	bind:this={containerRef}
-	class="relative w-full"
+	class="relative w-full z-10"
 	onfocusin={handleFocusin}
 	onfocusout={handleFocusout}
+	style="view-transition-name: search-input"
 >
 	<Popover bind:open={popoverOpen}>
 		<PopoverPrimitive.Trigger disabled>
@@ -261,6 +262,7 @@
 						{placeholder}
 						class="pl-4 pr-4 h-11 rounded-full bg-background"
 						{autofocus}
+						style="view-transition-name: search-input-input"
 					/>
 					{#if query}
 						<Button
