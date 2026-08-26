@@ -59,7 +59,7 @@
 		>
 			<div
 				role="menu"
-				class="absolute inset-y-0 right-0 w-full max-w-[calc(100vw-3rem)] sm:max-w-sm bg-background p-6 shadow-xl"
+				class="absolute flex flex-col inset-4 sm:inset-8 ml-auto max-w-full sm:max-w-sm bg-background p-6 shadow-deep rounded-3xl"
 				transition:fly={{ x: '100%', duration: 300 }}
 			>
 				<div class="flex justify-end mb-8">
@@ -73,7 +73,7 @@
 					</Button>
 				</div>
 
-				<nav class="flex flex-col gap-2">
+				<nav class="flex flex-col gap-2 overflow-auto h-full min-h-0">
 					{#each links as link}
 						<a
 							href={link.href}
