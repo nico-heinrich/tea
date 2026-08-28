@@ -7,6 +7,7 @@
 	import BackToTop from '$lib/components/ui/back-to-top/BackToTop.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import SearchInput from '$lib/components/search/SearchInput.svelte';
+	import ConsentBanner from '$lib/components/ui/ConsentBanner.svelte';
 	import BurgerMenu from '$lib/components/ui/burger-menu/BurgerMenu.svelte';
 	import { getSearchActive, setSearchActive } from '$lib/stores/search-active.svelte.js';
 	import { localizeHref, locales, baseLocale } from '$lib/paraglide/runtime.js';
@@ -163,3 +164,5 @@
 <Footer />
 
 <BackToTop />
+
+<ConsentBanner />

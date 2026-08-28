@@ -6,6 +6,7 @@
 	import { Popover as PopoverPrimitive } from 'bits-ui';
 	import { cn } from '$lib/utils.js';
 	import * as m from '$lib/paraglide/messages.js';
+	import { getConsent } from '$lib/stores/consent.svelte.js';
 	import SuggestionItem from './SuggestionItem.svelte';
 
 	const RECENT_KEY = 'tea-recent-searches';
@@ -116,6 +117,10 @@
 	let showPopover = $derived(isFocused && filteredSuggestions.length > 0);
 
 	function loadRecents() {
+		if (getConsent() !== 'accepted') {
+			recentSearches = [];
+			return;
+		}
 		try {
 			const raw = localStorage.getItem(RECENT_KEY);
 			recentSearches = raw ? JSON.parse(raw) : [];
@@ -128,19 +133,23 @@
 		const trimmed = searchQuery.trim();
 		if (!trimmed) return;
 		recentSearches = [trimmed, ...recentSearches.filter((r) => r !== trimmed)].slice(0, MAX_RECENT);
-		try {
-			localStorage.setItem(RECENT_KEY, JSON.stringify(recentSearches));
-		} catch {
-			// localStorage unavailable
+		if (getConsent() === 'accepted') {
+			try {
+				localStorage.setItem(RECENT_KEY, JSON.stringify(recentSearches));
+			} catch {
+				// localStorage unavailable
+			}
 		}
 	}
 
 	function removeRecent(searchQuery: string) {
 		recentSearches = recentSearches.filter((r) => r !== searchQuery);
-		try {
-			localStorage.setItem(RECENT_KEY, JSON.stringify(recentSearches));
-		} catch {
-			// localStorage unavailable
+		if (getConsent() === 'accepted') {
+			try {
+				localStorage.setItem(RECENT_KEY, JSON.stringify(recentSearches));
+			} catch {
+				// localStorage unavailable
+			}
 		}
 	}
 

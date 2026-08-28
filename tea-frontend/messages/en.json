@@ -41,5 +41,9 @@
 	"footer.about": "About",
 	"footer.contact": "Contact",
 	"footer.language": "Language",
-	"page.placeholder": "This page is under construction."
+	"page.placeholder": "This page is under construction.",
+	"consent.bannerTitle": "Your privacy matters",
+	"consent.bannerText": "We use local storage to remember your recent searches. This is optional — you can use the search without it.",
+	"consent.accept": "Accept",
+	"consent.decline": "Decline"
 }

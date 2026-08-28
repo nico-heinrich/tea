@@ -41,5 +41,9 @@
 	"footer.about": "Über uns",
 	"footer.contact": "Kontakt",
 	"footer.language": "Sprache",
-	"page.placeholder": "Diese Seite wird gerade erstellt."
+	"page.placeholder": "Diese Seite wird gerade erstellt.",
+	"consent.bannerTitle": "Ihre Privatsphäre ist uns wichtig",
+	"consent.bannerText": "Wir verwenden lokalen Speicher, um Ihre letzten Suchen zu merken. Dies ist optional — Sie können die Suche auch ohne diese Funktion nutzen.",
+	"consent.accept": "Akzeptieren",
+	"consent.decline": "Ablehnen"
 }
