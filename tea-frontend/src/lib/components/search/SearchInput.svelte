@@ -144,9 +144,10 @@
 		}
 	}
 
-	async function loadPopularSearches() {
+	async function loadPopularSearches(q: string = '') {
 		try {
-			const res = await fetch('/api/popular-searches');
+			const suffix = q ? `?q=${encodeURIComponent(q)}` : '';
+			const res = await fetch(`/api/popular-searches${suffix}`);
 			if (res.ok) {
 				const data = await res.json();
 				popularSearches = (data.searches ?? []).map((s: { query: string }) => s.query);
@@ -159,6 +160,17 @@
 	$effect(() => {
 		loadRecents();
 		loadPopularSearches();
+	});
+
+	// Live "as you type" suggestions sourced from real user searches: debounce
+	// typing (2+ chars) and ask the server for real terms matching the input.
+	$effect(() => {
+		const trimmed = query.trim();
+		if (trimmed.length < 2) return;
+		const handle = setTimeout(() => {
+			loadPopularSearches(trimmed);
+		}, 300);
+		return () => clearTimeout(handle);
 	});
 
 	function handleInput(e: Event) {

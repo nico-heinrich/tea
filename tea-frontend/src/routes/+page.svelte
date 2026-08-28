@@ -4,6 +4,7 @@
 	import * as m from '$lib/paraglide/messages.js';
 	import SearchInput from '$lib/components/search/SearchInput.svelte';
 	import SearchResults from '$lib/components/search/SearchResults.svelte';
+	import MissingShop from '$lib/components/search/MissingShop.svelte';
 	import { getSearchActive, setSearchActive } from '$lib/stores/search-active.svelte.js';
 	import { getCurrency } from '$lib/stores/search.svelte.js';
 	import { Button } from '$lib/components/ui/button/index.js';
@@ -78,12 +79,29 @@
 		}
 	}
 
+	// Fire-and-forget: record the executed search so the autocomplete can
+	// surface terms that stem from what users actually search for. Never blocks
+	// the search, and failures are ignored.
+	function logSearch(query: string) {
+		try {
+			fetch('/api/search-log', {
+				method: 'POST',
+				headers: { 'content-type': 'application/json' },
+				body: JSON.stringify({ term: query }),
+				keepalive: true
+			});
+		} catch {
+			// fire-and-forget — ignore
+		}
+	}
+
 	async function executeSearch(query: string) {
 		const url = new URL($page.url);
 		url.searchParams.set('q', query);
 		await goto(url, { replaceState: true });
 
 		setSearchActive(true);
+		logSearch(query);
 	}
 
 	async function loadMore() {
@@ -176,7 +194,7 @@
 		</div>
 	</div>
 {:else}
-	<div class="container pt-4">
+	<div class="container pt-4 pb-8">
 		<SearchResults
 			{results}
 			{totalCount}
@@ -187,5 +205,6 @@
 			onLoadMore={loadMore}
 			onSortChange={handleSortChange}
 		/>
+		<MissingShop />
 	</div>
 {/if}
