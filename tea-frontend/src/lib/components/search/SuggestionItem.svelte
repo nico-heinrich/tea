@@ -125,12 +125,12 @@
 			</span>
 		</div>
 	</div>
-	{#if recent && onRemove}
+	{#if recent && onRemove && selected}
 		<Button
 			variant="ghost"
 			size="icon-sm"
 			type="button"
-			class="hidden group-hover:block -mr-2 -my-2 shrink-0 self-center text-foreground/50"
+			class="-mr-2 -my-2 shrink-0 self-center rounded-full"
 			aria-label={`Remove ${suggestion} from recent searches`}
 			onclick={(e) => {
 				e.stopPropagation();

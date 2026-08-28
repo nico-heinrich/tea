@@ -271,7 +271,7 @@
 							onclick={handleClear}
 							type="button"
 							aria-label="Clear search"
-							class="absolute right-2 text-muted-foreground hover:text-foreground rounded-full"
+							class="absolute right-2 rounded-full"
 						>
 							<X class="size-4 shrink-0" />
 						</Button>

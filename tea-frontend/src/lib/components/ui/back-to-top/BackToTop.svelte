@@ -72,7 +72,7 @@
 </script>
 
 {#if visible}
-	<div transition:fade={{ duration: 200 }} class="fixed bottom-6 right-6 z-50">
+	<div transition:fade={{ duration: 200 }} class="fixed bottom-6 right-6 z-10">
 		<Button
 			variant="outline"
 			size="icon-lg"

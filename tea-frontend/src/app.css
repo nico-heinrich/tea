@@ -59,7 +59,7 @@
 		--destructive: oklch(0.577 0.245 27.325);
 		--border: var(--color-neutral-400);
 		--input: var(--color-neutral-400);
-		--ring: var(--color-primary-500);
+		--ring: black;
 	}
 
 	.dark {

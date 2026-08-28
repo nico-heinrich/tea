@@ -6,9 +6,39 @@
 	import SearchResults from '$lib/components/search/SearchResults.svelte';
 	import { getSearchActive, setSearchActive } from '$lib/stores/search-active.svelte.js';
 	import { getCurrency } from '$lib/stores/search.svelte.js';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import type { SearchSort, TeaResult } from '$lib/types/tea.js';
 
 	const PAGE_SIZE = 10;
+
+	// Shortcut for each tea type shown below the search input on the hero.
+	const TYPE_SHORTCUTS: { key: string; dot: string }[] = [
+		{ key: 'white', dot: 'bg-white-tea' },
+		{ key: 'yellow', dot: 'bg-yellow-tea' },
+		{ key: 'green', dot: 'bg-green-tea' },
+		{ key: 'oolong', dot: 'bg-oolong-tea' },
+		{ key: 'black', dot: 'bg-black-tea' },
+		{ key: 'dark', dot: 'bg-dark-tea' }
+	];
+
+	function typeLabel(typeKey: string): string {
+		switch (typeKey) {
+			case 'white':
+				return m['type.white']();
+			case 'yellow':
+				return m['type.yellow']();
+			case 'green':
+				return m['type.green']();
+			case 'oolong':
+				return m['type.oolong']();
+			case 'black':
+				return m['type.black']();
+			case 'dark':
+				return m['type.dark']();
+			default:
+				return typeKey;
+		}
+	}
 
 	let searchActive = $derived(getSearchActive());
 	let currentQuery = $derived($page.url.searchParams.get('q') ?? '');
@@ -130,6 +160,19 @@
 		</h1>
 		<div class="w-full max-w-2xl mx-auto">
 			<SearchInput onQueryCommit={handleQueryCommit} />
+			<div class="mt-5 flex flex-wrap items-center justify-center gap-2">
+				{#each TYPE_SHORTCUTS as { key, dot }}
+					<Button
+						variant="outline"
+						size="sm"
+						class="rounded-full"
+						onclick={() => executeSearch(typeLabel(key))}
+					>
+						<span class="inline-block size-2 rounded-full {dot}" aria-hidden="true"></span>
+						{typeLabel(key)}
+					</Button>
+				{/each}
+			</div>
 		</div>
 	</div>
 {:else}
