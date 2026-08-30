@@ -1,6 +1,9 @@
 <script lang="ts">
 	import LanguageSwitcher from '$lib/components/ui/LanguageSwitcher.svelte';
+	import Cookie from '@lucide/svelte/icons/cookie';
 	import { getNavLinks } from '$lib/config/navigation.js';
+	import { openConsent } from '$lib/stores/consent.svelte.js';
+	import * as m from '$lib/paraglide/messages.js';
 
 	const links = getNavLinks();
 </script>
@@ -14,7 +17,17 @@
 				</a>
 			{/each}
 		</nav>
-		<div class="flex items-center gap-2">
+		<div class="flex items-center gap-3">
+			<button
+				type="button"
+				onclick={openConsent}
+				aria-label={m['footer.consent']()}
+				title={m['footer.consent']()}
+				class="cursor-pointer text-muted-background transition-colors hover:text-background"
+			>
+				<Cookie class="size-4 shrink-0" />
+			</button>
+			<span class="text-muted-background/40" aria-hidden="true">|</span>
 			<LanguageSwitcher />
 		</div>
 	</div>

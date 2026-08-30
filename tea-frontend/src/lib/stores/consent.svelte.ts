@@ -21,28 +21,42 @@ function readConsentFromStorage(): ConsentValue | null {
 
 let consent = $state<ConsentValue | null>(readConsentFromStorage());
 
+// Forced open by the footer "Consent settings" control, independent of `consent`
+// so an already-decided user can review/change their choice.
+let bannerOpen = $state(false);
+
 export function getConsent(): ConsentValue | null {
 	return consent;
 }
 
-export function acceptConsent(): void {
-	consent = 'accepted';
+export function isBannerOpen(): boolean {
+	return bannerOpen;
+}
+
+export function openConsent(): void {
+	bannerOpen = true;
+}
+
+export function closeConsent(): void {
+	bannerOpen = false;
+}
+
+function setConsent(value: ConsentValue): void {
+	consent = value;
+	bannerOpen = false;
 	try {
 		if (typeof localStorage !== 'undefined') {
-			localStorage.setItem(CONSENT_KEY, 'accepted');
+			localStorage.setItem(CONSENT_KEY, value);
 		}
 	} catch {
 		// localStorage may be unavailable
 	}
 }
 
+export function acceptConsent(): void {
+	setConsent('accepted');
+}
+
 export function declineConsent(): void {
-	consent = 'declined';
-	try {
-		if (typeof localStorage !== 'undefined') {
-			localStorage.setItem(CONSENT_KEY, 'declined');
-		}
-	} catch {
-		// localStorage may be unavailable
-	}
+	setConsent('declined');
 }

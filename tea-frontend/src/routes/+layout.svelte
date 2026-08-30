@@ -165,4 +165,4 @@
 
 <BackToTop />
 
-<ConsentBanner />
+<ConsentBanner root={isRootPage} />
